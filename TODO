@@ -1,0 +1,9 @@
+
+* Coloration synthaxique
+  - Coloration des fonctions
+  - Coloration de tous les Modules (pas seulement ceux connus)
+
+
+* Indentation
+  - Inclure ocp-indent
+
