@@ -71,7 +71,7 @@ editor.getSession().setTabSize(2);
 
 /* Config des keybindings */
 editor.commands.addCommand({
-    name: 'tab',
+    name: 'indent-lines',
     bindKey: {win: 'Tab', mac: 'Tab'},
     exec: function(editor) {
 	var r = editor.getSelectionRange();
@@ -79,6 +79,15 @@ editor.commands.addCommand({
     },
     readOnly: false
 });
+editor.commands.addCommand({
+    name: 'comment-lines',
+    bindKey: {win: 'Ctrl-B', mac: 'Control-B'},
+    exec: function(editor) {
+	editor.toggleCommentLines();
+    },
+    readOnly: false
+});
+
 
 
 
