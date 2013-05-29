@@ -29,6 +29,40 @@
  * ***** END LICENSE BLOCK ***** */
 
 
+function indent_lines(editor, start, end) {
+    var curpos = editor.getCursorPosition();
+    var doc = editor.getSession().getDocument();
+    var code = ocpiPrint(doc.getValue(), start, end);
+    doc.setValue(code);
+    editor.moveCursorToPosition(curpos);
+    editor.clearSelection();
+}
+
+
+
+/* Config de l'éditeur */
+editor.getSession().setTabSize(2);
+
+
+/* Config des keybindings */
+editor.commands.addCommand({
+    name: 'tab',
+    bindKey: {win: 'Tab', mac: 'Tab'},
+    exec: function(editor) {
+	var r = editor.getSelectionRange();
+	indent_lines(editor, r.start.row+1, r.end.row+1);
+    },
+    readOnly: false
+});
+
+
+
+
+
+
+
+
+
 define('ace/mode/ocaml_ocp', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/text', 'ace/tokenizer', 'ace/mode/ocaml_highlight_rules', 'ace/mode/matching_brace_outdent', 'ace/range'], function(require, exports, module) {
 
 
@@ -46,7 +80,7 @@ var Mode = function() {
 oop.inherits(Mode, TextMode);
 
 var indenter = /(?:[({[=:]|[-=]>|\b(?:else|try|with))\s*$/;
-var outdenter = /^[' '|'\t']*(in|(end[' '|'\t'];?))[' '|'\t'|'\n']+/;
+var outdenter = /^[' '|'\t']*(in|(end[' '|'\t'];?))[' '|'\t']*/;
 
 (function() {
 
@@ -90,39 +124,16 @@ var outdenter = /^[' '|'\t']*(in|(end[' '|'\t'];?))[' '|'\t'|'\n']+/;
     };
 
     this.checkOutdent = function(state, line, input) {
-	var b = outdenter.test(line+input);
-	// console.log(b);
-	return b;
-        return this.$outdent.checkOutdent(line);
+	if ( input == '\n' ) {
+	    var b = outdenter.test(line);
+	    // console.log(line+"\n"+input);
+	    return b;
+	}
+        return this.$outdent.checkOutdent(line);	
     };
 
     this.autoOutdent = function(state, doc, row) {
-	var r = new Range(row, 0, row, 0);
-        var currline = editor.getCursorPosition();
-        var code = ocpiPrint(doc, row+1, row+2);
-        // console.log("Valeur d'indent :" + nb);
-	doc.setValue(code);
-	editor.moveCursorToPosition(currline);
-	
-
-        // for (i = 0; i < 1; i *= editor.getSession().getTabSize()) {
-	//     editor.getSession().outdentRows(r);
-        // }
-// =======
-	// 	return b;
-
-	// 	// ** Code d'origine ** //
-	//     // return this.$outdent.checkOutdent(line);
-	// };
-
-	// this.autoOutdent = function(state, doc, row) {
-	// 	console.log("autoOutdent");
-	// 	var r = new Range(row,0,row+2,0);
-	// 	var b = "bb";
-	// 	doc.replace(r, b+"\n");
-
- 	// ** Code d'origine ** //
-	// this.$outdent.autoOutdent(doc, 0);
+	indent_lines(editor, row+1, row+2);
     };
 
 }).call(Mode.prototype);

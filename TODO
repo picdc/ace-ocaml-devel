@@ -2,9 +2,13 @@
 * Coloration synthaxique
   - Coloration des fonctions
   - Coloration de tous les Modules (pas seulement ceux connus)
+  - Faire notre propre thème ace
 
+* Analyse synthaxique
+  - à discuter
 
 * Indentation
-  - Inclure ocp-indent
-    -> virer bug quand indentNextLine quand current line vide
+  - Faire l'indentation par "bloc" ou let au lieu de tout le document
 
+* Architecture du projet à revoir
+  -> pour être plus propre, notamment les modes ace inutile
