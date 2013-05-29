@@ -1,6 +1,6 @@
 
 let kind_num result = IndentPrinter.Numeric
-  (fun n -> result := n)
+    (fun n -> result := n)
 
 let kind_print result = IndentPrinter.Print (fun s ->
   Buffer.add_string result s)
@@ -9,7 +9,8 @@ let kind_print result = IndentPrinter.Print (fun s ->
 let my_indent_channel kind result str lines =
 
   let kind = kind result in
-  let r = ref 0 in
+  let char_left = ref (String.length str) in
+  let pos_str = ref 0 in
   let start, last = lines in
 
   let f_config = IndentConfig.default in
@@ -24,20 +25,16 @@ let my_indent_channel kind result str lines =
   in
 
   let reader buf n =
-    (* String.fill buf 0 (String.length buf) (char_of_int 0); *)
-    (* Format.printf "<?>%s<?>@." buf; *)
-    let ls = String.length str in
-    (* Format.printf "%s@.@." str; *)
+    (* Le nombre maximum de caractère à traiter pendant cette passe *)
     let n =
-      if n > ls then ls
+      if n > !char_left then !char_left
       else n
     in
-    String.blit str 0 buf 0 n;
-    (* Format.printf "<!>%s<!>@." buf; *)
-    let lr = n - !r in
-    r := n;
-    (* Format.printf "--%d--@." lr; *)
-    lr
+    (* Traitement et mise à jour *)
+    String.blit str !pos_str buf 0 n;
+    char_left := !char_left - n;
+    pos_str := !pos_str + n;
+    n
   in
 
 
@@ -71,16 +68,34 @@ let () =
   
   (Js.Unsafe.coerce Dom_html.window)##ocpiPrint <- Js.wrap_callback
   indent_line_print;
-  (* let code = "let x = *)
-  (* let y =  *)
-  (* 10  *)
-  (* in *)
-  (* let z = 10 in *)
-  (* y + z" *)
-  (* in *)
-  (* Format.printf "%s@." code; *)
-  (* for i=1 to 6 do *)
+ (*  let code = "let x = *)
+(*   let y = *)
+(*   10 *)
+(*   in *)
+(*   let z = 10 in *)
+(*   y + z *)
+
+(* let kind_num result = IndentPrinter.Numeric *)
+(*     (fun n -> result := n) *)
     
-  (*   let res = my_indent_channel code i in *)
-  (*   Format.printf "%d@." res; *)
-  (* done *)
+(* let kind_print result = IndentPrinter.Print (fun s -> *)
+(*     Buffer.add_string result s) *)
+    
+
+(* let my_indent_channel kind result str lines = *)
+  
+(*   let kind = kind result in *)
+(*   let r = ref 0 in *)
+(*   let start, last = lines in *)
+  
+(*   let f_config = IndentConfig.default in *)
+(*   let f_in_lines n = (n >= start && n <= last) in *)
+(*   let output = { *)
+(*     IndentPrinter. *)
+(*     debug = false; *)
+(*     config = f_config; *)
+(*     in_lines = f_in_lines; *)
+(*     indent_empty" *)
+(*   in *)
+(*   let s = indent_line_print code 0 500 in *)
+(*   Format.printf "@.@.Result:@.@.%s" s *)

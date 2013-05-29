@@ -29,12 +29,37 @@
  * ***** END LICENSE BLOCK ***** */
 
 
+
+define('ace/mode/ocaml_ocp', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/text', 'ace/tokenizer', 'ace/mode/ocaml_highlight_rules', 'ace/mode/matching_brace_outdent', 'ace/range'], function(require, exports, module) {
+
+
+var oop = require("../lib/oop");
+var TextMode = require("./text").Mode;
+var Tokenizer = require("../tokenizer").Tokenizer;
+var OcamlHighlightRules = require("./ocaml_highlight_rules").OcamlHighlightRules;
+var MatchingBraceOutdent = require("./matching_brace_outdent").MatchingBraceOutdent;
+var Range = require("../range").Range;
+
+var Mode = function() {
+    this.$tokenizer = new Tokenizer(new OcamlHighlightRules().getRules());
+    this.$outdent   = new MatchingBraceOutdent();
+};
+oop.inherits(Mode, TextMode);
+
+
+
+
+
+
+
 function indent_lines(editor, start, end) {
     var curpos = editor.getCursorPosition();
+    var fvr = editor.getFirstVisibleRow();
     var doc = editor.getSession().getDocument();
     var code = ocpiPrint(doc.getValue(), start, end);
     doc.setValue(code);
     editor.moveCursorToPosition(curpos);
+    editor.scrollToRow(fvr);
     editor.clearSelection();
 }
 
@@ -56,28 +81,6 @@ editor.commands.addCommand({
 });
 
 
-
-
-
-
-
-
-
-define('ace/mode/ocaml_ocp', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/text', 'ace/tokenizer', 'ace/mode/ocaml_highlight_rules', 'ace/mode/matching_brace_outdent', 'ace/range'], function(require, exports, module) {
-
-
-var oop = require("../lib/oop");
-var TextMode = require("./text").Mode;
-var Tokenizer = require("../tokenizer").Tokenizer;
-var OcamlHighlightRules = require("./ocaml_highlight_rules").OcamlHighlightRules;
-var MatchingBraceOutdent = require("./matching_brace_outdent").MatchingBraceOutdent;
-var Range = require("../range").Range;
-
-var Mode = function() {
-    this.$tokenizer = new Tokenizer(new OcamlHighlightRules().getRules());
-    this.$outdent   = new MatchingBraceOutdent();
-};
-oop.inherits(Mode, TextMode);
 
 var indenter = /(?:[({[=:]|[-=]>|\b(?:else|try|with))\s*$/;
 var outdenter = /^[' '|'\t']*(in|(end[' '|'\t'];?))[' '|'\t']*/;
