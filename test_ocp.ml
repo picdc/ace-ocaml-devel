@@ -48,16 +48,9 @@ let my_indent_channel str line =
 
 let f a = "Test"
 
-<<<<<<< Updated upstream
 let indent_channel' str c = 
   let str = Js.to_string str in
   my_indent_channel str c
-=======
-let () =
-  (* (Js.Unsafe.coerce Dom_html.window)##ocp_indent <- Js.wrap_callback my_indent_channel; *)
-  let code = "    10\nin" in
-  let res = my_indent_channel code 2 in
->>>>>>> Stashed changes
 
 let () =
   (Js.Unsafe.coerce Dom_html.window)##ocpi <- Js.wrap_callback indent_channel'

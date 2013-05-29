@@ -28,18 +28,6 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-function include(filename)
-{
-    var head = document.getElementsByTagName('head')[0];
-
-    var script = document.createElement('script');
-    script.src = filename;
-    script.type = 'text/javascript';
-
-    head.appendChild(script)
-}
-
-include("../test-ocp.js");
 
 define('ace/mode/ocaml_ocp', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/text', 'ace/tokenizer', 'ace/mode/ocaml_highlight_rules', 'ace/mode/matching_brace_outdent', 'ace/range'], function(require, exports, module) {
 
@@ -91,13 +79,18 @@ var indenter = /(?:[({[=:]|[-=]>|\b(?:else|try|with))\s*$/;
         // if (!(tokens.length && tokens[tokens.length - 1].type === 'comment') &&
         //     state === 'start' && indenter.test(line))
         //     indent += tab;
-        var nb = ocpi(line, 1);
+	var text = editor.getValue();
+	var currline = editor.getCursorPosition().row + 1;
+
+	console.log(text+"\n--\n"+currline);
+
+        var nb = ocpi(text, currline);
         
-        alert(nb+"!");
+        console.log(nb+"!");
 
         var indent = "";
         for (i=0; i<nb; i++) {
-            indent += tab;
+            indent += " ";
         }
 
         return indent;

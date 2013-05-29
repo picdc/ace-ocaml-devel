@@ -6,4 +6,5 @@
 
 * Indentation
   - Inclure ocp-indent
+    -> virer bug quand indentNextLine quand current line vide
 
