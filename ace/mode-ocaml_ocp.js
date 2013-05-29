@@ -46,6 +46,7 @@ var Mode = function() {
 oop.inherits(Mode, TextMode);
 
 var indenter = /(?:[({[=:]|[-=]>|\b(?:else|try|with))\s*$/;
+var outdenter = /^[' '|'\t']*(in|(end[' '|'\t'];?))[' '|'\t'|'\n']+/;
 
 (function() {
 
@@ -89,39 +90,38 @@ var indenter = /(?:[({[=:]|[-=]>|\b(?:else|try|with))\s*$/;
     };
 
     this.checkOutdent = function(state, line, input) {
-	var reg = /^[' '|'\t']*in[' '|'\t'|'\n']+/;
-	var b = reg.test(line+input);
-	console.log(b);
+	var b = outdenter.test(line+input);
+	// console.log(b);
 	return b;
         return this.$outdent.checkOutdent(line);
     };
 
     this.autoOutdent = function(state, doc, row) {
-	console.log(doc+row);
-	// editor.blockOutdent();
 	var r = new Range(row, 0, row, 0);
-        
-        var nb = ocpiNum(doc, row, row);
-        console.log("Valeur d'indent :" + nb);
+        var currline = editor.getCursorPosition();
+        var code = ocpiPrint(doc, row+1, row+2);
+        // console.log("Valeur d'indent :" + nb);
+	doc.setValue(code);
+	editor.moveCursorToPosition(currline);
+	
 
         // for (i = 0; i < 1; i *= editor.getSession().getTabSize()) {
 	//     editor.getSession().outdentRows(r);
         // }
 // =======
-// 	return b;
+	// 	return b;
 
-// 	// ** Code d'origine ** //
-//         // return this.$outdent.checkOutdent(line);
-//     };
+	// 	// ** Code d'origine ** //
+	//     // return this.$outdent.checkOutdent(line);
+	// };
 
-//     this.autoOutdent = function(state, doc, row) {
-// 	console.log("autoOutdent");
-// 	var r = new Range(row,0,row+2,0);
-// 	var b = "bb";
-// 	doc.replace(r, b+"\n");
+	// this.autoOutdent = function(state, doc, row) {
+	// 	console.log("autoOutdent");
+	// 	var r = new Range(row,0,row+2,0);
+	// 	var b = "bb";
+	// 	doc.replace(r, b+"\n");
 
-// 	// ** Code d'origine ** //
-// >>>>>>> 30d8d7b1f11f51dbc37dbc4922c579a91e8a571d
+ 	// ** Code d'origine ** //
 	// this.$outdent.autoOutdent(doc, 0);
     };
 
