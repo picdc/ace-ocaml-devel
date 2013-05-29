@@ -1,28 +1,26 @@
 
+let kind_num result = IndentPrinter.Numeric
+  (fun n -> result := n)
 
-let my_indent_channel str line =
+let kind_print result = IndentPrinter.Print (fun s ->
+  Buffer.add_string result s)
 
 
+let my_indent_channel kind result str lines =
+
+  let kind = kind result in
   let r = ref 0 in
-  let result = ref 0 in
-
-  let f_kind = IndentPrinter.Numeric
-    (fun n -> result := n)
-  in
-
-  (* let f_kind_print = IndentPrinter.Print (fun s -> *)
-  (*   Buffer.add_string result s) *)
-  (* in *)
+  let start, last = lines in
 
   let f_config = IndentConfig.default in
-  let f_in_lines n = (n = line) in
+  let f_in_lines n = (n >= start && n <= last) in
   let output = {
     IndentPrinter.
     debug = false;
     config = f_config;
     in_lines = f_in_lines;
     indent_empty = true;
-    kind = f_kind; }
+    kind; }
   in
 
   let reader buf n =
@@ -50,21 +48,39 @@ let my_indent_channel str line =
   (* (\* let s = IndentPrinter.save state in *\) *)
   (* (\* output_string oc s *\) *)
 
-  !result
+  result
 
-let indent_channel' str c = 
+let indent_line_num str start last =
+  let c = start, last in
+  let res = ref 0 in
   let str = Js.to_string str in
-  my_indent_channel str c
+  !(my_indent_channel kind_num res str c)
+
+
+let indent_line_print str start last =
+  let c = start, last in
+  let res = Buffer.create 511 in
+  let str = Js.to_string str in
+  let res = my_indent_channel kind_print res str c in
+  let res = Buffer.contents res in
+  Js.string res
 
 let () =
-  (Js.Unsafe.coerce Dom_html.window)##ocpi <- Js.wrap_callback indent_channel'
+  (Js.Unsafe.coerce Dom_html.window)##ocpiNum <- Js.wrap_callback
+  indent_line_num;
+  
+  (Js.Unsafe.coerce Dom_html.window)##ocpiPrint <- Js.wrap_callback
+  indent_line_print;
   (* let code = "let x = *)
-  (* let y = 10 in *)
+  (* let y =  *)
+  (* 10  *)
+  (* in *)
   (* let z = 10 in *)
-  (* y + z"  *)
+  (* y + z" *)
   (* in *)
   (* Format.printf "%s@." code; *)
-  (* let res = my_indent_channel code 2 in *)
-  (* Format.printf "%d@." res; *)
-  (* let res = my_indent_channel code 3 in *)
-  (* Format.printf "%d@." res *)
+  (* for i=1 to 6 do *)
+    
+  (*   let res = my_indent_channel code i in *)
+  (*   Format.printf "%d@." res; *)
+  (* done *)
