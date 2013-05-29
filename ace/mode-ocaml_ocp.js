@@ -73,18 +73,8 @@ var indenter = /(?:[({[=:]|[-=]>|\b(?:else|try|with))\s*$/;
     };
 
     this.getNextLineIndent = function(state, line, tab) {
-       
 	var text = editor.getValue();
 	var currline = editor.getCursorPosition().row;
-
-	// var reg = /^[' '|'\t']*in[' '|'\t'|'\n']+/;
-	// var b = reg.test(line+'\n');
-	// console.log(b+"--"+line+"-"+currline);
-	// if ( b ) {
-	//     var r = new Range(currline, 0, currline+1, 0);
-	//     editor.getSession().outdentRows(r);
-	// }
-
 
         var nb = ocpiNum(text, currline+1, currline+1);
         
@@ -117,6 +107,21 @@ var indenter = /(?:[({[=:]|[-=]>|\b(?:else|try|with))\s*$/;
         // for (i = 0; i < 1; i *= editor.getSession().getTabSize()) {
 	//     editor.getSession().outdentRows(r);
         // }
+// =======
+// 	return b;
+
+// 	// ** Code d'origine ** //
+//         // return this.$outdent.checkOutdent(line);
+//     };
+
+//     this.autoOutdent = function(state, doc, row) {
+// 	console.log("autoOutdent");
+// 	var r = new Range(row,0,row+2,0);
+// 	var b = "bb";
+// 	doc.replace(r, b+"\n");
+
+// 	// ** Code d'origine ** //
+// >>>>>>> 30d8d7b1f11f51dbc37dbc4922c579a91e8a571d
 	// this.$outdent.autoOutdent(doc, 0);
     };
 
