@@ -73,12 +73,7 @@ var indenter = /(?:[({[=:]|[-=]>|\b(?:else|try|with))\s*$/;
     };
 
     this.getNextLineIndent = function(state, line, tab) {
-        // var indent = this.$getIndent(line);
-        // var tokens = this.$tokenizer.getLineTokens(line, state).tokens;
-
-        // if (!(tokens.length && tokens[tokens.length - 1].type === 'comment') &&
-        //     state === 'start' && indenter.test(line))
-        //     indent += tab;
+       
 	var text = editor.getValue();
 	var currline = editor.getCursorPosition().row + 1;
 
