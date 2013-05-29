@@ -73,22 +73,11 @@ var indenter = /(?:[({[=:]|[-=]>|\b(?:else|try|with))\s*$/;
     };
 
     this.getNextLineIndent = function(state, line, tab) {
-       
 	var text = editor.getValue();
 	var currline = editor.getCursorPosition().row;
-
-	var reg = /^[' '|'\t']*in[' '|'\t'|'\n']+/;
-	var b = reg.test(line+'\n');
-	console.log(b+"--"+line+"-"+currline);
-	if ( b ) {
-	    var r = new Range(currline, 0, currline+1, 0);
-	    editor.getSession().outdentRows(r);
-	}
-
-
         var nb = ocpi(text, currline+1);
         
-        console.log("J'indente de : "+nb+" lignes (ocp)");
+        // console.log("J'indente de : "+nb+" lignes (ocp)");
 
         var indent = "";
         for (i=0; i<nb; i++) {
@@ -99,19 +88,21 @@ var indenter = /(?:[({[=:]|[-=]>|\b(?:else|try|with))\s*$/;
     };
 
     this.checkOutdent = function(state, line, input) {
-	// var reg = /^[' '|'\t']*in[' '|'\t'|'\n']+/;
-	// var b = reg.test(line+input);
-	// console.log(b);
-	// return b;
+	var reg = /^[' '|'\t']*in[' '|'\t'|'\n']+/;
+	var b = reg.test(line+input);
+	return b;
+
+	// ** Code d'origine ** //
         // return this.$outdent.checkOutdent(line);
     };
 
     this.autoOutdent = function(state, doc, row) {
-	// console.log(doc+row);
-	// editor.blockOutdent();
-	// var r = new Range(row, 0, row, 0);
-	// editor.getSession().outdentRows(r);
-        // editor.getSession().outdentRows(r);
+	console.log("autoOutdent");
+	var r = new Range(row,0,row+2,0);
+	var b = "bb";
+	doc.replace(r, b+"\n");
+
+	// ** Code d'origine ** //
 	// this.$outdent.autoOutdent(doc, 0);
     };
 
