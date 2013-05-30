@@ -1,6 +1,5 @@
 
 open Dom_html
-open Test_ocp
 
 let alert str =
   Dom_html.window##alert(Js.string str)

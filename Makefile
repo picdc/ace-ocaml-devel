@@ -22,5 +22,5 @@ all:
 
 
 clean:
-	rm -f *~ \#*\#
+	rm -f *~ \#*\# *.byte
 	rm -rf _build
