@@ -1,0 +1,665 @@
+"pos.ml" 25 1225 1231 "pos.ml" 25 1225 1240
+type(
+  t -> string
+)
+ident(
+  def to_string "pos.ml" 31 1382 1384 "pos.ml" 37 1541 1544
+)
+"pos.ml" 25 1225 1241 "pos.ml" 25 1225 1242
+type(
+  t
+)
+ident(
+  def t "pos.ml" 26 1245 1249 "pos.ml" 29 1350 1380
+)
+"pos.ml" 26 1245 1249 "pos.ml" 26 1245 1263
+type(
+  (string -> int -> int -> string, unit, string) format ->
+  string -> int -> int -> string
+)
+ident(
+  ext_ref Printf.sprintf
+)
+"pos.ml" 26 1245 1264 "pos.ml" 26 1245 1273
+type(
+  (string -> int -> int -> string, unit, string) format
+)
+"pos.ml" 27 1274 1284 "pos.ml" 27 1274 1285
+type(
+  t
+)
+ident(
+  int_ref t "pos.ml" 25 1225 1241 "pos.ml" 25 1225 1242
+)
+"pos.ml" 27 1274 1284 "pos.ml" 27 1274 1295
+type(
+  string
+)
+"pos.ml" 27 1274 1296 "pos.ml" 27 1274 1297
+type(
+  string -> string -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"pos.ml" 27 1274 1298 "pos.ml" 27 1274 1300
+type(
+  string
+)
+"pos.ml" 27 1274 1284 "pos.ml" 27 1274 1300
+type(
+  bool
+)
+"pos.ml" 27 1274 1306 "pos.ml" 27 1274 1308
+type(
+  string
+)
+"pos.ml" 27 1274 1314 "pos.ml" 27 1274 1315
+type(
+  t
+)
+ident(
+  int_ref t "pos.ml" 25 1225 1241 "pos.ml" 25 1225 1242
+)
+"pos.ml" 27 1274 1314 "pos.ml" 27 1274 1325
+type(
+  string
+)
+"pos.ml" 27 1274 1326 "pos.ml" 27 1274 1327
+type(
+  string -> string -> string
+)
+ident(
+  ext_ref Pervasives.( ^ )
+)
+"pos.ml" 27 1274 1328 "pos.ml" 27 1274 1331
+type(
+  string
+)
+"pos.ml" 27 1274 1314 "pos.ml" 27 1274 1331
+call(
+  stack
+)
+type(
+  string
+)
+"pos.ml" 27 1274 1280 "pos.ml" 27 1274 1332
+type(
+  string
+)
+"pos.ml" 28 1333 1339 "pos.ml" 28 1333 1340
+type(
+  t
+)
+ident(
+  int_ref t "pos.ml" 25 1225 1241 "pos.ml" 25 1225 1242
+)
+"pos.ml" 28 1333 1339 "pos.ml" 28 1333 1349
+type(
+  int
+)
+"pos.ml" 29 1350 1357 "pos.ml" 29 1350 1358
+type(
+  t
+)
+ident(
+  int_ref t "pos.ml" 25 1225 1241 "pos.ml" 25 1225 1242
+)
+"pos.ml" 29 1350 1357 "pos.ml" 29 1350 1367
+type(
+  int
+)
+"pos.ml" 29 1350 1368 "pos.ml" 29 1350 1369
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"pos.ml" 29 1350 1370 "pos.ml" 29 1350 1371
+type(
+  t
+)
+ident(
+  int_ref t "pos.ml" 25 1225 1241 "pos.ml" 25 1225 1242
+)
+"pos.ml" 29 1350 1370 "pos.ml" 29 1350 1379
+type(
+  int
+)
+"pos.ml" 29 1350 1356 "pos.ml" 29 1350 1380
+type(
+  int
+)
+"pos.ml" 26 1245 1249 "pos.ml" 29 1350 1380
+call(
+  tail
+)
+type(
+  string
+)
+"pos.ml" 31 1382 1388 "pos.ml" 31 1382 1392
+type(
+  t
+)
+ident(
+  def zero "pos.ml" 36 1501 1503 "pos.ml" 37 1541 1544
+)
+"pos.ml" 31 1382 1409 "pos.ml" 31 1382 1411
+type(
+  string
+)
+"pos.ml" 32 1413 1439 "pos.ml" 32 1413 1440
+type(
+  int
+)
+"pos.ml" 33 1442 1467 "pos.ml" 33 1442 1468
+type(
+  int
+)
+"pos.ml" 34 1470 1496 "pos.ml" 34 1470 1497
+type(
+  int
+)
+"pos.ml" 31 1382 1395 "pos.ml" 34 1470 1499
+type(
+  t
+)
+"pos.ml" 36 1501 1507 "pos.ml" 36 1501 1513
+type(
+  t -> int
+)
+ident(
+  def column "pos.ml" 36 1501 1540 "pos.ml" 37 1541 1544
+)
+"pos.ml" 36 1501 1514 "pos.ml" 36 1501 1515
+type(
+  t
+)
+ident(
+  def p "pos.ml" 36 1501 1518 "pos.ml" 36 1501 1540
+)
+"pos.ml" 36 1501 1518 "pos.ml" 36 1501 1519
+type(
+  t
+)
+ident(
+  int_ref p "pos.ml" 36 1501 1514 "pos.ml" 36 1501 1515
+)
+"pos.ml" 36 1501 1518 "pos.ml" 36 1501 1528
+type(
+  int
+)
+"pos.ml" 36 1501 1529 "pos.ml" 36 1501 1530
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"pos.ml" 36 1501 1531 "pos.ml" 36 1501 1532
+type(
+  t
+)
+ident(
+  int_ref p "pos.ml" 36 1501 1514 "pos.ml" 36 1501 1515
+)
+"pos.ml" 36 1501 1531 "pos.ml" 36 1501 1540
+type(
+  int
+)
+"pos.ml" 36 1501 1518 "pos.ml" 36 1501 1540
+type(
+  int
+)
+"pos.ml" 43 1621 1627 "pos.ml" 43 1621 1630
+type(
+  'a * 'b -> 'a
+)
+ident(
+  def fst "pos.ml" 44 1637 1639 "pos.ml" 62 2101 2104
+)
+"pos.ml" 43 1621 1633 "pos.ml" 43 1621 1636
+type(
+  'a * 'b -> 'a
+)
+ident(
+  ext_ref Pervasives.fst
+)
+"pos.ml" 44 1637 1643 "pos.ml" 44 1637 1646
+type(
+  'c * 'd -> 'd
+)
+ident(
+  def snd "pos.ml" 46 1654 1656 "pos.ml" 62 2101 2104
+)
+"pos.ml" 44 1637 1649 "pos.ml" 44 1637 1652
+type(
+  'c * 'd -> 'd
+)
+ident(
+  ext_ref Pervasives.snd
+)
+"pos.ml" 46 1654 1660 "pos.ml" 46 1654 1666
+type(
+  'e -> 'f -> 'e * 'f
+)
+ident(
+  def create "pos.ml" 48 1684 1686 "pos.ml" 62 2101 2104
+)
+"pos.ml" 46 1654 1667 "pos.ml" 46 1654 1669
+type(
+  'e
+)
+ident(
+  def p1 "pos.ml" 46 1654 1670 "pos.ml" 46 1654 1682
+)
+"pos.ml" 46 1654 1670 "pos.ml" 46 1654 1672
+type(
+  'f
+)
+ident(
+  def p2 "pos.ml" 46 1654 1675 "pos.ml" 46 1654 1682
+)
+"pos.ml" 46 1654 1676 "pos.ml" 46 1654 1678
+type(
+  'e
+)
+ident(
+  int_ref p1 "pos.ml" 46 1654 1667 "pos.ml" 46 1654 1669
+)
+"pos.ml" 46 1654 1679 "pos.ml" 46 1654 1681
+type(
+  'f
+)
+ident(
+  int_ref p2 "pos.ml" 46 1654 1670 "pos.ml" 46 1654 1672
+)
+"pos.ml" 46 1654 1675 "pos.ml" 46 1654 1682
+type(
+  'e * 'f
+)
+"pos.ml" 48 1684 1690 "pos.ml" 48 1684 1702
+type(
+  Position.t * 'g -> int
+)
+ident(
+  def start_column "pos.ml" 49 1720 1722 "pos.ml" 62 2101 2104
+)
+"pos.ml" 48 1684 1704 "pos.ml" 48 1684 1705
+type(
+  Position.t
+)
+ident(
+  def p "pos.ml" 48 1684 1711 "pos.ml" 48 1684 1719
+)
+"pos.ml" 48 1684 1706 "pos.ml" 48 1684 1707
+type(
+  'g
+)
+"pos.ml" 48 1684 1703 "pos.ml" 48 1684 1708
+type(
+  Position.t * 'g
+)
+"pos.ml" 48 1684 1711 "pos.ml" 48 1684 1717
+type(
+  Position.t -> int
+)
+ident(
+  ext_ref Position.column
+)
+"pos.ml" 48 1684 1718 "pos.ml" 48 1684 1719
+type(
+  Position.t
+)
+ident(
+  int_ref p "pos.ml" 48 1684 1704 "pos.ml" 48 1684 1705
+)
+"pos.ml" 48 1684 1711 "pos.ml" 48 1684 1719
+call(
+  tail
+)
+type(
+  int
+)
+"pos.ml" 49 1720 1726 "pos.ml" 49 1720 1736
+type(
+  'h * Position.t -> int
+)
+ident(
+  def end_column "pos.ml" 51 1755 1757 "pos.ml" 62 2101 2104
+)
+"pos.ml" 49 1720 1738 "pos.ml" 49 1720 1739
+type(
+  'h
+)
+"pos.ml" 49 1720 1740 "pos.ml" 49 1720 1741
+type(
+  Position.t
+)
+ident(
+  def p "pos.ml" 49 1720 1745 "pos.ml" 49 1720 1753
+)
+"pos.ml" 49 1720 1737 "pos.ml" 49 1720 1742
+type(
+  'h * Position.t
+)
+"pos.ml" 49 1720 1745 "pos.ml" 49 1720 1751
+type(
+  Position.t -> int
+)
+ident(
+  ext_ref Position.column
+)
+"pos.ml" 49 1720 1752 "pos.ml" 49 1720 1753
+type(
+  Position.t
+)
+ident(
+  int_ref p "pos.ml" 49 1720 1740 "pos.ml" 49 1720 1741
+)
+"pos.ml" 49 1720 1745 "pos.ml" 49 1720 1753
+call(
+  tail
+)
+type(
+  int
+)
+"pos.ml" 51 1755 1761 "pos.ml" 51 1755 1771
+type(
+  Position.t * 'i -> int
+)
+ident(
+  def start_line "pos.ml" 52 1791 1793 "pos.ml" 62 2101 2104
+)
+"pos.ml" 51 1755 1773 "pos.ml" 51 1755 1774
+type(
+  Position.t
+)
+ident(
+  def p "pos.ml" 51 1755 1780 "pos.ml" 51 1755 1790
+)
+"pos.ml" 51 1755 1775 "pos.ml" 51 1755 1776
+type(
+  'i
+)
+"pos.ml" 51 1755 1772 "pos.ml" 51 1755 1777
+type(
+  Position.t * 'i
+)
+"pos.ml" 51 1755 1780 "pos.ml" 51 1755 1781
+type(
+  Position.t
+)
+ident(
+  int_ref p "pos.ml" 51 1755 1773 "pos.ml" 51 1755 1774
+)
+"pos.ml" 51 1755 1780 "pos.ml" 51 1755 1790
+type(
+  int
+)
+"pos.ml" 52 1791 1797 "pos.ml" 52 1791 1805
+type(
+  'j * Position.t -> int
+)
+ident(
+  def end_line "pos.ml" 54 1826 1828 "pos.ml" 62 2101 2104
+)
+"pos.ml" 52 1791 1807 "pos.ml" 52 1791 1808
+type(
+  'j
+)
+"pos.ml" 52 1791 1809 "pos.ml" 52 1791 1810
+type(
+  Position.t
+)
+ident(
+  def p "pos.ml" 52 1791 1814 "pos.ml" 52 1791 1824
+)
+"pos.ml" 52 1791 1806 "pos.ml" 52 1791 1811
+type(
+  'j * Position.t
+)
+"pos.ml" 52 1791 1814 "pos.ml" 52 1791 1815
+type(
+  Position.t
+)
+ident(
+  int_ref p "pos.ml" 52 1791 1809 "pos.ml" 52 1791 1810
+)
+"pos.ml" 52 1791 1814 "pos.ml" 52 1791 1824
+type(
+  int
+)
+"pos.ml" 54 1826 1832 "pos.ml" 54 1826 1843
+type(
+  Position.t * 'k -> int
+)
+ident(
+  def char_offset "pos.ml" 55 1864 1866 "pos.ml" 62 2101 2104
+)
+"pos.ml" 54 1826 1845 "pos.ml" 54 1826 1846
+type(
+  Position.t
+)
+ident(
+  def p "pos.ml" 54 1826 1853 "pos.ml" 54 1826 1863
+)
+"pos.ml" 54 1826 1848 "pos.ml" 54 1826 1849
+type(
+  'k
+)
+"pos.ml" 54 1826 1844 "pos.ml" 54 1826 1850
+type(
+  Position.t * 'k
+)
+"pos.ml" 54 1826 1853 "pos.ml" 54 1826 1854
+type(
+  Position.t
+)
+ident(
+  int_ref p "pos.ml" 54 1826 1845 "pos.ml" 54 1826 1846
+)
+"pos.ml" 54 1826 1853 "pos.ml" 54 1826 1863
+type(
+  int
+)
+"pos.ml" 55 1864 1870 "pos.ml" 55 1864 1876
+type(
+  Position.t * Position.t -> int
+)
+ident(
+  def length "pos.ml" 57 1933 1935 "pos.ml" 62 2101 2104
+)
+"pos.ml" 55 1864 1878 "pos.ml" 55 1864 1880
+type(
+  Position.t
+)
+ident(
+  def p1 "pos.ml" 55 1864 1888 "pos.ml" 55 1864 1931
+)
+"pos.ml" 55 1864 1882 "pos.ml" 55 1864 1884
+type(
+  Position.t
+)
+ident(
+  def p2 "pos.ml" 55 1864 1888 "pos.ml" 55 1864 1931
+)
+"pos.ml" 55 1864 1877 "pos.ml" 55 1864 1885
+type(
+  Position.t * Position.t
+)
+"pos.ml" 55 1864 1888 "pos.ml" 55 1864 1890
+type(
+  Position.t
+)
+ident(
+  int_ref p2 "pos.ml" 55 1864 1882 "pos.ml" 55 1864 1884
+)
+"pos.ml" 55 1864 1888 "pos.ml" 55 1864 1908
+type(
+  int
+)
+"pos.ml" 55 1864 1909 "pos.ml" 55 1864 1910
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"pos.ml" 55 1864 1911 "pos.ml" 55 1864 1913
+type(
+  Position.t
+)
+ident(
+  int_ref p1 "pos.ml" 55 1864 1878 "pos.ml" 55 1864 1880
+)
+"pos.ml" 55 1864 1911 "pos.ml" 55 1864 1931
+type(
+  int
+)
+"pos.ml" 55 1864 1888 "pos.ml" 55 1864 1931
+type(
+  int
+)
+"pos.ml" 57 1933 1939 "pos.ml" 57 1933 1943
+type(
+  Position.t * Position.t
+)
+ident(
+  def zero "pos.ml" 59 1978 1980 "pos.ml" 62 2101 2104
+)
+"pos.ml" 57 1933 1947 "pos.ml" 57 1933 1960
+type(
+  Position.t
+)
+ident(
+  ext_ref Position.zero
+)
+"pos.ml" 57 1933 1962 "pos.ml" 57 1933 1975
+type(
+  Position.t
+)
+ident(
+  ext_ref Position.zero
+)
+"pos.ml" 57 1933 1946 "pos.ml" 57 1933 1976
+type(
+  Position.t * Position.t
+)
+"pos.ml" 59 1978 1984 "pos.ml" 59 1978 1993
+type(
+  Position.t * Position.t -> int -> Position.t * Position.t
+)
+ident(
+  def translate "pos.ml" 61 2055 2100 "pos.ml" 62 2101 2104
+)
+"pos.ml" 59 1978 1995 "pos.ml" 59 1978 1996
+type(
+  Position.t
+)
+ident(
+  def p "pos.ml" 59 1978 2001 "pos.ml" 61 2055 2100
+)
+"pos.ml" 59 1978 1997 "pos.ml" 59 1978 1999
+type(
+  Position.t
+)
+ident(
+  def p' "pos.ml" 59 1978 2001 "pos.ml" 61 2055 2100
+)
+"pos.ml" 59 1978 1994 "pos.ml" 59 1978 2000
+type(
+  Position.t * Position.t
+)
+"pos.ml" 59 1978 2001 "pos.ml" 59 1978 2005
+type(
+  int
+)
+ident(
+  def diff "pos.ml" 60 2008 2012 "pos.ml" 61 2055 2100
+)
+"pos.ml" 60 2008 2014 "pos.ml" 60 2008 2015
+type(
+  Position.t
+)
+ident(
+  int_ref p "pos.ml" 59 1978 1995 "pos.ml" 59 1978 1996
+)
+"pos.ml" 60 2008 2033 "pos.ml" 60 2008 2034
+type(
+  Position.t
+)
+ident(
+  int_ref p "pos.ml" 59 1978 1995 "pos.ml" 59 1978 1996
+)
+"pos.ml" 60 2008 2033 "pos.ml" 60 2008 2044
+type(
+  int
+)
+"pos.ml" 60 2008 2045 "pos.ml" 60 2008 2046
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"pos.ml" 60 2008 2047 "pos.ml" 60 2008 2051
+type(
+  int
+)
+ident(
+  int_ref diff "pos.ml" 59 1978 2001 "pos.ml" 59 1978 2005
+)
+"pos.ml" 60 2008 2033 "pos.ml" 60 2008 2051
+type(
+  int
+)
+"pos.ml" 60 2008 2012 "pos.ml" 60 2008 2053
+type(
+  Position.t
+)
+"pos.ml" 61 2055 2061 "pos.ml" 61 2055 2063
+type(
+  Position.t
+)
+ident(
+  int_ref p' "pos.ml" 59 1978 1997 "pos.ml" 59 1978 1999
+)
+"pos.ml" 61 2055 2080 "pos.ml" 61 2055 2082
+type(
+  Position.t
+)
+ident(
+  int_ref p' "pos.ml" 59 1978 1997 "pos.ml" 59 1978 1999
+)
+"pos.ml" 61 2055 2080 "pos.ml" 61 2055 2091
+type(
+  int
+)
+"pos.ml" 61 2055 2092 "pos.ml" 61 2055 2093
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"pos.ml" 61 2055 2094 "pos.ml" 61 2055 2098
+type(
+  int
+)
+ident(
+  int_ref diff "pos.ml" 59 1978 2001 "pos.ml" 59 1978 2005
+)
+"pos.ml" 61 2055 2080 "pos.ml" 61 2055 2098
+type(
+  int
+)
+"pos.ml" 61 2055 2059 "pos.ml" 61 2055 2100
+type(
+  Position.t
+)
+"pos.ml" 60 2008 2012 "pos.ml" 61 2055 2100
+type(
+  Position.t * Position.t
+)

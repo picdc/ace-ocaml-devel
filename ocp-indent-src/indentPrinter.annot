@@ -1,0 +1,4654 @@
+"indentPrinter.ml" 41 1617 1621 "indentPrinter.ml" 41 1617 1628
+type(
+  string
+)
+ident(
+  def endline "indentPrinter.ml" 43 1687 1687 "_none_" 1 0 -1
+)
+"indentPrinter.ml" 41 1617 1631 "indentPrinter.ml" 41 1617 1635
+type(
+  string
+)
+"indentPrinter.ml" 43 1687 1691 "indentPrinter.ml" 43 1687 1700
+type(
+  output -> string -> unit
+)
+ident(
+  def pr_string "indentPrinter.ml" 48 1783 1783 "_none_" 1 0 -1
+)
+"indentPrinter.ml" 43 1687 1701 "indentPrinter.ml" 43 1687 1707
+type(
+  output
+)
+ident(
+  def output "indentPrinter.ml" 43 1687 1708 "indentPrinter.ml" 46 1760 1781
+)
+"indentPrinter.ml" 43 1687 1708 "indentPrinter.ml" 43 1687 1712
+type(
+  string
+)
+ident(
+  def text "indentPrinter.ml" 44 1715 1717 "indentPrinter.ml" 46 1760 1781
+)
+"indentPrinter.ml" 44 1715 1723 "indentPrinter.ml" 44 1715 1729
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 43 1687 1701 "indentPrinter.ml" 43 1687 1707
+)
+"indentPrinter.ml" 44 1715 1723 "indentPrinter.ml" 44 1715 1734
+type(
+  output_kind
+)
+"indentPrinter.ml" 45 1740 1752 "indentPrinter.ml" 45 1740 1753
+type(
+  int -> unit
+)
+"indentPrinter.ml" 45 1740 1744 "indentPrinter.ml" 45 1740 1753
+type(
+  output_kind
+)
+"indentPrinter.ml" 45 1740 1757 "indentPrinter.ml" 45 1740 1759
+type(
+  unit
+)
+"indentPrinter.ml" 46 1760 1770 "indentPrinter.ml" 46 1760 1771
+type(
+  string -> unit
+)
+ident(
+  def f "indentPrinter.ml" 46 1760 1775 "indentPrinter.ml" 46 1760 1781
+)
+"indentPrinter.ml" 46 1760 1764 "indentPrinter.ml" 46 1760 1771
+type(
+  output_kind
+)
+"indentPrinter.ml" 46 1760 1775 "indentPrinter.ml" 46 1760 1776
+type(
+  string -> unit
+)
+ident(
+  int_ref f "indentPrinter.ml" 46 1760 1770 "indentPrinter.ml" 46 1760 1771
+)
+"indentPrinter.ml" 46 1760 1777 "indentPrinter.ml" 46 1760 1781
+type(
+  string
+)
+ident(
+  int_ref text "indentPrinter.ml" 43 1687 1708 "indentPrinter.ml" 43 1687 1712
+)
+"indentPrinter.ml" 46 1760 1775 "indentPrinter.ml" 46 1760 1781
+call(
+  tail
+)
+type(
+  unit
+)
+"indentPrinter.ml" 44 1715 1717 "indentPrinter.ml" 46 1760 1781
+type(
+  unit
+)
+"indentPrinter.ml" 48 1783 1787 "indentPrinter.ml" 48 1783 1792
+type(
+  output -> unit
+)
+ident(
+  def pr_nl "indentPrinter.ml" 53 1910 1910 "_none_" 1 0 -1
+)
+"indentPrinter.ml" 48 1783 1793 "indentPrinter.ml" 48 1783 1799
+type(
+  output
+)
+ident(
+  def output "indentPrinter.ml" 48 1783 1802 "indentPrinter.ml" 48 1783 1826
+)
+"indentPrinter.ml" 48 1783 1802 "indentPrinter.ml" 48 1783 1811
+type(
+  output -> string -> unit
+)
+ident(
+  int_ref pr_string "indentPrinter.ml" 43 1687 1691 "indentPrinter.ml" 43 1687 1700
+)
+"indentPrinter.ml" 48 1783 1812 "indentPrinter.ml" 48 1783 1818
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 48 1783 1793 "indentPrinter.ml" 48 1783 1799
+)
+"indentPrinter.ml" 48 1783 1819 "indentPrinter.ml" 48 1783 1826
+type(
+  string
+)
+ident(
+  int_ref endline "indentPrinter.ml" 41 1617 1621 "indentPrinter.ml" 41 1617 1628
+)
+"indentPrinter.ml" 48 1783 1802 "indentPrinter.ml" 48 1783 1826
+call(
+  tail
+)
+type(
+  unit
+)
+"indentPrinter.ml" 61 2317 2321 "indentPrinter.ml" 61 2317 2333
+type(
+  output -> int -> string -> ?kind:indentKind -> IndentBlock.t -> unit
+)
+ident(
+  def print_indent "indentPrinter.ml" 82 2961 2961 "_none_" 1 0 -1
+)
+"indentPrinter.ml" 61 2317 2334 "indentPrinter.ml" 61 2317 2340
+type(
+  output
+)
+ident(
+  def output "indentPrinter.ml" 61 2317 2341 "indentPrinter.ml" 80 2933 2959
+)
+"indentPrinter.ml" 61 2317 2341 "indentPrinter.ml" 61 2317 2345
+type(
+  int
+)
+ident(
+  def line "indentPrinter.ml" 61 2317 2346 "indentPrinter.ml" 80 2933 2959
+)
+"indentPrinter.ml" 61 2317 2346 "indentPrinter.ml" 61 2317 2351
+type(
+  string
+)
+ident(
+  def blank "indentPrinter.ml" 61 2317 2352 "indentPrinter.ml" 80 2933 2959
+)
+"indentPrinter.ml" 61 2317 2354 "indentPrinter.ml" 61 2317 2358
+type(
+  indentKind
+)
+"indentPrinter.ml" 61 2317 2359 "indentPrinter.ml" 61 2317 2365
+type(
+  indentKind
+)
+type(
+  indentKind
+)
+ident(
+  int_ref *sth* "indentPrinter.ml" 61 2317 2359 "indentPrinter.ml" 61 2317 2365
+)
+type(
+  indentKind option
+)
+type(
+  indentKind option
+)
+type(
+  indentKind
+)
+"indentPrinter.ml" 61 2317 2367 "indentPrinter.ml" 61 2317 2372
+type(
+  IndentBlock.t
+)
+ident(
+  def block "indentPrinter.ml" 63 2445 2447 "indentPrinter.ml" 80 2933 2959
+)
+"indentPrinter.ml" 63 2445 2450 "indentPrinter.ml" 63 2445 2456
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 61 2317 2334 "indentPrinter.ml" 61 2317 2340
+)
+"indentPrinter.ml" 63 2445 2450 "indentPrinter.ml" 63 2445 2465
+type(
+  int -> bool
+)
+"indentPrinter.ml" 63 2445 2466 "indentPrinter.ml" 63 2445 2470
+type(
+  int
+)
+ident(
+  int_ref line "indentPrinter.ml" 61 2317 2341 "indentPrinter.ml" 61 2317 2345
+)
+"indentPrinter.ml" 63 2445 2450 "indentPrinter.ml" 63 2445 2470
+call(
+  stack
+)
+type(
+  bool
+)
+"indentPrinter.ml" 64 2476 2484 "indentPrinter.ml" 64 2476 2490
+type(
+  int
+)
+ident(
+  def indent "indentPrinter.ml" 74 2774 2778 "indentPrinter.ml" 76 2831 2876
+)
+"indentPrinter.ml" 65 2493 2505 "indentPrinter.ml" 65 2493 2509
+type(
+  indentKind
+)
+ident(
+  int_ref kind "indentPrinter.ml" 61 2317 2354 "indentPrinter.ml" 61 2317 2358
+)
+"indentPrinter.ml" 66 2515 2523 "indentPrinter.ml" 66 2515 2529
+type(
+  indentKind
+)
+"indentPrinter.ml" 66 2515 2533 "indentPrinter.ml" 66 2515 2551
+type(
+  IndentBlock.t -> int
+)
+ident(
+  ext_ref IndentBlock.indent
+)
+"indentPrinter.ml" 66 2515 2552 "indentPrinter.ml" 66 2515 2557
+type(
+  IndentBlock.t
+)
+ident(
+  int_ref block "indentPrinter.ml" 61 2317 2367 "indentPrinter.ml" 61 2317 2372
+)
+"indentPrinter.ml" 66 2515 2533 "indentPrinter.ml" 66 2515 2557
+call(
+  stack
+)
+type(
+  int
+)
+"indentPrinter.ml" 67 2558 2566 "indentPrinter.ml" 67 2558 2571
+type(
+  indentKind
+)
+"indentPrinter.ml" 67 2558 2577 "indentPrinter.ml" 67 2558 2583
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 61 2317 2334 "indentPrinter.ml" 61 2317 2340
+)
+"indentPrinter.ml" 67 2558 2577 "indentPrinter.ml" 67 2558 2596
+type(
+  bool
+)
+"indentPrinter.ml" 68 2600 2610 "indentPrinter.ml" 68 2600 2634
+type(
+  int -> IndentBlock.t -> int
+)
+ident(
+  ext_ref IndentBlock.guess_indent
+)
+"indentPrinter.ml" 68 2600 2635 "indentPrinter.ml" 68 2600 2639
+type(
+  int
+)
+ident(
+  int_ref line "indentPrinter.ml" 61 2317 2341 "indentPrinter.ml" 61 2317 2345
+)
+"indentPrinter.ml" 68 2600 2640 "indentPrinter.ml" 68 2600 2645
+type(
+  IndentBlock.t
+)
+ident(
+  int_ref block "indentPrinter.ml" 61 2317 2367 "indentPrinter.ml" 61 2317 2372
+)
+"indentPrinter.ml" 68 2600 2610 "indentPrinter.ml" 68 2600 2645
+call(
+  stack
+)
+type(
+  int
+)
+"indentPrinter.ml" 67 2558 2572 "indentPrinter.ml" 68 2600 2645
+type(
+  int
+)
+"indentPrinter.ml" 69 2646 2654 "indentPrinter.ml" 69 2646 2659
+type(
+  indentKind
+)
+"indentPrinter.ml" 69 2646 2663 "indentPrinter.ml" 69 2646 2664
+type(
+  int
+)
+"indentPrinter.ml" 70 2665 2673 "indentPrinter.ml" 70 2665 2679
+type(
+  indentKind
+)
+"indentPrinter.ml" 71 2683 2693 "indentPrinter.ml" 71 2683 2711
+type(
+  IndentBlock.t -> int
+)
+ident(
+  ext_ref IndentBlock.indent
+)
+"indentPrinter.ml" 71 2683 2712 "indentPrinter.ml" 71 2683 2717
+type(
+  IndentBlock.t
+)
+ident(
+  int_ref block "indentPrinter.ml" 61 2317 2367 "indentPrinter.ml" 61 2317 2372
+)
+"indentPrinter.ml" 71 2683 2693 "indentPrinter.ml" 71 2683 2717
+call(
+  stack
+)
+type(
+  int
+)
+"indentPrinter.ml" 71 2683 2718 "indentPrinter.ml" 71 2683 2719
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"indentPrinter.ml" 71 2683 2720 "indentPrinter.ml" 71 2683 2739
+type(
+  IndentBlock.t -> int
+)
+ident(
+  ext_ref IndentBlock.padding
+)
+"indentPrinter.ml" 71 2683 2740 "indentPrinter.ml" 71 2683 2745
+type(
+  IndentBlock.t
+)
+ident(
+  int_ref block "indentPrinter.ml" 61 2317 2367 "indentPrinter.ml" 61 2317 2372
+)
+"indentPrinter.ml" 71 2683 2720 "indentPrinter.ml" 71 2683 2745
+call(
+  stack
+)
+type(
+  int
+)
+"indentPrinter.ml" 71 2683 2693 "indentPrinter.ml" 71 2683 2745
+type(
+  int
+)
+"indentPrinter.ml" 72 2746 2760 "indentPrinter.ml" 72 2746 2761
+type(
+  int
+)
+ident(
+  def n "indentPrinter.ml" 72 2746 2765 "indentPrinter.ml" 72 2746 2766
+)
+"indentPrinter.ml" 72 2746 2754 "indentPrinter.ml" 72 2746 2761
+type(
+  indentKind
+)
+"indentPrinter.ml" 72 2746 2765 "indentPrinter.ml" 72 2746 2766
+type(
+  int
+)
+ident(
+  int_ref n "indentPrinter.ml" 72 2746 2760 "indentPrinter.ml" 72 2746 2761
+)
+"indentPrinter.ml" 65 2493 2499 "indentPrinter.ml" 72 2746 2766
+type(
+  int
+)
+"indentPrinter.ml" 74 2774 2784 "indentPrinter.ml" 74 2774 2790
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 61 2317 2334 "indentPrinter.ml" 61 2317 2340
+)
+"indentPrinter.ml" 74 2774 2784 "indentPrinter.ml" 74 2774 2795
+type(
+  output_kind
+)
+"indentPrinter.ml" 75 2801 2815 "indentPrinter.ml" 75 2801 2817
+type(
+  int -> unit
+)
+ident(
+  def pr "indentPrinter.ml" 75 2801 2821 "indentPrinter.ml" 75 2801 2830
+)
+"indentPrinter.ml" 75 2801 2807 "indentPrinter.ml" 75 2801 2817
+type(
+  output_kind
+)
+"indentPrinter.ml" 75 2801 2821 "indentPrinter.ml" 75 2801 2823
+type(
+  int -> unit
+)
+ident(
+  int_ref pr "indentPrinter.ml" 75 2801 2815 "indentPrinter.ml" 75 2801 2817
+)
+"indentPrinter.ml" 75 2801 2824 "indentPrinter.ml" 75 2801 2830
+type(
+  int
+)
+ident(
+  int_ref indent "indentPrinter.ml" 64 2476 2484 "indentPrinter.ml" 64 2476 2490
+)
+"indentPrinter.ml" 75 2801 2821 "indentPrinter.ml" 75 2801 2830
+call(
+  tail
+)
+type(
+  unit
+)
+"indentPrinter.ml" 76 2831 2843 "indentPrinter.ml" 76 2831 2845
+type(
+  string -> unit
+)
+ident(
+  def pr "indentPrinter.ml" 76 2831 2849 "indentPrinter.ml" 76 2831 2876
+)
+"indentPrinter.ml" 76 2831 2837 "indentPrinter.ml" 76 2831 2845
+type(
+  output_kind
+)
+"indentPrinter.ml" 76 2831 2849 "indentPrinter.ml" 76 2831 2851
+type(
+  string -> unit
+)
+ident(
+  int_ref pr "indentPrinter.ml" 76 2831 2843 "indentPrinter.ml" 76 2831 2845
+)
+"indentPrinter.ml" 76 2831 2853 "indentPrinter.ml" 76 2831 2864
+type(
+  int -> char -> string
+)
+ident(
+  ext_ref Compat.String.make
+)
+"indentPrinter.ml" 76 2831 2865 "indentPrinter.ml" 76 2831 2871
+type(
+  int
+)
+ident(
+  int_ref indent "indentPrinter.ml" 64 2476 2484 "indentPrinter.ml" 64 2476 2490
+)
+"indentPrinter.ml" 76 2831 2872 "indentPrinter.ml" 76 2831 2875
+type(
+  char
+)
+"indentPrinter.ml" 76 2831 2852 "indentPrinter.ml" 76 2831 2876
+call(
+  stack
+)
+type(
+  string
+)
+"indentPrinter.ml" 76 2831 2849 "indentPrinter.ml" 76 2831 2876
+call(
+  tail
+)
+type(
+  unit
+)
+"indentPrinter.ml" 74 2774 2778 "indentPrinter.ml" 76 2831 2876
+type(
+  unit
+)
+"indentPrinter.ml" 64 2476 2480 "indentPrinter.ml" 76 2831 2876
+type(
+  unit
+)
+"indentPrinter.ml" 78 2884 2894 "indentPrinter.ml" 78 2884 2900
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 61 2317 2334 "indentPrinter.ml" 61 2317 2340
+)
+"indentPrinter.ml" 78 2884 2894 "indentPrinter.ml" 78 2884 2905
+type(
+  output_kind
+)
+"indentPrinter.ml" 79 2911 2925 "indentPrinter.ml" 79 2911 2926
+type(
+  int -> unit
+)
+"indentPrinter.ml" 79 2911 2917 "indentPrinter.ml" 79 2911 2926
+type(
+  output_kind
+)
+"indentPrinter.ml" 79 2911 2930 "indentPrinter.ml" 79 2911 2932
+type(
+  unit
+)
+"indentPrinter.ml" 80 2933 2945 "indentPrinter.ml" 80 2933 2947
+type(
+  string -> unit
+)
+ident(
+  def pr "indentPrinter.ml" 80 2933 2951 "indentPrinter.ml" 80 2933 2959
+)
+"indentPrinter.ml" 80 2933 2939 "indentPrinter.ml" 80 2933 2947
+type(
+  output_kind
+)
+"indentPrinter.ml" 80 2933 2951 "indentPrinter.ml" 80 2933 2953
+type(
+  string -> unit
+)
+ident(
+  int_ref pr "indentPrinter.ml" 80 2933 2945 "indentPrinter.ml" 80 2933 2947
+)
+"indentPrinter.ml" 80 2933 2954 "indentPrinter.ml" 80 2933 2959
+type(
+  string
+)
+ident(
+  int_ref blank "indentPrinter.ml" 61 2317 2346 "indentPrinter.ml" 61 2317 2351
+)
+"indentPrinter.ml" 80 2933 2951 "indentPrinter.ml" 80 2933 2959
+call(
+  tail
+)
+type(
+  unit
+)
+"indentPrinter.ml" 78 2884 2888 "indentPrinter.ml" 80 2933 2959
+type(
+  unit
+)
+"indentPrinter.ml" 63 2445 2447 "indentPrinter.ml" 80 2933 2959
+type(
+  unit
+)
+"indentPrinter.ml" 82 2961 2965 "indentPrinter.ml" 82 2961 2976
+type(
+  output -> IndentBlock.t -> Nstream.token -> unit
+)
+ident(
+  def print_token "indentPrinter.ml" 163 6187 6187 "_none_" 1 0 -1
+)
+"indentPrinter.ml" 82 2961 2977 "indentPrinter.ml" 82 2961 2983
+type(
+  output
+)
+ident(
+  def output "indentPrinter.ml" 82 2961 2984 "indentPrinter.ml" 161 6137 6185
+)
+"indentPrinter.ml" 82 2961 2984 "indentPrinter.ml" 82 2961 2989
+type(
+  IndentBlock.t
+)
+ident(
+  def block "indentPrinter.ml" 82 2961 2990 "indentPrinter.ml" 161 6137 6185
+)
+"indentPrinter.ml" 82 2961 2990 "indentPrinter.ml" 82 2961 2991
+type(
+  Nstream.token
+)
+ident(
+  def t "indentPrinter.ml" 83 2994 2996 "indentPrinter.ml" 161 6137 6185
+)
+"indentPrinter.ml" 83 2994 3000 "indentPrinter.ml" 83 2994 3017
+type(
+  int
+)
+ident(
+  def orig_start_column "indentPrinter.ml" 84 3057 3059 "indentPrinter.ml" 161 6137 6185
+)
+"indentPrinter.ml" 83 2994 3020 "indentPrinter.ml" 83 2994 3047
+type(
+  IndentBlock.t -> int
+)
+ident(
+  ext_ref IndentBlock.original_column
+)
+"indentPrinter.ml" 83 2994 3048 "indentPrinter.ml" 83 2994 3053
+type(
+  IndentBlock.t
+)
+ident(
+  int_ref block "indentPrinter.ml" 82 2961 2984 "indentPrinter.ml" 82 2961 2989
+)
+"indentPrinter.ml" 83 2994 3020 "indentPrinter.ml" 83 2994 3053
+call(
+  stack
+)
+type(
+  int
+)
+"indentPrinter.ml" 84 3057 3063 "indentPrinter.ml" 84 3057 3075
+type(
+  int
+)
+ident(
+  def start_column "indentPrinter.ml" 86 3159 3161 "indentPrinter.ml" 161 6137 6185
+)
+"indentPrinter.ml" 84 3057 3078 "indentPrinter.ml" 84 3057 3096
+type(
+  IndentBlock.t -> int
+)
+ident(
+  ext_ref IndentBlock.offset
+)
+"indentPrinter.ml" 84 3057 3097 "indentPrinter.ml" 84 3057 3102
+type(
+  IndentBlock.t
+)
+ident(
+  int_ref block "indentPrinter.ml" 82 2961 2984 "indentPrinter.ml" 82 2961 2989
+)
+"indentPrinter.ml" 84 3057 3078 "indentPrinter.ml" 84 3057 3102
+call(
+  stack
+)
+type(
+  int
+)
+"indentPrinter.ml" 86 3159 3169 "indentPrinter.ml" 86 3159 3186
+type(
+  int -> int option -> string -> string list -> unit
+)
+ident(
+  def print_extra_lines "indentPrinter.ml" 86 3159 3161 "indentPrinter.ml" 161 6137 6185
+)
+"indentPrinter.ml" 86 3159 3187 "indentPrinter.ml" 86 3159 3191
+type(
+  int
+)
+ident(
+  def line "indentPrinter.ml" 86 3159 3192 "indentPrinter.ml" 130 5091 5147
+)
+"indentPrinter.ml" 86 3159 3192 "indentPrinter.ml" 86 3159 3195
+type(
+  int option
+)
+ident(
+  def pad "indentPrinter.ml" 86 3159 3196 "indentPrinter.ml" 130 5091 5147
+)
+"indentPrinter.ml" 86 3159 3196 "indentPrinter.ml" 86 3159 3200
+type(
+  string
+)
+ident(
+  def last "indentPrinter.ml" 86 3159 3203 "indentPrinter.ml" 130 5091 5147
+)
+"indentPrinter.ml" 87 3212 3218 "indentPrinter.ml" 87 3212 3220
+type(
+  string list
+)
+"indentPrinter.ml" 87 3212 3224 "indentPrinter.ml" 87 3212 3226
+type(
+  unit
+)
+"indentPrinter.ml" 88 3227 3233 "indentPrinter.ml" 88 3227 3237
+type(
+  string
+)
+ident(
+  def text "indentPrinter.ml" 89 3253 3261 "indentPrinter.ml" 130 5091 5147
+)
+"indentPrinter.ml" 88 3227 3239 "indentPrinter.ml" 88 3227 3249
+type(
+  string list
+)
+ident(
+  def next_lines "indentPrinter.ml" 89 3253 3261 "indentPrinter.ml" 130 5091 5147
+)
+"indentPrinter.ml" 88 3227 3233 "indentPrinter.ml" 88 3227 3249
+type(
+  string list
+)
+"indentPrinter.ml" 89 3253 3261 "indentPrinter.ml" 89 3253 3266
+type(
+  output -> unit
+)
+ident(
+  int_ref pr_nl "indentPrinter.ml" 48 1783 1787 "indentPrinter.ml" 48 1783 1792
+)
+"indentPrinter.ml" 89 3253 3267 "indentPrinter.ml" 89 3253 3273
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 82 2961 2977 "indentPrinter.ml" 82 2961 2983
+)
+"indentPrinter.ml" 89 3253 3261 "indentPrinter.ml" 89 3253 3273
+call(
+  stack
+)
+type(
+  unit
+)
+"indentPrinter.ml" 90 3275 3286 "indentPrinter.ml" 90 3275 3289
+type(
+  bool -> bool
+)
+ident(
+  ext_ref Pervasives.not
+)
+"indentPrinter.ml" 90 3275 3291 "indentPrinter.ml" 90 3275 3297
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 82 2961 2977 "indentPrinter.ml" 82 2961 2983
+)
+"indentPrinter.ml" 90 3275 3291 "indentPrinter.ml" 90 3275 3306
+type(
+  int -> bool
+)
+"indentPrinter.ml" 90 3275 3307 "indentPrinter.ml" 90 3275 3311
+type(
+  int
+)
+ident(
+  int_ref line "indentPrinter.ml" 86 3159 3187 "indentPrinter.ml" 86 3159 3191
+)
+"indentPrinter.ml" 90 3275 3290 "indentPrinter.ml" 90 3275 3312
+call(
+  stack
+)
+type(
+  bool
+)
+"indentPrinter.ml" 90 3275 3286 "indentPrinter.ml" 90 3275 3312
+type(
+  bool
+)
+"indentPrinter.ml" 91 3318 3329 "indentPrinter.ml" 91 3318 3341
+type(
+  output -> int -> string -> ?kind:indentKind -> IndentBlock.t -> unit
+)
+ident(
+  int_ref print_indent "indentPrinter.ml" 61 2317 2321 "indentPrinter.ml" 61 2317 2333
+)
+"indentPrinter.ml" 91 3318 3342 "indentPrinter.ml" 91 3318 3348
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 82 2961 2977 "indentPrinter.ml" 82 2961 2983
+)
+"indentPrinter.ml" 91 3318 3349 "indentPrinter.ml" 91 3318 3353
+type(
+  int
+)
+ident(
+  int_ref line "indentPrinter.ml" 86 3159 3187 "indentPrinter.ml" 86 3159 3191
+)
+"indentPrinter.ml" 91 3318 3354 "indentPrinter.ml" 91 3318 3356
+type(
+  string
+)
+"indentPrinter.ml" 91 3318 3357 "indentPrinter.ml" 91 3318 3362
+type(
+  IndentBlock.t
+)
+ident(
+  int_ref block "indentPrinter.ml" 82 2961 2984 "indentPrinter.ml" 82 2961 2989
+)
+"indentPrinter.ml" 91 3318 3329 "indentPrinter.ml" 91 3318 3362
+call(
+  stack
+)
+type(
+  unit
+)
+"indentPrinter.ml" 92 3364 3375 "indentPrinter.ml" 92 3364 3384
+type(
+  output -> string -> unit
+)
+ident(
+  int_ref pr_string "indentPrinter.ml" 43 1687 1691 "indentPrinter.ml" 43 1687 1700
+)
+"indentPrinter.ml" 92 3364 3385 "indentPrinter.ml" 92 3364 3391
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 82 2961 2977 "indentPrinter.ml" 82 2961 2983
+)
+"indentPrinter.ml" 92 3364 3392 "indentPrinter.ml" 92 3364 3396
+type(
+  string
+)
+ident(
+  int_ref text "indentPrinter.ml" 88 3227 3233 "indentPrinter.ml" 88 3227 3237
+)
+"indentPrinter.ml" 92 3364 3375 "indentPrinter.ml" 92 3364 3396
+call(
+  stack
+)
+type(
+  unit
+)
+"indentPrinter.ml" 93 3398 3409 "indentPrinter.ml" 93 3398 3426
+type(
+  int -> int option -> string -> string list -> unit
+)
+ident(
+  int_ref print_extra_lines "indentPrinter.ml" 86 3159 3169 "indentPrinter.ml" 86 3159 3186
+)
+"indentPrinter.ml" 93 3398 3428 "indentPrinter.ml" 93 3398 3432
+type(
+  int
+)
+ident(
+  int_ref line "indentPrinter.ml" 86 3159 3187 "indentPrinter.ml" 86 3159 3191
+)
+"indentPrinter.ml" 93 3398 3432 "indentPrinter.ml" 93 3398 3433
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"indentPrinter.ml" 93 3398 3433 "indentPrinter.ml" 93 3398 3434
+type(
+  int
+)
+"indentPrinter.ml" 93 3398 3427 "indentPrinter.ml" 93 3398 3435
+type(
+  int
+)
+"indentPrinter.ml" 93 3398 3436 "indentPrinter.ml" 93 3398 3439
+type(
+  int option
+)
+ident(
+  int_ref pad "indentPrinter.ml" 86 3159 3192 "indentPrinter.ml" 86 3159 3195
+)
+"indentPrinter.ml" 93 3398 3440 "indentPrinter.ml" 93 3398 3444
+type(
+  string
+)
+ident(
+  int_ref text "indentPrinter.ml" 88 3227 3233 "indentPrinter.ml" 88 3227 3237
+)
+"indentPrinter.ml" 93 3398 3445 "indentPrinter.ml" 93 3398 3455
+type(
+  string list
+)
+ident(
+  int_ref next_lines "indentPrinter.ml" 88 3227 3239 "indentPrinter.ml" 88 3227 3249
+)
+"indentPrinter.ml" 93 3398 3409 "indentPrinter.ml" 93 3398 3455
+call(
+  tail
+)
+type(
+  unit
+)
+"indentPrinter.ml" 92 3364 3375 "indentPrinter.ml" 93 3398 3455
+type(
+  unit
+)
+"indentPrinter.ml" 91 3318 3328 "indentPrinter.ml" 93 3398 3456
+type(
+  unit
+)
+"indentPrinter.ml" 94 3457 3473 "indentPrinter.ml" 94 3457 3484
+type(
+  string -> string
+)
+ident(
+  ext_ref Compat.String.trim
+)
+"indentPrinter.ml" 94 3457 3485 "indentPrinter.ml" 94 3457 3489
+type(
+  string
+)
+ident(
+  int_ref text "indentPrinter.ml" 88 3227 3233 "indentPrinter.ml" 88 3227 3237
+)
+"indentPrinter.ml" 94 3457 3473 "indentPrinter.ml" 94 3457 3489
+call(
+  stack
+)
+type(
+  string
+)
+"indentPrinter.ml" 94 3457 3490 "indentPrinter.ml" 94 3457 3491
+type(
+  string -> string -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"indentPrinter.ml" 94 3457 3492 "indentPrinter.ml" 94 3457 3494
+type(
+  string
+)
+"indentPrinter.ml" 94 3457 3473 "indentPrinter.ml" 94 3457 3494
+type(
+  bool
+)
+"indentPrinter.ml" 94 3457 3495 "indentPrinter.ml" 94 3457 3497
+type(
+  bool -> bool -> bool
+)
+ident(
+  ext_ref Pervasives.( && )
+)
+"indentPrinter.ml" 94 3457 3498 "indentPrinter.ml" 94 3457 3499
+type(
+  Nstream.token
+)
+ident(
+  int_ref t "indentPrinter.ml" 82 2961 2990 "indentPrinter.ml" 82 2961 2991
+)
+"indentPrinter.ml" 94 3457 3498 "indentPrinter.ml" 94 3457 3505
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 94 3457 3506 "indentPrinter.ml" 94 3457 3508
+type(
+  Approx_lexer.token -> Approx_lexer.token -> bool
+)
+ident(
+  ext_ref Pervasives.( <> )
+)
+"indentPrinter.ml" 94 3457 3509 "indentPrinter.ml" 94 3457 3522
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 94 3457 3498 "indentPrinter.ml" 94 3457 3522
+type(
+  bool
+)
+"indentPrinter.ml" 94 3457 3473 "indentPrinter.ml" 94 3457 3522
+type(
+  bool
+)
+"indentPrinter.ml" 95 3528 3539 "indentPrinter.ml" 95 3528 3551
+type(
+  output -> int -> string -> ?kind:indentKind -> IndentBlock.t -> unit
+)
+ident(
+  int_ref print_indent "indentPrinter.ml" 61 2317 2321 "indentPrinter.ml" 61 2317 2333
+)
+"indentPrinter.ml" 95 3528 3552 "indentPrinter.ml" 95 3528 3558
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 82 2961 2977 "indentPrinter.ml" 82 2961 2983
+)
+"indentPrinter.ml" 95 3528 3559 "indentPrinter.ml" 95 3528 3563
+type(
+  int
+)
+ident(
+  int_ref line "indentPrinter.ml" 86 3159 3187 "indentPrinter.ml" 86 3159 3191
+)
+"indentPrinter.ml" 95 3528 3564 "indentPrinter.ml" 95 3528 3566
+type(
+  string
+)
+"indentPrinter.ml" 95 3528 3573 "indentPrinter.ml" 95 3528 3578
+type(
+  indentKind
+)
+"indentPrinter.ml" 95 3528 3579 "indentPrinter.ml" 95 3528 3584
+type(
+  IndentBlock.t
+)
+ident(
+  int_ref block "indentPrinter.ml" 82 2961 2984 "indentPrinter.ml" 82 2961 2989
+)
+"indentPrinter.ml" 95 3528 3539 "indentPrinter.ml" 95 3528 3584
+call(
+  stack
+)
+type(
+  unit
+)
+"indentPrinter.ml" 96 3586 3597 "indentPrinter.ml" 96 3586 3614
+type(
+  int -> int option -> string -> string list -> unit
+)
+ident(
+  int_ref print_extra_lines "indentPrinter.ml" 86 3159 3169 "indentPrinter.ml" 86 3159 3186
+)
+"indentPrinter.ml" 96 3586 3616 "indentPrinter.ml" 96 3586 3620
+type(
+  int
+)
+ident(
+  int_ref line "indentPrinter.ml" 86 3159 3187 "indentPrinter.ml" 86 3159 3191
+)
+"indentPrinter.ml" 96 3586 3620 "indentPrinter.ml" 96 3586 3621
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"indentPrinter.ml" 96 3586 3621 "indentPrinter.ml" 96 3586 3622
+type(
+  int
+)
+"indentPrinter.ml" 96 3586 3615 "indentPrinter.ml" 96 3586 3623
+type(
+  int
+)
+"indentPrinter.ml" 96 3586 3624 "indentPrinter.ml" 96 3586 3627
+type(
+  int option
+)
+ident(
+  int_ref pad "indentPrinter.ml" 86 3159 3192 "indentPrinter.ml" 86 3159 3195
+)
+"indentPrinter.ml" 96 3586 3628 "indentPrinter.ml" 96 3586 3632
+type(
+  string
+)
+ident(
+  int_ref text "indentPrinter.ml" 88 3227 3233 "indentPrinter.ml" 88 3227 3237
+)
+"indentPrinter.ml" 96 3586 3633 "indentPrinter.ml" 96 3586 3643
+type(
+  string list
+)
+ident(
+  int_ref next_lines "indentPrinter.ml" 88 3227 3239 "indentPrinter.ml" 88 3227 3249
+)
+"indentPrinter.ml" 96 3586 3597 "indentPrinter.ml" 96 3586 3643
+call(
+  tail
+)
+type(
+  unit
+)
+"indentPrinter.ml" 95 3528 3538 "indentPrinter.ml" 96 3586 3644
+type(
+  unit
+)
+"indentPrinter.ml" 98 3658 3672 "indentPrinter.ml" 98 3658 3688
+type(
+  int
+)
+ident(
+  def orig_line_indent "indentPrinter.ml" 99 3720 3730 "indentPrinter.ml" 130 5091 5147
+)
+"indentPrinter.ml" 98 3658 3691 "indentPrinter.ml" 98 3658 3711
+type(
+  string -> int
+)
+ident(
+  ext_ref Util.count_leading_spaces
+)
+"indentPrinter.ml" 98 3658 3712 "indentPrinter.ml" 98 3658 3716
+type(
+  string
+)
+ident(
+  int_ref text "indentPrinter.ml" 88 3227 3233 "indentPrinter.ml" 88 3227 3237
+)
+"indentPrinter.ml" 98 3658 3691 "indentPrinter.ml" 98 3658 3716
+call(
+  stack
+)
+type(
+  int
+)
+"indentPrinter.ml" 99 3720 3734 "indentPrinter.ml" 99 3720 3745
+type(
+  int
+)
+ident(
+  def orig_offset "indentPrinter.ml" 100 3788 3798 "indentPrinter.ml" 130 5091 5147
+)
+"indentPrinter.ml" 99 3720 3748 "indentPrinter.ml" 99 3720 3764
+type(
+  int
+)
+ident(
+  int_ref orig_line_indent "indentPrinter.ml" 98 3658 3672 "indentPrinter.ml" 98 3658 3688
+)
+"indentPrinter.ml" 99 3720 3765 "indentPrinter.ml" 99 3720 3766
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"indentPrinter.ml" 99 3720 3767 "indentPrinter.ml" 99 3720 3784
+type(
+  int
+)
+ident(
+  int_ref orig_start_column "indentPrinter.ml" 83 2994 3000 "indentPrinter.ml" 83 2994 3017
+)
+"indentPrinter.ml" 99 3720 3748 "indentPrinter.ml" 99 3720 3784
+type(
+  int
+)
+"indentPrinter.ml" 100 3788 3802 "indentPrinter.ml" 100 3788 3806
+type(
+  string
+)
+ident(
+  def text "indentPrinter.ml" 104 3921 3931 "indentPrinter.ml" 130 5091 5147
+)
+"indentPrinter.ml" 101 3809 3821 "indentPrinter.ml" 101 3809 3831
+type(
+  string -> int -> int -> string
+)
+ident(
+  ext_ref Compat.String.sub
+)
+"indentPrinter.ml" 101 3809 3832 "indentPrinter.ml" 101 3809 3836
+type(
+  string
+)
+ident(
+  int_ref text "indentPrinter.ml" 88 3227 3233 "indentPrinter.ml" 88 3227 3237
+)
+"indentPrinter.ml" 101 3809 3837 "indentPrinter.ml" 101 3809 3853
+type(
+  int
+)
+ident(
+  int_ref orig_line_indent "indentPrinter.ml" 98 3658 3672 "indentPrinter.ml" 98 3658 3688
+)
+"indentPrinter.ml" 102 3854 3869 "indentPrinter.ml" 102 3854 3882
+type(
+  string -> int
+)
+ident(
+  ext_ref Compat.String.length
+)
+"indentPrinter.ml" 102 3854 3883 "indentPrinter.ml" 102 3854 3887
+type(
+  string
+)
+ident(
+  int_ref text "indentPrinter.ml" 88 3227 3233 "indentPrinter.ml" 88 3227 3237
+)
+"indentPrinter.ml" 102 3854 3869 "indentPrinter.ml" 102 3854 3887
+type(
+  int
+)
+"indentPrinter.ml" 102 3854 3888 "indentPrinter.ml" 102 3854 3889
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"indentPrinter.ml" 102 3854 3890 "indentPrinter.ml" 102 3854 3906
+type(
+  int
+)
+ident(
+  int_ref orig_line_indent "indentPrinter.ml" 98 3658 3672 "indentPrinter.ml" 98 3658 3688
+)
+"indentPrinter.ml" 102 3854 3868 "indentPrinter.ml" 102 3854 3907
+type(
+  int
+)
+"indentPrinter.ml" 101 3809 3821 "indentPrinter.ml" 102 3854 3907
+call(
+  stack
+)
+type(
+  string
+)
+"indentPrinter.ml" 104 3921 3935 "indentPrinter.ml" 104 3921 3947
+type(
+  int
+)
+ident(
+  def indent_value "indentPrinter.ml" 128 4986 4996 "indentPrinter.ml" 130 5091 5147
+)
+"indentPrinter.ml" 105 3950 3968 "indentPrinter.ml" 105 3950 3971
+type(
+  int option
+)
+ident(
+  int_ref pad "indentPrinter.ml" 86 3159 3192 "indentPrinter.ml" 86 3159 3195
+)
+"indentPrinter.ml" 106 3977 3991 "indentPrinter.ml" 106 3977 3995
+type(
+  int option
+)
+"indentPrinter.ml" 106 3977 3999 "indentPrinter.ml" 106 3977 4015
+type(
+  int
+)
+ident(
+  int_ref orig_line_indent "indentPrinter.ml" 98 3658 3672 "indentPrinter.ml" 98 3658 3688
+)
+"indentPrinter.ml" 107 4016 4035 "indentPrinter.ml" 107 4016 4038
+type(
+  int
+)
+ident(
+  def pad "indentPrinter.ml" 107 4016 4042 "indentPrinter.ml" 126 4915 4972
+)
+"indentPrinter.ml" 107 4016 4030 "indentPrinter.ml" 107 4016 4038
+type(
+  int option
+)
+"indentPrinter.ml" 107 4016 4048 "indentPrinter.ml" 107 4016 4049
+type(
+  Nstream.token
+)
+ident(
+  int_ref t "indentPrinter.ml" 82 2961 2990 "indentPrinter.ml" 82 2961 2991
+)
+"indentPrinter.ml" 107 4016 4048 "indentPrinter.ml" 107 4016 4055
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 108 4061 4086 "indentPrinter.ml" 108 4061 4087
+type(
+  string
+)
+"indentPrinter.ml" 108 4061 4079 "indentPrinter.ml" 108 4061 4087
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 109 4091 4114 "indentPrinter.ml" 109 4091 4130
+type(
+  string -> bool
+)
+ident(
+  ext_ref Util.ends_with_escape
+)
+"indentPrinter.ml" 109 4091 4131 "indentPrinter.ml" 109 4091 4135
+type(
+  string
+)
+ident(
+  int_ref last "indentPrinter.ml" 86 3159 3196 "indentPrinter.ml" 86 3159 3200
+)
+"indentPrinter.ml" 109 4091 4114 "indentPrinter.ml" 109 4091 4135
+call(
+  stack
+)
+type(
+  bool
+)
+"indentPrinter.ml" 110 4141 4166 "indentPrinter.ml" 110 4141 4175
+type(
+  string -> string -> bool
+)
+ident(
+  ext_ref Util.is_prefix
+)
+"indentPrinter.ml" 110 4141 4176 "indentPrinter.ml" 110 4141 4180
+type(
+  string
+)
+"indentPrinter.ml" 110 4141 4181 "indentPrinter.ml" 110 4141 4185
+type(
+  string
+)
+ident(
+  int_ref text "indentPrinter.ml" 100 3788 3802 "indentPrinter.ml" 100 3788 3806
+)
+"indentPrinter.ml" 110 4141 4166 "indentPrinter.ml" 110 4141 4185
+call(
+  stack
+)
+type(
+  bool
+)
+"indentPrinter.ml" 110 4141 4186 "indentPrinter.ml" 110 4141 4188
+type(
+  bool -> bool -> bool
+)
+ident(
+  ext_ref Pervasives.( || )
+)
+"indentPrinter.ml" 110 4141 4189 "indentPrinter.ml" 110 4141 4198
+type(
+  string -> string -> bool
+)
+ident(
+  ext_ref Util.is_prefix
+)
+"indentPrinter.ml" 110 4141 4199 "indentPrinter.ml" 110 4141 4204
+type(
+  string
+)
+"indentPrinter.ml" 110 4141 4205 "indentPrinter.ml" 110 4141 4209
+type(
+  string
+)
+ident(
+  int_ref text "indentPrinter.ml" 100 3788 3802 "indentPrinter.ml" 100 3788 3806
+)
+"indentPrinter.ml" 110 4141 4189 "indentPrinter.ml" 110 4141 4209
+call(
+  stack
+)
+type(
+  bool
+)
+"indentPrinter.ml" 110 4141 4166 "indentPrinter.ml" 110 4141 4209
+type(
+  bool
+)
+"indentPrinter.ml" 111 4210 4237 "indentPrinter.ml" 111 4210 4249
+type(
+  int
+)
+ident(
+  int_ref start_column "indentPrinter.ml" 84 3057 3063 "indentPrinter.ml" 84 3057 3075
+)
+"indentPrinter.ml" 112 4250 4277 "indentPrinter.ml" 112 4250 4289
+type(
+  int
+)
+ident(
+  int_ref start_column "indentPrinter.ml" 84 3057 3063 "indentPrinter.ml" 84 3057 3075
+)
+"indentPrinter.ml" 112 4250 4290 "indentPrinter.ml" 112 4250 4291
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"indentPrinter.ml" 112 4250 4292 "indentPrinter.ml" 112 4250 4295
+type(
+  int
+)
+ident(
+  int_ref pad "indentPrinter.ml" 107 4016 4035 "indentPrinter.ml" 107 4016 4038
+)
+"indentPrinter.ml" 112 4250 4277 "indentPrinter.ml" 112 4250 4295
+type(
+  int
+)
+"indentPrinter.ml" 110 4141 4163 "indentPrinter.ml" 112 4250 4295
+type(
+  int
+)
+"indentPrinter.ml" 113 4296 4321 "indentPrinter.ml" 113 4296 4337
+type(
+  int
+)
+ident(
+  int_ref orig_line_indent "indentPrinter.ml" 98 3658 3672 "indentPrinter.ml" 98 3658 3688
+)
+"indentPrinter.ml" 109 4091 4111 "indentPrinter.ml" 113 4296 4337
+type(
+  int
+)
+"indentPrinter.ml" 114 4338 4356 "indentPrinter.ml" 114 4338 4363
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 114 4338 4366 "indentPrinter.ml" 114 4338 4377
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 114 4338 4356 "indentPrinter.ml" 114 4338 4377
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 115 4381 4405 "indentPrinter.ml" 115 4381 4406
+type(
+  int
+)
+ident(
+  def n "indentPrinter.ml" 116 4450 4470 "indentPrinter.ml" 121 4702 4738
+)
+"indentPrinter.ml" 115 4381 4412 "indentPrinter.ml" 115 4381 4421
+type(
+  string -> string -> bool
+)
+ident(
+  ext_ref Util.is_prefix
+)
+"indentPrinter.ml" 115 4381 4422 "indentPrinter.ml" 115 4381 4425
+type(
+  string
+)
+"indentPrinter.ml" 115 4381 4426 "indentPrinter.ml" 115 4381 4430
+type(
+  string
+)
+ident(
+  int_ref text "indentPrinter.ml" 100 3788 3802 "indentPrinter.ml" 100 3788 3806
+)
+"indentPrinter.ml" 115 4381 4412 "indentPrinter.ml" 115 4381 4430
+call(
+  stack
+)
+type(
+  bool
+)
+"indentPrinter.ml" 115 4381 4436 "indentPrinter.ml" 115 4381 4437
+type(
+  int
+)
+"indentPrinter.ml" 115 4381 4443 "indentPrinter.ml" 115 4381 4446
+type(
+  int
+)
+ident(
+  int_ref pad "indentPrinter.ml" 107 4016 4035 "indentPrinter.ml" 107 4016 4038
+)
+"indentPrinter.ml" 115 4381 4409 "indentPrinter.ml" 115 4381 4446
+type(
+  int
+)
+"indentPrinter.ml" 116 4450 4474 "indentPrinter.ml" 116 4450 4475
+type(
+  int
+)
+ident(
+  def n "indentPrinter.ml" 120 4623 4643 "indentPrinter.ml" 121 4702 4738
+)
+"indentPrinter.ml" 117 4478 4503 "indentPrinter.ml" 117 4478 4509
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 82 2961 2977 "indentPrinter.ml" 82 2961 2983
+)
+"indentPrinter.ml" 117 4478 4503 "indentPrinter.ml" 117 4478 4516
+type(
+  IndentConfig.t
+)
+"indentPrinter.ml" 117 4478 4503 "indentPrinter.ml" 117 4478 4547
+type(
+  bool
+)
+"indentPrinter.ml" 118 4548 4575 "indentPrinter.ml" 118 4548 4576
+type(
+  int
+)
+ident(
+  int_ref n "indentPrinter.ml" 115 4381 4405 "indentPrinter.ml" 115 4381 4406
+)
+"indentPrinter.ml" 118 4548 4582 "indentPrinter.ml" 118 4548 4585
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.max
+)
+"indentPrinter.ml" 118 4548 4586 "indentPrinter.ml" 118 4548 4597
+type(
+  int
+)
+ident(
+  int_ref orig_offset "indentPrinter.ml" 99 3720 3734 "indentPrinter.ml" 99 3720 3745
+)
+"indentPrinter.ml" 118 4548 4598 "indentPrinter.ml" 118 4548 4599
+type(
+  int
+)
+ident(
+  int_ref n "indentPrinter.ml" 115 4381 4405 "indentPrinter.ml" 115 4381 4406
+)
+"indentPrinter.ml" 118 4548 4582 "indentPrinter.ml" 118 4548 4599
+call(
+  stack
+)
+type(
+  int
+)
+"indentPrinter.ml" 117 4478 4500 "indentPrinter.ml" 118 4548 4599
+type(
+  int
+)
+"indentPrinter.ml" 120 4623 4647 "indentPrinter.ml" 120 4623 4648
+type(
+  int
+)
+ident(
+  def n "indentPrinter.ml" 121 4702 4722 "indentPrinter.ml" 121 4702 4738
+)
+"indentPrinter.ml" 120 4623 4654 "indentPrinter.ml" 120 4623 4664
+type(
+  string list
+)
+ident(
+  int_ref next_lines "indentPrinter.ml" 88 3227 3239 "indentPrinter.ml" 88 3227 3249
+)
+"indentPrinter.ml" 120 4623 4665 "indentPrinter.ml" 120 4623 4666
+type(
+  string list -> string list -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"indentPrinter.ml" 120 4623 4667 "indentPrinter.ml" 120 4623 4669
+type(
+  string list
+)
+"indentPrinter.ml" 120 4623 4654 "indentPrinter.ml" 120 4623 4669
+type(
+  bool
+)
+"indentPrinter.ml" 120 4623 4670 "indentPrinter.ml" 120 4623 4672
+type(
+  bool -> bool -> bool
+)
+ident(
+  ext_ref Pervasives.( && )
+)
+"indentPrinter.ml" 120 4623 4673 "indentPrinter.ml" 120 4623 4677
+type(
+  string
+)
+ident(
+  int_ref text "indentPrinter.ml" 100 3788 3802 "indentPrinter.ml" 100 3788 3806
+)
+"indentPrinter.ml" 120 4623 4678 "indentPrinter.ml" 120 4623 4679
+type(
+  string -> string -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"indentPrinter.ml" 120 4623 4680 "indentPrinter.ml" 120 4623 4684
+type(
+  string
+)
+"indentPrinter.ml" 120 4623 4673 "indentPrinter.ml" 120 4623 4684
+type(
+  bool
+)
+"indentPrinter.ml" 120 4623 4654 "indentPrinter.ml" 120 4623 4684
+type(
+  bool
+)
+"indentPrinter.ml" 120 4623 4690 "indentPrinter.ml" 120 4623 4691
+type(
+  int
+)
+"indentPrinter.ml" 120 4623 4697 "indentPrinter.ml" 120 4623 4698
+type(
+  int
+)
+ident(
+  int_ref n "indentPrinter.ml" 116 4450 4474 "indentPrinter.ml" 116 4450 4475
+)
+"indentPrinter.ml" 120 4623 4651 "indentPrinter.ml" 120 4623 4698
+type(
+  int
+)
+"indentPrinter.ml" 121 4702 4722 "indentPrinter.ml" 121 4702 4734
+type(
+  int
+)
+ident(
+  int_ref start_column "indentPrinter.ml" 84 3057 3063 "indentPrinter.ml" 84 3057 3075
+)
+"indentPrinter.ml" 121 4702 4735 "indentPrinter.ml" 121 4702 4736
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"indentPrinter.ml" 121 4702 4737 "indentPrinter.ml" 121 4702 4738
+type(
+  int
+)
+ident(
+  int_ref n "indentPrinter.ml" 120 4623 4647 "indentPrinter.ml" 120 4623 4648
+)
+"indentPrinter.ml" 121 4702 4722 "indentPrinter.ml" 121 4702 4738
+type(
+  int
+)
+"indentPrinter.ml" 120 4623 4643 "indentPrinter.ml" 121 4702 4738
+type(
+  int
+)
+"indentPrinter.ml" 116 4450 4470 "indentPrinter.ml" 121 4702 4738
+type(
+  int
+)
+"indentPrinter.ml" 115 4381 4401 "indentPrinter.ml" 121 4702 4738
+type(
+  int
+)
+"indentPrinter.ml" 122 4739 4757 "indentPrinter.ml" 122 4739 4766
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 123 4770 4790 "indentPrinter.ml" 123 4770 4802
+type(
+  int
+)
+ident(
+  int_ref start_column "indentPrinter.ml" 84 3057 3063 "indentPrinter.ml" 84 3057 3075
+)
+"indentPrinter.ml" 123 4770 4803 "indentPrinter.ml" 123 4770 4804
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"indentPrinter.ml" 124 4805 4830 "indentPrinter.ml" 124 4805 4840
+type(
+  string list
+)
+ident(
+  int_ref next_lines "indentPrinter.ml" 88 3227 3239 "indentPrinter.ml" 88 3227 3249
+)
+"indentPrinter.ml" 124 4805 4841 "indentPrinter.ml" 124 4805 4842
+type(
+  string list -> string list -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"indentPrinter.ml" 124 4805 4843 "indentPrinter.ml" 124 4805 4845
+type(
+  string list
+)
+"indentPrinter.ml" 124 4805 4830 "indentPrinter.ml" 124 4805 4845
+type(
+  bool
+)
+"indentPrinter.ml" 124 4805 4846 "indentPrinter.ml" 124 4805 4848
+type(
+  bool -> bool -> bool
+)
+ident(
+  ext_ref Pervasives.( && )
+)
+"indentPrinter.ml" 124 4805 4849 "indentPrinter.ml" 124 4805 4853
+type(
+  string
+)
+ident(
+  int_ref text "indentPrinter.ml" 100 3788 3802 "indentPrinter.ml" 100 3788 3806
+)
+"indentPrinter.ml" 124 4805 4854 "indentPrinter.ml" 124 4805 4855
+type(
+  string -> string -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"indentPrinter.ml" 124 4805 4856 "indentPrinter.ml" 124 4805 4860
+type(
+  string
+)
+"indentPrinter.ml" 124 4805 4849 "indentPrinter.ml" 124 4805 4860
+type(
+  bool
+)
+"indentPrinter.ml" 124 4805 4830 "indentPrinter.ml" 124 4805 4860
+type(
+  bool
+)
+"indentPrinter.ml" 124 4805 4866 "indentPrinter.ml" 124 4805 4867
+type(
+  int
+)
+"indentPrinter.ml" 125 4868 4895 "indentPrinter.ml" 125 4868 4898
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.max
+)
+"indentPrinter.ml" 125 4868 4899 "indentPrinter.ml" 125 4868 4910
+type(
+  int
+)
+ident(
+  int_ref orig_offset "indentPrinter.ml" 99 3720 3734 "indentPrinter.ml" 99 3720 3745
+)
+"indentPrinter.ml" 125 4868 4911 "indentPrinter.ml" 125 4868 4914
+type(
+  int
+)
+ident(
+  int_ref pad "indentPrinter.ml" 107 4016 4035 "indentPrinter.ml" 107 4016 4038
+)
+"indentPrinter.ml" 125 4868 4895 "indentPrinter.ml" 125 4868 4914
+call(
+  stack
+)
+type(
+  int
+)
+"indentPrinter.ml" 124 4805 4827 "indentPrinter.ml" 125 4868 4914
+type(
+  int
+)
+"indentPrinter.ml" 123 4770 4790 "indentPrinter.ml" 125 4868 4914
+type(
+  int
+)
+"indentPrinter.ml" 126 4915 4933 "indentPrinter.ml" 126 4915 4934
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 126 4915 4938 "indentPrinter.ml" 126 4915 4950
+type(
+  int
+)
+ident(
+  int_ref start_column "indentPrinter.ml" 84 3057 3063 "indentPrinter.ml" 84 3057 3075
+)
+"indentPrinter.ml" 126 4915 4951 "indentPrinter.ml" 126 4915 4952
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"indentPrinter.ml" 126 4915 4953 "indentPrinter.ml" 126 4915 4956
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.max
+)
+"indentPrinter.ml" 126 4915 4957 "indentPrinter.ml" 126 4915 4968
+type(
+  int
+)
+ident(
+  int_ref orig_offset "indentPrinter.ml" 99 3720 3734 "indentPrinter.ml" 99 3720 3745
+)
+"indentPrinter.ml" 126 4915 4969 "indentPrinter.ml" 126 4915 4972
+type(
+  int
+)
+ident(
+  int_ref pad "indentPrinter.ml" 107 4016 4035 "indentPrinter.ml" 107 4016 4038
+)
+"indentPrinter.ml" 126 4915 4953 "indentPrinter.ml" 126 4915 4972
+call(
+  stack
+)
+type(
+  int
+)
+"indentPrinter.ml" 126 4915 4938 "indentPrinter.ml" 126 4915 4972
+type(
+  int
+)
+"indentPrinter.ml" 107 4016 4042 "indentPrinter.ml" 126 4915 4972
+type(
+  int
+)
+"indentPrinter.ml" 105 3950 3962 "indentPrinter.ml" 126 4915 4972
+type(
+  int
+)
+"indentPrinter.ml" 128 4986 4996 "indentPrinter.ml" 128 4986 5008
+type(
+  output -> int -> string -> ?kind:indentKind -> IndentBlock.t -> unit
+)
+ident(
+  int_ref print_indent "indentPrinter.ml" 61 2317 2321 "indentPrinter.ml" 61 2317 2333
+)
+"indentPrinter.ml" 128 4986 5009 "indentPrinter.ml" 128 4986 5015
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 82 2961 2977 "indentPrinter.ml" 82 2961 2983
+)
+"indentPrinter.ml" 128 4986 5016 "indentPrinter.ml" 128 4986 5020
+type(
+  int
+)
+ident(
+  int_ref line "indentPrinter.ml" 86 3159 3187 "indentPrinter.ml" 86 3159 3191
+)
+"indentPrinter.ml" 128 4986 5021 "indentPrinter.ml" 128 4986 5023
+type(
+  string
+)
+"indentPrinter.ml" 128 4986 5037 "indentPrinter.ml" 128 4986 5049
+type(
+  int
+)
+ident(
+  int_ref indent_value "indentPrinter.ml" 104 3921 3935 "indentPrinter.ml" 104 3921 3947
+)
+"indentPrinter.ml" 128 4986 5030 "indentPrinter.ml" 128 4986 5050
+type(
+  indentKind
+)
+"indentPrinter.ml" 128 4986 5051 "indentPrinter.ml" 128 4986 5056
+type(
+  IndentBlock.t
+)
+ident(
+  int_ref block "indentPrinter.ml" 82 2961 2984 "indentPrinter.ml" 82 2961 2989
+)
+"indentPrinter.ml" 128 4986 4996 "indentPrinter.ml" 128 4986 5056
+call(
+  stack
+)
+type(
+  unit
+)
+"indentPrinter.ml" 129 5058 5068 "indentPrinter.ml" 129 5058 5077
+type(
+  output -> string -> unit
+)
+ident(
+  int_ref pr_string "indentPrinter.ml" 43 1687 1691 "indentPrinter.ml" 43 1687 1700
+)
+"indentPrinter.ml" 129 5058 5078 "indentPrinter.ml" 129 5058 5084
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 82 2961 2977 "indentPrinter.ml" 82 2961 2983
+)
+"indentPrinter.ml" 129 5058 5085 "indentPrinter.ml" 129 5058 5089
+type(
+  string
+)
+ident(
+  int_ref text "indentPrinter.ml" 100 3788 3802 "indentPrinter.ml" 100 3788 3806
+)
+"indentPrinter.ml" 129 5058 5068 "indentPrinter.ml" 129 5058 5089
+call(
+  stack
+)
+type(
+  unit
+)
+"indentPrinter.ml" 130 5091 5101 "indentPrinter.ml" 130 5091 5118
+type(
+  int -> int option -> string -> string list -> unit
+)
+ident(
+  int_ref print_extra_lines "indentPrinter.ml" 86 3159 3169 "indentPrinter.ml" 86 3159 3186
+)
+"indentPrinter.ml" 130 5091 5120 "indentPrinter.ml" 130 5091 5124
+type(
+  int
+)
+ident(
+  int_ref line "indentPrinter.ml" 86 3159 3187 "indentPrinter.ml" 86 3159 3191
+)
+"indentPrinter.ml" 130 5091 5124 "indentPrinter.ml" 130 5091 5125
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"indentPrinter.ml" 130 5091 5125 "indentPrinter.ml" 130 5091 5126
+type(
+  int
+)
+"indentPrinter.ml" 130 5091 5119 "indentPrinter.ml" 130 5091 5127
+type(
+  int
+)
+"indentPrinter.ml" 130 5091 5128 "indentPrinter.ml" 130 5091 5131
+type(
+  int option
+)
+ident(
+  int_ref pad "indentPrinter.ml" 86 3159 3192 "indentPrinter.ml" 86 3159 3195
+)
+"indentPrinter.ml" 130 5091 5132 "indentPrinter.ml" 130 5091 5136
+type(
+  string
+)
+ident(
+  int_ref text "indentPrinter.ml" 100 3788 3802 "indentPrinter.ml" 100 3788 3806
+)
+"indentPrinter.ml" 130 5091 5137 "indentPrinter.ml" 130 5091 5147
+type(
+  string list
+)
+ident(
+  int_ref next_lines "indentPrinter.ml" 88 3227 3239 "indentPrinter.ml" 88 3227 3249
+)
+"indentPrinter.ml" 130 5091 5101 "indentPrinter.ml" 130 5091 5147
+call(
+  tail
+)
+type(
+  unit
+)
+"indentPrinter.ml" 129 5058 5068 "indentPrinter.ml" 130 5091 5147
+type(
+  unit
+)
+"indentPrinter.ml" 128 4986 4996 "indentPrinter.ml" 130 5091 5147
+type(
+  unit
+)
+"indentPrinter.ml" 104 3921 3931 "indentPrinter.ml" 130 5091 5147
+type(
+  unit
+)
+"indentPrinter.ml" 100 3788 3798 "indentPrinter.ml" 130 5091 5147
+type(
+  unit
+)
+"indentPrinter.ml" 99 3720 3730 "indentPrinter.ml" 130 5091 5147
+type(
+  unit
+)
+"indentPrinter.ml" 98 3658 3668 "indentPrinter.ml" 130 5091 5147
+type(
+  unit
+)
+"indentPrinter.ml" 94 3457 3470 "indentPrinter.ml" 130 5091 5147
+type(
+  unit
+)
+"indentPrinter.ml" 90 3275 3283 "indentPrinter.ml" 130 5091 5147
+type(
+  unit
+)
+"indentPrinter.ml" 89 3253 3261 "indentPrinter.ml" 130 5091 5147
+type(
+  unit
+)
+"indentPrinter.ml" 86 3159 3203 "indentPrinter.ml" 130 5091 5147
+type(
+  string list -> unit
+)
+"indentPrinter.ml" 132 5153 5159 "indentPrinter.ml" 132 5153 5163
+type(
+  int
+)
+ident(
+  def line "indentPrinter.ml" 133 5196 5198 "indentPrinter.ml" 161 6137 6185
+)
+"indentPrinter.ml" 132 5153 5166 "indentPrinter.ml" 132 5153 5183
+type(
+  Pos.Region.t -> int
+)
+ident(
+  ext_ref Pos.Region.start_line
+)
+"indentPrinter.ml" 132 5153 5184 "indentPrinter.ml" 132 5153 5185
+type(
+  Nstream.token
+)
+ident(
+  int_ref t "indentPrinter.ml" 82 2961 2990 "indentPrinter.ml" 82 2961 2991
+)
+"indentPrinter.ml" 132 5153 5184 "indentPrinter.ml" 132 5153 5192
+type(
+  Pos.Region.t
+)
+"indentPrinter.ml" 132 5153 5166 "indentPrinter.ml" 132 5153 5192
+call(
+  stack
+)
+type(
+  int
+)
+"indentPrinter.ml" 133 5196 5202 "indentPrinter.ml" 133 5196 5206
+type(
+  string
+)
+ident(
+  def text "indentPrinter.ml" 139 5381 5383 "indentPrinter.ml" 161 6137 6185
+)
+"indentPrinter.ml" 133 5196 5208 "indentPrinter.ml" 133 5196 5218
+type(
+  string list
+)
+ident(
+  def next_lines "indentPrinter.ml" 139 5381 5383 "indentPrinter.ml" 161 6137 6185
+)
+"indentPrinter.ml" 133 5196 5202 "indentPrinter.ml" 133 5196 5218
+type(
+  string * string list
+)
+"indentPrinter.ml" 134 5221 5228 "indentPrinter.ml" 134 5221 5232
+type(
+  int
+)
+ident(
+  int_ref line "indentPrinter.ml" 132 5153 5159 "indentPrinter.ml" 132 5153 5163
+)
+"indentPrinter.ml" 134 5221 5233 "indentPrinter.ml" 134 5221 5234
+type(
+  int -> int -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"indentPrinter.ml" 134 5221 5235 "indentPrinter.ml" 134 5221 5250
+type(
+  Pos.Region.t -> int
+)
+ident(
+  ext_ref Pos.Region.end_line
+)
+"indentPrinter.ml" 134 5221 5251 "indentPrinter.ml" 134 5221 5252
+type(
+  Nstream.token
+)
+ident(
+  int_ref t "indentPrinter.ml" 82 2961 2990 "indentPrinter.ml" 82 2961 2991
+)
+"indentPrinter.ml" 134 5221 5251 "indentPrinter.ml" 134 5221 5259
+type(
+  Pos.Region.t
+)
+"indentPrinter.ml" 134 5221 5235 "indentPrinter.ml" 134 5221 5259
+call(
+  stack
+)
+type(
+  int
+)
+"indentPrinter.ml" 134 5221 5228 "indentPrinter.ml" 134 5221 5259
+type(
+  bool
+)
+"indentPrinter.ml" 134 5221 5265 "indentPrinter.ml" 134 5221 5266
+type(
+  Nstream.token
+)
+ident(
+  int_ref t "indentPrinter.ml" 82 2961 2990 "indentPrinter.ml" 82 2961 2991
+)
+"indentPrinter.ml" 134 5221 5265 "indentPrinter.ml" 134 5221 5273
+type(
+  string
+)
+"indentPrinter.ml" 134 5221 5275 "indentPrinter.ml" 134 5221 5277
+type(
+  string list
+)
+"indentPrinter.ml" 134 5221 5265 "indentPrinter.ml" 134 5221 5277
+type(
+  string * string list
+)
+"indentPrinter.ml" 135 5278 5293 "indentPrinter.ml" 135 5278 5305
+type(
+  char -> string -> string list
+)
+ident(
+  ext_ref Util.string_split
+)
+"indentPrinter.ml" 135 5278 5306 "indentPrinter.ml" 135 5278 5310
+type(
+  char
+)
+"indentPrinter.ml" 135 5278 5311 "indentPrinter.ml" 135 5278 5312
+type(
+  Nstream.token
+)
+ident(
+  int_ref t "indentPrinter.ml" 82 2961 2990 "indentPrinter.ml" 82 2961 2991
+)
+"indentPrinter.ml" 135 5278 5311 "indentPrinter.ml" 135 5278 5319
+type(
+  string
+)
+"indentPrinter.ml" 135 5278 5293 "indentPrinter.ml" 135 5278 5319
+call(
+  stack
+)
+type(
+  string list
+)
+"indentPrinter.ml" 136 5325 5333 "indentPrinter.ml" 136 5325 5335
+type(
+  string list
+)
+"indentPrinter.ml" 136 5325 5339 "indentPrinter.ml" 136 5325 5351
+type(
+  string * string list
+)
+"indentPrinter.ml" 137 5352 5360 "indentPrinter.ml" 137 5352 5362
+type(
+  string
+)
+ident(
+  def hd "indentPrinter.ml" 137 5352 5370 "indentPrinter.ml" 137 5352 5375
+)
+"indentPrinter.ml" 137 5352 5364 "indentPrinter.ml" 137 5352 5366
+type(
+  string list
+)
+ident(
+  def tl "indentPrinter.ml" 137 5352 5370 "indentPrinter.ml" 137 5352 5375
+)
+"indentPrinter.ml" 137 5352 5360 "indentPrinter.ml" 137 5352 5366
+type(
+  string list
+)
+"indentPrinter.ml" 137 5352 5370 "indentPrinter.ml" 137 5352 5372
+type(
+  string
+)
+ident(
+  int_ref hd "indentPrinter.ml" 137 5352 5360 "indentPrinter.ml" 137 5352 5362
+)
+"indentPrinter.ml" 137 5352 5373 "indentPrinter.ml" 137 5352 5375
+type(
+  string list
+)
+ident(
+  int_ref tl "indentPrinter.ml" 137 5352 5364 "indentPrinter.ml" 137 5352 5366
+)
+"indentPrinter.ml" 137 5352 5370 "indentPrinter.ml" 137 5352 5375
+type(
+  string * string list
+)
+"indentPrinter.ml" 135 5278 5287 "indentPrinter.ml" 137 5352 5375
+type(
+  string * string list
+)
+"indentPrinter.ml" 134 5221 5225 "indentPrinter.ml" 137 5352 5375
+type(
+  string * string list
+)
+"indentPrinter.ml" 139 5381 5383 "indentPrinter.ml" 139 5381 5392
+type(
+  output -> string -> unit
+)
+ident(
+  int_ref pr_string "indentPrinter.ml" 43 1687 1691 "indentPrinter.ml" 43 1687 1700
+)
+"indentPrinter.ml" 139 5381 5393 "indentPrinter.ml" 139 5381 5399
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 82 2961 2977 "indentPrinter.ml" 82 2961 2983
+)
+"indentPrinter.ml" 139 5381 5400 "indentPrinter.ml" 139 5381 5404
+type(
+  string
+)
+ident(
+  int_ref text "indentPrinter.ml" 133 5196 5202 "indentPrinter.ml" 133 5196 5206
+)
+"indentPrinter.ml" 139 5381 5383 "indentPrinter.ml" 139 5381 5404
+call(
+  stack
+)
+type(
+  unit
+)
+"indentPrinter.ml" 140 5406 5412 "indentPrinter.ml" 140 5406 5415
+type(
+  int option
+)
+ident(
+  def pad "indentPrinter.ml" 161 6137 6139 "indentPrinter.ml" 161 6137 6185
+)
+"indentPrinter.ml" 141 5418 5425 "indentPrinter.ml" 141 5418 5435
+type(
+  string list
+)
+ident(
+  int_ref next_lines "indentPrinter.ml" 133 5196 5208 "indentPrinter.ml" 133 5196 5218
+)
+"indentPrinter.ml" 141 5418 5436 "indentPrinter.ml" 141 5418 5437
+type(
+  string list -> string list -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"indentPrinter.ml" 141 5418 5438 "indentPrinter.ml" 141 5418 5440
+type(
+  string list
+)
+"indentPrinter.ml" 141 5418 5425 "indentPrinter.ml" 141 5418 5440
+type(
+  bool
+)
+"indentPrinter.ml" 141 5418 5446 "indentPrinter.ml" 141 5418 5450
+type(
+  int option
+)
+"indentPrinter.ml" 142 5451 5466 "indentPrinter.ml" 142 5451 5467
+type(
+  Nstream.token
+)
+ident(
+  int_ref t "indentPrinter.ml" 82 2961 2990 "indentPrinter.ml" 82 2961 2991
+)
+"indentPrinter.ml" 142 5451 5466 "indentPrinter.ml" 142 5451 5473
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 143 5479 5494 "indentPrinter.ml" 143 5479 5495
+type(
+  string
+)
+"indentPrinter.ml" 143 5479 5487 "indentPrinter.ml" 143 5479 5495
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 144 5499 5516 "indentPrinter.ml" 144 5499 5527
+type(
+  string -> string
+)
+ident(
+  ext_ref Compat.String.trim
+)
+"indentPrinter.ml" 144 5499 5528 "indentPrinter.ml" 144 5499 5532
+type(
+  string
+)
+ident(
+  int_ref text "indentPrinter.ml" 133 5196 5202 "indentPrinter.ml" 133 5196 5206
+)
+"indentPrinter.ml" 144 5499 5516 "indentPrinter.ml" 144 5499 5532
+call(
+  stack
+)
+type(
+  string
+)
+"indentPrinter.ml" 145 5538 5551 "indentPrinter.ml" 145 5538 5555
+type(
+  string
+)
+"indentPrinter.ml" 145 5538 5558 "indentPrinter.ml" 145 5538 5564
+type(
+  string
+)
+"indentPrinter.ml" 145 5538 5551 "indentPrinter.ml" 145 5538 5564
+type(
+  string
+)
+"indentPrinter.ml" 145 5538 5568 "indentPrinter.ml" 145 5538 5572
+type(
+  int option
+)
+"indentPrinter.ml" 146 5573 5586 "indentPrinter.ml" 146 5573 5587
+type(
+  string
+)
+"indentPrinter.ml" 146 5573 5596 "indentPrinter.ml" 146 5573 5597
+type(
+  int
+)
+"indentPrinter.ml" 146 5573 5591 "indentPrinter.ml" 146 5573 5597
+type(
+  int option
+)
+"indentPrinter.ml" 144 5499 5509 "indentPrinter.ml" 146 5573 5618
+type(
+  int option
+)
+"indentPrinter.ml" 147 5619 5627 "indentPrinter.ml" 147 5619 5634
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 148 5638 5655 "indentPrinter.ml" 148 5638 5666
+type(
+  string -> string
+)
+ident(
+  ext_ref Compat.String.trim
+)
+"indentPrinter.ml" 148 5638 5667 "indentPrinter.ml" 148 5638 5671
+type(
+  string
+)
+ident(
+  int_ref text "indentPrinter.ml" 133 5196 5202 "indentPrinter.ml" 133 5196 5206
+)
+"indentPrinter.ml" 148 5638 5655 "indentPrinter.ml" 148 5638 5671
+call(
+  stack
+)
+type(
+  string
+)
+"indentPrinter.ml" 149 5677 5690 "indentPrinter.ml" 149 5677 5694
+type(
+  string
+)
+"indentPrinter.ml" 149 5677 5700 "indentPrinter.ml" 149 5677 5703
+type(
+  bool -> bool
+)
+ident(
+  ext_ref Pervasives.not
+)
+"indentPrinter.ml" 149 5677 5704 "indentPrinter.ml" 149 5677 5710
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 82 2961 2977 "indentPrinter.ml" 82 2961 2983
+)
+"indentPrinter.ml" 149 5677 5704 "indentPrinter.ml" 149 5677 5717
+type(
+  IndentConfig.t
+)
+"indentPrinter.ml" 149 5677 5704 "indentPrinter.ml" 149 5677 5748
+type(
+  bool
+)
+"indentPrinter.ml" 149 5677 5700 "indentPrinter.ml" 149 5677 5748
+type(
+  bool
+)
+"indentPrinter.ml" 149 5677 5752 "indentPrinter.ml" 149 5677 5756
+type(
+  int option
+)
+"indentPrinter.ml" 149 5677 5695 "indentPrinter.ml" 149 5677 5756
+type(
+  int option
+)
+"indentPrinter.ml" 150 5757 5770 "indentPrinter.ml" 150 5757 5771
+type(
+  string
+)
+"indentPrinter.ml" 150 5757 5781 "indentPrinter.ml" 150 5757 5800
+type(
+  IndentBlock.t -> int
+)
+ident(
+  ext_ref IndentBlock.padding
+)
+"indentPrinter.ml" 150 5757 5801 "indentPrinter.ml" 150 5757 5806
+type(
+  IndentBlock.t
+)
+ident(
+  int_ref block "indentPrinter.ml" 82 2961 2984 "indentPrinter.ml" 82 2961 2989
+)
+"indentPrinter.ml" 150 5757 5780 "indentPrinter.ml" 150 5757 5807
+call(
+  stack
+)
+type(
+  int
+)
+"indentPrinter.ml" 150 5757 5775 "indentPrinter.ml" 150 5757 5807
+type(
+  int option
+)
+"indentPrinter.ml" 148 5638 5648 "indentPrinter.ml" 150 5757 5808
+type(
+  int option
+)
+"indentPrinter.ml" 151 5809 5817 "indentPrinter.ml" 151 5809 5828
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 152 5832 5848 "indentPrinter.ml" 152 5832 5867
+type(
+  IndentBlock.t -> int
+)
+ident(
+  ext_ref IndentBlock.padding
+)
+"indentPrinter.ml" 152 5832 5868 "indentPrinter.ml" 152 5832 5873
+type(
+  IndentBlock.t
+)
+ident(
+  int_ref block "indentPrinter.ml" 82 2961 2984 "indentPrinter.ml" 82 2961 2989
+)
+"indentPrinter.ml" 152 5832 5847 "indentPrinter.ml" 152 5832 5874
+call(
+  stack
+)
+type(
+  int
+)
+"indentPrinter.ml" 152 5832 5842 "indentPrinter.ml" 152 5832 5874
+type(
+  int option
+)
+"indentPrinter.ml" 153 5875 5883 "indentPrinter.ml" 153 5875 5896
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 153 5875 5900 "indentPrinter.ml" 153 5875 5904
+type(
+  int option
+)
+"indentPrinter.ml" 154 5905 5913 "indentPrinter.ml" 154 5905 5922
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 155 5926 5940 "indentPrinter.ml" 155 5926 5941
+type(
+  int ref
+)
+ident(
+  def i "indentPrinter.ml" 156 5953 5963 "indentPrinter.ml" 158 6083 6111
+)
+"indentPrinter.ml" 155 5926 5944 "indentPrinter.ml" 155 5926 5947
+type(
+  int -> int ref
+)
+ident(
+  ext_ref Pervasives.ref
+)
+"indentPrinter.ml" 155 5926 5948 "indentPrinter.ml" 155 5926 5949
+type(
+  int
+)
+"indentPrinter.ml" 155 5926 5944 "indentPrinter.ml" 155 5926 5949
+type(
+  int ref
+)
+"indentPrinter.ml" 156 5953 5969 "indentPrinter.ml" 156 5953 5970
+type(
+  int ref -> int
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"indentPrinter.ml" 156 5953 5970 "indentPrinter.ml" 156 5953 5971
+type(
+  int ref
+)
+ident(
+  int_ref i "indentPrinter.ml" 155 5926 5940 "indentPrinter.ml" 155 5926 5941
+)
+"indentPrinter.ml" 156 5953 5969 "indentPrinter.ml" 156 5953 5971
+type(
+  int
+)
+"indentPrinter.ml" 156 5953 5972 "indentPrinter.ml" 156 5953 5973
+type(
+  int -> int -> bool
+)
+ident(
+  ext_ref Pervasives.( < )
+)
+"indentPrinter.ml" 156 5953 5974 "indentPrinter.ml" 156 5953 5987
+type(
+  string -> int
+)
+ident(
+  ext_ref Compat.String.length
+)
+"indentPrinter.ml" 156 5953 5988 "indentPrinter.ml" 156 5953 5992
+type(
+  string
+)
+ident(
+  int_ref text "indentPrinter.ml" 133 5196 5202 "indentPrinter.ml" 133 5196 5206
+)
+"indentPrinter.ml" 156 5953 5974 "indentPrinter.ml" 156 5953 5992
+type(
+  int
+)
+"indentPrinter.ml" 156 5953 5969 "indentPrinter.ml" 156 5953 5992
+type(
+  bool
+)
+"indentPrinter.ml" 156 5953 5993 "indentPrinter.ml" 156 5953 5995
+type(
+  bool -> bool -> bool
+)
+ident(
+  ext_ref Pervasives.( && )
+)
+"indentPrinter.ml" 156 5953 5996 "indentPrinter.ml" 156 5953 6000
+type(
+  string
+)
+ident(
+  int_ref text "indentPrinter.ml" 133 5196 5202 "indentPrinter.ml" 133 5196 5206
+)
+"indentPrinter.ml" 156 5953 6002 "indentPrinter.ml" 156 5953 6003
+type(
+  int ref -> int
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"indentPrinter.ml" 156 5953 6003 "indentPrinter.ml" 156 5953 6004
+type(
+  int ref
+)
+ident(
+  int_ref i "indentPrinter.ml" 155 5926 5940 "indentPrinter.ml" 155 5926 5941
+)
+"indentPrinter.ml" 156 5953 6002 "indentPrinter.ml" 156 5953 6004
+type(
+  int
+)
+"indentPrinter.ml" 156 5953 5996 "indentPrinter.ml" 156 5953 6005
+type(
+  char
+)
+"indentPrinter.ml" 156 5953 6006 "indentPrinter.ml" 156 5953 6008
+type(
+  char -> char -> bool
+)
+ident(
+  ext_ref Pervasives.( <> )
+)
+"indentPrinter.ml" 156 5953 6009 "indentPrinter.ml" 156 5953 6012
+type(
+  char
+)
+"indentPrinter.ml" 156 5953 5996 "indentPrinter.ml" 156 5953 6012
+type(
+  bool
+)
+"indentPrinter.ml" 156 5953 5969 "indentPrinter.ml" 156 5953 6012
+type(
+  bool
+)
+"indentPrinter.ml" 156 5953 6016 "indentPrinter.ml" 156 5953 6020
+type(
+  int ref -> unit
+)
+ident(
+  ext_ref Pervasives.incr
+)
+"indentPrinter.ml" 156 5953 6021 "indentPrinter.ml" 156 5953 6022
+type(
+  int ref
+)
+ident(
+  int_ref i "indentPrinter.ml" 155 5926 5940 "indentPrinter.ml" 155 5926 5941
+)
+"indentPrinter.ml" 156 5953 6016 "indentPrinter.ml" 156 5953 6022
+type(
+  unit
+)
+"indentPrinter.ml" 156 5953 5963 "indentPrinter.ml" 156 5953 6027
+type(
+  unit
+)
+"indentPrinter.ml" 157 6029 6042 "indentPrinter.ml" 157 6029 6043
+type(
+  int ref -> int
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"indentPrinter.ml" 157 6029 6043 "indentPrinter.ml" 157 6029 6044
+type(
+  int ref
+)
+ident(
+  int_ref i "indentPrinter.ml" 155 5926 5940 "indentPrinter.ml" 155 5926 5941
+)
+"indentPrinter.ml" 157 6029 6042 "indentPrinter.ml" 157 6029 6044
+type(
+  int
+)
+"indentPrinter.ml" 157 6029 6045 "indentPrinter.ml" 157 6029 6046
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"indentPrinter.ml" 157 6029 6047 "indentPrinter.ml" 157 6029 6048
+type(
+  int
+)
+"indentPrinter.ml" 157 6029 6042 "indentPrinter.ml" 157 6029 6048
+type(
+  int
+)
+"indentPrinter.ml" 157 6029 6049 "indentPrinter.ml" 157 6029 6051
+type(
+  int -> int -> bool
+)
+ident(
+  ext_ref Pervasives.( >= )
+)
+"indentPrinter.ml" 157 6029 6052 "indentPrinter.ml" 157 6029 6065
+type(
+  string -> int
+)
+ident(
+  ext_ref Compat.String.length
+)
+"indentPrinter.ml" 157 6029 6066 "indentPrinter.ml" 157 6029 6070
+type(
+  string
+)
+ident(
+  int_ref text "indentPrinter.ml" 133 5196 5202 "indentPrinter.ml" 133 5196 5206
+)
+"indentPrinter.ml" 157 6029 6052 "indentPrinter.ml" 157 6029 6070
+type(
+  int
+)
+"indentPrinter.ml" 157 6029 6042 "indentPrinter.ml" 157 6029 6070
+type(
+  bool
+)
+"indentPrinter.ml" 157 6029 6081 "indentPrinter.ml" 157 6029 6082
+type(
+  int
+)
+"indentPrinter.ml" 157 6029 6076 "indentPrinter.ml" 157 6029 6082
+type(
+  int option
+)
+"indentPrinter.ml" 158 6083 6104 "indentPrinter.ml" 158 6083 6105
+type(
+  int ref -> int
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"indentPrinter.ml" 158 6083 6105 "indentPrinter.ml" 158 6083 6106
+type(
+  int ref
+)
+ident(
+  int_ref i "indentPrinter.ml" 155 5926 5940 "indentPrinter.ml" 155 5926 5941
+)
+"indentPrinter.ml" 158 6083 6104 "indentPrinter.ml" 158 6083 6106
+type(
+  int
+)
+"indentPrinter.ml" 158 6083 6107 "indentPrinter.ml" 158 6083 6108
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"indentPrinter.ml" 158 6083 6109 "indentPrinter.ml" 158 6083 6110
+type(
+  int
+)
+"indentPrinter.ml" 158 6083 6103 "indentPrinter.ml" 158 6083 6111
+type(
+  int
+)
+"indentPrinter.ml" 158 6083 6098 "indentPrinter.ml" 158 6083 6111
+type(
+  int option
+)
+"indentPrinter.ml" 157 6029 6039 "indentPrinter.ml" 158 6083 6111
+type(
+  int option
+)
+"indentPrinter.ml" 156 5953 5963 "indentPrinter.ml" 158 6083 6111
+type(
+  int option
+)
+"indentPrinter.ml" 155 5926 5936 "indentPrinter.ml" 158 6083 6111
+type(
+  int option
+)
+"indentPrinter.ml" 159 6112 6120 "indentPrinter.ml" 159 6112 6121
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 159 6112 6130 "indentPrinter.ml" 159 6112 6131
+type(
+  int
+)
+"indentPrinter.ml" 159 6112 6125 "indentPrinter.ml" 159 6112 6131
+type(
+  int option
+)
+"indentPrinter.ml" 142 5451 5460 "indentPrinter.ml" 159 6112 6131
+type(
+  int option
+)
+"indentPrinter.ml" 141 5418 5422 "indentPrinter.ml" 159 6112 6131
+type(
+  int option
+)
+"indentPrinter.ml" 161 6137 6139 "indentPrinter.ml" 161 6137 6156
+type(
+  int -> int option -> string -> string list -> unit
+)
+ident(
+  int_ref print_extra_lines "indentPrinter.ml" 86 3159 3169 "indentPrinter.ml" 86 3159 3186
+)
+"indentPrinter.ml" 161 6137 6158 "indentPrinter.ml" 161 6137 6162
+type(
+  int
+)
+ident(
+  int_ref line "indentPrinter.ml" 132 5153 5159 "indentPrinter.ml" 132 5153 5163
+)
+"indentPrinter.ml" 161 6137 6162 "indentPrinter.ml" 161 6137 6163
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"indentPrinter.ml" 161 6137 6163 "indentPrinter.ml" 161 6137 6164
+type(
+  int
+)
+"indentPrinter.ml" 161 6137 6157 "indentPrinter.ml" 161 6137 6165
+type(
+  int
+)
+"indentPrinter.ml" 161 6137 6166 "indentPrinter.ml" 161 6137 6169
+type(
+  int option
+)
+ident(
+  int_ref pad "indentPrinter.ml" 140 5406 5412 "indentPrinter.ml" 140 5406 5415
+)
+"indentPrinter.ml" 161 6137 6170 "indentPrinter.ml" 161 6137 6174
+type(
+  string
+)
+ident(
+  int_ref text "indentPrinter.ml" 133 5196 5202 "indentPrinter.ml" 133 5196 5206
+)
+"indentPrinter.ml" 161 6137 6175 "indentPrinter.ml" 161 6137 6185
+type(
+  string list
+)
+ident(
+  int_ref next_lines "indentPrinter.ml" 133 5196 5208 "indentPrinter.ml" 133 5196 5218
+)
+"indentPrinter.ml" 161 6137 6139 "indentPrinter.ml" 161 6137 6185
+call(
+  tail
+)
+type(
+  unit
+)
+"indentPrinter.ml" 140 5406 5408 "indentPrinter.ml" 161 6137 6185
+type(
+  unit
+)
+"indentPrinter.ml" 139 5381 5383 "indentPrinter.ml" 161 6137 6185
+type(
+  unit
+)
+"indentPrinter.ml" 133 5196 5198 "indentPrinter.ml" 161 6137 6185
+type(
+  unit
+)
+"indentPrinter.ml" 132 5153 5155 "indentPrinter.ml" 161 6137 6185
+type(
+  unit
+)
+"indentPrinter.ml" 86 3159 3161 "indentPrinter.ml" 161 6137 6185
+type(
+  unit
+)
+"indentPrinter.ml" 84 3057 3059 "indentPrinter.ml" 161 6137 6185
+type(
+  unit
+)
+"indentPrinter.ml" 83 2994 2996 "indentPrinter.ml" 161 6137 6185
+type(
+  unit
+)
+"indentPrinter.ml" 167 6307 6315 "indentPrinter.ml" 167 6307 6319
+type(
+  output ->
+  Pos.Position.t * IndentBlock.t ->
+  Nstream.t -> Pos.Position.t * IndentBlock.t
+)
+ident(
+  def loop "indentPrinter.ml" 167 6307 6307 "_none_" 1 0 -1
+)
+"indentPrinter.ml" 167 6307 6320 "indentPrinter.ml" 167 6307 6326
+type(
+  output
+)
+ident(
+  def output "indentPrinter.ml" 167 6307 6327 "indentPrinter.ml" 220 8298 8351
+)
+"indentPrinter.ml" 167 6307 6328 "indentPrinter.ml" 167 6307 6336
+type(
+  Pos.Position.t
+)
+ident(
+  def last_pos "indentPrinter.ml" 167 6307 6344 "indentPrinter.ml" 220 8298 8351
+)
+"indentPrinter.ml" 167 6307 6337 "indentPrinter.ml" 167 6307 6342
+type(
+  IndentBlock.t
+)
+ident(
+  def block "indentPrinter.ml" 167 6307 6344 "indentPrinter.ml" 220 8298 8351
+)
+"indentPrinter.ml" 167 6307 6327 "indentPrinter.ml" 167 6307 6343
+type(
+  Pos.Position.t * IndentBlock.t
+)
+"indentPrinter.ml" 167 6307 6344 "indentPrinter.ml" 167 6307 6350
+type(
+  Nstream.t
+)
+ident(
+  def stream "indentPrinter.ml" 168 6353 6355 "indentPrinter.ml" 220 8298 8351
+)
+"indentPrinter.ml" 168 6353 6361 "indentPrinter.ml" 168 6353 6373
+type(
+  Nstream.t -> (Nstream.token * Nstream.t) option
+)
+ident(
+  ext_ref Nstream.next
+)
+"indentPrinter.ml" 168 6353 6374 "indentPrinter.ml" 168 6353 6380
+type(
+  Nstream.t
+)
+ident(
+  int_ref stream "indentPrinter.ml" 167 6307 6344 "indentPrinter.ml" 167 6307 6350
+)
+"indentPrinter.ml" 168 6353 6361 "indentPrinter.ml" 168 6353 6380
+call(
+  stack
+)
+type(
+  (Nstream.token * Nstream.t) option
+)
+"indentPrinter.ml" 169 6386 6390 "indentPrinter.ml" 169 6386 6394
+type(
+  (Nstream.token * Nstream.t) option
+)
+"indentPrinter.ml" 169 6386 6399 "indentPrinter.ml" 169 6386 6407
+type(
+  Pos.Position.t
+)
+ident(
+  int_ref last_pos "indentPrinter.ml" 167 6307 6328 "indentPrinter.ml" 167 6307 6336
+)
+"indentPrinter.ml" 169 6386 6408 "indentPrinter.ml" 169 6386 6413
+type(
+  IndentBlock.t
+)
+ident(
+  int_ref block "indentPrinter.ml" 167 6307 6337 "indentPrinter.ml" 167 6307 6342
+)
+"indentPrinter.ml" 169 6386 6398 "indentPrinter.ml" 169 6386 6414
+type(
+  Pos.Position.t * IndentBlock.t
+)
+"indentPrinter.ml" 170 6433 6443 "indentPrinter.ml" 170 6433 6444
+type(
+  Nstream.token
+)
+ident(
+  def t "indentPrinter.ml" 171 6457 6463 "indentPrinter.ml" 220 8298 8351
+)
+"indentPrinter.ml" 170 6433 6446 "indentPrinter.ml" 170 6433 6452
+type(
+  Nstream.t
+)
+ident(
+  def stream "indentPrinter.ml" 171 6457 6463 "indentPrinter.ml" 220 8298 8351
+)
+"indentPrinter.ml" 170 6433 6442 "indentPrinter.ml" 170 6433 6453
+type(
+  Nstream.token * Nstream.t
+)
+"indentPrinter.ml" 170 6433 6437 "indentPrinter.ml" 170 6433 6453
+type(
+  (Nstream.token * Nstream.t) option
+)
+"indentPrinter.ml" 171 6457 6467 "indentPrinter.ml" 171 6457 6480
+type(
+  bool
+)
+ident(
+  def is_first_line "indentPrinter.ml" 172 6511 6517 "indentPrinter.ml" 220 8298 8351
+)
+"indentPrinter.ml" 171 6457 6483 "indentPrinter.ml" 171 6457 6491
+type(
+  Pos.Position.t
+)
+ident(
+  int_ref last_pos "indentPrinter.ml" 167 6307 6328 "indentPrinter.ml" 167 6307 6336
+)
+"indentPrinter.ml" 171 6457 6492 "indentPrinter.ml" 171 6457 6493
+type(
+  Pos.Position.t -> Pos.Position.t -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"indentPrinter.ml" 171 6457 6494 "indentPrinter.ml" 171 6457 6507
+type(
+  Pos.Position.t
+)
+ident(
+  ext_ref Pos.Position.zero
+)
+"indentPrinter.ml" 171 6457 6483 "indentPrinter.ml" 171 6457 6507
+type(
+  bool
+)
+"indentPrinter.ml" 172 6511 6521 "indentPrinter.ml" 172 6511 6525
+type(
+  int
+)
+ident(
+  def line "indentPrinter.ml" 174 6592 6598 "indentPrinter.ml" 220 8298 8351
+)
+"indentPrinter.ml" 172 6511 6528 "indentPrinter.ml" 172 6511 6545
+type(
+  Pos.Region.t -> int
+)
+ident(
+  ext_ref Pos.Region.start_line
+)
+"indentPrinter.ml" 172 6511 6546 "indentPrinter.ml" 172 6511 6547
+type(
+  Nstream.token
+)
+ident(
+  int_ref t "indentPrinter.ml" 170 6433 6443 "indentPrinter.ml" 170 6433 6444
+)
+"indentPrinter.ml" 172 6511 6546 "indentPrinter.ml" 172 6511 6554
+type(
+  Pos.Region.t
+)
+"indentPrinter.ml" 172 6511 6528 "indentPrinter.ml" 172 6511 6554
+call(
+  stack
+)
+type(
+  int
+)
+"indentPrinter.ml" 174 6592 6602 "indentPrinter.ml" 174 6592 6607
+type(
+  string
+)
+ident(
+  def blank "indentPrinter.ml" 197 7396 7402 "indentPrinter.ml" 220 8298 8351
+)
+"indentPrinter.ml" 175 6610 6622 "indentPrinter.ml" 175 6610 6628
+type(
+  string list
+)
+ident(
+  def blanks "indentPrinter.ml" 176 6662 6670 "indentPrinter.ml" 194 7286 7349
+)
+"indentPrinter.ml" 175 6610 6631 "indentPrinter.ml" 175 6610 6643
+type(
+  char -> string -> string list
+)
+ident(
+  ext_ref Util.string_split
+)
+"indentPrinter.ml" 175 6610 6644 "indentPrinter.ml" 175 6610 6648
+type(
+  char
+)
+"indentPrinter.ml" 175 6610 6649 "indentPrinter.ml" 175 6610 6650
+type(
+  Nstream.token
+)
+ident(
+  int_ref t "indentPrinter.ml" 170 6433 6443 "indentPrinter.ml" 170 6433 6444
+)
+"indentPrinter.ml" 175 6610 6649 "indentPrinter.ml" 175 6610 6658
+type(
+  string
+)
+"indentPrinter.ml" 175 6610 6631 "indentPrinter.ml" 175 6610 6658
+call(
+  stack
+)
+type(
+  string list
+)
+"indentPrinter.ml" 176 6662 6674 "indentPrinter.ml" 176 6662 6680
+type(
+  string list
+)
+ident(
+  def blanks "indentPrinter.ml" 180 6781 6789 "indentPrinter.ml" 194 7286 7349
+)
+"indentPrinter.ml" 176 6662 6682 "indentPrinter.ml" 176 6662 6686
+type(
+  int
+)
+ident(
+  def line "indentPrinter.ml" 180 6781 6789 "indentPrinter.ml" 194 7286 7349
+)
+"indentPrinter.ml" 176 6662 6674 "indentPrinter.ml" 176 6662 6686
+type(
+  string list * int
+)
+"indentPrinter.ml" 177 6689 6702 "indentPrinter.ml" 177 6689 6715
+type(
+  bool
+)
+ident(
+  int_ref is_first_line "indentPrinter.ml" 171 6457 6467 "indentPrinter.ml" 171 6457 6480
+)
+"indentPrinter.ml" 177 6689 6721 "indentPrinter.ml" 177 6689 6723
+type(
+  string
+)
+"indentPrinter.ml" 177 6689 6725 "indentPrinter.ml" 177 6689 6731
+type(
+  string list
+)
+ident(
+  int_ref blanks "indentPrinter.ml" 175 6610 6622 "indentPrinter.ml" 175 6610 6628
+)
+"indentPrinter.ml" 177 6689 6721 "indentPrinter.ml" 177 6689 6731
+type(
+  string list
+)
+"indentPrinter.ml" 177 6689 6733 "indentPrinter.ml" 177 6689 6737
+type(
+  int
+)
+ident(
+  int_ref line "indentPrinter.ml" 172 6511 6521 "indentPrinter.ml" 172 6511 6525
+)
+"indentPrinter.ml" 177 6689 6738 "indentPrinter.ml" 177 6689 6739
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"indentPrinter.ml" 177 6689 6740 "indentPrinter.ml" 177 6689 6741
+type(
+  int
+)
+"indentPrinter.ml" 177 6689 6733 "indentPrinter.ml" 177 6689 6741
+type(
+  int
+)
+"indentPrinter.ml" 177 6689 6721 "indentPrinter.ml" 177 6689 6741
+type(
+  string list * int
+)
+"indentPrinter.ml" 178 6742 6757 "indentPrinter.ml" 178 6742 6763
+type(
+  string list
+)
+ident(
+  int_ref blanks "indentPrinter.ml" 175 6610 6622 "indentPrinter.ml" 175 6610 6628
+)
+"indentPrinter.ml" 178 6742 6765 "indentPrinter.ml" 178 6742 6769
+type(
+  int
+)
+ident(
+  int_ref line "indentPrinter.ml" 172 6511 6521 "indentPrinter.ml" 172 6511 6525
+)
+"indentPrinter.ml" 178 6742 6757 "indentPrinter.ml" 178 6742 6769
+type(
+  string list * int
+)
+"indentPrinter.ml" 177 6689 6699 "indentPrinter.ml" 178 6742 6769
+type(
+  string list * int
+)
+"indentPrinter.ml" 180 6781 6795 "indentPrinter.ml" 180 6781 6801
+type(
+  string list
+)
+ident(
+  int_ref blanks "indentPrinter.ml" 176 6662 6674 "indentPrinter.ml" 176 6662 6680
+)
+"indentPrinter.ml" 181 6807 6817 "indentPrinter.ml" 181 6807 6819
+type(
+  string list
+)
+"indentPrinter.ml" 181 6807 6823 "indentPrinter.ml" 181 6807 6835
+type(
+  string
+)
+"indentPrinter.ml" 182 6836 6846 "indentPrinter.ml" 182 6836 6848
+type(
+  string
+)
+ident(
+  def bl "indentPrinter.ml" 182 6836 6856 "indentPrinter.ml" 182 6836 6858
+)
+"indentPrinter.ml" 182 6836 6850 "indentPrinter.ml" 182 6836 6852
+type(
+  string list
+)
+"indentPrinter.ml" 182 6836 6846 "indentPrinter.ml" 182 6836 6852
+type(
+  string list
+)
+"indentPrinter.ml" 182 6836 6856 "indentPrinter.ml" 182 6836 6858
+type(
+  string
+)
+ident(
+  int_ref bl "indentPrinter.ml" 182 6836 6846 "indentPrinter.ml" 182 6836 6848
+)
+"indentPrinter.ml" 183 6859 6869 "indentPrinter.ml" 183 6859 6871
+type(
+  string
+)
+ident(
+  def bl "indentPrinter.ml" 184 6883 6895 "indentPrinter.ml" 194 7286 7349
+)
+"indentPrinter.ml" 183 6859 6873 "indentPrinter.ml" 183 6859 6879
+type(
+  string list
+)
+ident(
+  def blanks "indentPrinter.ml" 184 6883 6895 "indentPrinter.ml" 194 7286 7349
+)
+"indentPrinter.ml" 183 6859 6869 "indentPrinter.ml" 183 6859 6879
+type(
+  string list
+)
+"indentPrinter.ml" 184 6883 6903 "indentPrinter.ml" 184 6883 6917
+type(
+  int -> IndentBlock.t -> string list -> string
+)
+ident(
+  def indent_between "indentPrinter.ml" 184 6883 6895 "indentPrinter.ml" 194 7286 7349
+)
+"indentPrinter.ml" 184 6883 6918 "indentPrinter.ml" 184 6883 6922
+type(
+  int
+)
+ident(
+  def line "indentPrinter.ml" 184 6883 6923 "indentPrinter.ml" 190 7131 7185
+)
+"indentPrinter.ml" 184 6883 6923 "indentPrinter.ml" 184 6883 6928
+type(
+  IndentBlock.t
+)
+ident(
+  def block "indentPrinter.ml" 184 6883 6931 "indentPrinter.ml" 190 7131 7185
+)
+"indentPrinter.ml" 185 6940 6956 "indentPrinter.ml" 185 6940 6958
+type(
+  string list
+)
+"indentPrinter.ml" 185 6940 6962 "indentPrinter.ml" 185 6940 6974
+type(
+  string
+)
+"indentPrinter.ml" 186 6975 6991 "indentPrinter.ml" 186 6975 6993
+type(
+  string
+)
+ident(
+  def bl "indentPrinter.ml" 186 6975 7001 "indentPrinter.ml" 186 6975 7003
+)
+"indentPrinter.ml" 186 6975 6995 "indentPrinter.ml" 186 6975 6997
+type(
+  string list
+)
+"indentPrinter.ml" 186 6975 6991 "indentPrinter.ml" 186 6975 6997
+type(
+  string list
+)
+"indentPrinter.ml" 186 6975 7001 "indentPrinter.ml" 186 6975 7003
+type(
+  string
+)
+ident(
+  int_ref bl "indentPrinter.ml" 186 6975 6991 "indentPrinter.ml" 186 6975 6993
+)
+"indentPrinter.ml" 187 7004 7020 "indentPrinter.ml" 187 7004 7022
+type(
+  string
+)
+ident(
+  def bl "indentPrinter.ml" 188 7034 7052 "indentPrinter.ml" 190 7131 7185
+)
+"indentPrinter.ml" 187 7004 7024 "indentPrinter.ml" 187 7004 7030
+type(
+  string list
+)
+ident(
+  def blanks "indentPrinter.ml" 188 7034 7052 "indentPrinter.ml" 190 7131 7185
+)
+"indentPrinter.ml" 187 7004 7020 "indentPrinter.ml" 187 7004 7030
+type(
+  string list
+)
+"indentPrinter.ml" 188 7034 7052 "indentPrinter.ml" 188 7034 7064
+type(
+  output -> int -> string -> ?kind:indentKind -> IndentBlock.t -> unit
+)
+ident(
+  int_ref print_indent "indentPrinter.ml" 61 2317 2321 "indentPrinter.ml" 61 2317 2333
+)
+"indentPrinter.ml" 188 7034 7065 "indentPrinter.ml" 188 7034 7071
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 167 6307 6320 "indentPrinter.ml" 167 6307 6326
+)
+"indentPrinter.ml" 188 7034 7072 "indentPrinter.ml" 188 7034 7076
+type(
+  int
+)
+ident(
+  int_ref line "indentPrinter.ml" 184 6883 6918 "indentPrinter.ml" 184 6883 6922
+)
+"indentPrinter.ml" 188 7034 7077 "indentPrinter.ml" 188 7034 7079
+type(
+  string
+)
+ident(
+  int_ref bl "indentPrinter.ml" 187 7004 7020 "indentPrinter.ml" 187 7004 7022
+)
+"indentPrinter.ml" 188 7034 7086 "indentPrinter.ml" 188 7034 7091
+type(
+  indentKind
+)
+"indentPrinter.ml" 188 7034 7092 "indentPrinter.ml" 188 7034 7097
+type(
+  IndentBlock.t
+)
+ident(
+  int_ref block "indentPrinter.ml" 184 6883 6923 "indentPrinter.ml" 184 6883 6928
+)
+"indentPrinter.ml" 188 7034 7052 "indentPrinter.ml" 188 7034 7097
+call(
+  stack
+)
+type(
+  unit
+)
+"indentPrinter.ml" 189 7099 7117 "indentPrinter.ml" 189 7099 7122
+type(
+  output -> unit
+)
+ident(
+  int_ref pr_nl "indentPrinter.ml" 48 1783 1787 "indentPrinter.ml" 48 1783 1792
+)
+"indentPrinter.ml" 189 7099 7123 "indentPrinter.ml" 189 7099 7129
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 167 6307 6320 "indentPrinter.ml" 167 6307 6326
+)
+"indentPrinter.ml" 189 7099 7117 "indentPrinter.ml" 189 7099 7129
+call(
+  stack
+)
+type(
+  unit
+)
+"indentPrinter.ml" 190 7131 7149 "indentPrinter.ml" 190 7131 7163
+type(
+  int -> IndentBlock.t -> string list -> string
+)
+ident(
+  int_ref indent_between "indentPrinter.ml" 184 6883 6903 "indentPrinter.ml" 184 6883 6917
+)
+"indentPrinter.ml" 190 7131 7165 "indentPrinter.ml" 190 7131 7169
+type(
+  int
+)
+ident(
+  int_ref line "indentPrinter.ml" 184 6883 6918 "indentPrinter.ml" 184 6883 6922
+)
+"indentPrinter.ml" 190 7131 7169 "indentPrinter.ml" 190 7131 7170
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"indentPrinter.ml" 190 7131 7170 "indentPrinter.ml" 190 7131 7171
+type(
+  int
+)
+"indentPrinter.ml" 190 7131 7164 "indentPrinter.ml" 190 7131 7172
+type(
+  int
+)
+"indentPrinter.ml" 190 7131 7173 "indentPrinter.ml" 190 7131 7178
+type(
+  IndentBlock.t
+)
+ident(
+  int_ref block "indentPrinter.ml" 184 6883 6923 "indentPrinter.ml" 184 6883 6928
+)
+"indentPrinter.ml" 190 7131 7179 "indentPrinter.ml" 190 7131 7185
+type(
+  string list
+)
+ident(
+  int_ref blanks "indentPrinter.ml" 187 7004 7024 "indentPrinter.ml" 187 7004 7030
+)
+"indentPrinter.ml" 190 7131 7149 "indentPrinter.ml" 190 7131 7185
+call(
+  tail
+)
+type(
+  string
+)
+"indentPrinter.ml" 189 7099 7117 "indentPrinter.ml" 190 7131 7185
+type(
+  string
+)
+"indentPrinter.ml" 188 7034 7052 "indentPrinter.ml" 190 7131 7185
+type(
+  string
+)
+"indentPrinter.ml" 184 6883 6931 "indentPrinter.ml" 190 7131 7185
+type(
+  string list -> string
+)
+"indentPrinter.ml" 192 7201 7213 "indentPrinter.ml" 192 7201 7222
+type(
+  output -> string -> unit
+)
+ident(
+  int_ref pr_string "indentPrinter.ml" 43 1687 1691 "indentPrinter.ml" 43 1687 1700
+)
+"indentPrinter.ml" 192 7201 7223 "indentPrinter.ml" 192 7201 7229
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 167 6307 6320 "indentPrinter.ml" 167 6307 6326
+)
+"indentPrinter.ml" 192 7201 7230 "indentPrinter.ml" 192 7201 7232
+type(
+  string
+)
+ident(
+  int_ref bl "indentPrinter.ml" 183 6859 6869 "indentPrinter.ml" 183 6859 6871
+)
+"indentPrinter.ml" 192 7201 7213 "indentPrinter.ml" 192 7201 7232
+call(
+  stack
+)
+type(
+  unit
+)
+"indentPrinter.ml" 193 7234 7249 "indentPrinter.ml" 193 7234 7252
+type(
+  bool -> bool
+)
+ident(
+  ext_ref Pervasives.not
+)
+"indentPrinter.ml" 193 7234 7253 "indentPrinter.ml" 193 7234 7266
+type(
+  bool
+)
+ident(
+  int_ref is_first_line "indentPrinter.ml" 171 6457 6467 "indentPrinter.ml" 171 6457 6480
+)
+"indentPrinter.ml" 193 7234 7249 "indentPrinter.ml" 193 7234 7266
+type(
+  bool
+)
+"indentPrinter.ml" 193 7234 7272 "indentPrinter.ml" 193 7234 7277
+type(
+  output -> unit
+)
+ident(
+  int_ref pr_nl "indentPrinter.ml" 48 1783 1787 "indentPrinter.ml" 48 1783 1792
+)
+"indentPrinter.ml" 193 7234 7278 "indentPrinter.ml" 193 7234 7284
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 167 6307 6320 "indentPrinter.ml" 167 6307 6326
+)
+"indentPrinter.ml" 193 7234 7272 "indentPrinter.ml" 193 7234 7284
+call(
+  stack
+)
+type(
+  unit
+)
+"indentPrinter.ml" 193 7234 7246 "indentPrinter.ml" 193 7234 7284
+type(
+  unit
+)
+"indentPrinter.ml" 194 7286 7298 "indentPrinter.ml" 194 7286 7312
+type(
+  int -> IndentBlock.t -> string list -> string
+)
+ident(
+  int_ref indent_between "indentPrinter.ml" 184 6883 6903 "indentPrinter.ml" 184 6883 6917
+)
+"indentPrinter.ml" 194 7286 7314 "indentPrinter.ml" 194 7286 7318
+type(
+  int
+)
+ident(
+  int_ref line "indentPrinter.ml" 176 6662 6682 "indentPrinter.ml" 176 6662 6686
+)
+"indentPrinter.ml" 194 7286 7319 "indentPrinter.ml" 194 7286 7320
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"indentPrinter.ml" 194 7286 7321 "indentPrinter.ml" 194 7286 7322
+type(
+  Nstream.token
+)
+ident(
+  int_ref t "indentPrinter.ml" 170 6433 6443 "indentPrinter.ml" 170 6433 6444
+)
+"indentPrinter.ml" 194 7286 7321 "indentPrinter.ml" 194 7286 7331
+type(
+  int
+)
+"indentPrinter.ml" 194 7286 7314 "indentPrinter.ml" 194 7286 7331
+type(
+  int
+)
+"indentPrinter.ml" 194 7286 7332 "indentPrinter.ml" 194 7286 7333
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"indentPrinter.ml" 194 7286 7334 "indentPrinter.ml" 194 7286 7335
+type(
+  int
+)
+"indentPrinter.ml" 194 7286 7313 "indentPrinter.ml" 194 7286 7336
+type(
+  int
+)
+"indentPrinter.ml" 194 7286 7337 "indentPrinter.ml" 194 7286 7342
+type(
+  IndentBlock.t
+)
+ident(
+  int_ref block "indentPrinter.ml" 167 6307 6337 "indentPrinter.ml" 167 6307 6342
+)
+"indentPrinter.ml" 194 7286 7343 "indentPrinter.ml" 194 7286 7349
+type(
+  string list
+)
+ident(
+  int_ref blanks "indentPrinter.ml" 183 6859 6873 "indentPrinter.ml" 183 6859 6879
+)
+"indentPrinter.ml" 194 7286 7298 "indentPrinter.ml" 194 7286 7349
+call(
+  stack
+)
+type(
+  string
+)
+"indentPrinter.ml" 193 7234 7246 "indentPrinter.ml" 194 7286 7349
+type(
+  string
+)
+"indentPrinter.ml" 192 7201 7213 "indentPrinter.ml" 194 7286 7349
+type(
+  string
+)
+"indentPrinter.ml" 184 6883 6895 "indentPrinter.ml" 194 7286 7349
+type(
+  string
+)
+"indentPrinter.ml" 180 6781 6789 "indentPrinter.ml" 194 7286 7349
+type(
+  string
+)
+"indentPrinter.ml" 176 6662 6670 "indentPrinter.ml" 194 7286 7349
+type(
+  string
+)
+"indentPrinter.ml" 175 6610 6618 "indentPrinter.ml" 194 7286 7349
+type(
+  string
+)
+"indentPrinter.ml" 197 7396 7406 "indentPrinter.ml" 197 7396 7419
+type(
+  bool
+)
+ident(
+  def at_line_start "indentPrinter.ml" 198 7457 7463 "indentPrinter.ml" 220 8298 8351
+)
+"indentPrinter.ml" 197 7396 7422 "indentPrinter.ml" 197 7396 7423
+type(
+  Nstream.token
+)
+ident(
+  int_ref t "indentPrinter.ml" 170 6433 6443 "indentPrinter.ml" 170 6433 6444
+)
+"indentPrinter.ml" 197 7396 7422 "indentPrinter.ml" 197 7396 7432
+type(
+  int
+)
+"indentPrinter.ml" 197 7396 7433 "indentPrinter.ml" 197 7396 7434
+type(
+  int -> int -> bool
+)
+ident(
+  ext_ref Pervasives.( > )
+)
+"indentPrinter.ml" 197 7396 7435 "indentPrinter.ml" 197 7396 7436
+type(
+  int
+)
+"indentPrinter.ml" 197 7396 7422 "indentPrinter.ml" 197 7396 7436
+type(
+  bool
+)
+"indentPrinter.ml" 197 7396 7437 "indentPrinter.ml" 197 7396 7439
+type(
+  bool -> bool -> bool
+)
+ident(
+  ext_ref Pervasives.( || )
+)
+"indentPrinter.ml" 197 7396 7440 "indentPrinter.ml" 197 7396 7453
+type(
+  bool
+)
+ident(
+  int_ref is_first_line "indentPrinter.ml" 171 6457 6467 "indentPrinter.ml" 171 6457 6480
+)
+"indentPrinter.ml" 197 7396 7422 "indentPrinter.ml" 197 7396 7453
+type(
+  bool
+)
+"indentPrinter.ml" 198 7457 7467 "indentPrinter.ml" 198 7457 7472
+type(
+  IndentBlock.t
+)
+ident(
+  def block "indentPrinter.ml" 201 7625 7631 "indentPrinter.ml" 220 8298 8351
+)
+"indentPrinter.ml" 198 7457 7475 "indentPrinter.ml" 198 7457 7493
+type(
+  IndentConfig.t ->
+  IndentBlock.t -> Nstream.t -> Nstream.token -> IndentBlock.t
+)
+ident(
+  ext_ref IndentBlock.update
+)
+"indentPrinter.ml" 198 7457 7494 "indentPrinter.ml" 198 7457 7500
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 167 6307 6320 "indentPrinter.ml" 167 6307 6326
+)
+"indentPrinter.ml" 198 7457 7494 "indentPrinter.ml" 198 7457 7507
+type(
+  IndentConfig.t
+)
+"indentPrinter.ml" 198 7457 7508 "indentPrinter.ml" 198 7457 7513
+type(
+  IndentBlock.t
+)
+ident(
+  int_ref block "indentPrinter.ml" 167 6307 6337 "indentPrinter.ml" 167 6307 6342
+)
+"indentPrinter.ml" 198 7457 7514 "indentPrinter.ml" 198 7457 7520
+type(
+  Nstream.t
+)
+ident(
+  int_ref stream "indentPrinter.ml" 170 6433 6446 "indentPrinter.ml" 170 6433 6452
+)
+"indentPrinter.ml" 198 7457 7521 "indentPrinter.ml" 198 7457 7522
+type(
+  Nstream.token
+)
+ident(
+  int_ref t "indentPrinter.ml" 170 6433 6443 "indentPrinter.ml" 170 6433 6444
+)
+"indentPrinter.ml" 198 7457 7475 "indentPrinter.ml" 198 7457 7522
+call(
+  stack
+)
+type(
+  IndentBlock.t
+)
+"indentPrinter.ml" 201 7625 7635 "indentPrinter.ml" 201 7625 7640
+type(
+  IndentBlock.t
+)
+ident(
+  def block "indentPrinter.ml" 205 7734 7740 "indentPrinter.ml" 220 8298 8351
+)
+"indentPrinter.ml" 202 7643 7654 "indentPrinter.ml" 202 7643 7660
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 167 6307 6320 "indentPrinter.ml" 167 6307 6326
+)
+"indentPrinter.ml" 202 7643 7654 "indentPrinter.ml" 202 7643 7669
+type(
+  int -> bool
+)
+"indentPrinter.ml" 202 7643 7670 "indentPrinter.ml" 202 7643 7674
+type(
+  int
+)
+ident(
+  int_ref line "indentPrinter.ml" 172 6511 6521 "indentPrinter.ml" 172 6511 6525
+)
+"indentPrinter.ml" 202 7643 7654 "indentPrinter.ml" 202 7643 7674
+call(
+  stack
+)
+type(
+  bool
+)
+"indentPrinter.ml" 202 7643 7680 "indentPrinter.ml" 202 7643 7685
+type(
+  IndentBlock.t
+)
+ident(
+  int_ref block "indentPrinter.ml" 198 7457 7467 "indentPrinter.ml" 198 7457 7472
+)
+"indentPrinter.ml" 203 7686 7699 "indentPrinter.ml" 203 7686 7718
+type(
+  IndentBlock.t -> IndentBlock.t
+)
+ident(
+  ext_ref IndentBlock.reverse
+)
+"indentPrinter.ml" 203 7686 7719 "indentPrinter.ml" 203 7686 7724
+type(
+  IndentBlock.t
+)
+ident(
+  int_ref block "indentPrinter.ml" 198 7457 7467 "indentPrinter.ml" 198 7457 7472
+)
+"indentPrinter.ml" 203 7686 7699 "indentPrinter.ml" 203 7686 7724
+call(
+  stack
+)
+type(
+  IndentBlock.t
+)
+"indentPrinter.ml" 202 7643 7651 "indentPrinter.ml" 203 7686 7724
+type(
+  IndentBlock.t
+)
+"indentPrinter.ml" 205 7734 7743 "indentPrinter.ml" 205 7734 7749
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 167 6307 6320 "indentPrinter.ml" 167 6307 6326
+)
+"indentPrinter.ml" 205 7734 7743 "indentPrinter.ml" 205 7734 7755
+type(
+  bool
+)
+"indentPrinter.ml" 205 7734 7761 "indentPrinter.ml" 205 7734 7783
+type(
+  IndentBlock.t -> unit
+)
+ident(
+  ext_ref IndentBlock.stacktrace
+)
+"indentPrinter.ml" 205 7734 7784 "indentPrinter.ml" 205 7734 7789
+type(
+  IndentBlock.t
+)
+ident(
+  int_ref block "indentPrinter.ml" 201 7625 7635 "indentPrinter.ml" 201 7625 7640
+)
+"indentPrinter.ml" 205 7734 7761 "indentPrinter.ml" 205 7734 7789
+call(
+  stack
+)
+type(
+  unit
+)
+"indentPrinter.ml" 205 7734 7740 "indentPrinter.ml" 205 7734 7789
+type(
+  unit
+)
+"indentPrinter.ml" 207 7816 7825 "indentPrinter.ml" 207 7816 7838
+type(
+  bool
+)
+ident(
+  int_ref at_line_start "indentPrinter.ml" 197 7396 7406 "indentPrinter.ml" 197 7396 7419
+)
+"indentPrinter.ml" 208 7844 7856 "indentPrinter.ml" 208 7844 7860
+type(
+  indentKind
+)
+ident(
+  def kind "indentPrinter.ml" 217 8178 8186 "indentPrinter.ml" 217 8178 8228
+)
+"indentPrinter.ml" 208 7844 7869 "indentPrinter.ml" 208 7844 7870
+type(
+  Nstream.token
+)
+ident(
+  int_ref t "indentPrinter.ml" 170 6433 6443 "indentPrinter.ml" 170 6433 6444
+)
+"indentPrinter.ml" 208 7844 7869 "indentPrinter.ml" 208 7844 7876
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 209 7882 7894 "indentPrinter.ml" 209 7882 7901
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 209 7882 7907 "indentPrinter.ml" 209 7882 7916
+type(
+  string -> string -> bool
+)
+ident(
+  ext_ref Util.is_prefix
+)
+"indentPrinter.ml" 209 7882 7917 "indentPrinter.ml" 209 7882 7923
+type(
+  string
+)
+"indentPrinter.ml" 209 7882 7924 "indentPrinter.ml" 209 7882 7925
+type(
+  Nstream.token
+)
+ident(
+  int_ref t "indentPrinter.ml" 170 6433 6443 "indentPrinter.ml" 170 6433 6444
+)
+"indentPrinter.ml" 209 7882 7924 "indentPrinter.ml" 209 7882 7932
+type(
+  string
+)
+"indentPrinter.ml" 209 7882 7907 "indentPrinter.ml" 209 7882 7932
+call(
+  stack
+)
+type(
+  bool
+)
+"indentPrinter.ml" 210 7936 7957 "indentPrinter.ml" 210 7936 7970
+type(
+  string -> int
+)
+ident(
+  ext_ref Compat.String.length
+)
+"indentPrinter.ml" 210 7936 7971 "indentPrinter.ml" 210 7936 7976
+type(
+  string
+)
+ident(
+  int_ref blank "indentPrinter.ml" 174 6592 6602 "indentPrinter.ml" 174 6592 6607
+)
+"indentPrinter.ml" 210 7936 7956 "indentPrinter.ml" 210 7936 7977
+type(
+  int
+)
+"indentPrinter.ml" 210 7936 7950 "indentPrinter.ml" 210 7936 7977
+type(
+  indentKind
+)
+"indentPrinter.ml" 209 7882 7902 "indentPrinter.ml" 210 7936 7977
+type(
+  indentKind
+)
+"indentPrinter.ml" 211 7978 7990 "indentPrinter.ml" 211 7978 8003
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 211 7978 8007 "indentPrinter.ml" 211 7978 8013
+type(
+  indentKind
+)
+"indentPrinter.ml" 212 8014 8026 "indentPrinter.ml" 212 8014 8029
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 212 8014 8032 "indentPrinter.ml" 212 8014 8046
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 212 8014 8026 "indentPrinter.ml" 212 8014 8046
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 212 8014 8066 "indentPrinter.ml" 212 8014 8067
+type(
+  int
+)
+"indentPrinter.ml" 212 8014 8049 "indentPrinter.ml" 212 8014 8067
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 212 8014 8026 "indentPrinter.ml" 212 8014 8067
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 212 8014 8084 "indentPrinter.ml" 212 8014 8085
+type(
+  int
+)
+"indentPrinter.ml" 212 8014 8070 "indentPrinter.ml" 212 8014 8085
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 212 8014 8026 "indentPrinter.ml" 212 8014 8085
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 213 8089 8103 "indentPrinter.ml" 213 8089 8108
+type(
+  indentKind
+)
+"indentPrinter.ml" 214 8109 8121 "indentPrinter.ml" 214 8109 8132
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 214 8109 8136 "indentPrinter.ml" 214 8109 8142
+type(
+  indentKind
+)
+"indentPrinter.ml" 215 8143 8155 "indentPrinter.ml" 215 8143 8156
+type(
+  Approx_lexer.token
+)
+"indentPrinter.ml" 215 8143 8160 "indentPrinter.ml" 215 8143 8166
+type(
+  indentKind
+)
+"indentPrinter.ml" 208 7844 7863 "indentPrinter.ml" 215 8143 8166
+type(
+  indentKind
+)
+"indentPrinter.ml" 217 8178 8186 "indentPrinter.ml" 217 8178 8198
+type(
+  output -> int -> string -> ?kind:indentKind -> IndentBlock.t -> unit
+)
+ident(
+  int_ref print_indent "indentPrinter.ml" 61 2317 2321 "indentPrinter.ml" 61 2317 2333
+)
+"indentPrinter.ml" 217 8178 8199 "indentPrinter.ml" 217 8178 8205
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 167 6307 6320 "indentPrinter.ml" 167 6307 6326
+)
+"indentPrinter.ml" 217 8178 8206 "indentPrinter.ml" 217 8178 8210
+type(
+  int
+)
+ident(
+  int_ref line "indentPrinter.ml" 172 6511 6521 "indentPrinter.ml" 172 6511 6525
+)
+"indentPrinter.ml" 217 8178 8211 "indentPrinter.ml" 217 8178 8216
+type(
+  string
+)
+ident(
+  int_ref blank "indentPrinter.ml" 174 6592 6602 "indentPrinter.ml" 174 6592 6607
+)
+"indentPrinter.ml" 217 8178 8218 "indentPrinter.ml" 217 8178 8222
+type(
+  indentKind
+)
+ident(
+  int_ref kind "indentPrinter.ml" 208 7844 7856 "indentPrinter.ml" 208 7844 7860
+)
+"indentPrinter.ml" 217 8178 8223 "indentPrinter.ml" 217 8178 8228
+type(
+  IndentBlock.t
+)
+ident(
+  int_ref block "indentPrinter.ml" 201 7625 7635 "indentPrinter.ml" 201 7625 7640
+)
+"indentPrinter.ml" 217 8178 8186 "indentPrinter.ml" 217 8178 8228
+call(
+  stack
+)
+type(
+  unit
+)
+"indentPrinter.ml" 208 7844 7852 "indentPrinter.ml" 217 8178 8228
+type(
+  unit
+)
+"indentPrinter.ml" 218 8229 8240 "indentPrinter.ml" 218 8229 8249
+type(
+  output -> string -> unit
+)
+ident(
+  int_ref pr_string "indentPrinter.ml" 43 1687 1691 "indentPrinter.ml" 43 1687 1700
+)
+"indentPrinter.ml" 218 8229 8250 "indentPrinter.ml" 218 8229 8256
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 167 6307 6320 "indentPrinter.ml" 167 6307 6326
+)
+"indentPrinter.ml" 218 8229 8257 "indentPrinter.ml" 218 8229 8262
+type(
+  string
+)
+ident(
+  int_ref blank "indentPrinter.ml" 174 6592 6602 "indentPrinter.ml" 174 6592 6607
+)
+"indentPrinter.ml" 218 8229 8240 "indentPrinter.ml" 218 8229 8262
+call(
+  stack
+)
+type(
+  unit
+)
+"indentPrinter.ml" 207 7816 7822 "indentPrinter.ml" 218 8229 8262
+type(
+  unit
+)
+"indentPrinter.ml" 219 8264 8270 "indentPrinter.ml" 219 8264 8281
+type(
+  output -> IndentBlock.t -> Nstream.token -> unit
+)
+ident(
+  int_ref print_token "indentPrinter.ml" 82 2961 2965 "indentPrinter.ml" 82 2961 2976
+)
+"indentPrinter.ml" 219 8264 8282 "indentPrinter.ml" 219 8264 8288
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 167 6307 6320 "indentPrinter.ml" 167 6307 6326
+)
+"indentPrinter.ml" 219 8264 8289 "indentPrinter.ml" 219 8264 8294
+type(
+  IndentBlock.t
+)
+ident(
+  int_ref block "indentPrinter.ml" 201 7625 7635 "indentPrinter.ml" 201 7625 7640
+)
+"indentPrinter.ml" 219 8264 8295 "indentPrinter.ml" 219 8264 8296
+type(
+  Nstream.token
+)
+ident(
+  int_ref t "indentPrinter.ml" 170 6433 6443 "indentPrinter.ml" 170 6433 6444
+)
+"indentPrinter.ml" 219 8264 8270 "indentPrinter.ml" 219 8264 8296
+call(
+  stack
+)
+type(
+  unit
+)
+"indentPrinter.ml" 220 8298 8304 "indentPrinter.ml" 220 8298 8308
+type(
+  output ->
+  Pos.Position.t * IndentBlock.t ->
+  Nstream.t -> Pos.Position.t * IndentBlock.t
+)
+ident(
+  int_ref loop "indentPrinter.ml" 167 6307 6315 "indentPrinter.ml" 167 6307 6319
+)
+"indentPrinter.ml" 220 8298 8309 "indentPrinter.ml" 220 8298 8315
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 167 6307 6320 "indentPrinter.ml" 167 6307 6326
+)
+"indentPrinter.ml" 220 8298 8317 "indentPrinter.ml" 220 8298 8327
+type(
+  Pos.Region.t -> Pos.Position.t
+)
+ident(
+  ext_ref Pos.Region.snd
+)
+"indentPrinter.ml" 220 8298 8328 "indentPrinter.ml" 220 8298 8329
+type(
+  Nstream.token
+)
+ident(
+  int_ref t "indentPrinter.ml" 170 6433 6443 "indentPrinter.ml" 170 6433 6444
+)
+"indentPrinter.ml" 220 8298 8328 "indentPrinter.ml" 220 8298 8336
+type(
+  Pos.Region.t
+)
+"indentPrinter.ml" 220 8298 8317 "indentPrinter.ml" 220 8298 8336
+call(
+  stack
+)
+type(
+  Pos.Position.t
+)
+"indentPrinter.ml" 220 8298 8338 "indentPrinter.ml" 220 8298 8343
+type(
+  IndentBlock.t
+)
+ident(
+  int_ref block "indentPrinter.ml" 201 7625 7635 "indentPrinter.ml" 201 7625 7640
+)
+"indentPrinter.ml" 220 8298 8316 "indentPrinter.ml" 220 8298 8344
+type(
+  Pos.Position.t * IndentBlock.t
+)
+"indentPrinter.ml" 220 8298 8345 "indentPrinter.ml" 220 8298 8351
+type(
+  Nstream.t
+)
+ident(
+  int_ref stream "indentPrinter.ml" 170 6433 6446 "indentPrinter.ml" 170 6433 6452
+)
+"indentPrinter.ml" 220 8298 8304 "indentPrinter.ml" 220 8298 8351
+call(
+  tail
+)
+type(
+  Pos.Position.t * IndentBlock.t
+)
+"indentPrinter.ml" 219 8264 8270 "indentPrinter.ml" 220 8298 8351
+type(
+  Pos.Position.t * IndentBlock.t
+)
+"indentPrinter.ml" 207 7816 7822 "indentPrinter.ml" 220 8298 8351
+type(
+  Pos.Position.t * IndentBlock.t
+)
+"indentPrinter.ml" 205 7734 7740 "indentPrinter.ml" 220 8298 8351
+type(
+  Pos.Position.t * IndentBlock.t
+)
+"indentPrinter.ml" 201 7625 7631 "indentPrinter.ml" 220 8298 8351
+type(
+  Pos.Position.t * IndentBlock.t
+)
+"indentPrinter.ml" 198 7457 7463 "indentPrinter.ml" 220 8298 8351
+type(
+  Pos.Position.t * IndentBlock.t
+)
+"indentPrinter.ml" 197 7396 7402 "indentPrinter.ml" 220 8298 8351
+type(
+  Pos.Position.t * IndentBlock.t
+)
+"indentPrinter.ml" 174 6592 6598 "indentPrinter.ml" 220 8298 8351
+type(
+  Pos.Position.t * IndentBlock.t
+)
+"indentPrinter.ml" 172 6511 6517 "indentPrinter.ml" 220 8298 8351
+type(
+  Pos.Position.t * IndentBlock.t
+)
+"indentPrinter.ml" 171 6457 6463 "indentPrinter.ml" 220 8298 8351
+type(
+  Pos.Position.t * IndentBlock.t
+)
+"indentPrinter.ml" 168 6353 6355 "indentPrinter.ml" 220 8298 8351
+type(
+  Pos.Position.t * IndentBlock.t
+)
+"indentPrinter.ml" 224 8378 8382 "indentPrinter.ml" 224 8378 8389
+type(
+  Pos.Position.t * IndentBlock.t
+)
+ident(
+  def initial "indentPrinter.ml" 226 8426 8426 "_none_" 1 0 -1
+)
+"indentPrinter.ml" 224 8378 8392 "indentPrinter.ml" 224 8378 8405
+type(
+  Pos.Position.t
+)
+ident(
+  ext_ref Pos.Position.zero
+)
+"indentPrinter.ml" 224 8378 8407 "indentPrinter.ml" 224 8378 8424
+type(
+  IndentBlock.t
+)
+ident(
+  ext_ref IndentBlock.empty
+)
+"indentPrinter.ml" 224 8378 8392 "indentPrinter.ml" 224 8378 8424
+type(
+  Pos.Position.t * IndentBlock.t
+)
+"indentPrinter.ml" 226 8426 8430 "indentPrinter.ml" 226 8426 8438
+type(
+  'a * 'b -> 'a
+)
+ident(
+  def position "indentPrinter.ml" 228 8450 8450 "_none_" 1 0 -1
+)
+"indentPrinter.ml" 226 8426 8440 "indentPrinter.ml" 226 8426 8441
+type(
+  'a
+)
+ident(
+  def p "indentPrinter.ml" 226 8426 8447 "indentPrinter.ml" 226 8426 8448
+)
+"indentPrinter.ml" 226 8426 8442 "indentPrinter.ml" 226 8426 8443
+type(
+  'b
+)
+"indentPrinter.ml" 226 8426 8439 "indentPrinter.ml" 226 8426 8444
+type(
+  'a * 'b
+)
+"indentPrinter.ml" 226 8426 8447 "indentPrinter.ml" 226 8426 8448
+type(
+  'a
+)
+ident(
+  int_ref p "indentPrinter.ml" 226 8426 8440 "indentPrinter.ml" 226 8426 8441
+)
+"indentPrinter.ml" 228 8450 8454 "indentPrinter.ml" 228 8450 8458
+type(
+  Pos.Position.t * 'a -> string
+)
+ident(
+  def save "indentPrinter.ml" 236 8680 8680 "_none_" 1 0 -1
+)
+"indentPrinter.ml" 228 8450 8459 "indentPrinter.ml" 228 8450 8464
+type(
+  Pos.Position.t * 'a
+)
+ident(
+  def state "indentPrinter.ml" 229 8467 8469 "indentPrinter.ml" 234 8663 8678
+)
+"indentPrinter.ml" 229 8467 8473 "indentPrinter.ml" 229 8467 8476
+type(
+  Pos.Position.t
+)
+ident(
+  def pos "indentPrinter.ml" 230 8497 8499 "indentPrinter.ml" 234 8663 8678
+)
+"indentPrinter.ml" 229 8467 8479 "indentPrinter.ml" 229 8467 8487
+type(
+  Pos.Position.t * 'a -> Pos.Position.t
+)
+ident(
+  int_ref position "indentPrinter.ml" 226 8426 8430 "indentPrinter.ml" 226 8426 8438
+)
+"indentPrinter.ml" 229 8467 8488 "indentPrinter.ml" 229 8467 8493
+type(
+  Pos.Position.t * 'a
+)
+ident(
+  int_ref state "indentPrinter.ml" 228 8450 8459 "indentPrinter.ml" 228 8450 8464
+)
+"indentPrinter.ml" 229 8467 8479 "indentPrinter.ml" 229 8467 8493
+call(
+  stack
+)
+type(
+  Pos.Position.t
+)
+"indentPrinter.ml" 230 8497 8503 "indentPrinter.ml" 230 8497 8507
+type(
+  int
+)
+ident(
+  def line "indentPrinter.ml" 231 8559 8561 "indentPrinter.ml" 234 8663 8678
+)
+"indentPrinter.ml" 230 8497 8509 "indentPrinter.ml" 230 8497 8512
+type(
+  int
+)
+ident(
+  def col "indentPrinter.ml" 231 8559 8561 "indentPrinter.ml" 234 8663 8678
+)
+"indentPrinter.ml" 230 8497 8503 "indentPrinter.ml" 230 8497 8512
+type(
+  int * int
+)
+"indentPrinter.ml" 230 8497 8515 "indentPrinter.ml" 230 8497 8518
+type(
+  Pos.Position.t
+)
+ident(
+  int_ref pos "indentPrinter.ml" 229 8467 8473 "indentPrinter.ml" 229 8467 8476
+)
+"indentPrinter.ml" 230 8497 8515 "indentPrinter.ml" 230 8497 8534
+type(
+  int
+)
+"indentPrinter.ml" 230 8497 8536 "indentPrinter.ml" 230 8497 8551
+type(
+  Pos.Position.t -> int
+)
+ident(
+  ext_ref Pos.Position.column
+)
+"indentPrinter.ml" 230 8497 8552 "indentPrinter.ml" 230 8497 8555
+type(
+  Pos.Position.t
+)
+ident(
+  int_ref pos "indentPrinter.ml" 229 8467 8473 "indentPrinter.ml" 229 8467 8476
+)
+"indentPrinter.ml" 230 8497 8536 "indentPrinter.ml" 230 8497 8555
+call(
+  stack
+)
+type(
+  int
+)
+"indentPrinter.ml" 230 8497 8515 "indentPrinter.ml" 230 8497 8555
+type(
+  int * int
+)
+"indentPrinter.ml" 231 8559 8561 "indentPrinter.ml" 231 8559 8575
+type(
+  (int -> int -> (unit -> 'a -> string) -> 'a -> string, unit, string) format ->
+  int -> int -> (unit -> 'a -> string) -> 'a -> string
+)
+ident(
+  ext_ref Printf.sprintf
+)
+"indentPrinter.ml" 231 8559 8576 "indentPrinter.ml" 231 8559 8586
+type(
+  (int -> int -> (unit -> 'a -> string) -> 'a -> string, unit, string) format
+)
+"indentPrinter.ml" 232 8588 8592 "indentPrinter.ml" 232 8588 8596
+type(
+  int
+)
+ident(
+  int_ref line "indentPrinter.ml" 230 8497 8503 "indentPrinter.ml" 230 8497 8507
+)
+"indentPrinter.ml" 232 8588 8597 "indentPrinter.ml" 232 8588 8600
+type(
+  int
+)
+ident(
+  int_ref col "indentPrinter.ml" 230 8497 8509 "indentPrinter.ml" 230 8497 8512
+)
+"indentPrinter.ml" 233 8601 8610 "indentPrinter.ml" 233 8601 8612
+type(
+  unit
+)
+"indentPrinter.ml" 233 8601 8613 "indentPrinter.ml" 233 8601 8614
+type(
+  'a
+)
+ident(
+  def a "indentPrinter.ml" 233 8601 8618 "indentPrinter.ml" 233 8601 8661
+)
+"indentPrinter.ml" 233 8601 8618 "indentPrinter.ml" 233 8601 8636
+type(
+  string -> string
+)
+ident(
+  ext_ref Util.string_to_hex
+)
+"indentPrinter.ml" 233 8601 8638 "indentPrinter.ml" 233 8601 8655
+type(
+  'a -> Marshal.extern_flags list -> string
+)
+ident(
+  ext_ref Marshal.to_string
+)
+"indentPrinter.ml" 233 8601 8656 "indentPrinter.ml" 233 8601 8657
+type(
+  'a
+)
+ident(
+  int_ref a "indentPrinter.ml" 233 8601 8613 "indentPrinter.ml" 233 8601 8614
+)
+"indentPrinter.ml" 233 8601 8658 "indentPrinter.ml" 233 8601 8660
+type(
+  Marshal.extern_flags list
+)
+"indentPrinter.ml" 233 8601 8637 "indentPrinter.ml" 233 8601 8661
+type(
+  string
+)
+"indentPrinter.ml" 233 8601 8618 "indentPrinter.ml" 233 8601 8661
+call(
+  tail
+)
+type(
+  string
+)
+"indentPrinter.ml" 233 8601 8605 "indentPrinter.ml" 233 8601 8662
+type(
+  unit -> 'a -> string
+)
+"indentPrinter.ml" 234 8663 8668 "indentPrinter.ml" 234 8663 8671
+type(
+  Pos.Position.t * 'a -> 'a
+)
+ident(
+  ext_ref Pervasives.snd
+)
+"indentPrinter.ml" 234 8663 8672 "indentPrinter.ml" 234 8663 8677
+type(
+  Pos.Position.t * 'a
+)
+ident(
+  int_ref state "indentPrinter.ml" 228 8450 8459 "indentPrinter.ml" 228 8450 8464
+)
+"indentPrinter.ml" 234 8663 8667 "indentPrinter.ml" 234 8663 8678
+type(
+  'a
+)
+"indentPrinter.ml" 231 8559 8561 "indentPrinter.ml" 234 8663 8678
+call(
+  tail
+)
+type(
+  string
+)
+"indentPrinter.ml" 230 8497 8499 "indentPrinter.ml" 234 8663 8678
+type(
+  string
+)
+"indentPrinter.ml" 229 8467 8469 "indentPrinter.ml" 234 8663 8678
+type(
+  string
+)
+"indentPrinter.ml" 236 8680 8684 "indentPrinter.ml" 236 8680 8688
+type(
+  string -> Pos.Position.t * IndentBlock.t
+)
+ident(
+  def load "indentPrinter.ml" 246 8952 8952 "_none_" 1 0 -1
+)
+"indentPrinter.ml" 236 8680 8689 "indentPrinter.ml" 236 8680 8692
+type(
+  string
+)
+ident(
+  def str "indentPrinter.ml" 237 8695 8697 "indentPrinter.ml" 244 8897 8950
+)
+"indentPrinter.ml" 237 8695 8697 "indentPrinter.ml" 237 8695 8710
+type(
+  string -> unit
+)
+ident(
+  ext_ref Pervasives.print_endline
+)
+"indentPrinter.ml" 237 8695 8712 "indentPrinter.ml" 237 8695 8721
+type(
+  string
+)
+"indentPrinter.ml" 237 8695 8721 "indentPrinter.ml" 237 8695 8722
+type(
+  string -> string -> string
+)
+ident(
+  ext_ref Pervasives.( ^ )
+)
+"indentPrinter.ml" 237 8695 8722 "indentPrinter.ml" 237 8695 8725
+type(
+  string
+)
+ident(
+  int_ref str "indentPrinter.ml" 236 8680 8689 "indentPrinter.ml" 236 8680 8692
+)
+"indentPrinter.ml" 237 8695 8711 "indentPrinter.ml" 237 8695 8726
+call(
+  stack
+)
+type(
+  string
+)
+"indentPrinter.ml" 237 8695 8697 "indentPrinter.ml" 237 8695 8726
+call(
+  stack
+)
+type(
+  unit
+)
+"indentPrinter.ml" 238 8728 8733 "indentPrinter.ml" 238 8728 8736
+type(
+  string
+)
+ident(
+  int_ref str "indentPrinter.ml" 236 8680 8689 "indentPrinter.ml" 236 8680 8692
+)
+"indentPrinter.ml" 238 8728 8737 "indentPrinter.ml" 238 8728 8738
+type(
+  string -> string -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"indentPrinter.ml" 238 8728 8739 "indentPrinter.ml" 238 8728 8741
+type(
+  string
+)
+"indentPrinter.ml" 238 8728 8733 "indentPrinter.ml" 238 8728 8741
+type(
+  bool
+)
+"indentPrinter.ml" 239 8742 8749 "indentPrinter.ml" 239 8742 8756
+type(
+  Pos.Position.t * IndentBlock.t
+)
+ident(
+  int_ref initial "indentPrinter.ml" 224 8378 8382 "indentPrinter.ml" 224 8378 8389
+)
+"indentPrinter.ml" 240 8757 8764 "indentPrinter.ml" 240 8757 8776
+type(
+  string ->
+  (int -> int -> string -> Pos.Position.t * IndentBlock.t, '_a,
+   (int -> int -> string -> Pos.Position.t * IndentBlock.t) ->
+   Pos.Position.t * IndentBlock.t, Pos.Position.t * IndentBlock.t)
+  Scanf.scanner
+)
+ident(
+  ext_ref Scanf.sscanf
+)
+"indentPrinter.ml" 240 8757 8777 "indentPrinter.ml" 240 8757 8780
+type(
+  string
+)
+ident(
+  int_ref str "indentPrinter.ml" 236 8680 8689 "indentPrinter.ml" 236 8680 8692
+)
+"indentPrinter.ml" 241 8781 8785 "indentPrinter.ml" 241 8781 8795
+type(
+  (int -> int -> string -> Pos.Position.t * IndentBlock.t,
+   Scanf.Scanning.in_channel, '_a,
+   (int -> int -> string -> Pos.Position.t * IndentBlock.t) ->
+   Pos.Position.t * IndentBlock.t,
+   (int -> int -> string -> Pos.Position.t * IndentBlock.t) ->
+   Pos.Position.t * IndentBlock.t, Pos.Position.t * IndentBlock.t)
+  format6
+)
+"indentPrinter.ml" 242 8796 8805 "indentPrinter.ml" 242 8796 8813
+type(
+  int
+)
+ident(
+  def pos_lnum "indentPrinter.ml" 242 8796 8814 "indentPrinter.ml" 244 8897 8949
+)
+"indentPrinter.ml" 242 8796 8814 "indentPrinter.ml" 242 8796 8822
+type(
+  int
+)
+ident(
+  def pos_cnum "indentPrinter.ml" 242 8796 8823 "indentPrinter.ml" 244 8897 8949
+)
+"indentPrinter.ml" 242 8796 8823 "indentPrinter.ml" 242 8796 8826
+type(
+  string
+)
+ident(
+  def str "indentPrinter.ml" 243 8830 8836 "indentPrinter.ml" 244 8897 8949
+)
+"indentPrinter.ml" 243 8830 8858 "indentPrinter.ml" 243 8830 8860
+type(
+  string
+)
+"indentPrinter.ml" 243 8830 8872 "indentPrinter.ml" 243 8830 8873
+type(
+  int
+)
+"indentPrinter.ml" 243 8830 8875 "indentPrinter.ml" 243 8830 8883
+type(
+  int
+)
+ident(
+  int_ref pos_lnum "indentPrinter.ml" 242 8796 8805 "indentPrinter.ml" 242 8796 8813
+)
+"indentPrinter.ml" 243 8830 8885 "indentPrinter.ml" 243 8830 8893
+type(
+  int
+)
+ident(
+  int_ref pos_cnum "indentPrinter.ml" 242 8796 8814 "indentPrinter.ml" 242 8796 8822
+)
+"indentPrinter.ml" 243 8830 8836 "indentPrinter.ml" 243 8830 8895
+type(
+  Pos.Position.t
+)
+"indentPrinter.ml" 244 8897 8903 "indentPrinter.ml" 244 8897 8922
+type(
+  string -> int -> IndentBlock.t
+)
+ident(
+  ext_ref Marshal.from_string
+)
+"indentPrinter.ml" 244 8897 8924 "indentPrinter.ml" 244 8897 8942
+type(
+  string -> string
+)
+ident(
+  ext_ref Util.string_of_hex
+)
+"indentPrinter.ml" 244 8897 8943 "indentPrinter.ml" 244 8897 8946
+type(
+  string
+)
+ident(
+  int_ref str "indentPrinter.ml" 242 8796 8823 "indentPrinter.ml" 242 8796 8826
+)
+"indentPrinter.ml" 244 8897 8923 "indentPrinter.ml" 244 8897 8947
+call(
+  stack
+)
+type(
+  string
+)
+"indentPrinter.ml" 244 8897 8948 "indentPrinter.ml" 244 8897 8949
+type(
+  int
+)
+"indentPrinter.ml" 244 8897 8903 "indentPrinter.ml" 244 8897 8949
+call(
+  stack
+)
+type(
+  IndentBlock.t
+)
+"indentPrinter.ml" 243 8830 8836 "indentPrinter.ml" 244 8897 8949
+type(
+  Pos.Position.t * IndentBlock.t
+)
+"indentPrinter.ml" 242 8796 8800 "indentPrinter.ml" 244 8897 8950
+type(
+  int -> int -> string -> Pos.Position.t * IndentBlock.t
+)
+"indentPrinter.ml" 240 8757 8764 "indentPrinter.ml" 244 8897 8950
+call(
+  tail
+)
+type(
+  Pos.Position.t * IndentBlock.t
+)
+"indentPrinter.ml" 238 8728 8730 "indentPrinter.ml" 244 8897 8950
+type(
+  Pos.Position.t * IndentBlock.t
+)
+"indentPrinter.ml" 237 8695 8697 "indentPrinter.ml" 244 8897 8950
+type(
+  Pos.Position.t * IndentBlock.t
+)
+"indentPrinter.ml" 246 8952 8956 "indentPrinter.ml" 246 8952 8962
+type(
+  output ->
+  ?resume:Pos.Position.t * IndentBlock.t ->
+  Nstream.t -> Pos.Position.t * IndentBlock.t
+)
+ident(
+  def stream "indentPrinter.ml" 247 8997 9024 "_none_" 1 0 -1
+)
+"indentPrinter.ml" 246 8952 8963 "indentPrinter.ml" 246 8952 8969
+type(
+  output
+)
+ident(
+  def output "indentPrinter.ml" 246 8952 8970 "indentPrinter.ml" 247 8997 9024
+)
+"indentPrinter.ml" 246 8952 8972 "indentPrinter.ml" 246 8952 8978
+type(
+  Pos.Position.t * IndentBlock.t
+)
+"indentPrinter.ml" 246 8952 8979 "indentPrinter.ml" 246 8952 8986
+type(
+  Pos.Position.t * IndentBlock.t
+)
+ident(
+  int_ref initial "indentPrinter.ml" 224 8378 8382 "indentPrinter.ml" 224 8378 8389
+)
+type(
+  Pos.Position.t * IndentBlock.t
+)
+ident(
+  int_ref *sth* "indentPrinter.ml" 246 8952 8979 "indentPrinter.ml" 246 8952 8986
+)
+type(
+  (Pos.Position.t * IndentBlock.t) option
+)
+type(
+  (Pos.Position.t * IndentBlock.t) option
+)
+type(
+  Pos.Position.t * IndentBlock.t
+)
+"indentPrinter.ml" 246 8952 8988 "indentPrinter.ml" 246 8952 8994
+type(
+  Nstream.t
+)
+ident(
+  def stream "indentPrinter.ml" 247 8997 8999 "indentPrinter.ml" 247 8997 9024
+)
+"indentPrinter.ml" 247 8997 8999 "indentPrinter.ml" 247 8997 9003
+type(
+  output ->
+  Pos.Position.t * IndentBlock.t ->
+  Nstream.t -> Pos.Position.t * IndentBlock.t
+)
+ident(
+  int_ref loop "indentPrinter.ml" 167 6307 6315 "indentPrinter.ml" 167 6307 6319
+)
+"indentPrinter.ml" 247 8997 9004 "indentPrinter.ml" 247 8997 9010
+type(
+  output
+)
+ident(
+  int_ref output "indentPrinter.ml" 246 8952 8963 "indentPrinter.ml" 246 8952 8969
+)
+"indentPrinter.ml" 247 8997 9011 "indentPrinter.ml" 247 8997 9017
+type(
+  Pos.Position.t * IndentBlock.t
+)
+ident(
+  int_ref resume "indentPrinter.ml" 246 8952 8972 "indentPrinter.ml" 246 8952 8978
+)
+"indentPrinter.ml" 247 8997 9018 "indentPrinter.ml" 247 8997 9024
+type(
+  Nstream.t
+)
+ident(
+  int_ref stream "indentPrinter.ml" 246 8952 8988 "indentPrinter.ml" 246 8952 8994
+)
+"indentPrinter.ml" 247 8997 8999 "indentPrinter.ml" 247 8997 9024
+call(
+  tail
+)
+type(
+  Pos.Position.t * IndentBlock.t
+)

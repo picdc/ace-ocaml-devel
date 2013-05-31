@@ -1,0 +1,6 @@
+ace_utils.cmo :
+ace_utils.cmx :
+indent_js.cmo :
+indent_js.cmx :
+main.cmo : indent_js.cmo ace_utils.cmo
+main.cmx : indent_js.cmx ace_utils.cmx

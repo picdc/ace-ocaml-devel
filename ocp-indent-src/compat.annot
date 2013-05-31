@@ -1,0 +1,679 @@
+"compat.ml" 5 42 48 "compat.ml" 5 42 56
+type(
+  char -> bool
+)
+ident(
+  def is_space "compat.ml" 9 134 136 "compat.ml" 25 491 494
+)
+"compat.ml" 6 68 74 "compat.ml" 6 68 77
+type(
+  char
+)
+"compat.ml" 6 68 80 "compat.ml" 6 68 86
+type(
+  char
+)
+"compat.ml" 6 68 74 "compat.ml" 6 68 86
+type(
+  char
+)
+"compat.ml" 6 68 89 "compat.ml" 6 68 93
+type(
+  char
+)
+"compat.ml" 6 68 74 "compat.ml" 6 68 93
+type(
+  char
+)
+"compat.ml" 6 68 96 "compat.ml" 6 68 100
+type(
+  char
+)
+"compat.ml" 6 68 74 "compat.ml" 6 68 100
+type(
+  char
+)
+"compat.ml" 6 68 103 "compat.ml" 6 68 107
+type(
+  char
+)
+"compat.ml" 6 68 74 "compat.ml" 6 68 107
+type(
+  char
+)
+"compat.ml" 6 68 111 "compat.ml" 6 68 115
+type(
+  bool
+)
+"compat.ml" 7 116 122 "compat.ml" 7 116 123
+type(
+  char
+)
+"compat.ml" 7 116 127 "compat.ml" 7 116 132
+type(
+  bool
+)
+"compat.ml" 5 42 59 "compat.ml" 7 116 132
+type(
+  char -> bool
+)
+"compat.ml" 9 134 140 "compat.ml" 9 134 144
+type(
+  string -> string
+)
+ident(
+  def trim "compat.ml" 24 482 490 "compat.ml" 25 491 494
+)
+"compat.ml" 9 134 145 "compat.ml" 9 134 146
+type(
+  string
+)
+ident(
+  def s "compat.ml" 10 149 153 "compat.ml" 24 482 490
+)
+"compat.ml" 10 149 157 "compat.ml" 10 149 160
+type(
+  int
+)
+ident(
+  def len "compat.ml" 11 175 179 "compat.ml" 24 482 490
+)
+"compat.ml" 10 149 163 "compat.ml" 10 149 169
+type(
+  string -> int
+)
+"compat.ml" 10 149 170 "compat.ml" 10 149 171
+type(
+  string
+)
+ident(
+  int_ref s "compat.ml" 9 134 145 "compat.ml" 9 134 146
+)
+"compat.ml" 10 149 163 "compat.ml" 10 149 171
+type(
+  int
+)
+"compat.ml" 11 175 183 "compat.ml" 11 175 184
+type(
+  int ref
+)
+ident(
+  def i "compat.ml" 12 196 200 "compat.ml" 24 482 490
+)
+"compat.ml" 11 175 187 "compat.ml" 11 175 190
+type(
+  int -> int ref
+)
+ident(
+  ext_ref Pervasives.ref
+)
+"compat.ml" 11 175 191 "compat.ml" 11 175 192
+type(
+  int
+)
+"compat.ml" 11 175 187 "compat.ml" 11 175 192
+type(
+  int ref
+)
+"compat.ml" 12 196 206 "compat.ml" 12 196 207
+type(
+  int ref -> int
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"compat.ml" 12 196 207 "compat.ml" 12 196 208
+type(
+  int ref
+)
+ident(
+  int_ref i "compat.ml" 11 175 183 "compat.ml" 11 175 184
+)
+"compat.ml" 12 196 206 "compat.ml" 12 196 208
+type(
+  int
+)
+"compat.ml" 12 196 209 "compat.ml" 12 196 210
+type(
+  int -> int -> bool
+)
+ident(
+  ext_ref Pervasives.( < )
+)
+"compat.ml" 12 196 211 "compat.ml" 12 196 214
+type(
+  int
+)
+ident(
+  int_ref len "compat.ml" 10 149 157 "compat.ml" 10 149 160
+)
+"compat.ml" 12 196 206 "compat.ml" 12 196 214
+type(
+  bool
+)
+"compat.ml" 12 196 215 "compat.ml" 12 196 217
+type(
+  bool -> bool -> bool
+)
+ident(
+  ext_ref Pervasives.( && )
+)
+"compat.ml" 12 196 218 "compat.ml" 12 196 226
+type(
+  char -> bool
+)
+ident(
+  int_ref is_space "compat.ml" 5 42 48 "compat.ml" 5 42 56
+)
+"compat.ml" 12 196 228 "compat.ml" 12 196 238
+type(
+  string -> int -> char
+)
+"compat.ml" 12 196 239 "compat.ml" 12 196 240
+type(
+  string
+)
+ident(
+  int_ref s "compat.ml" 9 134 145 "compat.ml" 9 134 146
+)
+"compat.ml" 12 196 241 "compat.ml" 12 196 242
+type(
+  int ref -> int
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"compat.ml" 12 196 242 "compat.ml" 12 196 243
+type(
+  int ref
+)
+ident(
+  int_ref i "compat.ml" 11 175 183 "compat.ml" 11 175 184
+)
+"compat.ml" 12 196 241 "compat.ml" 12 196 243
+type(
+  int
+)
+"compat.ml" 12 196 227 "compat.ml" 12 196 244
+type(
+  char
+)
+"compat.ml" 12 196 218 "compat.ml" 12 196 244
+call(
+  stack
+)
+type(
+  bool
+)
+"compat.ml" 12 196 206 "compat.ml" 12 196 244
+type(
+  bool
+)
+"compat.ml" 13 248 254 "compat.ml" 13 248 258
+type(
+  int ref -> unit
+)
+ident(
+  ext_ref Pervasives.incr
+)
+"compat.ml" 13 248 259 "compat.ml" 13 248 260
+type(
+  int ref
+)
+ident(
+  int_ref i "compat.ml" 11 175 183 "compat.ml" 11 175 184
+)
+"compat.ml" 13 248 254 "compat.ml" 13 248 260
+type(
+  unit
+)
+"compat.ml" 12 196 200 "compat.ml" 14 261 269
+type(
+  unit
+)
+"compat.ml" 15 271 279 "compat.ml" 15 271 280
+type(
+  int ref
+)
+ident(
+  def j "compat.ml" 16 300 304 "compat.ml" 24 482 490
+)
+"compat.ml" 15 271 283 "compat.ml" 15 271 286
+type(
+  int -> int ref
+)
+ident(
+  ext_ref Pervasives.ref
+)
+"compat.ml" 15 271 288 "compat.ml" 15 271 291
+type(
+  int
+)
+ident(
+  int_ref len "compat.ml" 10 149 157 "compat.ml" 10 149 160
+)
+"compat.ml" 15 271 292 "compat.ml" 15 271 293
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"compat.ml" 15 271 294 "compat.ml" 15 271 295
+type(
+  int
+)
+"compat.ml" 15 271 287 "compat.ml" 15 271 296
+type(
+  int
+)
+"compat.ml" 15 271 283 "compat.ml" 15 271 296
+type(
+  int ref
+)
+"compat.ml" 16 300 310 "compat.ml" 16 300 311
+type(
+  int ref -> int
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"compat.ml" 16 300 311 "compat.ml" 16 300 312
+type(
+  int ref
+)
+ident(
+  int_ref j "compat.ml" 15 271 279 "compat.ml" 15 271 280
+)
+"compat.ml" 16 300 310 "compat.ml" 16 300 312
+type(
+  int
+)
+"compat.ml" 16 300 313 "compat.ml" 16 300 315
+type(
+  int -> int -> bool
+)
+ident(
+  ext_ref Pervasives.( >= )
+)
+"compat.ml" 16 300 316 "compat.ml" 16 300 317
+type(
+  int ref -> int
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"compat.ml" 16 300 317 "compat.ml" 16 300 318
+type(
+  int ref
+)
+ident(
+  int_ref i "compat.ml" 11 175 183 "compat.ml" 11 175 184
+)
+"compat.ml" 16 300 316 "compat.ml" 16 300 318
+type(
+  int
+)
+"compat.ml" 16 300 310 "compat.ml" 16 300 318
+type(
+  bool
+)
+"compat.ml" 16 300 319 "compat.ml" 16 300 321
+type(
+  bool -> bool -> bool
+)
+ident(
+  ext_ref Pervasives.( && )
+)
+"compat.ml" 16 300 322 "compat.ml" 16 300 330
+type(
+  char -> bool
+)
+ident(
+  int_ref is_space "compat.ml" 5 42 48 "compat.ml" 5 42 56
+)
+"compat.ml" 16 300 332 "compat.ml" 16 300 342
+type(
+  string -> int -> char
+)
+"compat.ml" 16 300 343 "compat.ml" 16 300 344
+type(
+  string
+)
+ident(
+  int_ref s "compat.ml" 9 134 145 "compat.ml" 9 134 146
+)
+"compat.ml" 16 300 345 "compat.ml" 16 300 346
+type(
+  int ref -> int
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"compat.ml" 16 300 346 "compat.ml" 16 300 347
+type(
+  int ref
+)
+ident(
+  int_ref j "compat.ml" 15 271 279 "compat.ml" 15 271 280
+)
+"compat.ml" 16 300 345 "compat.ml" 16 300 347
+type(
+  int
+)
+"compat.ml" 16 300 331 "compat.ml" 16 300 348
+type(
+  char
+)
+"compat.ml" 16 300 322 "compat.ml" 16 300 348
+call(
+  stack
+)
+type(
+  bool
+)
+"compat.ml" 16 300 310 "compat.ml" 16 300 348
+type(
+  bool
+)
+"compat.ml" 17 352 358 "compat.ml" 17 352 362
+type(
+  int ref -> unit
+)
+ident(
+  ext_ref Pervasives.decr
+)
+"compat.ml" 17 352 363 "compat.ml" 17 352 364
+type(
+  int ref
+)
+ident(
+  int_ref j "compat.ml" 15 271 279 "compat.ml" 15 271 280
+)
+"compat.ml" 17 352 358 "compat.ml" 17 352 364
+type(
+  unit
+)
+"compat.ml" 16 300 304 "compat.ml" 18 365 373
+type(
+  unit
+)
+"compat.ml" 19 375 382 "compat.ml" 19 375 383
+type(
+  int ref -> int
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"compat.ml" 19 375 383 "compat.ml" 19 375 384
+type(
+  int ref
+)
+ident(
+  int_ref i "compat.ml" 11 175 183 "compat.ml" 11 175 184
+)
+"compat.ml" 19 375 382 "compat.ml" 19 375 384
+type(
+  int
+)
+"compat.ml" 19 375 385 "compat.ml" 19 375 386
+type(
+  int -> int -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"compat.ml" 19 375 387 "compat.ml" 19 375 388
+type(
+  int
+)
+"compat.ml" 19 375 382 "compat.ml" 19 375 388
+type(
+  bool
+)
+"compat.ml" 19 375 389 "compat.ml" 19 375 391
+type(
+  bool -> bool -> bool
+)
+ident(
+  ext_ref Pervasives.( && )
+)
+"compat.ml" 19 375 392 "compat.ml" 19 375 393
+type(
+  int ref -> int
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"compat.ml" 19 375 393 "compat.ml" 19 375 394
+type(
+  int ref
+)
+ident(
+  int_ref j "compat.ml" 15 271 279 "compat.ml" 15 271 280
+)
+"compat.ml" 19 375 392 "compat.ml" 19 375 394
+type(
+  int
+)
+"compat.ml" 19 375 395 "compat.ml" 19 375 396
+type(
+  int -> int -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"compat.ml" 19 375 397 "compat.ml" 19 375 400
+type(
+  int
+)
+ident(
+  int_ref len "compat.ml" 10 149 157 "compat.ml" 10 149 160
+)
+"compat.ml" 19 375 401 "compat.ml" 19 375 402
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"compat.ml" 19 375 403 "compat.ml" 19 375 404
+type(
+  int
+)
+"compat.ml" 19 375 397 "compat.ml" 19 375 404
+type(
+  int
+)
+"compat.ml" 19 375 392 "compat.ml" 19 375 404
+type(
+  bool
+)
+"compat.ml" 19 375 382 "compat.ml" 19 375 404
+type(
+  bool
+)
+"compat.ml" 20 410 416 "compat.ml" 20 410 417
+type(
+  string
+)
+ident(
+  int_ref s "compat.ml" 9 134 145 "compat.ml" 9 134 146
+)
+"compat.ml" 21 418 430 "compat.ml" 21 418 431
+type(
+  int ref -> int
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"compat.ml" 21 418 431 "compat.ml" 21 418 432
+type(
+  int ref
+)
+ident(
+  int_ref j "compat.ml" 15 271 279 "compat.ml" 15 271 280
+)
+"compat.ml" 21 418 430 "compat.ml" 21 418 432
+type(
+  int
+)
+"compat.ml" 21 418 433 "compat.ml" 21 418 435
+type(
+  int -> int -> bool
+)
+ident(
+  ext_ref Pervasives.( >= )
+)
+"compat.ml" 21 418 436 "compat.ml" 21 418 437
+type(
+  int ref -> int
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"compat.ml" 21 418 437 "compat.ml" 21 418 438
+type(
+  int ref
+)
+ident(
+  int_ref i "compat.ml" 11 175 183 "compat.ml" 11 175 184
+)
+"compat.ml" 21 418 436 "compat.ml" 21 418 438
+type(
+  int
+)
+"compat.ml" 21 418 430 "compat.ml" 21 418 438
+type(
+  bool
+)
+"compat.ml" 22 444 450 "compat.ml" 22 444 453
+type(
+  string -> int -> int -> string
+)
+"compat.ml" 22 444 454 "compat.ml" 22 444 455
+type(
+  string
+)
+ident(
+  int_ref s "compat.ml" 9 134 145 "compat.ml" 9 134 146
+)
+"compat.ml" 22 444 456 "compat.ml" 22 444 457
+type(
+  int ref -> int
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"compat.ml" 22 444 457 "compat.ml" 22 444 458
+type(
+  int ref
+)
+ident(
+  int_ref i "compat.ml" 11 175 183 "compat.ml" 11 175 184
+)
+"compat.ml" 22 444 456 "compat.ml" 22 444 458
+type(
+  int
+)
+"compat.ml" 22 444 460 "compat.ml" 22 444 461
+type(
+  int ref -> int
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"compat.ml" 22 444 461 "compat.ml" 22 444 462
+type(
+  int ref
+)
+ident(
+  int_ref j "compat.ml" 15 271 279 "compat.ml" 15 271 280
+)
+"compat.ml" 22 444 460 "compat.ml" 22 444 462
+type(
+  int
+)
+"compat.ml" 22 444 463 "compat.ml" 22 444 464
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"compat.ml" 22 444 465 "compat.ml" 22 444 466
+type(
+  int ref -> int
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"compat.ml" 22 444 466 "compat.ml" 22 444 467
+type(
+  int ref
+)
+ident(
+  int_ref i "compat.ml" 11 175 183 "compat.ml" 11 175 184
+)
+"compat.ml" 22 444 465 "compat.ml" 22 444 467
+type(
+  int
+)
+"compat.ml" 22 444 460 "compat.ml" 22 444 467
+type(
+  int
+)
+"compat.ml" 22 444 468 "compat.ml" 22 444 469
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"compat.ml" 22 444 470 "compat.ml" 22 444 471
+type(
+  int
+)
+"compat.ml" 22 444 459 "compat.ml" 22 444 472
+type(
+  int
+)
+"compat.ml" 22 444 450 "compat.ml" 22 444 472
+call(
+  tail
+)
+type(
+  string
+)
+"compat.ml" 24 482 488 "compat.ml" 24 482 490
+type(
+  string
+)
+"compat.ml" 21 418 427 "compat.ml" 24 482 490
+type(
+  string
+)
+"compat.ml" 19 375 379 "compat.ml" 24 482 490
+type(
+  string
+)
+"compat.ml" 16 300 304 "compat.ml" 24 482 490
+type(
+  string
+)
+"compat.ml" 15 271 275 "compat.ml" 24 482 490
+type(
+  string
+)
+"compat.ml" 12 196 200 "compat.ml" 24 482 490
+type(
+  string
+)
+"compat.ml" 11 175 179 "compat.ml" 24 482 490
+type(
+  string
+)
+"compat.ml" 10 149 153 "compat.ml" 24 482 490
+type(
+  string
+)

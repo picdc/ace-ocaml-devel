@@ -92,7 +92,7 @@ editor.commands.addCommand({
 
 
 var indenter = /(?:[({[=:]|[-=]>|\b(?:else|try|with))\s*$/;
-var outdenter = /^[' '|'\t']*(in|(end[' '|'\t'];?))[' '|'\t']*/;
+var outdenter = /^[' '|'\t']*(in|(end[' '|'\t']*;?)|let)[' '|'\t']*$/;
 
 (function() {
 
@@ -136,12 +136,18 @@ var outdenter = /^[' '|'\t']*(in|(end[' '|'\t'];?))[' '|'\t']*/;
     };
 
     this.checkOutdent = function(state, line, input) {
-	if ( input == '\n' ) {
+	if ( input == '\n' || input == ' ' ) {
 	    var b = outdenter.test(line);
-	    // console.log(line+"\n"+input);
+	    /* Si on veut faire comme avec emacs et typerex/tuareg
+	       ça réindente quand on fait un espace juste après le token
+	       (in/let/end...).
+	       Pour cela, vérifier avec la position du curseur, le token
+	       avant, et indenter en fonction de ça
+	     */ 
 	    return b;
 	}
-        return this.$outdent.checkOutdent(line);	
+        return this.$outdent.checkOutdent(line);
+    
     };
 
     this.autoOutdent = function(state, doc, row) {

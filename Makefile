@@ -1,26 +1,40 @@
 
-FLAGS_JS=-pretty -noinline
+include Makefile.rules
 
-CAMLP4="camlp4o ~/.opam/4.00.1/lib/js_of_ocaml/pa_js.cmo"
+OCPDIR= ocp-indent-src
+OCPLIB= -I $(OCPDIR) ocp_indent.cma
 
-all:
-	ocamlbuild -use-ocamlfind -pkgs js_of_ocaml,js_of_ocaml.syntax \
-	 -pp $(CAMLP4) -I ocp-indent/src main.byte
-	js_of_ocaml $(FLAGS_JS) main.byte
+LIBS= $(OCPLIB)
 
-# utils:
-# 	ocamlbuild -use-ocamlfind -pkgs js_of_ocaml,js_of_ocaml.syntax \
-# 	 -pp $(CAMLP4) -I ocp-indent/src utils.byte
-# 	js_of_ocaml $(FLAGS_JS) utils.byte
+JSFLAGS = -pretty
 
-# js: ocp-bytecode
-# 	js_of_ocaml $(FLAGS_JS) test_ocp.byte
+all: depend main.js
 
-# ocp-byte:
-# 	ocamlbuild -use-ocamlfind -pkgs js_of_ocaml,js_of_ocaml.syntax \
-# 	 -pp $(CAMLP4) -I ocp-indent/src test_ocp.byte
+indent_js.cmo:
+	$(MAKE) -C $(OCPDIR)
+	$(CAMLJS) -c $(OCPLIB) $*.ml
 
+ace_utils.cmo:
+	$(CAMLJS) -c $*.ml
+
+
+main.byte: indent_js.cmo ace_utils.cmo
+	$(CAMLJS) -o $@ $(LIBS) $^ $*.ml
+
+
+main.js: main.byte
+	js_of_ocaml $(JSFLAGS) $<
 
 clean:
-	rm -f *~ \#*\# *.byte
-	rm -rf _build
+	rm -f *~ \#*\# *.cm[ioa] *.annot
+	rm -f *.byte a.out
+
+clean-all: clean
+	$(MAKE) -C $(OCPDIR) clean
+
+
+depend: $(SOURCES)
+	$(CAMLDEP) -pp $(PP) *.mli *.ml > .depend
+
+
+include .depend

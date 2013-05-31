@@ -1,0 +1,12 @@
+toplevel.cmo: ../ocp-jslib/utils.cmi ../tutorial/tutorial.cmi \
+    ../ocaml-num/topnum.cmo ../js_of_ocaml/compiler/pretty_print.cmi \
+    errors.cmi ../js_of_ocaml/compiler/driver.cmi ../ocp-jslib/dragnDrop.cmi \
+    ../ocp-jslib/cookie.cmi ../ocp-jslib/button.cmi toplevel.cmi
+toplevel.cmx: ../ocp-jslib/utils.cmx ../tutorial/tutorial.cmx \
+    ../ocaml-num/topnum.cmx ../js_of_ocaml/compiler/pretty_print.cmx \
+    errors.cmi ../js_of_ocaml/compiler/driver.cmx ../ocp-jslib/dragnDrop.cmx \
+    ../ocp-jslib/cookie.cmx ../ocp-jslib/button.cmx toplevel.cmi
+topmain.cmo: toplevel.cmi
+topmain.cmx: toplevel.cmx
+errors.cmi:
+toplevel.cmi:

@@ -1,0 +1,1197 @@
+"nstream.ml" 35 1365 1369 "nstream.ml" 35 1365 1373
+type(
+  ?pos:Pos.Position.t -> (string -> int -> int) -> cons lazy_t
+)
+ident(
+  def make "nstream.ml" 74 2742 2742 "_none_" 1 0 -1
+)
+"nstream.ml" 35 1365 1376 "nstream.ml" 35 1365 1379
+type(
+  Pos.Position.t
+)
+"nstream.ml" 35 1365 1380 "nstream.ml" 35 1365 1393
+type(
+  Pos.Position.t
+)
+ident(
+  ext_ref Pos.Position.zero
+)
+type(
+  Pos.Position.t
+)
+ident(
+  int_ref *sth* "nstream.ml" 35 1365 1380 "nstream.ml" 35 1365 1393
+)
+type(
+  Pos.Position.t option
+)
+type(
+  Pos.Position.t option
+)
+type(
+  Pos.Position.t
+)
+"nstream.ml" 35 1365 1395 "nstream.ml" 35 1365 1401
+type(
+  string -> int -> int
+)
+ident(
+  def reader "nstream.ml" 38 1503 1505 "nstream.ml" 72 2703 2740
+)
+"nstream.ml" 38 1503 1509 "nstream.ml" 38 1503 1512
+type(
+  Buffer.t
+)
+ident(
+  def buf "nstream.ml" 39 1536 1538 "nstream.ml" 72 2703 2740
+)
+"nstream.ml" 38 1503 1515 "nstream.ml" 38 1503 1528
+type(
+  int -> Buffer.t
+)
+ident(
+  ext_ref Buffer.create
+)
+"nstream.ml" 38 1503 1529 "nstream.ml" 38 1503 1532
+type(
+  int
+)
+"nstream.ml" 38 1503 1515 "nstream.ml" 38 1503 1532
+call(
+  stack
+)
+type(
+  Buffer.t
+)
+"nstream.ml" 39 1536 1542 "nstream.ml" 39 1536 1548
+type(
+  string -> int -> int
+)
+ident(
+  def reader "nstream.ml" 44 1642 1644 "nstream.ml" 72 2703 2740
+)
+"nstream.ml" 39 1536 1549 "nstream.ml" 39 1536 1552
+type(
+  string
+)
+ident(
+  def str "nstream.ml" 39 1536 1553 "nstream.ml" 42 1631 1636
+)
+"nstream.ml" 39 1536 1553 "nstream.ml" 39 1536 1558
+type(
+  int
+)
+ident(
+  def count "nstream.ml" 40 1561 1565 "nstream.ml" 42 1631 1636
+)
+"nstream.ml" 40 1561 1569 "nstream.ml" 40 1561 1570
+type(
+  int
+)
+ident(
+  def n "nstream.ml" 41 1593 1597 "nstream.ml" 42 1631 1636
+)
+"nstream.ml" 40 1561 1573 "nstream.ml" 40 1561 1579
+type(
+  string -> int -> int
+)
+ident(
+  int_ref reader "nstream.ml" 35 1365 1395 "nstream.ml" 35 1365 1401
+)
+"nstream.ml" 40 1561 1580 "nstream.ml" 40 1561 1583
+type(
+  string
+)
+ident(
+  int_ref str "nstream.ml" 39 1536 1549 "nstream.ml" 39 1536 1552
+)
+"nstream.ml" 40 1561 1584 "nstream.ml" 40 1561 1589
+type(
+  int
+)
+ident(
+  int_ref count "nstream.ml" 39 1536 1553 "nstream.ml" 39 1536 1558
+)
+"nstream.ml" 40 1561 1573 "nstream.ml" 40 1561 1589
+call(
+  stack
+)
+type(
+  int
+)
+"nstream.ml" 41 1593 1597 "nstream.ml" 41 1593 1617
+type(
+  Buffer.t -> string -> int -> int -> unit
+)
+ident(
+  ext_ref Buffer.add_substring
+)
+"nstream.ml" 41 1593 1618 "nstream.ml" 41 1593 1621
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "nstream.ml" 38 1503 1509 "nstream.ml" 38 1503 1512
+)
+"nstream.ml" 41 1593 1622 "nstream.ml" 41 1593 1625
+type(
+  string
+)
+ident(
+  int_ref str "nstream.ml" 39 1536 1549 "nstream.ml" 39 1536 1552
+)
+"nstream.ml" 41 1593 1626 "nstream.ml" 41 1593 1627
+type(
+  int
+)
+"nstream.ml" 41 1593 1628 "nstream.ml" 41 1593 1629
+type(
+  int
+)
+ident(
+  int_ref n "nstream.ml" 40 1561 1569 "nstream.ml" 40 1561 1570
+)
+"nstream.ml" 41 1593 1597 "nstream.ml" 41 1593 1629
+call(
+  stack
+)
+type(
+  unit
+)
+"nstream.ml" 42 1631 1635 "nstream.ml" 42 1631 1636
+type(
+  int
+)
+ident(
+  int_ref n "nstream.ml" 40 1561 1569 "nstream.ml" 40 1561 1570
+)
+"nstream.ml" 41 1593 1597 "nstream.ml" 42 1631 1636
+type(
+  int
+)
+"nstream.ml" 40 1561 1565 "nstream.ml" 42 1631 1636
+type(
+  int
+)
+"nstream.ml" 44 1642 1648 "nstream.ml" 44 1642 1654
+type(
+  Lexing.lexbuf
+)
+ident(
+  def lexbuf "nstream.ml" 45 1688 1690 "nstream.ml" 72 2703 2740
+)
+"nstream.ml" 44 1642 1657 "nstream.ml" 44 1642 1677
+type(
+  (string -> int -> int) -> Lexing.lexbuf
+)
+ident(
+  ext_ref Lexing.from_function
+)
+"nstream.ml" 44 1642 1678 "nstream.ml" 44 1642 1684
+type(
+  string -> int -> int
+)
+ident(
+  int_ref reader "nstream.ml" 39 1536 1542 "nstream.ml" 39 1536 1548
+)
+"nstream.ml" 44 1642 1657 "nstream.ml" 44 1642 1684
+call(
+  stack
+)
+type(
+  Lexing.lexbuf
+)
+"nstream.ml" 45 1688 1690 "nstream.ml" 45 1688 1696
+type(
+  Lexing.lexbuf
+)
+ident(
+  int_ref lexbuf "nstream.ml" 44 1642 1648 "nstream.ml" 44 1642 1654
+)
+"nstream.ml" 45 1688 1718 "nstream.ml" 45 1688 1721
+type(
+  Pos.Position.t
+)
+ident(
+  int_ref pos "nstream.ml" 35 1365 1376 "nstream.ml" 35 1365 1379
+)
+"nstream.ml" 45 1688 1690 "nstream.ml" 45 1688 1721
+type(
+  unit
+)
+"nstream.ml" 46 1723 1725 "nstream.ml" 46 1723 1742
+type(
+  unit -> unit
+)
+ident(
+  ext_ref Approx_lexer.init
+)
+"nstream.ml" 46 1723 1743 "nstream.ml" 46 1723 1745
+type(
+  unit
+)
+"nstream.ml" 46 1723 1725 "nstream.ml" 46 1723 1745
+call(
+  stack
+)
+type(
+  unit
+)
+"nstream.ml" 47 1747 1757 "nstream.ml" 47 1747 1761
+type(
+  Pos.Region.t -> cons
+)
+ident(
+  def loop "nstream.ml" 47 1747 1749 "nstream.ml" 72 2703 2740
+)
+"nstream.ml" 47 1747 1762 "nstream.ml" 47 1747 1766
+type(
+  Pos.Region.t
+)
+ident(
+  def last "nstream.ml" 48 1769 1773 "nstream.ml" 70 2692 2697
+)
+"nstream.ml" 49 1792 1800 "nstream.ml" 49 1792 1805
+type(
+  Approx_lexer.token
+)
+ident(
+  def token "nstream.ml" 50 1851 1855 "nstream.ml" 70 2692 2697
+)
+"nstream.ml" 49 1792 1808 "nstream.ml" 49 1792 1840
+type(
+  Lexing.lexbuf -> Approx_lexer.token
+)
+ident(
+  ext_ref Approx_lexer.token_with_comments
+)
+"nstream.ml" 49 1792 1841 "nstream.ml" 49 1792 1847
+type(
+  Lexing.lexbuf
+)
+ident(
+  int_ref lexbuf "nstream.ml" 44 1642 1648 "nstream.ml" 44 1642 1654
+)
+"nstream.ml" 49 1792 1808 "nstream.ml" 49 1792 1847
+call(
+  stack
+)
+type(
+  Approx_lexer.token
+)
+"nstream.ml" 50 1851 1859 "nstream.ml" 50 1851 1867
+type(
+  Pos.Position.t
+)
+ident(
+  def pos_last "nstream.ml" 54 1968 1972 "nstream.ml" 70 2692 2697
+)
+"nstream.ml" 50 1851 1870 "nstream.ml" 50 1851 1880
+type(
+  Pos.Region.t -> Pos.Position.t
+)
+ident(
+  ext_ref Pos.Region.snd
+)
+"nstream.ml" 50 1851 1881 "nstream.ml" 50 1851 1885
+type(
+  Pos.Region.t
+)
+ident(
+  int_ref last "nstream.ml" 47 1747 1762 "nstream.ml" 47 1747 1766
+)
+"nstream.ml" 50 1851 1870 "nstream.ml" 50 1851 1885
+call(
+  stack
+)
+type(
+  Pos.Position.t
+)
+"nstream.ml" 51 1886 1894 "nstream.ml" 51 1886 1903
+type(
+  Lexing.position
+)
+ident(
+  def pos_start "nstream.ml" 54 1968 1972 "nstream.ml" 70 2692 2697
+)
+"nstream.ml" 51 1886 1906 "nstream.ml" 51 1886 1912
+type(
+  Lexing.lexbuf
+)
+ident(
+  int_ref lexbuf "nstream.ml" 44 1642 1648 "nstream.ml" 44 1642 1654
+)
+"nstream.ml" 51 1886 1906 "nstream.ml" 51 1886 1924
+type(
+  Lexing.position
+)
+"nstream.ml" 52 1925 1933 "nstream.ml" 52 1925 1940
+type(
+  Lexing.position
+)
+ident(
+  def pos_end "nstream.ml" 54 1968 1972 "nstream.ml" 70 2692 2697
+)
+"nstream.ml" 52 1925 1943 "nstream.ml" 52 1925 1949
+type(
+  Lexing.lexbuf
+)
+ident(
+  int_ref lexbuf "nstream.ml" 44 1642 1648 "nstream.ml" 44 1642 1654
+)
+"nstream.ml" 52 1925 1943 "nstream.ml" 52 1925 1960
+type(
+  Lexing.position
+)
+"nstream.ml" 54 1968 1976 "nstream.ml" 54 1968 1982
+type(
+  int
+)
+ident(
+  def spaces "nstream.ml" 55 2027 2031 "nstream.ml" 70 2692 2697
+)
+"nstream.ml" 54 1968 1985 "nstream.ml" 54 1968 1994
+type(
+  Lexing.position
+)
+ident(
+  int_ref pos_start "nstream.ml" 51 1886 1894 "nstream.ml" 51 1886 1903
+)
+"nstream.ml" 54 1968 1985 "nstream.ml" 54 1968 2003
+type(
+  int
+)
+"nstream.ml" 54 1968 2004 "nstream.ml" 54 1968 2005
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"nstream.ml" 54 1968 2006 "nstream.ml" 54 1968 2014
+type(
+  Pos.Position.t
+)
+ident(
+  int_ref pos_last "nstream.ml" 50 1851 1859 "nstream.ml" 50 1851 1867
+)
+"nstream.ml" 54 1968 2006 "nstream.ml" 54 1968 2023
+type(
+  int
+)
+"nstream.ml" 54 1968 1985 "nstream.ml" 54 1968 2023
+type(
+  int
+)
+"nstream.ml" 55 2027 2035 "nstream.ml" 55 2027 2038
+type(
+  int
+)
+ident(
+  def len "nstream.ml" 56 2082 2086 "nstream.ml" 70 2692 2697
+)
+"nstream.ml" 55 2027 2041 "nstream.ml" 55 2027 2048
+type(
+  Lexing.position
+)
+ident(
+  int_ref pos_end "nstream.ml" 52 1925 1933 "nstream.ml" 52 1925 1940
+)
+"nstream.ml" 55 2027 2041 "nstream.ml" 55 2027 2057
+type(
+  int
+)
+"nstream.ml" 55 2027 2058 "nstream.ml" 55 2027 2059
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"nstream.ml" 55 2027 2060 "nstream.ml" 55 2027 2069
+type(
+  Lexing.position
+)
+ident(
+  int_ref pos_start "nstream.ml" 51 1886 1894 "nstream.ml" 51 1886 1903
+)
+"nstream.ml" 55 2027 2060 "nstream.ml" 55 2027 2078
+type(
+  int
+)
+"nstream.ml" 55 2027 2041 "nstream.ml" 55 2027 2078
+type(
+  int
+)
+"nstream.ml" 56 2082 2090 "nstream.ml" 56 2082 2098
+type(
+  int
+)
+ident(
+  def newlines "nstream.ml" 57 2143 2147 "nstream.ml" 70 2692 2697
+)
+"nstream.ml" 56 2082 2101 "nstream.ml" 56 2082 2110
+type(
+  Lexing.position
+)
+ident(
+  int_ref pos_start "nstream.ml" 51 1886 1894 "nstream.ml" 51 1886 1903
+)
+"nstream.ml" 56 2082 2101 "nstream.ml" 56 2082 2119
+type(
+  int
+)
+"nstream.ml" 56 2082 2120 "nstream.ml" 56 2082 2121
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"nstream.ml" 56 2082 2122 "nstream.ml" 56 2082 2130
+type(
+  Pos.Position.t
+)
+ident(
+  int_ref pos_last "nstream.ml" 50 1851 1859 "nstream.ml" 50 1851 1867
+)
+"nstream.ml" 56 2082 2122 "nstream.ml" 56 2082 2139
+type(
+  int
+)
+"nstream.ml" 56 2082 2101 "nstream.ml" 56 2082 2139
+type(
+  int
+)
+"nstream.ml" 57 2143 2151 "nstream.ml" 57 2143 2158
+type(
+  string
+)
+ident(
+  def between "nstream.ml" 58 2188 2192 "nstream.ml" 70 2692 2697
+)
+"nstream.ml" 57 2143 2161 "nstream.ml" 57 2143 2171
+type(
+  Buffer.t -> int -> int -> string
+)
+ident(
+  ext_ref Buffer.sub
+)
+"nstream.ml" 57 2143 2172 "nstream.ml" 57 2143 2175
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "nstream.ml" 38 1503 1509 "nstream.ml" 38 1503 1512
+)
+"nstream.ml" 57 2143 2176 "nstream.ml" 57 2143 2177
+type(
+  int
+)
+"nstream.ml" 57 2143 2178 "nstream.ml" 57 2143 2184
+type(
+  int
+)
+ident(
+  int_ref spaces "nstream.ml" 54 1968 1976 "nstream.ml" 54 1968 1982
+)
+"nstream.ml" 57 2143 2161 "nstream.ml" 57 2143 2184
+call(
+  stack
+)
+type(
+  string
+)
+"nstream.ml" 58 2188 2196 "nstream.ml" 58 2188 2202
+type(
+  string
+)
+ident(
+  def substr "nstream.ml" 60 2238 2242 "nstream.ml" 70 2692 2697
+)
+"nstream.ml" 58 2188 2205 "nstream.ml" 58 2188 2215
+type(
+  Buffer.t -> int -> int -> string
+)
+ident(
+  ext_ref Buffer.sub
+)
+"nstream.ml" 58 2188 2216 "nstream.ml" 58 2188 2219
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "nstream.ml" 38 1503 1509 "nstream.ml" 38 1503 1512
+)
+"nstream.ml" 58 2188 2220 "nstream.ml" 58 2188 2226
+type(
+  int
+)
+ident(
+  int_ref spaces "nstream.ml" 54 1968 1976 "nstream.ml" 54 1968 1982
+)
+"nstream.ml" 58 2188 2227 "nstream.ml" 58 2188 2230
+type(
+  int
+)
+ident(
+  int_ref len "nstream.ml" 55 2027 2035 "nstream.ml" 55 2027 2038
+)
+"nstream.ml" 58 2188 2205 "nstream.ml" 58 2188 2230
+call(
+  stack
+)
+type(
+  string
+)
+"nstream.ml" 60 2238 2246 "nstream.ml" 60 2238 2251
+type(
+  int
+)
+ident(
+  def total "nstream.ml" 61 2294 2298 "nstream.ml" 70 2692 2697
+)
+"nstream.ml" 60 2238 2254 "nstream.ml" 60 2238 2261
+type(
+  Lexing.position
+)
+ident(
+  int_ref pos_end "nstream.ml" 52 1925 1933 "nstream.ml" 52 1925 1940
+)
+"nstream.ml" 60 2238 2254 "nstream.ml" 60 2238 2270
+type(
+  int
+)
+"nstream.ml" 60 2238 2271 "nstream.ml" 60 2238 2272
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"nstream.ml" 60 2238 2273 "nstream.ml" 60 2238 2281
+type(
+  Pos.Position.t
+)
+ident(
+  int_ref pos_last "nstream.ml" 50 1851 1859 "nstream.ml" 50 1851 1867
+)
+"nstream.ml" 60 2238 2273 "nstream.ml" 60 2238 2290
+type(
+  int
+)
+"nstream.ml" 60 2238 2254 "nstream.ml" 60 2238 2290
+type(
+  int
+)
+"nstream.ml" 61 2294 2302 "nstream.ml" 61 2294 2306
+type(
+  string
+)
+ident(
+  def more "nstream.ml" 62 2361 2365 "nstream.ml" 70 2692 2697
+)
+"nstream.ml" 61 2294 2309 "nstream.ml" 61 2294 2319
+type(
+  Buffer.t -> int -> int -> string
+)
+ident(
+  ext_ref Buffer.sub
+)
+"nstream.ml" 61 2294 2320 "nstream.ml" 61 2294 2323
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "nstream.ml" 38 1503 1509 "nstream.ml" 38 1503 1512
+)
+"nstream.ml" 61 2294 2324 "nstream.ml" 61 2294 2329
+type(
+  int
+)
+ident(
+  int_ref total "nstream.ml" 60 2238 2246 "nstream.ml" 60 2238 2251
+)
+"nstream.ml" 61 2294 2331 "nstream.ml" 61 2294 2344
+type(
+  Buffer.t -> int
+)
+ident(
+  ext_ref Buffer.length
+)
+"nstream.ml" 61 2294 2345 "nstream.ml" 61 2294 2348
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "nstream.ml" 38 1503 1509 "nstream.ml" 38 1503 1512
+)
+"nstream.ml" 61 2294 2331 "nstream.ml" 61 2294 2348
+call(
+  stack
+)
+type(
+  int
+)
+"nstream.ml" 61 2294 2349 "nstream.ml" 61 2294 2350
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"nstream.ml" 61 2294 2351 "nstream.ml" 61 2294 2356
+type(
+  int
+)
+ident(
+  int_ref total "nstream.ml" 60 2238 2246 "nstream.ml" 60 2238 2251
+)
+"nstream.ml" 61 2294 2330 "nstream.ml" 61 2294 2357
+type(
+  int
+)
+"nstream.ml" 61 2294 2309 "nstream.ml" 61 2294 2357
+call(
+  stack
+)
+type(
+  string
+)
+"nstream.ml" 62 2361 2365 "nstream.ml" 62 2361 2377
+type(
+  Buffer.t -> unit
+)
+ident(
+  ext_ref Buffer.clear
+)
+"nstream.ml" 62 2361 2378 "nstream.ml" 62 2361 2381
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "nstream.ml" 38 1503 1509 "nstream.ml" 38 1503 1512
+)
+"nstream.ml" 62 2361 2365 "nstream.ml" 62 2361 2381
+call(
+  stack
+)
+type(
+  unit
+)
+"nstream.ml" 63 2383 2387 "nstream.ml" 63 2383 2404
+type(
+  Buffer.t -> string -> unit
+)
+ident(
+  ext_ref Buffer.add_string
+)
+"nstream.ml" 63 2383 2405 "nstream.ml" 63 2383 2408
+type(
+  Buffer.t
+)
+ident(
+  int_ref buf "nstream.ml" 38 1503 1509 "nstream.ml" 38 1503 1512
+)
+"nstream.ml" 63 2383 2409 "nstream.ml" 63 2383 2413
+type(
+  string
+)
+ident(
+  int_ref more "nstream.ml" 61 2294 2302 "nstream.ml" 61 2294 2306
+)
+"nstream.ml" 63 2383 2387 "nstream.ml" 63 2383 2413
+call(
+  stack
+)
+type(
+  unit
+)
+"nstream.ml" 64 2415 2423 "nstream.ml" 64 2415 2429
+type(
+  Pos.Region.t
+)
+ident(
+  def region "nstream.ml" 65 2467 2471 "nstream.ml" 70 2692 2697
+)
+"nstream.ml" 64 2415 2432 "nstream.ml" 64 2415 2445
+type(
+  Pos.Position.t -> Pos.Position.t -> Pos.Region.t
+)
+ident(
+  ext_ref Pos.Region.create
+)
+"nstream.ml" 64 2415 2446 "nstream.ml" 64 2415 2455
+type(
+  Pos.Position.t
+)
+ident(
+  int_ref pos_start "nstream.ml" 51 1886 1894 "nstream.ml" 51 1886 1903
+)
+"nstream.ml" 64 2415 2456 "nstream.ml" 64 2415 2463
+type(
+  Pos.Position.t
+)
+ident(
+  int_ref pos_end "nstream.ml" 52 1925 1933 "nstream.ml" 52 1925 1940
+)
+"nstream.ml" 64 2415 2432 "nstream.ml" 64 2415 2463
+call(
+  stack
+)
+type(
+  Pos.Region.t
+)
+"nstream.ml" 65 2467 2475 "nstream.ml" 65 2467 2481
+type(
+  int
+)
+ident(
+  def offset "nstream.ml" 66 2541 2545 "nstream.ml" 70 2692 2697
+)
+"nstream.ml" 65 2467 2484 "nstream.ml" 65 2467 2503
+type(
+  Pos.Region.t -> int
+)
+ident(
+  ext_ref Pos.Region.start_column
+)
+"nstream.ml" 65 2467 2504 "nstream.ml" 65 2467 2510
+type(
+  Pos.Region.t
+)
+ident(
+  int_ref region "nstream.ml" 64 2415 2423 "nstream.ml" 64 2415 2429
+)
+"nstream.ml" 65 2467 2484 "nstream.ml" 65 2467 2510
+call(
+  stack
+)
+type(
+  int
+)
+"nstream.ml" 65 2467 2511 "nstream.ml" 65 2467 2512
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"nstream.ml" 65 2467 2513 "nstream.ml" 65 2467 2532
+type(
+  Pos.Region.t -> int
+)
+ident(
+  ext_ref Pos.Region.start_column
+)
+"nstream.ml" 65 2467 2533 "nstream.ml" 65 2467 2537
+type(
+  Pos.Region.t
+)
+ident(
+  int_ref last "nstream.ml" 47 1747 1762 "nstream.ml" 47 1747 1766
+)
+"nstream.ml" 65 2467 2513 "nstream.ml" 65 2467 2537
+call(
+  stack
+)
+type(
+  int
+)
+"nstream.ml" 65 2467 2484 "nstream.ml" 65 2467 2537
+type(
+  int
+)
+"nstream.ml" 66 2541 2553 "nstream.ml" 66 2541 2559
+type(
+  Pos.Region.t
+)
+ident(
+  int_ref region "nstream.ml" 64 2415 2423 "nstream.ml" 64 2415 2429
+)
+"nstream.ml" 66 2541 2561 "nstream.ml" 66 2541 2568
+type(
+  string
+)
+ident(
+  int_ref between "nstream.ml" 57 2143 2151 "nstream.ml" 57 2143 2158
+)
+"nstream.ml" 66 2541 2570 "nstream.ml" 66 2541 2576
+type(
+  int
+)
+ident(
+  int_ref spaces "nstream.ml" 54 1968 1976 "nstream.ml" 54 1968 1982
+)
+"nstream.ml" 66 2541 2578 "nstream.ml" 66 2541 2583
+type(
+  Approx_lexer.token
+)
+ident(
+  int_ref token "nstream.ml" 49 1792 1800 "nstream.ml" 49 1792 1805
+)
+"nstream.ml" 66 2541 2585 "nstream.ml" 66 2541 2591
+type(
+  string
+)
+ident(
+  int_ref substr "nstream.ml" 58 2188 2196 "nstream.ml" 58 2188 2202
+)
+"nstream.ml" 66 2541 2593 "nstream.ml" 66 2541 2601
+type(
+  int
+)
+ident(
+  int_ref newlines "nstream.ml" 56 2082 2090 "nstream.ml" 56 2082 2098
+)
+"nstream.ml" 66 2541 2603 "nstream.ml" 66 2541 2609
+type(
+  int
+)
+ident(
+  int_ref offset "nstream.ml" 65 2467 2475 "nstream.ml" 65 2467 2481
+)
+"nstream.ml" 66 2541 2551 "nstream.ml" 66 2541 2611
+type(
+  token
+)
+"nstream.ml" 67 2613 2631 "nstream.ml" 67 2613 2636
+type(
+  Approx_lexer.token
+)
+ident(
+  int_ref token "nstream.ml" 49 1792 1800 "nstream.ml" 49 1792 1805
+)
+"nstream.ml" 68 2642 2652 "nstream.ml" 68 2642 2655
+type(
+  Approx_lexer.token
+)
+"nstream.ml" 68 2642 2659 "nstream.ml" 68 2642 2663
+type(
+  cons
+)
+"nstream.ml" 69 2664 2674 "nstream.ml" 69 2664 2675
+type(
+  Approx_lexer.token
+)
+"nstream.ml" 69 2664 2679 "nstream.ml" 69 2664 2683
+type(
+  Pos.Region.t -> cons
+)
+ident(
+  int_ref loop "nstream.ml" 47 1747 1757 "nstream.ml" 47 1747 1761
+)
+"nstream.ml" 69 2664 2684 "nstream.ml" 69 2664 2690
+type(
+  Pos.Region.t
+)
+ident(
+  int_ref region "nstream.ml" 64 2415 2423 "nstream.ml" 64 2415 2429
+)
+"nstream.ml" 69 2664 2679 "nstream.ml" 69 2664 2690
+call(
+  tail
+)
+type(
+  cons
+)
+"nstream.ml" 67 2613 2624 "nstream.ml" 69 2664 2691
+type(
+  cons
+)
+"nstream.ml" 67 2613 2619 "nstream.ml" 69 2664 2691
+type(
+  t
+)
+"nstream.ml" 66 2541 2545 "nstream.ml" 70 2692 2697
+type(
+  cons
+)
+"nstream.ml" 65 2467 2471 "nstream.ml" 70 2692 2697
+type(
+  cons
+)
+"nstream.ml" 64 2415 2419 "nstream.ml" 70 2692 2697
+type(
+  cons
+)
+"nstream.ml" 63 2383 2387 "nstream.ml" 70 2692 2697
+type(
+  cons
+)
+"nstream.ml" 62 2361 2365 "nstream.ml" 70 2692 2697
+type(
+  cons
+)
+"nstream.ml" 61 2294 2298 "nstream.ml" 70 2692 2697
+type(
+  cons
+)
+"nstream.ml" 60 2238 2242 "nstream.ml" 70 2692 2697
+type(
+  cons
+)
+"nstream.ml" 58 2188 2192 "nstream.ml" 70 2692 2697
+type(
+  cons
+)
+"nstream.ml" 57 2143 2147 "nstream.ml" 70 2692 2697
+type(
+  cons
+)
+"nstream.ml" 56 2082 2086 "nstream.ml" 70 2692 2697
+type(
+  cons
+)
+"nstream.ml" 55 2027 2031 "nstream.ml" 70 2692 2697
+type(
+  cons
+)
+"nstream.ml" 54 1968 1972 "nstream.ml" 70 2692 2697
+type(
+  cons
+)
+"nstream.ml" 50 1851 1855 "nstream.ml" 70 2692 2697
+type(
+  cons
+)
+"nstream.ml" 49 1792 1796 "nstream.ml" 70 2692 2697
+type(
+  cons
+)
+"nstream.ml" 72 2703 2711 "nstream.ml" 72 2703 2715
+type(
+  Pos.Region.t -> cons
+)
+ident(
+  int_ref loop "nstream.ml" 47 1747 1757 "nstream.ml" 47 1747 1761
+)
+"nstream.ml" 72 2703 2717 "nstream.ml" 72 2703 2730
+type(
+  Pos.Position.t -> Pos.Position.t -> Pos.Region.t
+)
+ident(
+  ext_ref Pos.Region.create
+)
+"nstream.ml" 72 2703 2731 "nstream.ml" 72 2703 2734
+type(
+  Pos.Position.t
+)
+ident(
+  int_ref pos "nstream.ml" 35 1365 1376 "nstream.ml" 35 1365 1379
+)
+"nstream.ml" 72 2703 2735 "nstream.ml" 72 2703 2738
+type(
+  Pos.Position.t
+)
+ident(
+  int_ref pos "nstream.ml" 35 1365 1376 "nstream.ml" 35 1365 1379
+)
+"nstream.ml" 72 2703 2716 "nstream.ml" 72 2703 2739
+call(
+  stack
+)
+type(
+  Pos.Region.t
+)
+"nstream.ml" 72 2703 2710 "nstream.ml" 72 2703 2740
+call(
+  tail
+)
+type(
+  cons
+)
+"nstream.ml" 72 2703 2705 "nstream.ml" 72 2703 2740
+type(
+  cons lazy_t
+)
+"nstream.ml" 47 1747 1749 "nstream.ml" 72 2703 2740
+type(
+  cons lazy_t
+)
+"nstream.ml" 46 1723 1725 "nstream.ml" 72 2703 2740
+type(
+  cons lazy_t
+)
+"nstream.ml" 45 1688 1690 "nstream.ml" 72 2703 2740
+type(
+  cons lazy_t
+)
+"nstream.ml" 44 1642 1644 "nstream.ml" 72 2703 2740
+type(
+  cons lazy_t
+)
+"nstream.ml" 39 1536 1538 "nstream.ml" 72 2703 2740
+type(
+  cons lazy_t
+)
+"nstream.ml" 38 1503 1505 "nstream.ml" 72 2703 2740
+type(
+  cons lazy_t
+)
+"nstream.ml" 74 2742 2746 "nstream.ml" 74 2742 2752
+type(
+  ?pos:Pos.Position.t -> in_channel -> cons lazy_t
+)
+ident(
+  def create "nstream.ml" 77 2808 2808 "_none_" 1 0 -1
+)
+"nstream.ml" 74 2742 2754 "nstream.ml" 74 2742 2757
+type(
+  Pos.Position.t option
+)
+ident(
+  def pos "nstream.ml" 74 2742 2758 "nstream.ml" 75 2763 2806
+)
+"nstream.ml" 74 2742 2758 "nstream.ml" 74 2742 2760
+type(
+  in_channel
+)
+ident(
+  def ic "nstream.ml" 75 2763 2765 "nstream.ml" 75 2763 2806
+)
+"nstream.ml" 75 2763 2765 "nstream.ml" 75 2763 2769
+type(
+  ?pos:Pos.Position.t -> (string -> int -> int) -> cons lazy_t
+)
+ident(
+  int_ref make "nstream.ml" 35 1365 1369 "nstream.ml" 35 1365 1373
+)
+"nstream.ml" 75 2763 2771 "nstream.ml" 75 2763 2774
+type(
+  Pos.Position.t option
+)
+ident(
+  int_ref pos "nstream.ml" 74 2742 2754 "nstream.ml" 74 2742 2757
+)
+"nstream.ml" 75 2763 2780 "nstream.ml" 75 2763 2783
+type(
+  string
+)
+ident(
+  def buf "nstream.ml" 75 2763 2784 "nstream.ml" 75 2763 2805
+)
+"nstream.ml" 75 2763 2784 "nstream.ml" 75 2763 2785
+type(
+  int
+)
+ident(
+  def n "nstream.ml" 75 2763 2789 "nstream.ml" 75 2763 2805
+)
+"nstream.ml" 75 2763 2789 "nstream.ml" 75 2763 2794
+type(
+  in_channel -> string -> int -> int -> int
+)
+ident(
+  ext_ref Pervasives.input
+)
+"nstream.ml" 75 2763 2795 "nstream.ml" 75 2763 2797
+type(
+  in_channel
+)
+ident(
+  int_ref ic "nstream.ml" 74 2742 2758 "nstream.ml" 74 2742 2760
+)
+"nstream.ml" 75 2763 2798 "nstream.ml" 75 2763 2801
+type(
+  string
+)
+ident(
+  int_ref buf "nstream.ml" 75 2763 2780 "nstream.ml" 75 2763 2783
+)
+"nstream.ml" 75 2763 2802 "nstream.ml" 75 2763 2803
+type(
+  int
+)
+"nstream.ml" 75 2763 2804 "nstream.ml" 75 2763 2805
+type(
+  int
+)
+ident(
+  int_ref n "nstream.ml" 75 2763 2784 "nstream.ml" 75 2763 2785
+)
+"nstream.ml" 75 2763 2789 "nstream.ml" 75 2763 2805
+call(
+  tail
+)
+type(
+  int
+)
+"nstream.ml" 75 2763 2775 "nstream.ml" 75 2763 2806
+type(
+  string -> int -> int
+)
+"nstream.ml" 75 2763 2765 "nstream.ml" 75 2763 2806
+call(
+  tail
+)
+type(
+  cons lazy_t
+)
+"nstream.ml" 77 2808 2812 "nstream.ml" 77 2808 2816
+type(
+  cons lazy_t -> (token * t) option
+)
+ident(
+  def next "nstream.ml" 79 2850 2895 "_none_" 1 0 -1
+)
+"nstream.ml" 78 2828 2837 "nstream.ml" 78 2828 2841
+type(
+  cons
+)
+"nstream.ml" 78 2828 2832 "nstream.ml" 78 2828 2841
+type(
+  cons lazy_t
+)
+"nstream.ml" 78 2828 2845 "nstream.ml" 78 2828 2849
+type(
+  (token * t) option
+)
+"nstream.ml" 79 2850 2866 "nstream.ml" 79 2850 2869
+type(
+  token
+)
+ident(
+  def car "nstream.ml" 79 2850 2880 "nstream.ml" 79 2850 2895
+)
+"nstream.ml" 79 2850 2871 "nstream.ml" 79 2850 2874
+type(
+  t
+)
+ident(
+  def cdr "nstream.ml" 79 2850 2880 "nstream.ml" 79 2850 2895
+)
+"nstream.ml" 79 2850 2859 "nstream.ml" 79 2850 2876
+type(
+  cons
+)
+"nstream.ml" 79 2850 2854 "nstream.ml" 79 2850 2876
+type(
+  cons lazy_t
+)
+"nstream.ml" 79 2850 2886 "nstream.ml" 79 2850 2889
+type(
+  token
+)
+ident(
+  int_ref car "nstream.ml" 79 2850 2866 "nstream.ml" 79 2850 2869
+)
+"nstream.ml" 79 2850 2891 "nstream.ml" 79 2850 2894
+type(
+  t
+)
+ident(
+  int_ref cdr "nstream.ml" 79 2850 2871 "nstream.ml" 79 2850 2874
+)
+"nstream.ml" 79 2850 2885 "nstream.ml" 79 2850 2895
+type(
+  token * t
+)
+"nstream.ml" 79 2850 2880 "nstream.ml" 79 2850 2895
+type(
+  (token * t) option
+)
+"nstream.ml" 77 2808 2819 "nstream.ml" 79 2850 2895
+type(
+  cons lazy_t -> (token * t) option
+)
