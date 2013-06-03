@@ -1,16 +1,4 @@
 
-FLAGS = -annot
-JSPKGS = -package js_of_ocaml -package js_of_ocaml.syntax \
-	 -syntax camlp4o -linkpkg
-
-CAMLC = ocamlc
-CAMLLEX = ocamllex
-CAMLDEP = ocamldep
-CAMLFIND = ocamlfind
-CAMLJS = $(CAMLFIND) $(CAMLC) $(JSPKGS) $(FLAGS) 
-
-PP = "camlp4o ~/.opam/4.00.1/lib/js_of_ocaml/pa_js.cmo"
-
 .SUFFIXES:
 .SUFFIXES: .ml .mli .mll .cmo .cmi .cma .js .byte
 
@@ -19,6 +7,9 @@ PP = "camlp4o ~/.opam/4.00.1/lib/js_of_ocaml/pa_js.cmo"
 
 .mli.cmi:
 	$(CAMLC) -c $(FLAGS) $<
+
+.mll.ml:
+	$(CAMLLEX) $<
 
 .mll.cmo:
 	$(CAMLLEX) $<

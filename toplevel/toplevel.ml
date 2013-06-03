@@ -43,17 +43,17 @@ external global_data : unit -> global_data Js.t = "caml_get_global_data"
 
 let g = global_data ()
 
-let _ =
-  let toc = g##toc in
-  let prims = split_primitives (List.assoc "PRIM" toc) in
+(* let _ = *)
+(*   let toc = g##toc in *)
+(*   let prims = split_primitives (List.assoc "PRIM" toc) in *)
 
-  let compile s =
-    let output_program = Driver.from_string prims s in
-    let b = Buffer.create 100 in
-    output_program (Pretty_print.to_buffer b);
-    Buffer.contents b
-  in
-  g##compile <- compile (*XXX HACK!*)
+(*   let compile s = *)
+(*     let output_program = Driver.from_string prims s in *)
+(*     let b = Buffer.create 100 in *)
+(*     output_program (Pretty_print.to_buffer b); *)
+(*     Buffer.contents b *)
+(*   in *)
+(*   g##compile <- compile (\*XXX HACK!*\) *)
 
 let exec ppf s =
   let lb = Lexing.from_string s in
@@ -153,25 +153,25 @@ let ensure_at_bol ppf =
     consume_nl := true; at_bol := true
   end
 
-let update_lesson_text () =
-  if !Tutorial.this_lesson <> 0 then begin
-    !init_in_lesson ();
-    set_div_by_id "lesson-text" !Tutorial.this_step_html
-  end
+(* let update_lesson_text () = *)
+(*   if !Tutorial.this_lesson <> 0 then begin *)
+(*     !init_in_lesson (); *)
+(*     set_div_by_id "lesson-text" !Tutorial.this_step_html *)
+(*   end *)
 
-let update_lesson_number () =
-  if  !Tutorial.this_lesson <> 0 then
-    set_div_by_id "lesson-number"
-      (Printf.sprintf "<span class=\"lesson\">%s %d</span>"
-         (Tutorial.translate "Lesson")
-         !Tutorial.this_lesson)
+(* let update_lesson_number () = *)
+(*   if  !Tutorial.this_lesson <> 0 then *)
+(*     set_div_by_id "lesson-number" *)
+(*       (Printf.sprintf "<span class=\"lesson\">%s %d</span>" *)
+(*          (Tutorial.translate "Lesson") *)
+(*          !Tutorial.this_lesson) *)
 
-let update_lesson_step_number () =
-  if !Tutorial.this_lesson <> 0 then
-    set_div_by_id "lesson-step"
-      (Printf.sprintf "<span class=\"step\">%s %d</span>"
-         (Tutorial.translate "Step")
-         !Tutorial.this_step)
+(* let update_lesson_step_number () = *)
+(*   if !Tutorial.this_lesson <> 0 then *)
+(*     set_div_by_id "lesson-step" *)
+(*       (Printf.sprintf "<span class=\"step\">%s %d</span>" *)
+(*          (Tutorial.translate "Step") *)
+(*          !Tutorial.this_step) *)
 
 let update_prompt prompt =
   set_div_by_id "sharp" prompt
@@ -224,11 +224,11 @@ let string_of_char_list list =
 
 let loop s ppf buffer =
   let s =
-    if !Tutorial.use_multiline then begin
-      input := List.rev ('\n' :: !output);
-      output := [];
-      s
-    end else begin
+    (* if !Tutorial.use_multiline then begin *)
+    (*   input := List.rev ('\n' :: !output); *)
+    (*   output := []; *)
+    (*   s *)
+    (* end else *) begin
       let need_terminator = ref true in
       for i = 0 to String.length s - 2 do
         if s.[i] = ';' && s.[i+1] = ';' then need_terminator := false;
@@ -247,38 +247,39 @@ let loop s ppf buffer =
           with End_of_file -> raise End_of_input
             | e ->
               let input = string_of_char_list (List.rev !output) in
-              Tutorial.print_debug (Printf.sprintf "debug: input = [%s]"  (String.escaped input));
+              (* Tutorial.print_debug (Printf.sprintf "debug: input = [%s]"  (String.escaped input)); *)
               raise e
         in
         let input = string_of_char_list (List.rev !output) in
-        Tutorial.print_debug (Printf.sprintf "debug: input = [%s]"  (String.escaped input));
-        if !Tutorial.use_multiline then begin
-          match !output with
-              ';' :: ';' :: _ -> output := []
-            | _ -> assert false
-        end else output := [];
+        (* Tutorial.print_debug (Printf.sprintf "debug: input = [%s]"  (String.escaped input)); *)
+        (* if !Tutorial.use_multiline then begin *)
+        (*   match !output with *)
+        (*       ';' :: ';' :: _ -> output := [] *)
+        (*     | _ -> assert false *)
+        (* end else *) output := [];
         ensure_at_bol ppf;
         Buffer.clear buffer;
-        Tutorial.print_debug s;
+        (* Tutorial.print_debug s; *)
         ignore (Toploop.execute_phrase true ppf phr);
-        Tutorial.print_debug (Printf.sprintf "debug: phrase executed");
+        (* Tutorial.print_debug (Printf.sprintf "debug: phrase executed"); *)
         let res = Buffer.contents buffer in
-        Tutorial.check_step ppf input res;
-        update_lesson_text ();
-        update_lesson_number ();
-        update_lesson_step_number ();
+        (* Tutorial.check_step ppf input res; *)
+        (* update_lesson_text (); *)
+        (* update_lesson_number (); *)
+        (* update_lesson_step_number (); *)
+	()
       with
           End_of_input ->
             ensure_at_bol ppf;
             raise End_of_input
         | x ->
-          Tutorial.print_debug (Printf.sprintf "execption %s" (Printexc.to_string x));
+          (* Tutorial.print_debug (Printf.sprintf "execption %s" (Printexc.to_string x)); *)
           let do_report_error =
-            if !Tutorial.use_multiline then
-              match !output with
-                  '\000' :: _ -> false
-                | _ -> true
-            else true
+            (* if !Tutorial.use_multiline then *)
+            (*   match !output with *)
+            (*       '\000' :: _ -> false *)
+            (*     | _ -> true *)
+            (* else *) true
           in
           if do_report_error then begin
             output := [];
@@ -298,13 +299,13 @@ let loop s ppf buffer =
           update_prompt (Printf.sprintf "[%s]> " s)
   end
 
-let _ =
-  Tutorial.message_fun := (fun s ->
-    if  !Tutorial.this_lesson <> 0 then
-      set_div_by_id "lesson-message"
-        (Printf.sprintf
-           "<div class=\"alert-message block-message success\">%s</div>" s)
-  )
+(* let _ = *)
+(*   Tutorial.message_fun := (fun s -> *)
+(*     if  !Tutorial.this_lesson <> 0 then *)
+(*       set_div_by_id "lesson-message" *)
+(*         (Printf.sprintf *)
+(*            "<div class=\"alert-message block-message success\">%s</div>" s) *)
+(*   ) *)
 
 let to_update = [
   "main-title", "Try OCaml";
@@ -328,14 +329,14 @@ let to_update = [
   "text-back", "Move to the previous step";
 ]
 
-let _ =
-  Tutorial.update_lang_fun := (fun _ ->
-    List.iter (fun list ->
-      List.iter (fun (id, s) ->
-        set_div_by_id id (Tutorial.translate s))
-        list)
-      [ to_update; !Button.registered_buttons ]
-  )
+(* let _ = *)
+(*   Tutorial.update_lang_fun := (fun _ -> *)
+(*     List.iter (fun list -> *)
+(*       List.iter (fun (id, s) -> *)
+(*         set_div_by_id id (Tutorial.translate s)) *)
+(*         list) *)
+(*       [ to_update; !Button.registered_buttons ] *)
+(*   ) *)
 
 let get_storage () =
   match Js.Optdef.to_option window##localStorage with
@@ -416,7 +417,7 @@ let run () =
     List.iter (fun code ->
       let html =  code##innerHTML in
       let txt = text_of_html (Js.to_string html) in
-      code##title <- _s (Tutorial.translate "Click here to execute this code");
+      (* code##title <- _s (Tutorial.translate "Click here to execute this code"); *)
       code##onclick <- Html.handler (fun _ ->
         textbox##value <- _s ( txt ^ ";;" );
         execute ();
@@ -434,7 +435,7 @@ let run () =
     history_frwrd := [];
     textbox##value <- _s "";
     (try loop s ppf buffer with _ -> ());
-    Tutorial.debug_fun := (fun s -> Firebug.console##log (_s s));
+    (* Tutorial.debug_fun := (fun s -> Firebug.console##log (_s s)); *)
     make_code_clickable ();
     textbox##focus();
     container##scrollTop <- container##scrollHeight
@@ -541,14 +542,14 @@ let run () =
     textbox##style##width <- _s ((string_of_int (i * 7)) ^ "px") in
 
   let send_button =
-    Button.create (Tutorial.translate "Send") (fun () -> execute ()) in
+    Button.create ((* Tutorial.translate *) "Send") (fun () -> execute ()) in
   let clear_button =
     Button.create
-      (Tutorial.translate "Clear") (fun () -> clear ()) in
+      ((* Tutorial.translate *) "Clear") (fun () -> clear ()) in
   let reset_button =
-    Button.create (Tutorial.translate "Reset") (fun () -> reset ()) in
+    Button.create ((* Tutorial.translate  *)"Reset") (fun () -> reset ()) in
   let save_button =
-    Button.create (Tutorial.translate "Save") (fun () ->
+    Button.create ((* Tutorial.translate  *)"Save") (fun () ->
     let content = Js.to_string output_area##innerHTML in
     let l = Regexp.split (Regexp.regexp ("\n")) content in
     let content =
@@ -564,31 +565,31 @@ let run () =
     let _ = window##open_(uriContent, _s "Try OCaml", Js.null) in
     window##close ()) in
 
-  let update_lesson () =
-    update_lesson_number ();
-    update_lesson_step_number ();
-    update_lesson_text ();
-    make_code_clickable ();
-    Cookie.set_cookie "lang" (Tutorial.lang ());
-    Cookie.set_cookie "lesson" (string_of_int !Tutorial.this_lesson);
-    Cookie.set_cookie "step" (string_of_int !Tutorial.this_step)
-  in
+  (* let update_lesson () = *)
+  (*   update_lesson_number (); *)
+  (*   update_lesson_step_number (); *)
+  (*   update_lesson_text (); *)
+  (*   make_code_clickable (); *)
+  (*   Cookie.set_cookie "lang" (Tutorial.lang ()); *)
+  (*   Cookie.set_cookie "lesson" (string_of_int !Tutorial.this_lesson); *)
+  (*   Cookie.set_cookie "step" (string_of_int !Tutorial.this_step) *)
+  (* in *)
 
   (* Choose your language *)
   let form = Html.createDiv doc in
   let sel = Dom_html.createSelect doc in
   sel##id <- _s "languages";
-  List.iter (fun (_, (lang, _)) ->
-    let opt = Html.createOption doc in
-    Dom.appendChild opt (doc##createTextNode (_s lang));
-    sel##add (opt, Js.null);
-  ) Tutorial.langs;
+  (* List.iter (fun (_, (lang, _)) -> *)
+  (*   let opt = Html.createOption doc in *)
+  (*   Dom.appendChild opt (doc##createTextNode (_s lang)); *)
+  (*   sel##add (opt, Js.null); *)
+  (* ) Tutorial.langs; *)
   sel##onchange <-
     Html.handler
     (fun _ ->
-      Tutorial.set_lang (fst (List.nth Tutorial.langs sel##selectedIndex));
-      Cookie.set_cookie "lang" (Tutorial.lang ());
-      update_lesson ();
+      (* Tutorial.set_lang (fst (List.nth Tutorial.langs sel##selectedIndex)); *)
+      (* Cookie.set_cookie "lang" (Tutorial.lang ()); *)
+      (* update_lesson (); *)
       Js._true);
   Dom.appendChild form sel;
   let langs = get_element_by_id "languages" in
@@ -599,46 +600,46 @@ let run () =
     send_button; clear_button; reset_button; save_button];
 
   (* Choice of lesson and step with URL *)
-  let update_lesson_step lesson step =
-    Tutorial.lesson lesson;
-    Tutorial.step step;
-    update_lesson () in
+  (* let update_lesson_step lesson step = *)
+  (*   Tutorial.lesson lesson; *)
+  (*   Tutorial.step step; *)
+  (*   update_lesson () in *)
 
-  init_in_lesson :=
-    (let init = ref false in
-     fun () ->
-       if not !init then begin
-         init := true;
+  (* init_in_lesson := *)
+  (*   (let init = ref false in *)
+  (*    fun () -> *)
+  (*      if not !init then begin *)
+  (*        init := true; *)
 
-         append_children "lesson-left-button" [
-           Button.create_with_image "images/left2.png" 16 (Tutorial.translate "left2")
-             (fun _ ->
-               Tutorial.lesson (!Tutorial.this_lesson-1);
-               update_lesson ();
-             );
-         ];
-         append_children "lesson-right-button" [
-           Button.create_with_image "images/right2.png" 16 (Tutorial.translate "right2")
-             (fun _ ->
-               Tutorial.lesson (!Tutorial.this_lesson+1);
-               update_lesson ();
-             );
-         ];
-         append_children "step-left-button" [
-           Button.create_with_image "images/left1.png" 16 (Tutorial.translate"left1")
-             (fun _ ->
-               Tutorial.back();
-             update_lesson ();
-           );
-         ];
-         append_children "step-right-button" [
-           Button.create_with_image "images/right1.png" 16 (Tutorial.translate "right1")
-             (fun _ ->
-             Tutorial.next();
-             update_lesson ();
-           );
-         ];
-       end);
+  (*        append_children "lesson-left-button" [ *)
+  (*          Button.create_with_image "images/left2.png" 16 (Tutorial.translate "left2") *)
+  (*            (fun _ -> *)
+  (*              Tutorial.lesson (!Tutorial.this_lesson-1); *)
+  (*              update_lesson (); *)
+  (*            ); *)
+  (*        ]; *)
+  (*        append_children "lesson-right-button" [ *)
+  (*          Button.create_with_image "images/right2.png" 16 (Tutorial.translate "right2") *)
+  (*            (fun _ -> *)
+  (*              Tutorial.lesson (!Tutorial.this_lesson+1); *)
+  (*              update_lesson (); *)
+  (*            ); *)
+  (*        ]; *)
+  (*        append_children "step-left-button" [ *)
+  (*          Button.create_with_image "images/left1.png" 16 (Tutorial.translate"left1") *)
+  (*            (fun _ -> *)
+  (*              Tutorial.back(); *)
+  (*            update_lesson (); *)
+  (*          ); *)
+  (*        ]; *)
+  (*        append_children "step-right-button" [ *)
+  (*          Button.create_with_image "images/right1.png" 16 (Tutorial.translate "right1") *)
+  (*            (fun _ -> *)
+  (*            Tutorial.next(); *)
+  (*            update_lesson (); *)
+  (*          ); *)
+  (*        ]; *)
+  (*      end); *)
 
   output_area##scrollTop <- output_area##scrollHeight;
   make_code_clickable ();
@@ -669,12 +670,12 @@ let run () =
 
   let set_lang_from_cookie () =
     let lang = get_lang_from_cookie () in
-    if lang <> "" then Tutorial.set_lang lang in
+    (* if lang <> "" then Tutorial.set_lang lang  *) () in
 
-  let set_lesson_step_from_cookie () =
-    let lesson = get_lesson_from_cookie () in
-    let step = get_step_from_cookie () in
-    update_lesson_step lesson step in
+  (* let set_lesson_step_from_cookie () = *)
+  (*   let lesson = get_lesson_from_cookie () in *)
+  (*   let step = get_step_from_cookie () in *)
+  (*   update_lesson_step lesson step in *)
 
   (* Check if language has change in URL *)
   let url = Js.decodeURI loc##href in
@@ -685,32 +686,32 @@ let run () =
       | Some r ->
         match Regexp.matched_group r 1 with
             None -> set_lang_from_cookie ()
-          | Some s ->
-              Tutorial.set_lang s;
-              Cookie.set_cookie "lang" (Tutorial.lang ()) in
+          | Some s -> ()
+              (* Tutorial.set_lang s; *)
+              (* Cookie.set_cookie "lang" (Tutorial.lang ()) *) in
   let reg_lesson = Regexp.regexp ".*lesson=([0-9]+).*" in
   let reg_step = Regexp.regexp ".*step=([0-9]+).*" in
-  let _ =
-    match Regexp.string_match reg_lesson (Js.to_string url) 0 with
-      | None -> ()
-      | Some r ->
-        match Regexp.matched_group r 1 with
-            None -> ()
-          | Some s ->
-              Cookie.set_cookie "lesson" s;
-            Tutorial.lesson (int_of_string s) in
-  let _ =
-    match Regexp.string_match reg_step (Js.to_string url) 0 with
-      | None -> set_lesson_step_from_cookie ()
-      | Some r ->
-        match Regexp.matched_group r 1 with
-            None -> set_lesson_step_from_cookie ()
-          | Some s ->
-              Cookie.set_cookie "step" s;
-              Tutorial.step (int_of_string s) in
-  update_lesson_step !Tutorial.this_lesson !Tutorial.this_step;
-  let _ =
-    Tutorial.read_fun := (fun msg default -> read_from_input ~msg:msg ~default:default) in
+  (* let _ = *)
+  (*   match Regexp.string_match reg_lesson (Js.to_string url) 0 with *)
+  (*     | None -> () *)
+  (*     | Some r -> *)
+  (*       match Regexp.matched_group r 1 with *)
+  (*           None -> () *)
+  (*         | Some s -> () *)
+            (*   Cookie.set_cookie "lesson" s; *)
+            (* Tutorial.lesson (int_of_string s) in *)
+  (* let _ = *)
+  (*   match Regexp.string_match reg_step (Js.to_string url) 0 with *)
+  (*     | None -> set_lesson_step_from_cookie () *)
+  (*     | Some r -> *)
+  (*       match Regexp.matched_group r 1 with *)
+  (*           None -> set_lesson_step_from_cookie () *)
+  (*         | Some s -> *)
+  (*             Cookie.set_cookie "step" s; *)
+  (*             Tutorial.step (int_of_string s) in *)
+  (* update_lesson_step !Tutorial.this_lesson !Tutorial.this_step; *)
+  (* let _ = *)
+  (*   Tutorial.read_fun := (fun msg default -> read_from_input ~msg:msg ~default:default) in *)
   Js._false
 
 let main () =
@@ -722,6 +723,6 @@ let main () =
 
 (* Force some dependencies to be linked : *)
 let _ =
-  Tutorial.init ();
+  (* Tutorial.init (); *)
   Topnum.init ();
   ()

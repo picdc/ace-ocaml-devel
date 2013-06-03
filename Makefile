@@ -1,8 +1,12 @@
 
+include Makefile.config
 include Makefile.rules
 
 OCPDIR= ocp-indent-src
 OCPLIB= -I $(OCPDIR) ocp_indent.cma
+
+# TOPLVLDIR= toplevel
+# TOPLVLLIB= -I $(TOPLVLDIR) toplevel.cma
 
 LIBS= $(OCPLIB)
 
@@ -17,9 +21,9 @@ indent_js.cmo:
 ace_utils.cmo:
 	$(CAMLJS) -c $*.ml
 
-
 main.byte: indent_js.cmo ace_utils.cmo
-	$(CAMLJS) -o $@ $(LIBS) $^ $*.ml
+#	$(MAKE) -C $(TOPLVLDIR)
+	$(CAMLJS) $(LIBS) -o $@ $^ $*.ml
 
 
 main.js: main.byte

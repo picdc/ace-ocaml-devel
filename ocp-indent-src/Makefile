@@ -1,4 +1,5 @@
 
+include ../Makefile.config
 include ../Makefile.rules
 
 SOURCES = util.ml pos.ml compat.ml approx_tokens.ml approx_lexer.mll \
@@ -16,6 +17,7 @@ all: depend ocp_indent.cma
 
 ocp_indent.cma: $(OBJS)
 	$(CAMLC) -a -o $@ $(FLAGS) $^
+	cp $@ ../lib
 
 clean:
 	rm -f *~ \#*\# *.cm[ioa] *.annot
