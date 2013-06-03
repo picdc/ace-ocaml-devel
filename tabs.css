@@ -1,0 +1,12 @@
+
+
+#tabs {
+    overflow: hidden;
+    list-style: none;
+}
+
+#tabs li {
+    overflow: hidden;
+    border: 1px solid black;
+    width: 100px;
+}

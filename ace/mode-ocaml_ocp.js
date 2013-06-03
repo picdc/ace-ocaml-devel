@@ -49,7 +49,9 @@ oop.inherits(Mode, TextMode);
 
 
 
-
+/**********************************************************/
+/*   Indent definition                                    */
+/**********************************************************/
 
 
 function indent_lines(editor, start, end) {
@@ -124,8 +126,6 @@ var outdenter = /^[' '|'\t']*(in|(end[' '|'\t']*;?)|let)[' '|'\t']*$/;
 	var currline = editor.getCursorPosition().row;
 
         var nb = ocpiNum(text, currline+1, currline+1);
-        
-        // console.log("J'indente de : "+nb+" lignes (ocp)");
 
         var indent = "";
         for (i=0; i<nb; i++) {
@@ -158,6 +158,14 @@ var outdenter = /^[' '|'\t']*(in|(end[' '|'\t']*;?)|let)[' '|'\t']*$/;
 
 exports.Mode = Mode;
 });
+
+
+
+/**********************************************************/
+/*   Highlight definition                                 */
+/**********************************************************/
+
+
 
 define('ace/mode/ocaml_highlight_rules', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/text_highlight_rules'], function(require, exports, module) {
 
@@ -466,6 +474,18 @@ oop.inherits(OcamlHighlightRules, TextHighlightRules);
 
 exports.OcamlHighlightRules = OcamlHighlightRules;
 });
+
+
+
+
+
+
+
+/**********************************************************/
+/*   ??? definition                                       */
+/**********************************************************/
+
+
 
 define('ace/mode/matching_brace_outdent', ['require', 'exports', 'module' , 'ace/range'], function(require, exports, module) {
 
