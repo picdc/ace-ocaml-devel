@@ -3,27 +3,44 @@
     overflow: hidden;
 }
 
-#tabs {
+#divtabs #tabs {
+    float: left;
     list-style: none;
     height: 50px;
 }
 
-#tabs li {
+#divtabs #tabs li {
     float: left;
     border: 1px solid black;
-
 }
 
-#tabs li .tabtitle {
+
+#divtabs #tabs .active {
+    background-color: #DFD;
+}
+
+#divtabs #tabs li:hover {
+    background-color: #DDD;
+}
+
+#divtabs #tabs li .tabtitle {
     display: inline-block;
     overflow: hidden;
     width: 100px;
 }
 
-#tabs li .tabclose {
+#divtabs #tabs li .tabclose {
     display: inline-block;
     width: 20px;
     font-weight: bold;
     text-align: center;
     border: 1px solid black;
+}
+
+#divtabs #tabs li .tabclose:hover {
+    color: red;
+}
+
+#divtabs #tab #newTabButton {
+   display: inline-block;
 }
