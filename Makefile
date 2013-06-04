@@ -14,7 +14,7 @@ OBJS_JS= $(SOURCES_JS:.ml=.cmo)
 
 LIBS= $(OCPLIB)
 
-JSFLAGS = -pretty
+JSFLAGS = -pretty -noinline
 
 .PHONY: depend
 
@@ -22,7 +22,7 @@ all: depend main.js
 
 main.js: main.byte
 	js_of_ocaml $(JSFLAGS) $<
-	oclosure_req $@
+#	oclosure_req $@
 
 main.byte: indent_js.cmo $(OBJS_JS)
 	$(CAMLJS) $(LIBS) -o $@ $^ $*.ml
@@ -39,7 +39,7 @@ $(OBJS_JS): $(SOURCES_JS)
 clean:
 	rm .depend
 	rm -f *~ \#*\# *.cm[ioa] *.annot
-	rm -f *.byte a.out main.js main_oclosure.js
+	rm -f *.byte a.out main.js
 
 clean-all: clean
 	$(MAKE) -C $(OCPDIR) clean

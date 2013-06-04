@@ -8,6 +8,7 @@ module H = Hashtbl
 let htbl = H.create 19
 
 let curr_tab = ref 0
+let tabs = ref []
 let nb_untitled = ref 0
 
 let change_tab id =
@@ -20,9 +21,9 @@ let change_tab id =
 
   (* Changement du focus du tab *)
   let old_tab = get_element_by_id (Format.sprintf "tabnum%d" !curr_tab) in
-  old_tab##className <- Js.string "";
+  old_tab##className <- Js.string "tab";
   let new_tab = get_element_by_id (Format.sprintf "tabnum%d" id) in
-  new_tab##className <- Js.string "active";
+  new_tab##className <- Js.string "tab active";
   curr_tab := id
 
 
@@ -30,12 +31,13 @@ let rec add_tab title content =
   let i = !id in
   H.add htbl i (title, content);
   incr id;
-  let ul = get_element_by_id "tabs" in
-  let new_span_title = createDiv document in
-  let new_span_close = createDiv document in
-  let new_li = createLi document in
+  let tr = get_element_by_id "divtabs" in
+  let new_span_title = createSpan document in
+  let new_span_close = createSpan document in
+  let new_td = createSpan document in
   let span_id = Format.sprintf "tabnum%d" i in
-  new_li##id <- Js.string span_id;
+  new_td##id <- Js.string span_id;
+  new_td##className <- Js.string "tab";
   new_span_title##innerHTML <- Js.string title;
   new_span_title##className <- Js.string "tabtitle";
   new_span_title##onclick <- handler ( fun _ ->
@@ -46,9 +48,9 @@ let rec add_tab title content =
   new_span_close##onclick <- handler ( fun _ ->
     close_tab i;
     Js._true);
-  Dom.appendChild new_li new_span_title;
-  Dom.appendChild new_li new_span_close;
-  Dom.appendChild ul new_li;
+  Dom.appendChild new_td new_span_title;
+  Dom.appendChild new_td new_span_close;
+  Dom.appendChild tr new_td;
   i
 
 and add_untitled_tab () =
@@ -92,10 +94,6 @@ and close_tab id =
 
 
 let _ =
-  ignore (add_untitled_tab ());
-  let first_tab = get_element_by_id "tabnum0" in
-  first_tab##className <- Js.string "active";
-
   (* Création du bouton d'importation des fichiers *)
   let container = get_element_by_id "input" in
   let button = createInput
@@ -144,36 +142,9 @@ let _ =
     ignore (add_untitled_tab ());
     Js._true
   );
-  Dom.appendChild container button(* ; *)
+  Dom.appendChild container button;
 
-  (* let domHelper = jsnew Goog.Gdom.domHelper() in *)
-  (* let loc_pre = Goog.Ui.TabBar.location_pre_of_location *)
-  (*   Goog.Ui.TabBar.TOP in *)
-  (* (\* let tabBarRend = jsnew Goog.Ui.tabBarRenderer() in *\) *)
 
-  (* let a = jsnew Goog.Ui.tabBar( *)
-  (*   Js.Opt.return loc_pre, *)
-  (*   Js.Opt.empty, *)
-  (*   Js.Opt.return domHelper) *)
-  (* in *)
-  (* a##render(Js.some Dom_html.document##body) *)
-open Js
-
-let my_alert s =
-  let dialog = jsnew Goog.Ui.dialog(Js.null, Js.null, Js.null) in
-  dialog##setContent(Js.string s);
-  dialog##setVisible(Js._true)
-
-let onload evt =
-  let click = Goog.Ui.ControlContent.string (Js.string "Click") in
-  let button = jsnew Goog.Ui.button(click, Js.null, Js.null) in
-  ignore
-    (Goog.Events.listen
-       (Goog.Tools.Union.i1 button)
-       (Js.string "action")
-       (Js.wrap_callback (fun _ -> my_alert "Hello world!"))
-       Js.null);
-  button##render(Js.some Dom_html.document##body);
-  Js._true
-
-let _ = Dom_html.window##onload <- Dom_html.handler onload
+  ignore (add_untitled_tab ());
+  let first_tab = get_element_by_id "tabnum0" in
+  first_tab##className <- Js.string "tab active";
