@@ -16,6 +16,8 @@ LIBS= $(OCPLIB)
 
 JSFLAGS = -pretty
 
+.PHONY: depend
+
 all: depend main.js
 
 main.js: main.byte
