@@ -2,7 +2,7 @@
 include Makefile.config
 include Makefile.rules
 
-SOURCES_JS= ace_utils.ml tabs.ml
+SOURCES= ace_utils.ml tabs.ml
 
 OCPDIR= ocp-indent-src
 OCPLIB= -I $(OCPDIR) ocp_indent.cma
@@ -10,7 +10,7 @@ OCPLIB= -I $(OCPDIR) ocp_indent.cma
 # TOPLVLDIR= toplevel
 # TOPLVLLIB= -I $(TOPLVLDIR) toplevel.cma
 
-OBJS_JS= $(SOURCES_JS:.ml=.cmo)
+OBJS= $(SOURCES:.ml=.cmo)
 
 LIBS= $(OCPLIB)
 
@@ -22,9 +22,9 @@ all: depend main.js
 
 main.js: main.byte
 	js_of_ocaml $(JSFLAGS) $<
-#	oclosure_req $@
 
-main.byte: indent_js.cmo $(OBJS_JS)
+
+main.byte: indent_js.cmo $(OBJS)
 	$(CAMLJS) $(LIBS) -o $@ $^ $*.ml
 
 
@@ -32,7 +32,7 @@ indent_js.cmo:
 	$(MAKE) -C $(OCPDIR)
 	$(CAMLJS) -c $(OCPLIB) $*.ml
 
-$(OBJS_JS): $(SOURCES_JS)
+$(OBJS): $(SOURCES)
 	$(CAMLJS) -c $*.ml
 
 
@@ -45,7 +45,7 @@ clean-all: clean
 	$(MAKE) -C $(OCPDIR) clean
 
 
-depend: $(SOURCES) $(SOURCES_JS)
+depend: $(SOURCES)
 	$(CAMLDEP) -pp $(PP) *.mli *.ml > .depend
 
-include .depend
+-include .depend

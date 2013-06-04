@@ -144,7 +144,6 @@ let _ =
   );
   Dom.appendChild container button;
 
-
   ignore (add_untitled_tab ());
   let first_tab = get_element_by_id "tabnum0" in
   first_tab##className <- Js.string "tab active";
