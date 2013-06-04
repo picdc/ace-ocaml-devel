@@ -10,6 +10,53 @@ let htbl = H.create 19
 let curr_tab = ref 0
 let nb_untitled = ref 0
 
+let tabs_offset = ref 0
+let len = ref 4
+
+let tabs_list = ref []
+
+
+(** Utils functions **)
+
+exception InvalidSublist
+
+let sublist list off len = 
+  let rec step off len acc = function
+    | [] -> if len > 0 then raise InvalidSublist
+      else acc
+    | v :: l -> if off > 0 then step (off-1) len acc l
+      else if len > 0 then
+        let acc = v :: acc in 
+        step off (len-1) acc l
+      else acc
+  in
+  List.rev (step off len [] list)
+      
+
+
+(** **)
+
+let init_tabs_drawing () =
+  let sc_left = createTd document in
+  let sc_right = createTd document in
+  let new_tab = createTd document in
+  ()
+  
+
+let update_tabs_drawing () = 
+  let l = sublist !tabs_list !tabs_offset !len in
+  let tab = get_element_by_id "tabs" in
+  let tabs = tab##childNodes () in
+  let length = tabs##length () in
+  for i = 0 to length do
+    begin
+      let n = tabs##item i in
+      tab##remove n;
+    end
+  done;
+  let elements_list = 
+
+
 let change_tab id =
   (* Changement du tab *)
   let title = fst (H.find htbl !curr_tab) in
@@ -49,6 +96,9 @@ let rec add_tab title content =
   Dom.appendChild new_li new_span_title;
   Dom.appendChild new_li new_span_close;
   Dom.appendChild ul new_li;
+
+  tabs_list := (i, title) :: !tabs_list;
+  update_tabs_drawing ();
   i
 
 and add_untitled_tab () =
@@ -88,6 +138,8 @@ and close_tab id =
   in
   change_tab next_id;
   H.remove htbl id;
+  tabs_list := List.remove_assoc id !tabs_list;
+  update_tabs_drawing ();
   Dom.removeChild ul li
 
 
@@ -131,29 +183,17 @@ let _ =
   );
   Dom.appendChild container button;
 
-  (* (\* Création du bouton pour faire un nouvel onglet vide *\) *)
-  (* let container = get_element_by_id "divtabs" in *)
-  (* let button = createInput *)
-  (*   ~name:(Js.string "newEmptyTab") *)
-  (*   ~_type:(Js.string "button") *)
-  (*   document *)
-  (* in *)
-  (* button##value <- Js.string "+"; *)
-  (* button##id <- Js.string "newTabButton"; *)
-  (* button##onclick <- handler (fun _ -> *)
-  (*   ignore (add_untitled_tab ()); *)
-  (*   Js._true *)
-  (* ); *)
-  (* Dom.appendChild container button; *)
-
-  let domHelper = jsnew Goog.Gdom.domHelper() in
-  let loc_pre = Goog.Ui.TabBar.location_pre_of_location
-    Goog.Ui.TabBar.TOP in
-  (* let tabBarRend = jsnew Goog.Ui.tabBarRenderer() in *)
-
-  let a = jsnew Goog.Ui.tabBar(
-    Js.Opt.return loc_pre,
-    Js.Opt.empty,
-    Js.Opt.return domHelper)
+  (* Création du bouton pour faire un nouvel onglet vide *)
+  let container = get_element_by_id "divtabs" in
+  let button = createInput
+    ~name:(Js.string "newEmptyTab")
+    ~_type:(Js.string "button")
+    document
   in
-  a##render(Js.some Dom_html.document##body)
+  button##value <- Js.string "+";
+  button##id <- Js.string "newTabButton";
+  button##onclick <- handler (fun _ ->
+    ignore (add_untitled_tab ());
+    Js._true
+  );
+  Dom.appendChild container button;
