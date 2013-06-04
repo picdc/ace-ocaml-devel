@@ -20,9 +20,11 @@ JSFLAGS = -pretty
 
 all: depend main.js
 
+oclosure: main.js
+	oclosure_req $<
+
 main.js: main.byte
 	js_of_ocaml $(JSFLAGS) $<
-	oclosure_req $@
 
 main.byte: indent_js.cmo $(OBJS_JS)
 	$(CAMLJS) $(LIBS) -o $@ $^ $*.ml
