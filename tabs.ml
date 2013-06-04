@@ -2,8 +2,6 @@
 open Dom_html
 open Ace_utils
 
-
-
 let id = ref 0
 module H = Hashtbl
 
@@ -146,4 +144,36 @@ let _ =
     ignore (add_untitled_tab ());
     Js._true
   );
-  Dom.appendChild container button;
+  Dom.appendChild container button(* ; *)
+
+  (* let domHelper = jsnew Goog.Gdom.domHelper() in *)
+  (* let loc_pre = Goog.Ui.TabBar.location_pre_of_location *)
+  (*   Goog.Ui.TabBar.TOP in *)
+  (* (\* let tabBarRend = jsnew Goog.Ui.tabBarRenderer() in *\) *)
+
+  (* let a = jsnew Goog.Ui.tabBar( *)
+  (*   Js.Opt.return loc_pre, *)
+  (*   Js.Opt.empty, *)
+  (*   Js.Opt.return domHelper) *)
+  (* in *)
+  (* a##render(Js.some Dom_html.document##body) *)
+open Js
+
+let my_alert s =
+  let dialog = jsnew Goog.Ui.dialog(Js.null, Js.null, Js.null) in
+  dialog##setContent(Js.string s);
+  dialog##setVisible(Js._true)
+
+let onload evt =
+  let click = Goog.Ui.ControlContent.string (Js.string "Click") in
+  let button = jsnew Goog.Ui.button(click, Js.null, Js.null) in
+  ignore
+    (Goog.Events.listen
+       (Goog.Tools.Union.i1 button)
+       (Js.string "action")
+       (Js.wrap_callback (fun _ -> my_alert "Hello world!"))
+       Js.null);
+  button##render(Js.some Dom_html.document##body);
+  Js._true
+
+let _ = Dom_html.window##onload <- Dom_html.handler onload
