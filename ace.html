@@ -1,77 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>ACE in Action</title>
-    <style type="text/css" media="screen">
-      #editor {
-      position: block;
-      height: 350px;
-      border: 1px solid #DDD;
-      }
-    </style>
-    
-    <!-- <script src="closure-library/closure/goog/base.js"></script> -->
-    <!-- <script> -->
-    <!--   goog.require('goog.debug.DivConsole'); -->
-    <!--   goog.require('goog.debug.Logger'); -->
-    <!--   goog.require('goog.debug.Logger.Level'); -->
-    <!--   goog.require('goog.debug.LogManager'); -->
-    <!--   goog.require('goog.dom'); -->
-    <!--   goog.require('goog.events'); -->
-    <!--   goog.require('goog.events.EventType'); -->
-    <!--   goog.require('goog.object'); -->
-    <!--   goog.require('goog.ui.Component.EventType'); -->
-    <!--   goog.require('goog.ui.RoundedTabRenderer'); -->
-    <!--   goog.require('goog.ui.Tab'); -->
-    <!--   goog.require('goog.ui.TabBar'); -->
-    <!-- </script> -->
- 
+<<<<<<< HEAD
+<head>
+<title>ACE in Action</title>
+<style type="text/css" media="screen">
+  #editor {
+    position: block;
+    height: 350px;
+    border: 1px solid #DDD;
+  }
+</style>
+<link rel="stylesheet" type="text/css"
+      href="./tryocaml/try-ocaml/style.css" />
+<link rel="stylesheet" type="text/css"
+      href="./tabs.css" />
+</head>
+<body>
 
+<a href="./ace.html" download="coucou">test</a>
 
-    <!-- <link rel="stylesheet" type="text/css" -->
-    <!-- 	href="./tryocaml/try-ocaml/style.css" /> -->
-    <link rel="stylesheet" type="text/css"
-	  href="./tabs.css" />
-  </head>
-  <body>
+<div id="input"></div>
 
-    <div id="test"></div>
+<div id="divtabs">
+  <ul id="tabs"></ul>
+</div>
+<div>
+  <div id="editor">let _ =
+  print_endline "Hello world !"</div>
+</div>
 
-    <a href="./ace.html" download="coucou">test</a>
+<!-- <div id="toplevel-container"> -->
+<!--   <pre id="output"></pre> -->
+<!--   <div id="sharp">#</div> -->
+<!--   <div id="toplevel"></div> -->
+<!-- </div> -->
 
-    <div id="input"></div>
+<!-- <script type="text/javascript" -->
+<!-- 	src="./tryocaml/toplevel/toplevel.js"></script> -->
+<script src="./ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="./main.js" type="text/javascript"
+	charset="utf-8"></script>
 
-    <div id="divtabs">
+<script>
+  var editor = ace.edit("editor");
+  editor.setTheme("ace/theme/eclipse");
+  editor.getSession().setMode("ace/mode/ocaml_ocp");
+</script>
+<!-- <script src="./tabs.js" type="text/javascript" -->
+<!-- 	  charset="utf-8"></script> -->
+</body>
 
-    </div>
-    <div>
-      <div id="editor">let _ =
-	print_endline "Hello world !"</div>
-    </div>
-
-    <!-- <div id="toplevel-container"> -->
-    <!--   <pre id="output"></pre> -->
-    <!--   <div id="sharp">#</div> -->
-    <!--   <div id="toplevel"></div> -->
-    <!-- </div> -->
-
-    <!-- <script type="text/javascript" -->
-    <!-- 	src="./tryocaml/toplevel/toplevel.js"></script> -->
-
- <script src="./ace/ace.js" type="text/javascript" charset="utf-8"></script>
-  <script src="./main.js" type="text/javascript"
-	  charset="utf-8"></script>
-  <!-- <script src="./main_oclosure.js" type="text/javascript" -->
-  <!-- 	charset="utf-8"></script> -->
-
-  <script>
-    var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/eclipse");
-    editor.getSession().setMode("ace/mode/ocaml_ocp");
-  </script>
-  <!-- <script src="./tabs.js" type="text/javascript" -->
-  <!-- 	  charset="utf-8"></script> -->
-  </body>
- 
 </html>
 

@@ -11,6 +11,53 @@ let curr_tab = ref 0
 
 let nb_untitled = ref 0
 
+let tabs_offset = ref 0
+let len = ref 4
+
+let tabs_list = ref []
+
+
+(** Utils functions **)
+
+exception InvalidSublist
+
+let sublist list off len = 
+  let rec step off len acc = function
+    | [] -> if len > 0 then raise InvalidSublist
+      else acc
+    | v :: l -> if off > 0 then step (off-1) len acc l
+      else if len > 0 then
+        let acc = v :: acc in 
+        step off (len-1) acc l
+      else acc
+  in
+  List.rev (step off len [] list)
+      
+
+
+(** **)
+
+let init_tabs_drawing () =
+  let sc_left = createTd document in
+  let sc_right = createTd document in
+  let new_tab = createTd document in
+  ()
+  
+
+let update_tabs_drawing () = 
+  let l = sublist !tabs_list !tabs_offset !len in
+  let tab = get_element_by_id "tabs" in
+  let tabs = tab##childNodes () in
+  let length = tabs##length () in
+  for i = 0 to length do
+    begin
+      let n = tabs##item i in
+      tab##remove n;
+    end
+  done;
+  let elements_list = 
+
+
 let change_tab id =
   (* Changement du tab *)
   let title = fst (H.find htbl !curr_tab) in
@@ -48,6 +95,10 @@ let rec add_tab title content =
   new_span_close##onclick <- handler ( fun _ ->
     close_tab i;
     Js._true);
+
+  tabs_list := (i, title) :: !tabs_list;
+  update_tabs_drawing ();
+
   Dom.appendChild new_td new_span_title;
   Dom.appendChild new_td new_span_close;
   Dom.appendChild tr new_td;
@@ -90,6 +141,8 @@ and close_tab id =
   in
   change_tab next_id;
   H.remove htbl id;
+  tabs_list := List.remove_assoc id !tabs_list;
+  update_tabs_drawing ();
   Dom.removeChild ul li
 
 
