@@ -10,46 +10,55 @@ let htbl = H.create 19
 let curr_tab = ref 0
 let nb_untitled = ref 0
 
-let tabs_offset = ref 0
+let offset = ref 0
 let len = ref 4
-
-let tabs_list = ref []
-
-
-(** Utils functions **)
-
-let sublist list off len = 
-  let rec step off len acc = function
-    | [] -> if len > 0 then raise (Invalid_argument "")
-      else acc
-    | v :: l -> if off > 0 then step (off-1) len acc l
-      else if len > 0 then
-        let acc = v :: acc in 
-        step off (len-1) acc l
-      else acc
-  in
-  List.rev (step off len [] list)
-      
 
 
 (** **)
 
+let get_line_width () =
+  let content = get_element_by_id "tabline" in
+  content##clientWidth
 
+let get_line_max_width () =
+  let w_sc_left = (get_element_by_id "tabscleft")##clientWidth in
+  let w_sc_right = (get_element_by_id "tabscright")##clientWidth in
+  let w_new_tab = (get_element_by_id "tabnewtab")##clientWidth in
+  let w_show_all = (get_element_by_id "tabshowall")##clientWidth in
+  let w_content = (get_element_by_id "tabs")##clientWidth in
+  w_content - w_sc_left - w_sc_right - w_new_tab - w_show_all
+
+
+let update_len () =
+  let t_size = 105
+    (* match Js.Opt.to_option (get_element_by_id "tabline")##firstChild with *)
+    (* | None -> assert false *)
+    (* | Some c ->  *)
+    (*   let el = Dom_html.CoerceTo.element c in *)
+    (*   match Js.Opt.to_option el with *)
+    (*   | None -> assert false *)
+    (*   | Some el -> (el##clientWidth) + 4 *)
+  in
+  let l_width = get_line_max_width () in
+  let new_len = l_width / t_size in
+  console (string_of_int t_size);
+  len := new_len
   
 
-let update_tabs_drawing () = 
-  (* let l = sublist !tabs_list !tabs_offset !len in *)
-  (* let tab = get_element_by_id "tabs" in *)
-  (* let tabs = tab##childNodes () in *)
-  (* let length = tabs##length () in *)
-  (* for i = 0 to length do *)
-  (*   begin *)
-  (*     let n = tabs##item i in *)
-  (*     tab##remove n; *)
-  (*   end *)
-  (* done; *)
-  (* let elements_list =  *)
-  ()
+let refresh_tabs () = 
+  let tabs = (get_element_by_id "tabline")##childNodes in
+  for i=0 to tabs##length do
+    match Js.Opt.to_option tabs##item(i) with
+    | None -> ()
+    | Some tab_opt ->
+      match Js.Opt.to_option (Dom_html.CoerceTo.element tab_opt) with
+      | None -> ()
+      | Some tab ->
+	let cssdecl = tab##style in
+	if i >= !offset && i < !offset + !len then
+	  cssdecl##display <- Js.string ""
+	else cssdecl##display <- Js.string "none" 
+  done
 
 
 let change_tab id =
@@ -65,8 +74,7 @@ let change_tab id =
   old_tab##className <- Js.string "tab";
   let new_tab = get_element_by_id (Format.sprintf "tabnum%d" id) in
   new_tab##className <- Js.string "tab active";
-  curr_tab := id;
-  alert ("Tab changed " ^ (string_of_int id))
+  curr_tab := id
 
 
 let rec add_tab title content =
@@ -98,36 +106,12 @@ let rec add_tab title content =
   Dom.appendChild new_tab span_close;
   Dom.appendChild line new_tab;
 
-  (* Post-traitement du tab *)
-  tabs_list := (i, title) :: !tabs_list;
-  update_tabs_drawing ();
-
+  let nbtabs = H.length htbl in
+  if !offset + !len < nbtabs then
+      offset := nbtabs - !len;
+  refresh_tabs ();
   i
 
-  (* let tr = get_element_by_id "tabs-table" in *)
-  (* let new_span_title = createSpan document in *)
-  (* let new_span_close = createSpan document in *)
-  (* let new_td = createSpan document in *)
-  (* let tab_id = Format.sprintf "tabnum%d" i in *)
-  (* new_td##id <- Js.string tab_id; *)
-  (* new_td##className <- Js.string "tab"; *)
-  (* new_span_title##innerHTML <- Js.string title; *)
-  (* new_span_title##className <- Js.string "tabtitle"; *)
-  (* new_span_title##onclick <- handler ( fun _ -> *)
-  (*   change_tab i; *)
-  (*   Js._true); *)
-  (* new_span_close##innerHTML <- Js.string "x"; *)
-  (* new_span_close##className <- Js.string "tabclose"; *)
-  (* new_span_close##onclick <- handler ( fun _ -> *)
-  (*   close_tab i; *)
-  (*   Js._true); *)
-
-
-
-  (* Dom.appendChild new_td new_span_title; *)
-  (* Dom.appendChild new_td new_span_close; *)
-  (* Dom.appendChild tr new_td; *)
-  (* i *)
 
 and add_untitled_tab () =
   let id = !nb_untitled in
@@ -193,7 +177,8 @@ let init_tabs_drawing () =
   button##value <- Js.string "+";
   button##id <- Js.string "newEmptyTab";
   button##onclick <- handler (fun _ ->
-    ignore (add_untitled_tab ());
+    let id = add_untitled_tab () in
+    change_tab id;    
     Js._true);
   Dom.appendChild new_tab button;
 
@@ -201,7 +186,7 @@ let init_tabs_drawing () =
   button##value <- Js.string "<";
   button##id <- Js.string "scrollTabLeft";
   button##onclick <- handler (fun _ ->
-    
+ 
     Js._true);
   Dom.appendChild sc_left button;
 
@@ -282,26 +267,19 @@ let _ =
   );
   Dom.appendChild container button;
 
-  (* Création du bouton pour faire un nouvel onglet vide *)
-  (* let container = get_element_by_id "divtabs" in *)
-  (* let button = createInput *)
-  (*   ~name:(Js.string "newEmptyTab") *)
-  (*   ~_type:(Js.string "button") *)
-  (*   document *)
-  (* in *)
-  (* button##value <- Js.string "+"; *)
-  (* button##id <- Js.string "newTabButton"; *)
-  (* button##onclick <- handler (fun _ -> *)
-  (*   ignore (add_untitled_tab ()); *)
-  (*   Js._true *)
-  (* ); *)
-  (* Dom.appendChild container button; *)
-
-
   (* Création des tabs *)
   init_tabs_drawing ();
-
   ignore (add_untitled_tab ());
   let first_tab = get_element_by_id "tabnum0" in
-  first_tab##className <- Js.string "tab active"
+  first_tab##className <- Js.string "tab active";
+
+  (* Création de l'event pour recalculer le nb de tab affiché
+     à la redimention de la fenêtre *)
+  update_len ();
+  Dom_html.window##onresize <- Dom_html.handler
+    (fun _ -> update_len ();
+      refresh_tabs ();
+      Js._true)
+
+
 
