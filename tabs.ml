@@ -8,7 +8,7 @@ module H = Hashtbl
 let htbl = H.create 19
 
 let curr_tab = ref 0
-let tabs = ref []
+
 let nb_untitled = ref 0
 
 let change_tab id =
