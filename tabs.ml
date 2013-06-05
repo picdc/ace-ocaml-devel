@@ -8,7 +8,6 @@ module H = Hashtbl
 let htbl = H.create 19
 
 let curr_tab = ref 0
-(* let tabs = ref [] *)
 let nb_untitled = ref 0
 
 let tabs_offset = ref 0
@@ -138,7 +137,6 @@ and close_tab id =
   let next_id =
     let i = Js.to_string next_tab##id in
     let len = (String.length i) - 6 in
-    alert i;
     int_of_string (String.sub i 6 len)
   in
   change_tab next_id;
@@ -201,4 +199,5 @@ let _ =
 
   ignore (add_untitled_tab ());
   let first_tab = get_element_by_id "tabnum0" in
-  first_tab##className <- Js.string "tab active";
+  first_tab##className <- Js.string "tab active"
+
