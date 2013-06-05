@@ -56,7 +56,8 @@ let update_tabs_drawing () =
     end
   done;
   let elements_list = 
-
+    ()
+  in ()
 
 let change_tab id =
   (* Changement du tab *)

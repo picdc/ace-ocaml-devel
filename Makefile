@@ -7,12 +7,12 @@ SOURCES= ace_utils.ml tabs.ml
 OCPDIR= ocp-indent-src
 OCPLIB= -I $(OCPDIR) ocp_indent.cma
 
-TOPLVLDIR= tryocaml/toplevel
-TOPLVLLIB= -I $(TOPLVLDIR) toplevel.cma
+#TOPLVLDIR= tryocaml/toplevel
+#TOPLVLLIB= -I $(TOPLVLDIR) toplevel.cma
 
 OBJS= $(SOURCES:.ml=.cmo)
 
-LIBS= $(OCPLIB) $(TOPLVLLIB)
+LIBS= $(OCPLIB) 
 
 JSFLAGS = -pretty -noinline
 
