@@ -9,24 +9,23 @@ let htbl = H.create 19
 
 let curr_tab = ref 0
 let nb_untitled = ref 0
-
+let is_list_shown = ref false
 let offset = ref 0
 let len = ref 4
 
 
-(** **)
 
 let get_line_width () =
-  let content = get_element_by_id "tabline" in
-  content##clientWidth
+  let container = get_element_by_id "tabline" in
+  container##clientWidth
 
 let get_line_max_width () =
   let w_sc_left = (get_element_by_id "tabscleft")##clientWidth in
   let w_sc_right = (get_element_by_id "tabscright")##clientWidth in
   let w_new_tab = (get_element_by_id "tabnewtab")##clientWidth in
   let w_show_all = (get_element_by_id "tabshowall")##clientWidth in
-  let w_content = (get_element_by_id "tabs")##clientWidth in
-  w_content - w_sc_left - w_sc_right - w_new_tab - w_show_all
+  let w_container = (get_element_by_id "tabs")##clientWidth in
+  w_container - w_sc_left - w_sc_right - w_new_tab - w_show_all
 
 
 let update_len () =
@@ -41,14 +40,17 @@ let update_len () =
   in
   let l_width = get_line_max_width () in
   let new_len = l_width / t_size in
-  console (string_of_int t_size);
   len := new_len
   
 
 let refresh_tabs () = 
-  let tabs = (get_element_by_id "tabline")##childNodes in
-  for i=0 to tabs##length do
-    match Js.Opt.to_option tabs##item(i) with
+  let tabs = get_element_by_id "tabs" in
+  let listtabs = get_element_by_id "listtabs" in
+  let tabs_childs = (get_element_by_id "tabline")##childNodes in
+  let list_childs = (get_element_by_id "listul")##childNodes in
+  (* Refresh des tabs *)
+  for i=0 to tabs_childs##length do
+    match Js.Opt.to_option tabs_childs##item(i) with
     | None -> ()
     | Some tab_opt ->
       match Js.Opt.to_option (Dom_html.CoerceTo.element tab_opt) with
@@ -56,10 +58,35 @@ let refresh_tabs () =
       | Some tab ->
 	let cssdecl = tab##style in
 	if i >= !offset && i < !offset + !len then
-	  cssdecl##display <- Js.string ""
+	  cssdecl##display <- Js.string ""	   
 	else cssdecl##display <- Js.string "none" 
-  done
-
+  done;
+  (* Refresh de la liste *)
+  for i=0 to list_childs##length do
+    match Js.Opt.to_option list_childs##item(i) with
+    | None -> ()
+    | Some li_opt ->
+      match Js.Opt.to_option (Dom_html.CoerceTo.element li_opt) with
+      | None -> ()
+      | Some li ->
+  	let cssdecl = li##style in
+  	if i >= !offset && i < !offset + !len then
+  	  cssdecl##display <- Js.string "none"
+  	else
+  	  begin
+  	    if i = !curr_tab then
+  	      cssdecl##fontWeight <- Js.string "bold"
+  	    else cssdecl##fontWeight <- Js.string "";
+  	    cssdecl##display <- Js.string ""
+  	  end
+  done;
+  (* Refresh de la position de la liste *)
+  (** NE PAS FAIRE CA ICI MAIS QUAND ON LE DISPLAY **)
+  let left_pos = Format.sprintf "%dpx"
+    (tabs##offsetLeft + tabs##clientWidth - listtabs##clientWidth)
+  in
+  listtabs##style##left <- Js.string left_pos;
+  ()
 
 let change_tab id =
   (* Changement du tab *)
@@ -105,6 +132,26 @@ let rec add_tab title content =
   Dom.appendChild new_tab span_title;
   Dom.appendChild new_tab span_close;
   Dom.appendChild line new_tab;
+
+
+  (* Création de l'item de la liste des tabs *)
+  let listul = get_element_by_id "listul" in
+  let li_tab = createLi document in
+  let id = Format.sprintf "listulnum%d" i in
+  li_tab##id <- Js.string id;
+  li_tab##innerHTML <- Js.string title;
+  li_tab##style##display <- Js.string "none";
+  li_tab##onclick <- handler ( fun _ ->
+    change_tab i;
+    is_list_shown := false;
+    let listtabs = get_element_by_id "listtabs" in
+    listtabs##style##display <- Js.string "none";
+    offset := i;
+    refresh_tabs ();
+    Js._true);
+
+  Dom.appendChild listul li_tab;
+
 
   let nbtabs = H.length htbl in
   if !offset + !len < nbtabs then
@@ -186,23 +233,29 @@ let init_tabs_drawing () =
   button##value <- Js.string "<";
   button##id <- Js.string "scrollTabLeft";
   button##onclick <- handler (fun _ ->
- 
+    offset := max 0 (!offset-1);
+    refresh_tabs ();
     Js._true);
   Dom.appendChild sc_left button;
 
   let button = createInput ~_type:(Js.string "button") document in
   button##value <- Js.string ">";
-  button##id <- Js.string "scrollTabLeft";
+  button##id <- Js.string "scrollTabRight";
   button##onclick <- handler (fun _ ->
-    
+    let nbmax = H.length htbl in
+    offset := min (nbmax-1) (!offset+1);
+    refresh_tabs ();  
     Js._true);
   Dom.appendChild sc_right button;
 
   let button = createInput ~_type:(Js.string "button") document in
   button##value <- Js.string "...";
-  button##id <- Js.string "scrollTabLeft";
+  button##id <- Js.string "showAllTabs";
   button##onclick <- handler (fun _ ->
-    
+    let container = get_element_by_id "listtabs" in
+    let s = if !is_list_shown then "none" else "" in
+    container##style##display <- Js.string s;
+    is_list_shown := not !is_list_shown;
     Js._true);
   Dom.appendChild show_all button;
 
@@ -227,8 +280,14 @@ let init_tabs_drawing () =
 
 
 
-
-
+let init_listtabs () =
+  let container = get_element_by_id "listtabs" in
+  let ul = createUl document in
+  ul##id <- Js.string "listul";
+  container##style##display <- Js.string "none";
+  container##style##position <- Js.string "absolute";
+  Dom.appendChild container ul
+  
 
 
 let _ =
@@ -269,6 +328,7 @@ let _ =
 
   (* Création des tabs *)
   init_tabs_drawing ();
+  init_listtabs ();
   ignore (add_untitled_tab ());
   let first_tab = get_element_by_id "tabnum0" in
   first_tab##className <- Js.string "tab active";

@@ -6,6 +6,7 @@
     margin-left: auto;
     margin-right: auto;
     border: 3px double pink;
+    z-index: 5;
 }
 
 #tabs { width: 100%; }
@@ -31,11 +32,11 @@
 
 
 #tabs .active {
-    background-color: #DFD;
+    background-color: #DDFFDD;
 }
 
 #tabs .tab:hover {
-    background-color: #DDD;
+    background-color: #DDDDDD;
 }
 
 #tabs .tab .tabtitle {
@@ -56,3 +57,16 @@
     color: red;
 }
 
+
+#listtabs {
+    position: absolute;
+    top: 100px;
+    z-index: 4;
+    background-color: #FFFFFF;
+    border: 3px double black;
+}
+
+#listtabs ul {
+    list-style: none;
+    font-size: 10pt;
+}
