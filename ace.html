@@ -4,13 +4,12 @@
     <title>ACE in Action</title>
     <style type="text/css" media="screen">
       #editor {
-      position: block;
-      height: 350px;
-      border: 1px solid #DDD;
+        position: block;
+        width: 100%;
+        height: 350px;
+        border: 1px solid #DDD;
       }
     </style>
-    <link rel="stylesheet" type="text/css"
-          href="./tryocaml/try-ocaml/style.css" />
     <link rel="stylesheet" type="text/css"
           href="./tabs.css" />
   </head>
@@ -20,19 +19,13 @@
 
     <div id="input"></div>
 
-    <div id="divtabs">
-      <!-- <ul id="tabs"></ul> -->
-      <table id="tabs-table"> 
-        <tr id="tabs">
-          
-        </tr>
-      </table>
-    </div>
-    <div>
-      <div id="editor">let _ =
-        print_endline "Hello world !"</div>
-    </div>
+    <h1>OCamlPro en rose !</h1>
 
+    <div id="main_content">
+      <div id="tabs"></div>
+      <div id="editor">let _ =
+  print_endline "Hello world !"</div>
+    </div>
     <!-- <div id="toplevel-container"> -->
     <!--   <pre id="output"></pre> -->
     <!--   <div id="sharp">#</div> -->

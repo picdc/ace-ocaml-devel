@@ -34,11 +34,7 @@ let sublist list off len =
 
 (** **)
 
-let init_tabs_drawing () =
-  let sc_left = createTd document in
-  let sc_right = createTd document in
-  let new_tab = createTd document in
-  ()
+
   
 
 let update_tabs_drawing () = 
@@ -73,34 +69,64 @@ let change_tab id =
 
 
 let rec add_tab title content =
+  (* Choix de l'id *)
   let i = !id in
   H.add htbl i (title, content);
   incr id;
-  let tr = get_element_by_id "tabs-table" in
-  let new_span_title = createSpan document in
-  let new_span_close = createSpan document in
-  let new_td = createSpan document in
-  let tab_id = Format.sprintf "tabnum%d" i in
-  new_td##id <- Js.string tab_id;
-  new_td##className <- Js.string "tab";
-  new_span_title##innerHTML <- Js.string title;
-  new_span_title##className <- Js.string "tabtitle";
-  new_span_title##onclick <- handler ( fun _ ->
+
+  (* Création du tab *)
+  let line = get_element_by_id "tabline" in
+  let new_tab = createTd document in
+  let id = Format.sprintf "tabnum%d" i in
+  let span_title = createSpan document in
+  let span_close = createSpan document in
+  new_tab##id <- Js.string id;
+  new_tab##className <- Js.string "tab";
+  span_title##innerHTML <- Js.string title;
+  span_title##className <- Js.string "tabtitle";
+  span_title##onclick <- handler ( fun _ ->
     change_tab i;
     Js._true);
-  new_span_close##innerHTML <- Js.string "x";
-  new_span_close##className <- Js.string "tabclose";
-  new_span_close##onclick <- handler ( fun _ ->
+  span_close##innerHTML <- Js.string "x";
+  span_close##className <- Js.string "tabclose";
+  span_close##onclick <- handler ( fun _ ->
     close_tab i;
     Js._true);
 
+  Dom.appendChild new_tab span_title;
+  Dom.appendChild new_tab span_close;
+  Dom.appendChild line new_tab;
+
+  (* Post-traitement du tab *)
   tabs_list := (i, title) :: !tabs_list;
   update_tabs_drawing ();
 
-  Dom.appendChild new_td new_span_title;
-  Dom.appendChild new_td new_span_close;
-  Dom.appendChild tr new_td;
   i
+
+  (* let tr = get_element_by_id "tabs-table" in *)
+  (* let new_span_title = createSpan document in *)
+  (* let new_span_close = createSpan document in *)
+  (* let new_td = createSpan document in *)
+  (* let tab_id = Format.sprintf "tabnum%d" i in *)
+  (* new_td##id <- Js.string tab_id; *)
+  (* new_td##className <- Js.string "tab"; *)
+  (* new_span_title##innerHTML <- Js.string title; *)
+  (* new_span_title##className <- Js.string "tabtitle"; *)
+  (* new_span_title##onclick <- handler ( fun _ -> *)
+  (*   change_tab i; *)
+  (*   Js._true); *)
+  (* new_span_close##innerHTML <- Js.string "x"; *)
+  (* new_span_close##className <- Js.string "tabclose"; *)
+  (* new_span_close##onclick <- handler ( fun _ -> *)
+  (*   close_tab i; *)
+  (*   Js._true); *)
+
+
+
+  (* Dom.appendChild new_td new_span_title; *)
+  (* Dom.appendChild new_td new_span_close; *)
+  (* Dom.appendChild tr new_td; *)
+  (* i *)
 
 and add_untitled_tab () =
   let id = !nb_untitled in
@@ -115,14 +141,18 @@ and add_untitled_tab () =
 and close_tab id =
   let tab_id = Format.sprintf "tabnum%d" id in
   let td = get_element_by_id tab_id in
-  let tr = get_element_by_id "tabs" in
-  let sibling = 
+  let tr = get_element_by_id "tabline" in
+
+  (* Choix du prochain tab à afficher *)
+  let sibling =
     match Js.Opt.to_option td##previousSibling with
     | Some s -> Dom_html.CoerceTo.element s
     | None -> 
-      match Js.Opt.to_option td##nextSibling with
-      | Some s -> Dom_html.CoerceTo.element s
-      | None -> Js.Opt.empty
+      begin
+	match Js.Opt.to_option td##previousSibling with
+	| Some s -> Dom_html.CoerceTo.element s
+	| None -> Js.Opt.empty
+      end
   in
   let next_tab =
     match Js.Opt.to_option sibling with
@@ -137,11 +167,82 @@ and close_tab id =
     let len = (String.length i) - 6 in
     int_of_string (String.sub i 6 len)
   in
+
+  (* Changement du tab et remove de celui qu'on voulait *)
   change_tab next_id;
   H.remove htbl id;
   tabs_list := List.remove_assoc id !tabs_list;
   update_tabs_drawing ();
   Dom.removeChild tr td
+
+
+
+
+
+let init_tabs_drawing () =
+  let container = get_element_by_id "tabs" in
+  let table = createTable document in
+  let line = createTr document in
+  let sc_left = createSpan document in
+  let sc_right = createSpan document in
+  let new_tab = createSpan document in
+  let show_all = createSpan document in
+
+  let button = createInput ~_type:(Js.string "button") document in
+  button##value <- Js.string "+";
+  button##id <- Js.string "newEmptyTab";
+  button##onclick <- handler (fun _ ->
+    ignore (add_untitled_tab ());
+    Js._true);
+  Dom.appendChild new_tab button;
+
+  let button = createInput ~_type:(Js.string "button") document in
+  button##value <- Js.string "<";
+  button##id <- Js.string "scrollTabLeft";
+  button##onclick <- handler (fun _ ->
+    
+    Js._true);
+  Dom.appendChild sc_left button;
+
+  let button = createInput ~_type:(Js.string "button") document in
+  button##value <- Js.string ">";
+  button##id <- Js.string "scrollTabLeft";
+  button##onclick <- handler (fun _ ->
+    
+    Js._true);
+  Dom.appendChild sc_right button;
+
+  let button = createInput ~_type:(Js.string "button") document in
+  button##value <- Js.string "...";
+  button##id <- Js.string "scrollTabLeft";
+  button##onclick <- handler (fun _ ->
+    
+    Js._true);
+  Dom.appendChild show_all button;
+
+  line##id <- Js.string "tabline";
+  table##id <- Js.string "tabtable";
+  table##className <- Js.string "tabwidget";
+  sc_left##id <- Js.string "tabscleft";
+  sc_left##className <- Js.string "tabwidget";
+  sc_right##id <- Js.string "tabscright";
+  sc_right##className <- Js.string "tabwidget";
+  new_tab##id <- Js.string "tabnewtab";
+  new_tab##className <- Js.string "tabwidget";
+  show_all##id <- Js.string "tabshowall";
+  show_all##className <- Js.string "tabwidget";
+
+  Dom.appendChild table line;
+  Dom.appendChild container sc_left; 
+  Dom.appendChild container table;
+  Dom.appendChild container sc_right;
+  Dom.appendChild container new_tab;
+  Dom.appendChild container show_all
+
+
+
+
+
 
 
 let _ =
@@ -181,19 +282,23 @@ let _ =
   Dom.appendChild container button;
 
   (* Création du bouton pour faire un nouvel onglet vide *)
-  let container = get_element_by_id "divtabs" in
-  let button = createInput
-    ~name:(Js.string "newEmptyTab")
-    ~_type:(Js.string "button")
-    document
-  in
-  button##value <- Js.string "+";
-  button##id <- Js.string "newTabButton";
-  button##onclick <- handler (fun _ ->
-    ignore (add_untitled_tab ());
-    Js._true
-  );
-  Dom.appendChild container button;
+  (* let container = get_element_by_id "divtabs" in *)
+  (* let button = createInput *)
+  (*   ~name:(Js.string "newEmptyTab") *)
+  (*   ~_type:(Js.string "button") *)
+  (*   document *)
+  (* in *)
+  (* button##value <- Js.string "+"; *)
+  (* button##id <- Js.string "newTabButton"; *)
+  (* button##onclick <- handler (fun _ -> *)
+  (*   ignore (add_untitled_tab ()); *)
+  (*   Js._true *)
+  (* ); *)
+  (* Dom.appendChild container button; *)
+
+
+  (* Création des tabs *)
+  init_tabs_drawing ();
 
   ignore (add_untitled_tab ());
   let first_tab = get_element_by_id "tabnum0" in

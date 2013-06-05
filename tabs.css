@@ -1,35 +1,50 @@
 
-#divtabs {
-    border: 1px solid pink;
-    width: 100%;
-    height: 100px;
-    overflow: scroll;
+
+#main_content {
+    width: 80%; 
+    min-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px double pink;
 }
 
-#divtabs .tab {
-    display: inline;
+#tabs { width: 100%; }
 
+#tabs .tabwidget {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#tabs #tabscleft { float: left; }
+#tabs #tabscright { float: right; }
+#tabs #tabnewtab { float: right; }
+#tabs #tabshowall { float: right; }
+#tabs #tabtable {  }
+
+#tabs .tab {
+    display: inline;
     overflow: hidden;
     border: 1px solid black;
+    font-size: 10pt;
     width: 100px;
 }
 
 
-#divtabs .active {
+#tabs .active {
     background-color: #DFD;
 }
 
-#divtabs .tab:hover {
+#tabs .tab:hover {
     background-color: #DDD;
 }
 
-#divtabs .tab .tabtitle {
+#tabs .tab .tabtitle {
     display: inline-block;
     overflow: hidden;
     width: 78px;
 }
 
-#divtabs .tabclose {
+#tabs .tab .tabclose {
     display: inline-block;
     min-width: 20px;
     font-weight: bold;
@@ -37,10 +52,7 @@
     border: 1px solid black;
 }
 
-#divtabs .tab .tabclose:hover {
+#tabs .tab .tabclose:hover {
     color: red;
 }
 
-#divtabs .tab #newTabButton {
-   display: inline-block;
-}
