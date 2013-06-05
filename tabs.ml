@@ -65,7 +65,8 @@ let change_tab id =
   old_tab##className <- Js.string "tab";
   let new_tab = get_element_by_id (Format.sprintf "tabnum%d" id) in
   new_tab##className <- Js.string "tab active";
-  curr_tab := id
+  curr_tab := id;
+  alert ("Tab changed " ^ (string_of_int id))
 
 
 let rec add_tab title content =
@@ -170,9 +171,9 @@ and close_tab id =
 
   (* Changement du tab et remove de celui qu'on voulait *)
   change_tab next_id;
-  H.remove htbl id;
-  tabs_list := List.remove_assoc id !tabs_list;
-  update_tabs_drawing ();
+  (* H.remove htbl id; *)
+  (* tabs_list := List.remove_assoc id !tabs_list; *)
+  (* update_tabs_drawing (); *)
   Dom.removeChild tr td
 
 
