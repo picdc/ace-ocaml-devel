@@ -70,7 +70,8 @@ let change_tab id =
   old_tab##className <- Js.string "tab";
   let new_tab = get_element_by_id (Format.sprintf "tabnum%d" id) in
   new_tab##className <- Js.string "tab active";
-  curr_tab := id
+  curr_tab := id;
+  alert ("Tab changed " ^ (string_of_int id))
 
 
 let rec add_tab title content =
@@ -116,6 +117,7 @@ and add_untitled_tab () =
 and close_tab id =
   let tab_id = Format.sprintf "tabnum%d" id in
   let td = get_element_by_id tab_id in
+  td##innerHTML <- Js.string "suppr";
   let tr = get_element_by_id "tabs" in
   let sibling = 
     match Js.Opt.to_option td##previousSibling with
@@ -136,13 +138,13 @@ and close_tab id =
   let next_id =
     let i = Js.to_string next_tab##id in
     let len = (String.length i) - 6 in
-    (* Firebug.console##log next_tab##id; *)
+    alert i;
     int_of_string (String.sub i 6 len)
   in
   change_tab next_id;
-  H.remove htbl id;
-  tabs_list := List.remove_assoc id !tabs_list;
-  update_tabs_drawing ();
+  (* H.remove htbl id; *)
+  (* tabs_list := List.remove_assoc id !tabs_list; *)
+  (* update_tabs_drawing (); *)
   Dom.removeChild tr td
 
 
