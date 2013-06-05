@@ -5,7 +5,7 @@ let alert str =
   Dom_html.window##alert(Js.string str)
 
 let console str =
-  Firebug.console##log(str)
+  Firebug.console##log(Js.string str)
 
 let get_element_by_id id =
   Js.Opt.get (document##getElementById (Js.string id))
