@@ -1,54 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-<head>
-<title>ACE in Action</title>
-<style type="text/css" media="screen">
-  #editor {
-    position: block;
-    height: 350px;
-    border: 1px solid #DDD;
-  }
-</style>
-<link rel="stylesheet" type="text/css"
-      href="./tryocaml/try-ocaml/style.css" />
-<link rel="stylesheet" type="text/css"
-      href="./tabs.css" />
-</head>
-<body>
+  <head>
+    <title>ACE in Action</title>
+    <style type="text/css" media="screen">
+      #editor {
+      position: block;
+      height: 350px;
+      border: 1px solid #DDD;
+      }
+    </style>
+    <link rel="stylesheet" type="text/css"
+          href="./tryocaml/try-ocaml/style.css" />
+    <link rel="stylesheet" type="text/css"
+          href="./tabs.css" />
+  </head>
+  <body>
 
-<a href="./ace.html" download="coucou">test</a>
+    <a href="./ace.html" download="coucou">test</a>
 
-<div id="input"></div>
+    <div id="input"></div>
 
-<div id="divtabs">
-  <ul id="tabs"></ul>
-</div>
-<div>
-  <div id="editor">let _ =
-  print_endline "Hello world !"</div>
-</div>
+    <div id="divtabs">
+      <!-- <ul id="tabs"></ul> -->
+      <table id="tabs-table"> 
+        <tr id="tabs">
+          
+        </tr>
+      </table>
+    </div>
+    <div>
+      <div id="editor">let _ =
+        print_endline "Hello world !"</div>
+    </div>
 
-<!-- <div id="toplevel-container"> -->
-<!--   <pre id="output"></pre> -->
-<!--   <div id="sharp">#</div> -->
-<!--   <div id="toplevel"></div> -->
-<!-- </div> -->
+    <!-- <div id="toplevel-container"> -->
+    <!--   <pre id="output"></pre> -->
+    <!--   <div id="sharp">#</div> -->
+    <!--   <div id="toplevel"></div> -->
+    <!-- </div> -->
 
-<!-- <script type="text/javascript" -->
-<!-- 	src="./tryocaml/toplevel/toplevel.js"></script> -->
-<script src="./ace/ace.js" type="text/javascript" charset="utf-8"></script>
-<script src="./main.js" type="text/javascript"
-	charset="utf-8"></script>
+    <!-- <script type="text/javascript" -->
+    <!-- 	src="./tryocaml/toplevel/toplevel.js"></script> -->
+    <script src="./ace/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./main.js" type="text/javascript"
+	    charset="utf-8"></script>
 
-<script>
-  var editor = ace.edit("editor");
-  editor.setTheme("ace/theme/eclipse");
-  editor.getSession().setMode("ace/mode/ocaml_ocp");
-</script>
-<!-- <script src="./tabs.js" type="text/javascript" -->
-<!-- 	  charset="utf-8"></script> -->
-</body>
+    <script>
+      var editor = ace.edit("editor");
+      editor.setTheme("ace/theme/eclipse");
+      editor.getSession().setMode("ace/mode/ocaml_ocp");
+    </script>
+    <!-- <script src="./tabs.js" type="text/javascript" -->
+    <!-- 	  charset="utf-8"></script> -->
+  </body>
 
 </html>
 

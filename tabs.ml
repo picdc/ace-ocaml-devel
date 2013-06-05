@@ -8,7 +8,6 @@ module H = Hashtbl
 let htbl = H.create 19
 
 let curr_tab = ref 0
-
 let nb_untitled = ref 0
 
 let tabs_offset = ref 0
@@ -19,11 +18,9 @@ let tabs_list = ref []
 
 (** Utils functions **)
 
-exception InvalidSublist
-
 let sublist list off len = 
   let rec step off len acc = function
-    | [] -> if len > 0 then raise InvalidSublist
+    | [] -> if len > 0 then raise (Invalid_argument "")
       else acc
     | v :: l -> if off > 0 then step (off-1) len acc l
       else if len > 0 then
@@ -45,19 +42,19 @@ let init_tabs_drawing () =
   
 
 let update_tabs_drawing () = 
-  let l = sublist !tabs_list !tabs_offset !len in
-  let tab = get_element_by_id "tabs" in
-  let tabs = tab##childNodes () in
-  let length = tabs##length () in
-  for i = 0 to length do
-    begin
-      let n = tabs##item i in
-      tab##remove n;
-    end
-  done;
-  let elements_list = 
-    ()
-  in ()
+  (* let l = sublist !tabs_list !tabs_offset !len in *)
+  (* let tab = get_element_by_id "tabs" in *)
+  (* let tabs = tab##childNodes () in *)
+  (* let length = tabs##length () in *)
+  (* for i = 0 to length do *)
+  (*   begin *)
+  (*     let n = tabs##item i in *)
+  (*     tab##remove n; *)
+  (*   end *)
+  (* done; *)
+  (* let elements_list =  *)
+  ()
+
 
 let change_tab id =
   (* Changement du tab *)
@@ -79,12 +76,12 @@ let rec add_tab title content =
   let i = !id in
   H.add htbl i (title, content);
   incr id;
-  let tr = get_element_by_id "divtabs" in
+  let tr = get_element_by_id "tabs-table" in
   let new_span_title = createSpan document in
   let new_span_close = createSpan document in
   let new_td = createSpan document in
-  let span_id = Format.sprintf "tabnum%d" i in
-  new_td##id <- Js.string span_id;
+  let tab_id = Format.sprintf "tabnum%d" i in
+  new_td##id <- Js.string tab_id;
   new_td##className <- Js.string "tab";
   new_span_title##innerHTML <- Js.string title;
   new_span_title##className <- Js.string "tabtitle";
@@ -116,14 +113,14 @@ and add_untitled_tab () =
   add_tab title content
 
 and close_tab id =
-  let span_id = Format.sprintf "tabnum%d" id in
-  let li = get_element_by_id span_id in
-  let ul = get_element_by_id "tabs" in
+  let tab_id = Format.sprintf "tabnum%d" id in
+  let td = get_element_by_id tab_id in
+  let tr = get_element_by_id "tabs" in
   let sibling = 
-    match Js.Opt.to_option li##previousSibling with
+    match Js.Opt.to_option td##previousSibling with
     | Some s -> Dom_html.CoerceTo.element s
     | None -> 
-      match Js.Opt.to_option li##nextSibling with
+      match Js.Opt.to_option td##nextSibling with
       | Some s -> Dom_html.CoerceTo.element s
       | None -> Js.Opt.empty
   in
@@ -138,13 +135,14 @@ and close_tab id =
   let next_id =
     let i = Js.to_string next_tab##id in
     let len = (String.length i) - 6 in
+    (* Firebug.console##log next_tab##id; *)
     int_of_string (String.sub i 6 len)
   in
   change_tab next_id;
   H.remove htbl id;
   tabs_list := List.remove_assoc id !tabs_list;
   update_tabs_drawing ();
-  Dom.removeChild ul li
+  Dom.removeChild tr td
 
 
 let _ =
