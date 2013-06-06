@@ -82,11 +82,21 @@ let refresh_tabs () =
   	    cssdecl##display <- Js.string ""
   	  end
   done;
-  if !is_empty then
-    begin
-      
-      if !is_list_shown then
-
+  let b = get_element_by_id "showAllTabs" in
+  match Js.Opt.to_option (Dom_html.CoerceTo.input b) with
+    | None -> assert false
+    | Some b -> 
+          if !is_empty then
+            begin
+              b##disabled <- Js._true;
+              if !is_list_shown then
+                begin
+                  let container = get_element_by_id "listtabs" in
+                  container##style##display <- Js.string "none";
+                  is_list_shown := false
+                end
+            end
+          else b##disabled <- Js._false; 
 
   (* Refresh de la position de la liste *)
   let right_pos = Format.sprintf "%dpx"
