@@ -234,7 +234,6 @@ let save state =
     (snd state)
 
 let load str =
-  print_endline ("!!!! - "^str);
   if str = ""
   then initial
   else Scanf.sscanf str

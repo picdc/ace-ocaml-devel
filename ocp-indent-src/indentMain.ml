@@ -29,7 +29,7 @@ let indent_channel ic args config out =
     kind = args.Args.indent_printer oc;
   }
   in
-Format.printf "%b" args.Args.marshal_state;
+  
   let state = if args.Args.marshal_state
     then let line = input_line ic in
          IndentPrinter.load line

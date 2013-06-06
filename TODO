@@ -24,6 +24,7 @@
 * Ouverture de plusieurs fichiers à la fois
 
 * Indentation
+  - bug du "in" -> "  i n"
   - Faire l'indentation par "bloc" ou let au lieu de tout le document
   - Configurer l'indentation
 

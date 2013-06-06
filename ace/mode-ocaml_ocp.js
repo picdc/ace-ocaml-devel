@@ -54,18 +54,68 @@ oop.inherits(Mode, TextMode);
 /**********************************************************/
 
 
-function indent_lines(editor, start, end) {
+function get_indent(line) {
+    return line.match(/^\s*/)[0];
+}
+
+function indent_lines(text, start_anchor, start_indent, end_indent,
+		      additional_indent) {
+    console.log("---\n"+text+"\n---");
+    console.log("ligne de l'ancre :"+start_anchor);
+    console.log("start indent :"+start_indent);
+    console.log("end indent :"+end_indent);
+    console.log("additionnal indent : |"+additional_indent+"|");
+
+    /* Pour repositionner le cursor */
     var curpos = editor.getCursorPosition();
     var fvr = editor.getFirstVisibleRow();
+
+    /* Traitement */
     var doc = editor.getSession().getDocument();
-    var code = ocpiPrint(doc.getValue(), start, end);
-    doc.setValue(code);
+    var start_indent_in_block = start_indent - start_anchor + 1; 
+    var end_indent_in_block = end_indent - start_anchor + 1;
+    var code = ocpiPrint(text, start_indent_in_block, end_indent_in_block);
+    var r = new Range(start_anchor, 0, end_indent, curpos.column);
+
+    doc.replace(r, code);
+    /* Si on tente d'indenter la end+1 alors qu'elle existe
+       pas, ça bug */
+    var true_end = end_indent + 1;
+    if ( true_end >= doc.getLength() )
+	true_end = doc.getLength() - 1;
+
+    editor.getSession().indentRows(start_indent, true_end, additional_indent);
+
+    /* Repositionnement du curseur */
     editor.moveCursorToPosition(curpos);
     editor.scrollToRow(fvr);
     editor.clearSelection();
 }
-
-
+    
+    
+function get_firstline_of_this_block() {
+    var count = 0;
+    var currline = editor.getCursorPosition().row;
+    console.log("ppppp --- "+currline);
+    var session = editor.getSession();
+    for ( var i = currline-1 ; i >= 0 ; i-- ) {
+	var tokens = session.getTokens(i);
+	for ( var j = tokens.length-1 ; j >= 0 ; j-- ) {
+	    if ( tokens[j].type == "keyword" ) {
+		var v = tokens[j].value;
+		if ( v == "in" )
+		    count++;
+		else if ( v == "let" ) {
+		    console.log("let num :"+count);
+		    if ( count == 0 )
+			return i;
+		    else count--;
+		}
+	    }
+	}
+    }
+    return 0;
+}
 
 /* Config de l'éditeur */
 editor.getSession().setTabSize(2);
@@ -77,7 +127,9 @@ editor.commands.addCommand({
     bindKey: {win: 'Tab', mac: 'Tab'},
     exec: function(editor) {
 	var r = editor.getSelectionRange();
-	indent_lines(editor, r.start.row+1, r.end.row+1);
+	var indent_def = get_indent(editor.getSession().getLine(r.start.row));
+	var text = editor.getSession().getLines(r.start.row, r.end.row);
+	indent_lines(text, r.start.row+1, r.end.row+1, indent_def);
     },
     readOnly: false
 });
@@ -121,16 +173,21 @@ var outdenter = /^[' '|'\t']*(in|(end[' '|'\t']*;?)|let)[' '|'\t']*$/;
         }
     };
 
+    /* position du curseur : commence à 0
+       position des lignes de l'éditeur : commence à 0
+       position d'ocp-indent : commence à 1 on dirait
+
+       Convention : ici on prend tout qui commence à 0 */
     this.getNextLineIndent = function(state, line, tab) {
-	var text = editor.getValue();
 	var currline = editor.getCursorPosition().row;
-
-        var nb = ocpiNum(text, currline+1, currline+1);
-
-        var indent = "";
-        for (i=0; i<nb; i++) {
+	var last_anchor = get_firstline_of_this_block();
+	var session = editor.getSession();
+	var text = session.getLines(last_anchor, currline).join('\n');
+	var line_in_block = currline - last_anchor;
+	var nb_indent = ocpiNum(text, line_in_block, line_in_block+1);
+	var indent = this.$getIndent(session.getLine(last_anchor));
+        for ( var i=0 ; i < nb_indent ; i++) 
             indent += " ";
-        }
 
         return indent;
     };
@@ -151,7 +208,17 @@ var outdenter = /^[' '|'\t']*(in|(end[' '|'\t']*;?)|let)[' '|'\t']*$/;
     };
 
     this.autoOutdent = function(state, doc, row) {
-	indent_lines(editor, row+1, row+2);
+	var last_anchor = get_firstline_of_this_block();
+	var session = editor.getSession();
+	var start_indent = row;
+	var end_indent = editor.getCursorPosition().row;
+	// var r = new Range(0,0,3,0);
+	// editor.getSession().getDocument().replace(r, "coucou\n");
+	// console.log("!"+session.getLine(last_anchor)+"!");
+	var text = session.getLines(last_anchor, row+1).join('\n');
+	var indent_default = this.$getIndent(session.getLine(last_anchor));
+	indent_lines(text, last_anchor, start_indent, end_indent,
+		     indent_default);
     };
 
 }).call(Mode.prototype);
@@ -526,3 +593,5 @@ var MatchingBraceOutdent = function() {};
 
 exports.MatchingBraceOutdent = MatchingBraceOutdent;
 });
+
+
