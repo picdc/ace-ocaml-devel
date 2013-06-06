@@ -77,53 +77,63 @@ let rename_tab id new_title =
   H.replace htbl id (new_title, content)
 
 
+let update_element_from_node n f =
+  match Js.Opt.to_option (Dom_html.CoerceTo.element n) with
+      | None -> ()
+      | Some e -> f e
+
+let update_input name f =
+  let b = get_element_by_id name in
+  match Js.Opt.to_option (Dom_html.CoerceTo.input b) with
+    | None -> assert false
+    | Some b -> f b
+
+
+
 let refresh_tabs () = 
   let tabs = get_element_by_id "tabs" in
   let listtabs = get_element_by_id "listtabs" in
   let tabs_childs = (get_element_by_id "tabline")##childNodes in
   let list_childs = (get_element_by_id "listul")##childNodes in
+  
   (* Refresh des tabs *)
   for i=0 to tabs_childs##length do
     match Js.Opt.to_option tabs_childs##item(i) with
     | None -> ()
     | Some tab_opt ->
-      match Js.Opt.to_option (Dom_html.CoerceTo.element tab_opt) with
-      | None -> ()
-      | Some tab ->
-	let cssdecl = tab##style in
-	if i >= !offset && i < !offset + !len then
-	  cssdecl##display <- Js.string ""	   
-	else cssdecl##display <- Js.string "none" 
+        update_element_from_node tab_opt 
+          (fun tab ->
+	    let cssdecl = tab##style in
+	    if i >= !offset && i < !offset + !len then
+	      cssdecl##display <- Js.string ""	   
+	    else cssdecl##display <- Js.string "none") 
   done;
+
   (* Refresh de la liste *)
   let is_empty = ref true in
   for i=0 to list_childs##length do
     match Js.Opt.to_option list_childs##item(i) with
     | None -> ()
     | Some li_opt ->
-      match Js.Opt.to_option (Dom_html.CoerceTo.element li_opt) with
-      | None -> ()
-      | Some li ->
-  	let cssdecl = li##style in
-  	if i >= !offset && i < !offset + !len then
-  	  cssdecl##display <- Js.string "none"
-  	else
-  	  begin
-	    is_empty := false;
-  	    if i = !curr_tab then
-  	      li##className <- Js.string "listactive"
-  	    else li##className <- Js.string "";
-  	    cssdecl##display <- Js.string ""
-  	  end
+        update_element_from_node li_opt 
+          (fun li ->
+  	    let cssdecl = li##style in
+  	    if i >= !offset && i < !offset + !len then
+  	      cssdecl##display <- Js.string "none"
+  	    else
+  	      begin
+	        is_empty := false;
+  	        if i = !curr_tab then
+  	          li##className <- Js.string "listactive"
+  	        else li##className <- Js.string "";
+  	        cssdecl##display <- Js.string ""
+  	      end)
   done;
 
-  (* Refresh des buttons *)
-  let b = get_element_by_id "showAllTabs" in
-  begin
-    match Js.Opt.to_option (Dom_html.CoerceTo.input b) with
-    | None -> assert false
-    | Some b ->
-	if !is_empty then
+
+  (* Refresh des buttons *)  
+  update_input "showAllTabs" (fun b ->
+    if !is_empty then
 	  begin
             b##disabled <- Js._true;
             if !is_list_shown then
@@ -133,30 +143,19 @@ let refresh_tabs () =
 		is_list_shown := false
               end
 	  end
-	else b##disabled <- Js._false
-  end;
+	else b##disabled <- Js._false);
  
-
-  let b = get_element_by_id "scrollTabLeft" in
-  begin
-    match Js.Opt.to_option (Dom_html.CoerceTo.input b) with
-    | None -> assert false
-    | Some b ->
-      if !offset = 0 then
+  update_input "scrollTabLeft" (fun b ->
+    if !offset = 0 then
 	b##disabled <- Js._true
-      else b##disabled <- Js._false
-  end;
+      else b##disabled <- Js._false);
+  
 
-  let b = get_element_by_id "scrollTabRight" in
-  begin
-    match Js.Opt.to_option (Dom_html.CoerceTo.input b) with
-    | None -> assert false
-    | Some b ->
-      let max_offset = tabs_childs##length - 1 in
+  update_input "scrollTabLeft" (fun b ->
+    let max_offset = tabs_childs##length - 1 in
       if !offset >= max_offset then
 	b##disabled <- Js._true
-      else b##disabled <- Js._false
-  end;
+      else b##disabled <- Js._false);
      
   (* Refresh de la position de la liste *)
   let right_pos = Format.sprintf "%dpx"
