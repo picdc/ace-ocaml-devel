@@ -43,6 +43,14 @@ let update_len () =
   len := new_len
   
 
+let update_button name f =
+  let b = get_element_by_id name in
+  match Js.Opt.to_option (Dom_html.CoerceTo.input b) with
+    | None -> assert false
+    | Some b -> f
+
+
+
 let refresh_tabs () = 
   let tabs = get_element_by_id "tabs" in
   let listtabs = get_element_by_id "listtabs" in
