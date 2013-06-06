@@ -82,6 +82,8 @@ let refresh_tabs () =
   	    cssdecl##display <- Js.string ""
   	  end
   done;
+
+  (* Refresh des buttons *)
   let b = get_element_by_id "showAllTabs" in
   match Js.Opt.to_option (Dom_html.CoerceTo.input b) with
     | None -> assert false
@@ -190,16 +192,18 @@ and add_untitled_tab () =
 
 and close_tab id =
   let tab_id = Format.sprintf "tabnum%d" id in
-  let td = get_element_by_id tab_id in
-  let tr = get_element_by_id "tabline" in
+  let tab = get_element_by_id tab_id in
+  let line = get_element_by_id "tabline" in
+  let list = get_element_by_id "listul" in
+  let tabli = get_element_by_id (Format.sprintf "listulnum%d" id) in
 
   (* Choix du prochain tab à afficher *)
   let sibling =
-    match Js.Opt.to_option td##previousSibling with
+    match Js.Opt.to_option tab##previousSibling with
     | Some s -> Dom_html.CoerceTo.element s
     | None -> 
       begin
-	match Js.Opt.to_option td##previousSibling with
+	match Js.Opt.to_option tab##nextSibling with
 	| Some s -> Dom_html.CoerceTo.element s
 	| None -> Js.Opt.empty
       end
@@ -220,10 +224,10 @@ and close_tab id =
 
   (* Changement du tab et remove de celui qu'on voulait *)
   change_tab next_id;
-  (* H.remove htbl id; *)
-  (* tabs_list := List.remove_assoc id !tabs_list; *)
-  (* update_tabs_drawing (); *)
-  Dom.removeChild tr td
+  H.remove htbl id;
+  refresh_tabs ();
+  Dom.removeChild line tab;
+  Dom.removeChild list tabli
 
 
 

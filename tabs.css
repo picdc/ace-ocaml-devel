@@ -78,3 +78,7 @@
 #listtabs ul li:hover {
     background-color: #DDDDDD
 }
+
+input:disabled {
+    opacity: 0.5;
+}
