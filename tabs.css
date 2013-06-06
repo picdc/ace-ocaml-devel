@@ -1,4 +1,7 @@
 
+input:disabled {
+    opacity: 0.5;
+}
 
 #main_content {
     width: 80%; 
@@ -43,6 +46,8 @@
     display: inline-block;
     overflow: hidden;
     width: 78px;
+    border: none;
+    background-color: inherit;
 }
 
 #tabs .tab .tabclose {
@@ -69,6 +74,7 @@
     list-style: none;
     font-size: 10pt;
     padding: 10px;
+    margin: 0px;
 }
 
 #listtabs ul .listactive {
@@ -79,6 +85,3 @@
     background-color: #DDDDDD
 }
 
-input:disabled {
-    opacity: 0.5;
-}

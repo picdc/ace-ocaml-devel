@@ -42,6 +42,40 @@ let update_len () =
   let new_len = l_width / t_size in
   len := new_len
   
+let get_tab_id_from_html tab =
+  let i = Js.to_string tab##id in
+  let len = (String.length i) - 6 in
+  int_of_string (String.sub i 6 len)
+
+let change_offset_from_id id =
+  let tabs_childs = (get_element_by_id "tabline")##childNodes in
+  (* Refresh des tabs *)
+  for i=0 to tabs_childs##length do
+    match Js.Opt.to_option tabs_childs##item(i) with
+    | None -> ()
+    | Some tab_opt ->
+      match Js.Opt.to_option (Dom_html.CoerceTo.element tab_opt) with
+      | None -> ()
+      | Some tab ->
+	let tab_id = get_tab_id_from_html tab in
+	if tab_id = id then
+	  offset := i
+  done
+
+
+let rename_tab id new_title =
+  let content = snd (H.find htbl id) in
+  let tab = get_element_by_id (Format.sprintf "tabnum%dtitle" id) in
+  let listli = get_element_by_id (Format.sprintf "listulnum%d" id) in
+  console (string_of_int id);
+  begin
+    match Js.Opt.to_option (Dom_html.CoerceTo.input tab) with
+    | None -> assert false
+    | Some tab -> tab##value <- Js.string new_title
+  end;
+  listli##innerHTML <- Js.string new_title;
+  H.replace htbl id (new_title, content)
+
 
 let refresh_tabs () = 
   let tabs = get_element_by_id "tabs" in
@@ -85,21 +119,45 @@ let refresh_tabs () =
 
   (* Refresh des buttons *)
   let b = get_element_by_id "showAllTabs" in
-  match Js.Opt.to_option (Dom_html.CoerceTo.input b) with
+  begin
+    match Js.Opt.to_option (Dom_html.CoerceTo.input b) with
     | None -> assert false
-    | Some b -> 
-          if !is_empty then
-            begin
-              b##disabled <- Js._true;
-              if !is_list_shown then
-                begin
-                  let container = get_element_by_id "listtabs" in
-                  container##style##display <- Js.string "none";
-                  is_list_shown := false
-                end
-            end
-          else b##disabled <- Js._false; 
+    | Some b ->
+	if !is_empty then
+	  begin
+            b##disabled <- Js._true;
+            if !is_list_shown then
+              begin
+		let container = get_element_by_id "listtabs" in
+		container##style##display <- Js.string "none";
+		is_list_shown := false
+              end
+	  end
+	else b##disabled <- Js._false
+  end;
+ 
 
+  let b = get_element_by_id "scrollTabLeft" in
+  begin
+    match Js.Opt.to_option (Dom_html.CoerceTo.input b) with
+    | None -> assert false
+    | Some b ->
+      if !offset = 0 then
+	b##disabled <- Js._true
+      else b##disabled <- Js._false
+  end;
+
+  let b = get_element_by_id "scrollTabRight" in
+  begin
+    match Js.Opt.to_option (Dom_html.CoerceTo.input b) with
+    | None -> assert false
+    | Some b ->
+      let max_offset = tabs_childs##length - 1 in
+      if !offset >= max_offset then
+	b##disabled <- Js._true
+      else b##disabled <- Js._false
+  end;
+     
   (* Refresh de la position de la liste *)
   let right_pos = Format.sprintf "%dpx"
     (document##body##clientWidth - tabs##offsetLeft - tabs##clientWidth + 35)
@@ -134,14 +192,31 @@ let rec add_tab title content =
   let line = get_element_by_id "tabline" in
   let new_tab = createTd document in
   let id = Format.sprintf "tabnum%d" i in
-  let span_title = createSpan document in
+  let span_title = createInput
+    ~name:(Js.string id)
+    ~_type:(Js.string "text")
+    document in
   let span_close = createSpan document in
   new_tab##id <- Js.string id;
   new_tab##className <- Js.string "tab";
-  span_title##innerHTML <- Js.string title;
+  span_title##id <- Js.string (id^"title");
+  span_title##value <- Js.string title;
+  span_title##readOnly <- Js._true;
   span_title##className <- Js.string "tabtitle";
   span_title##onclick <- handler ( fun _ ->
-    change_tab i;
+    if !curr_tab <> i then
+      change_tab i;
+    Js._true);
+  span_title##ondblclick <- handler ( fun _ ->
+    span_title##readOnly <- Js._false;
+    Js._true);
+  ignore (Dom_html.addEventListener
+    span_title 
+    (Dom_html.Event.make "blur")
+    (handler (fun _ ->
+      span_title##readOnly <- Js._true;
+      rename_tab i (Js.to_string span_title##value);
+      Js._true))
     Js._true);
   span_close##innerHTML <- Js.string "x";
   span_close##className <- Js.string "tabclose";
@@ -166,7 +241,7 @@ let rec add_tab title content =
     is_list_shown := false;
     let listtabs = get_element_by_id "listtabs" in
     listtabs##style##display <- Js.string "none";
-    offset := i;
+    change_offset_from_id i;
     refresh_tabs ();
     Js._true);
 
@@ -197,38 +272,35 @@ and close_tab id =
   let list = get_element_by_id "listul" in
   let tabli = get_element_by_id (Format.sprintf "listulnum%d" id) in
 
-  (* Choix du prochain tab à afficher *)
-  let sibling =
-    match Js.Opt.to_option tab##previousSibling with
-    | Some s -> Dom_html.CoerceTo.element s
-    | None -> 
-      begin
-	match Js.Opt.to_option tab##nextSibling with
+  if !curr_tab = id then
+    begin
+    (* Choix du prochain tab à afficher *)
+      let sibling =
+	match Js.Opt.to_option tab##previousSibling with
 	| Some s -> Dom_html.CoerceTo.element s
-	| None -> Js.Opt.empty
-      end
-  in
-  let next_tab =
-    match Js.Opt.to_option sibling with
-    | Some s -> s
-    | None ->
-      let t = add_untitled_tab () in
-      let tab_id = Format.sprintf "tabnum%d" t in
-      get_element_by_id tab_id
-  in
-  let next_id =
-    let i = Js.to_string next_tab##id in
-    let len = (String.length i) - 6 in
-    int_of_string (String.sub i 6 len)
-  in
-
-  (* Changement du tab et remove de celui qu'on voulait *)
-  change_tab next_id;
+	| None -> 
+	  begin
+	    match Js.Opt.to_option tab##nextSibling with
+	    | Some s -> Dom_html.CoerceTo.element s
+	    | None -> Js.Opt.empty
+	  end
+      in
+      let next_tab =
+	match Js.Opt.to_option sibling with
+	| Some s -> s
+	| None ->
+	  let t = add_untitled_tab () in
+	  let tab_id = Format.sprintf "tabnum%d" t in
+	  get_element_by_id tab_id
+      in
+      let next_id = get_tab_id_from_html next_tab in
+      change_tab next_id
+    end;
+  
   H.remove htbl id;
-  refresh_tabs ();
   Dom.removeChild line tab;
-  Dom.removeChild list tabli
-
+  Dom.removeChild list tabli;
+  refresh_tabs ()
 
 
 
@@ -362,6 +434,7 @@ let _ =
     (fun _ -> update_len ();
       refresh_tabs ();
       Js._true)
+
 
 
 
