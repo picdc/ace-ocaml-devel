@@ -62,6 +62,7 @@ let refresh_tabs () =
 	else cssdecl##display <- Js.string "none" 
   done;
   (* Refresh de la liste *)
+  let is_empty = ref true in
   for i=0 to list_childs##length do
     match Js.Opt.to_option list_childs##item(i) with
     | None -> ()
@@ -74,19 +75,26 @@ let refresh_tabs () =
   	  cssdecl##display <- Js.string "none"
   	else
   	  begin
+	    is_empty := false;
   	    if i = !curr_tab then
-  	      cssdecl##fontWeight <- Js.string "bold"
-  	    else cssdecl##fontWeight <- Js.string "";
+  	      li##className <- Js.string "listactive"
+  	    else li##className <- Js.string "";
   	    cssdecl##display <- Js.string ""
   	  end
   done;
+  if !is_empty then
+    begin
+      
+      if !is_list_shown then
+
+
   (* Refresh de la position de la liste *)
-  (** NE PAS FAIRE CA ICI MAIS QUAND ON LE DISPLAY **)
-  let left_pos = Format.sprintf "%dpx"
-    (tabs##offsetLeft + tabs##clientWidth - listtabs##clientWidth)
+  let right_pos = Format.sprintf "%dpx"
+    (document##body##clientWidth - tabs##offsetLeft - tabs##clientWidth + 35)
   in
-  listtabs##style##left <- Js.string left_pos;
-  ()
+  listtabs##style##right <- Js.string right_pos
+
+
 
 let change_tab id =
   (* Changement du tab *)

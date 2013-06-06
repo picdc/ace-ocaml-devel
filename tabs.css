@@ -60,7 +60,6 @@
 
 #listtabs {
     position: absolute;
-    top: 100px;
     z-index: 4;
     background-color: #FFFFFF;
     border: 3px double black;
@@ -69,4 +68,13 @@
 #listtabs ul {
     list-style: none;
     font-size: 10pt;
+    padding: 10px;
+}
+
+#listtabs ul .listactive {
+    font-weight: bold;
+}
+
+#listtabs ul li:hover {
+    background-color: #DDDDDD
 }
