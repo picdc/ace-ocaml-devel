@@ -1,5 +1,14 @@
 
-=> script CGI ?? en ocaml 
+* Serveur Web
+  - discuter pour savoir comment le faire
+     -> script CGI en ocaml ?
+
+* Amélioration du CSS
+  - pour les Tabs
+
+* Les onglets
+  - Quand on renomme, binder le Enter pour valider la sélection
+  ! Voir si on peut pas mettre le code dans le DOM a la place du Htbl 
 
 * Coloration synthaxique
   - Coloration des fonctions
@@ -7,10 +16,20 @@
   - Faire notre propre thème ace
 
 * Analyse synthaxique
-  - à discuter
+  - à discuter mais oui
+
+* Auto-complétion
+  - ocp-index
+
+* Ouverture de plusieurs fichiers à la fois
 
 * Indentation
   - Faire l'indentation par "bloc" ou let au lieu de tout le document
+  - Configurer l'indentation
+
+* Main.ml
+  - Ajouter un constructeur pour la structure globale de l'éditeur
+     -> si possible paramétrable (ex: ne pas vouloir les tabs)
 
 * Architecture du projet à revoir
   -> pour être plus propre, notamment les modes ace inutile

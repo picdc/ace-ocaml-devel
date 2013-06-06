@@ -393,28 +393,31 @@ let _ =
     document
   in
   button##innerHTML <- Js.string "coucou";
+  button##setAttribute(Js.string "multiple", Js.string "multiple");
   button##onchange <- handler (fun _ ->
     begin
       match Js.Optdef.to_option button##files with
       | None -> ()
       | Some fl ->
-	match Js.Opt.to_option fl##item(0) with
-	| None -> ()
-	| Some f -> 
-	  begin
-	    let reader = jsnew File.fileReader () in
-	    reader##onload <- Dom.handler (fun _ ->
-	      let s =
-		match Js.Opt.to_option
-		  (File.CoerceTo.string (reader##result)) with
-		  | None -> Js.string "je suis la"
-		  | Some str -> str
-	      in
-	      let id = add_tab (Js.to_string f##name) (Js.to_string s) in
-	      change_tab id;
-	      Js._false);
-	    reader##readAsText (( f :> (File.blob Js.t)));
-	  end
+	for i=0 to fl##length do
+	  match Js.Opt.to_option fl##item(i) with
+	  | None -> ()
+	  | Some f -> 
+	    begin
+	      let reader = jsnew File.fileReader () in
+	      reader##onload <- Dom.handler (fun _ ->
+		let s =
+		  match Js.Opt.to_option
+		    (File.CoerceTo.string (reader##result)) with
+		    | None -> assert false
+		    | Some str -> str
+		in
+		let id = add_tab (Js.to_string f##name) (Js.to_string s) in
+		change_tab id;
+		Js._false);
+	      reader##readAsText (( f :> (File.blob Js.t)));
+	    end
+	done
     end;
     Js._true
   );
