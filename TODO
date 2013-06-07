@@ -7,7 +7,6 @@
   - pour les Tabs
 
 * Les onglets
-  - Quand on renomme, binder le Enter pour valider la sélection
   ! Voir si on peut pas mettre le code dans le DOM a la place du Htbl 
 
 * Coloration synthaxique
@@ -17,16 +16,24 @@
 
 * Analyse synthaxique
   - à discuter mais oui
+  - "identifiant non déclaré"
 
 * Auto-complétion
-  - ocp-index
+  - ocp-index (courage Pierrick !)
 
 * Ouverture de plusieurs fichiers à la fois
 
 * Indentation
-  - bug du "in" -> "  i n"
-  - Faire l'indentation par "bloc" ou let au lieu de tout le document
+  - Bug quand sélection trop grosse
+  - Adapter la méthode par block pour les modules
+  - Quand on appuye sur Tab, placer cursor juste apres l'indentation
+  - Bug commentaire --- Apparament non, juste bug selection
+   de plusieurs block
+  - Bug d'un let après un match dans l'édition de indentBlock.ml
   - Configurer l'indentation
+
+* Code folding
+  - A faire
 
 * Main.ml
   - Ajouter un constructeur pour la structure globale de l'éditeur

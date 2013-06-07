@@ -67,7 +67,6 @@ let rename_tab id new_title =
   let content = snd (H.find htbl id) in
   let tab = get_element_by_id (Format.sprintf "tabnum%dtitle" id) in
   let listli = get_element_by_id (Format.sprintf "listulnum%d" id) in
-  console (string_of_int id);
   begin
     match Js.Opt.to_option (Dom_html.CoerceTo.input tab) with
     | None -> assert false
@@ -151,7 +150,7 @@ let refresh_tabs () =
       else b##disabled <- Js._false);
   
 
-  update_input "scrollTabLeft" (fun b ->
+  update_input "scrollTabRight" (fun b ->
     let max_offset = tabs_childs##length - 1 in
       if !offset >= max_offset then
 	b##disabled <- Js._true
@@ -216,6 +215,11 @@ let rec add_tab title content =
       span_title##readOnly <- Js._true;
       rename_tab i (Js.to_string span_title##value);
       Js._true))
+    Js._true);
+  span_title##onkeypress <- handler (fun kev ->
+    if kev##keyCode == 13 then
+      (span_title##readOnly <- Js._true;
+       rename_tab i (Js.to_string span_title##value));
     Js._true);
   span_close##innerHTML <- Js.string "x";
   span_close##className <- Js.string "tabclose";
@@ -363,6 +367,20 @@ let init_tabs_drawing () =
   new_tab##className <- Js.string "tabwidget";
   show_all##id <- Js.string "tabshowall";
   show_all##className <- Js.string "tabwidget";
+
+  ignore(Dom_html.addMousewheelEventListener
+    container
+    (fun _ ~dx ~dy ->
+      let dir = dx < 0 || dy > 0 in
+      let nbmax = H.length htbl in
+      if dir && !offset < nbmax-1 then
+	(incr offset;
+	 refresh_tabs ())
+      else if not dir && !offset > 0 then
+	(decr offset;
+	 refresh_tabs ());
+      Js._true)
+    Js._true);
 
   Dom.appendChild table line;
   Dom.appendChild container sc_left; 

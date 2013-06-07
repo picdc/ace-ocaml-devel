@@ -8,57 +8,66 @@ input:disabled {
     min-width: 620px;
     margin-left: auto;
     margin-right: auto;
-    border: 3px double pink;
     z-index: 5;
 }
 
-#tabs { width: 100%; }
+#editor { border-top: none; padding-right:10px; }
 
-#tabs .tabwidget {
-    display: inline-block;
-    vertical-align: middle;
+#tabs {
+    width: 100%;
+    height: 28px;
+    border-bottom: 1px solid #aaaaaa;
+    padding-left: 10px;
 }
 
-#tabs #tabscleft { float: left; }
-#tabs #tabscright { float: right; }
-#tabs #tabnewtab { float: right; }
-#tabs #tabshowall { float: right; }
-#tabs #tabtable {  }
+.tabwidget {
+    display: inline-block;
+}
 
-#tabs .tab {
-    display: inline;
+
+#tabscleft { float: left; }
+#tabscright { float: right; }
+#tabnewtab { float: right; }
+#tabshowall { float: right; }
+#tabtable { border-collapse: collapse; }
+
+#tabline { height: 28px; }
+
+.tab {
     overflow: hidden;
-    border: 1px solid black;
     font-size: 10pt;
+    border: 1px solid #aaaaaa;
     width: 100px;
 }
 
-
-#tabs .active {
-    background-color: #DDFFDD;
+.tab:hover {
+    background-color: #eeeeee;
 }
 
-#tabs .tab:hover {
-    background-color: #DDDDDD;
+.active {
+    border-bottom: 1px solid #ffffff;
+    background-color: rgb(232, 242, 254);
 }
 
-#tabs .tab .tabtitle {
+.tabtitle {
     display: inline-block;
     overflow: hidden;
-    width: 78px;
+    width: 76px;
     border: none;
     background-color: inherit;
 }
 
-#tabs .tab .tabclose {
+.tabclose {
     display: inline-block;
     min-width: 20px;
     font-weight: bold;
     text-align: center;
-    border: 1px solid black;
+    border: 2px inset #aaaaaa;
+    border-radius: 8px 8px;
+    background-color: inherit;
 }
 
-#tabs .tab .tabclose:hover {
+.tabclose:hover {
     color: red;
 }
 
