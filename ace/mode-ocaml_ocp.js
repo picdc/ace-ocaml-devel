@@ -58,47 +58,26 @@ function get_indent(line) {
     return line.match(/^\s*/)[0];
 }
 
-function indent_lines(text, start_anchor, start_indent, end_indent,
-		      additional_indent) {
-    console.log("---\n"+text+"\n---");
-    console.log("ligne de l'ancre :"+start_anchor);
-    console.log("start indent :"+start_indent);
-    console.log("end indent :"+end_indent);
-    console.log("additionnal indent : |"+additional_indent+"|");
-
-    /* Pour repositionner le cursor */
-    var curpos = editor.getCursorPosition();
-    var fvr = editor.getFirstVisibleRow();
-
-    /* Traitement */
-    var doc = editor.getSession().getDocument();
-    var start_indent_in_block = start_indent - start_anchor + 1; 
-    var end_indent_in_block = end_indent - start_anchor + 1;
-    var code = ocpiPrint(text, start_indent_in_block, end_indent_in_block);
-    var r = new Range(start_anchor, 0, end_indent, curpos.column);
-
-    doc.replace(r, code);
-    /* Si on tente d'indenter la end+1 alors qu'elle existe
-       pas, ça bug */
-    var true_end = end_indent + 1;
-    if ( true_end >= doc.getLength() )
-	true_end = doc.getLength() - 1;
-
-    editor.getSession().indentRows(start_indent, true_end, additional_indent);
-
-    /* Repositionnement du curseur */
-    editor.moveCursorToPosition(curpos);
-    editor.scrollToRow(fvr);
-    editor.clearSelection();
-}
-    
-    
-function get_firstline_of_this_block() {
-    var count = 0;
-    var currline = editor.getCursorPosition().row;
-    console.log("ppppp --- "+currline);
+/* Ici les lignes commencent à l'index 0 */
+function get_last_anchor(start, end) {
     var session = editor.getSession();
-    for ( var i = currline-1 ; i >= 0 ; i-- ) {
+    var currline = start;// editor.getCursorPosition().row;
+    var count = 0;
+
+    // initialisation du count à partir du nombre de in de la currline
+    /* Inutile car on va forcer ocp-indent a prendre en compte 
+       l'indentation déjà existante, et donc juste le block courrant
+       est nécessaire */
+    // for ( var i = end-1 ; i >= start-1 ; i-- ) {
+    	// var tokens_curr = session.getTokens(end);
+    	// for ( var j = tokens_curr.length-1 ; j>=0 ; j-- ) {
+    	//     if ( tokens_curr[j].type == "keyword" &&
+    	// 	 tokens_curr[j].value == "in" )
+    	// 	count++;
+    	// }
+    // }
+    // recherche de la dernière ancre
+    for ( var i = end-1 ; i >= 0 ; i-- ) {
 	var tokens = session.getTokens(i);
 	for ( var j = tokens.length-1 ; j >= 0 ; j-- ) {
 	    if ( tokens[j].type == "keyword" ) {
@@ -106,7 +85,6 @@ function get_firstline_of_this_block() {
 		if ( v == "in" )
 		    count++;
 		else if ( v == "let" ) {
-		    console.log("let num :"+count);
 		    if ( count == 0 )
 			return i;
 		    else count--;
@@ -116,6 +94,60 @@ function get_firstline_of_this_block() {
     }
     return 0;
 }
+
+/* Attention start et end sont les numéros de lignes du document
+   qu'on souhaite indenté.
+   La première ligne commence avec un index de 1 */
+function get_indent_lines(start, end) {
+    /* Traitement */
+    var session = editor.getSession();
+    var last_anchor = get_last_anchor(start-1, end-1);
+    var text = session.getLines(last_anchor, end-1).join('\n');
+ 
+    console.log("Texte pris en compte pour ocp_indent :\n"+text);
+
+    // Création d'une ligne vide pour qu'ocp-indent se scale dessus
+    //  pour l'indentation relative
+    var fictive_line = get_indent(text.split('\n')[0])+';\n';
+
+    // On repère la sélection du texte à indenter
+    //    +1 pour notre ligne fictive  
+    var start_indent_in_block = start - last_anchor + 1;
+    var end_indent_in_block = end - last_anchor + 1;
+    var code = ocpiPrint(fictive_line+text,
+			 start_indent_in_block,
+			 end_indent_in_block);
+
+    // On récupère que les lignes du code indenté qui ont changées
+    var indented_lines = "";
+    code = code.split('\n');
+    for ( var i=start_indent_in_block-1 ; i < end_indent_in_block ; i++ ) {
+	indented_lines += code[i];
+	if ( i != end_indent_in_block-1 )
+	    indented_lines += '\n';
+    }
+
+    return indented_lines;
+}
+
+/* Idem que get_indent_lines */
+function indent_lines(start, end) {
+    var curpos = editor.getCursorPosition();
+    var document = editor.getSession().getDocument();
+    var fvr = editor.getFirstVisibleRow();
+    var indented_code = get_indent_lines(start, end);
+
+    /* Remplacement partiel du document par notre code indenté */
+    var col_end = document.getLine(end-1).length
+    var r = new Range(start-1, 0, end-1, col_end);
+    document.replace(r, indented_code);
+
+    /* Repositionnement du curseur */
+    editor.moveCursorToPosition(curpos);
+    editor.scrollToRow(fvr);
+    editor.clearSelection();
+}
+ 
 
 /* Config de l'éditeur */
 editor.getSession().setTabSize(2);
@@ -127,9 +159,7 @@ editor.commands.addCommand({
     bindKey: {win: 'Tab', mac: 'Tab'},
     exec: function(editor) {
 	var r = editor.getSelectionRange();
-	var indent_def = get_indent(editor.getSession().getLine(r.start.row));
-	var text = editor.getSession().getLines(r.start.row, r.end.row);
-	indent_lines(text, r.start.row+1, r.end.row+1, indent_def);
+	indent_lines(r.start.row+1, r.end.row+1);
     },
     readOnly: false
 });
@@ -145,8 +175,10 @@ editor.commands.addCommand({
 
 
 
-var indenter = /(?:[({[=:]|[-=]>|\b(?:else|try|with))\s*$/;
-var outdenter = /^[' '|'\t']*(in|(end[' '|'\t']*;?)|let)[' '|'\t']*$/;
+//var indenter = /(?:[({[=:]|[-=]>|\b(?:else|try|with))\s*$/;
+//var outdenter = /^[' '|'\t']*(in|(end[' '|'\t']*;?)|let)[' '|'\t']*$/;
+
+var outdenter_list = /(in|let|end)/;
 
 (function() {
 
@@ -173,52 +205,39 @@ var outdenter = /^[' '|'\t']*(in|(end[' '|'\t']*;?)|let)[' '|'\t']*$/;
         }
     };
 
-    /* position du curseur : commence à 0
-       position des lignes de l'éditeur : commence à 0
-       position d'ocp-indent : commence à 1 on dirait
-
-       Convention : ici on prend tout qui commence à 0 */
+ 
     this.getNextLineIndent = function(state, line, tab) {
-	var currline = editor.getCursorPosition().row;
-	var last_anchor = get_firstline_of_this_block();
-	var session = editor.getSession();
-	var text = session.getLines(last_anchor, currline).join('\n');
-	var line_in_block = currline - last_anchor;
-	var nb_indent = ocpiNum(text, line_in_block, line_in_block+1);
-	var indent = this.$getIndent(session.getLine(last_anchor));
-        for ( var i=0 ; i < nb_indent ; i++) 
-            indent += " ";
-
-        return indent;
+	var currline = editor.getCursorPosition().row + 1;
+	var indented_line = get_indent_lines(currline, currline);
+        return get_indent(indented_line);
     };
 
     this.checkOutdent = function(state, line, input) {
+	var curpos = editor.getCursorPosition();
+	var session = editor.getSession();
+	var token = session.getTokenAt(curpos.row, curpos.column);
+
+	if ( token == null )
+	    return false;
+
 	if ( input == '\n' || input == ' ' ) {
-	    var b = outdenter.test(line);
-	    /* Si on veut faire comme avec emacs et typerex/tuareg
-	       ça réindente quand on fait un espace juste après le token
-	       (in/let/end...).
-	       Pour cela, vérifier avec la position du curseur, le token
-	       avant, et indenter en fonction de ça
-	     */ 
-	    return b;
+	    var next_token = session.getTokenAt(curpos.row, curpos.column+1);
+
+	    if ( token.type == "keyword" &&
+		 outdenter_list.test(token.value) &&
+		 token != next_token ) {
+		return true;
+	    } 
 	}
+	if ( token.type == "keyword.operator" &&
+	     token.value == "|" )
+	    return true;
         return this.$outdent.checkOutdent(line);
     
     };
 
     this.autoOutdent = function(state, doc, row) {
-	var last_anchor = get_firstline_of_this_block();
-	var session = editor.getSession();
-	var start_indent = row;
-	var end_indent = editor.getCursorPosition().row;
-	// var r = new Range(0,0,3,0);
-	// editor.getSession().getDocument().replace(r, "coucou\n");
-	// console.log("!"+session.getLine(last_anchor)+"!");
-	var text = session.getLines(last_anchor, row+1).join('\n');
-	var indent_default = this.$getIndent(session.getLine(last_anchor));
-	indent_lines(text, last_anchor, start_indent, end_indent,
-		     indent_default);
+	indent_lines(row + 1, editor.getCursorPosition().row + 1);
     };
 
 }).call(Mode.prototype);
