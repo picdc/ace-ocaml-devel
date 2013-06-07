@@ -2,7 +2,7 @@
 include Makefile.config
 include Makefile.rules
 
-SOURCES= ace_utils.ml tabs.ml
+SOURCES= ace_utils.ml tabs.ml autocomplete.ml
 
 OCPDIR= ocp-indent-src
 OCPLIB= -I $(OCPDIR) ocp_indent.cma
@@ -35,6 +35,8 @@ indent_js.cmo:
 $(OBJS): $(SOURCES)
 	$(CAMLJS) -c $*.ml
 
+autocomplete: autocomplete.cmo
+	$(CAMLJS) -c $@.ml
 
 clean:
 	rm .depend

@@ -19,13 +19,13 @@ let new_block env =
 let end_block env =
   env.parent
   
-let add_new_block () =
+let begin_block () =
   actual_env := new_block !actual_env
 
 let close_block () =
   actual_env := end_block !actual_env
 
-let new_keyword w =
+let new_word w =
   !actual_env.actual <- Words.add w !actual_env.actual
 
 let rec print_words = function
@@ -38,26 +38,36 @@ let find_completion w =
   let re = Str.regexp re in
   let rec step env acc =
     let acc = Words.fold
-      (fun s l ->
-        if  Str.string_match re s 0 then s :: l
-        else l)
+      (fun s acc ->
+        if  Str.string_match re s 0 then Words.add s acc
+        else acc)
       env.actual
       acc
     in
     if env == glob_env then acc
     else step env.parent acc
   in
-  step !actual_env []
+  step !actual_env Words.empty
+
+let set_to_list s =
+  List.rev (Words.fold (fun elt l -> elt :: l) s [])
+
+let list_to_js_array l =
+  let a = Array.of_list l in
+  Js.array a
+
+let find_completion_js w =
+  list_to_js_array (set_to_list (find_completion w)) 
 
 let _ = 
-  (* (Js.Unsafe.coerce Dom_html.window)##complete <- find_completion; *)
-  new_keyword "get_id";
-  new_keyword "match_str";
-  add_new_block ();
-  new_keyword "get_str_id";
+  (Js.Unsafe.coerce Dom_html.window)##complete <- find_completion_js;
+  new_word "get_id";
+  new_word "match_str";
+  begin_block ();
+  new_word "get_str_id";
   let w = "get" in
-  print_words (find_completion w);
+  print_words (set_to_list (find_completion w));
   close_block ();
   Format.printf "End of block@.";
-  print_words (find_completion w)
+  print_words (set_to_list (find_completion w))
   
