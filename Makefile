@@ -12,7 +12,7 @@ OCPLIB= -I $(OCPDIR) ocp_indent.cma
 
 OBJS= $(SOURCES:.ml=.cmo)
 
-LIBS= $(OCPLIB) 
+LIBS= $(OCPLIB) str.cma
 
 JSFLAGS = -pretty -noinline
 
