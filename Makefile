@@ -2,17 +2,19 @@
 include Makefile.config
 include Makefile.rules
 
-SOURCES= ace_utils.ml tabs.ml autocomplete.ml
+SOURCES= ace_utils.ml tabs.ml
 
 OCPDIR= ocp-indent-src
 OCPLIB= -I $(OCPDIR) ocp_indent.cma
+
+RELIB= -I ~/.opam/4.00.1/lib/re re.cma re_emacs.cma re_str.cma
 
 #TOPLVLDIR= tryocaml/toplevel
 #TOPLVLLIB= -I $(TOPLVLDIR) toplevel.cma
 
 OBJS= $(SOURCES:.ml=.cmo)
 
-LIBS= $(OCPLIB) str.cma
+LIBS= $(OCPLIB) $(RELIB)
 
 JSFLAGS = -pretty -noinline
 
@@ -24,7 +26,7 @@ main.js: main.byte
 	js_of_ocaml $(JSFLAGS) $<
 
 
-main.byte: indent_js.cmo $(OBJS)
+main.byte: indent_js.cmo autocomplete.cmo $(OBJS)
 	$(CAMLJS) $(LIBS) -o $@ $^ $*.ml
 
 
@@ -32,11 +34,15 @@ indent_js.cmo:
 	$(MAKE) -C $(OCPDIR)
 	$(CAMLJS) -c $(OCPLIB) $*.ml
 
+
+autocomplete.cmo: 
+	$(CAMLJS) $(RELIB) -c $*.ml
+
 $(OBJS): $(SOURCES)
 	$(CAMLJS) -c $*.ml
 
-autocomplete: autocomplete.cmo
-	$(CAMLJS) -c $@.ml
+
+
 
 clean:
 	rm .depend

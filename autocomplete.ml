@@ -1,3 +1,8 @@
+(**
+ ocamlc -I ~/.opam/4.00.1/lib/re re.cma re_emacs.cma re_str.cma -o autocomplete autocomplete.ml && ./autocomplete 
+**)
+
+
 module Words = Set.Make(String)
 
 let words = ref Words.empty
@@ -6,6 +11,7 @@ type env =
     { mutable actual : Words.t;
       parent : env }
 
+let console = Ace_utils.console
 
 let rec glob_env = 
   { actual = Words.empty;
@@ -30,16 +36,21 @@ let new_word w =
 
 let rec print_words = function
   | [] -> ()
-  | w :: l -> Format.printf "%s@." w; print_words l
+  | w :: l -> console (Format.sprintf "%s@." w); print_words l
 
+(* let change_glob_env env = *)
+(*   glob_env := env *)
 
 let find_completion w =
   let re = "^" ^ w ^ "*" in
-  let re = Str.regexp re in
+  let re = Re_str.regexp re in
+  (* let re = Re.compile re in *)
+  
   let rec step env acc =
     let acc = Words.fold
       (fun s acc ->
-        if  Str.string_match re s 0 then Words.add s acc
+        (* Format.printf "%s@." s; *)
+        if  Re_str.string_match re s 0 then Words.add s acc
         else acc)
       env.actual
       acc
@@ -57,7 +68,7 @@ let list_to_js_array l =
   Js.array a
 
 let find_completion_js w =
-  list_to_js_array (set_to_list (find_completion w)) 
+  list_to_js_array (set_to_list (find_completion w))
 
 let _ = 
   (Js.Unsafe.coerce Dom_html.window)##complete <- find_completion_js;
