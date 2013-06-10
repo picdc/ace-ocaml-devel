@@ -41,3 +41,6 @@
 
 * Architecture du projet à revoir
   -> pour être plus propre, notamment les modes ace inutile
+
+* Makefile :
+  - faire quelque chose de propre avec ocamlfind pour les libs par exemple

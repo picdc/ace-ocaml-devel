@@ -99,12 +99,18 @@ function get_last_anchor(start, end) {
    qu'on souhaite indenté.
    La première ligne commence avec un index de 1 */
 function get_indent_lines(start, end) {
-    /* Traitement */
     var session = editor.getSession();
     var last_anchor = get_last_anchor(start-1, end-1);
+
+    // Traitement si la sélection a plusieurs "blocs"
+    var start2 = start;
+    var prev_code = "";
+    if ( start-1 < last_anchor ) {
+	prev_code = get_indent_lines(start, last_anchor)+'\n';
+	start2 = last_anchor+1;
+    }
+
     var text = session.getLines(last_anchor, end-1).join('\n');
- 
-    console.log("Texte pris en compte pour ocp_indent :\n"+text);
 
     // Création d'une ligne vide pour qu'ocp-indent se scale dessus
     //  pour l'indentation relative
@@ -112,7 +118,7 @@ function get_indent_lines(start, end) {
 
     // On repère la sélection du texte à indenter
     //    +1 pour notre ligne fictive  
-    var start_indent_in_block = start - last_anchor + 1;
+    var start_indent_in_block = start2 - last_anchor + 1;
     var end_indent_in_block = end - last_anchor + 1;
     var code = ocpiPrint(fictive_line+text,
 			 start_indent_in_block,
@@ -127,7 +133,19 @@ function get_indent_lines(start, end) {
 	    indented_lines += '\n';
     }
 
-    return indented_lines;
+    console.log("start = "+start);
+    console.log("start2 = "+start2);
+    console.log("end = "+end);
+    console.log("last_anchor = "+last_anchor);
+    console.log("start_indent_in_block = "+start_indent_in_block);
+    console.log("end_indent_in_block = "+end_indent_in_block);
+    console.log("text = \n----\n"+text+"\n----");
+    console.log("code = \n----\n"+code+"\n----");
+
+
+    // Résultat final = code indenté des blocs précédent +
+    //   celui du bloc actuel
+    return prev_code+indented_lines;
 }
 
 /* Idem que get_indent_lines */
