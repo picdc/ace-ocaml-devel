@@ -166,11 +166,8 @@ let refresh_tabs () =
 
 let change_tab id =
   (* Changement du tab *)
-  let title = fst (H.find htbl !curr_tab) in
-  let content = get_editor_value () in
-  H.replace htbl !curr_tab (title, content);
-  let content = snd (H.find htbl id) in
-  set_editor_value (Js.string content);
+  let es = snd (H.find htbl id) in
+  change_edit_session es;
 
   (* Changement du focus du tab *)
   let old_tab = get_element_by_id (Format.sprintf "tabnum%d" !curr_tab) in
@@ -183,7 +180,8 @@ let change_tab id =
 let rec add_tab title content =
   (* Choix de l'id *)
   let i = !id in
-  H.add htbl i (title, content);
+  let es = create_edit_session content in
+  H.add htbl i (title, es);
   incr id;
 
   (* Création du tab *)
@@ -401,7 +399,8 @@ let init_listtabs () =
   
 
 
-let _ =
+let main () =
+
   (* Création du bouton d'importation des fichiers *)
   let container = get_element_by_id "input" in
   let button = createInput
@@ -444,8 +443,10 @@ let _ =
   init_tabs_drawing ();
   init_listtabs ();
   ignore (add_untitled_tab ());
-  let first_tab = get_element_by_id "tabnum0" in
-  first_tab##className <- Js.string "tab active";
+  change_tab 0;
+  (* let first_tab = get_element_by_id "tabnum0" in *)
+  (* first_tab##className <- Js.string "tab active"; *)
+
 
   (* Création de l'event pour recalculer le nb de tab affiché
      à la redimention de la fenêtre *)

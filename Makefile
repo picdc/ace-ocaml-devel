@@ -2,7 +2,7 @@
 include Makefile.config
 include Makefile.rules
 
-SOURCES= ace_utils.ml tabs.ml autocomplete.ml
+SOURCES= ace_utils.ml tabs.ml #autocomplete.ml
 
 OCPDIR= ocp-indent-src
 OCPLIB= -I $(OCPDIR) ocp_indent.cma
@@ -12,7 +12,7 @@ OCPLIB= -I $(OCPDIR) ocp_indent.cma
 
 OBJS= $(SOURCES:.ml=.cmo)
 
-LIBS= $(OCPLIB) str.cma
+LIBS= $(OCPLIB) #str.cma
 
 JSFLAGS = -pretty -noinline
 

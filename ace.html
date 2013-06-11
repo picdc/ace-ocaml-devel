@@ -1,50 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <title>ACE in Action</title>
-    <style type="text/css" media="screen">
-      #editor {
-        position: block;
-        width: 100%;
-        height: 350px;
-        border: 1px solid #aaaaaa;
-      }
-    </style>
-    <link rel="stylesheet" type="text/css"
-          href="./tabs.css" />
+    <title>Éditeur d'Ocaml en ligne</title>
+ 
   </head>
   <body>
+    <div id="main_content" style="width: 80%;"></div>
 
-    <a href="./ace.html" download="coucou">test</a>
-
-    <div id="input"></div>
-
-    <div id="main_content">
-      <div id="tabs"></div>
-      <div id="listtabs"></div>
-      <div id="editor">let _ =
-  print_endline "Hello world !"</div>
-    </div>
-    <!-- <div id="toplevel-container"> -->
-    <!--   <pre id="output"></pre> -->
-    <!--   <div id="sharp">#</div> -->
-    <!--   <div id="toplevel"></div> -->
-    <!-- </div> -->
-
-    <!-- <script type="text/javascript" -->
-    <!-- 	src="./tryocaml/toplevel/toplevel.js"></script> -->
-    <script src="./ace/ace.js" type="text/javascript" charset="utf-8"></script>
     <script src="./main.js" type="text/javascript"
 	    charset="utf-8"></script>
-
+    <script src="./ace/ace.js" type="text/javascript"
+    	    charset="utf-8"></script>
     <script>
-      var editor = ace.edit("editor");
-      editor.setTheme("ace/theme/eclipse");
-      editor.getSession().setMode("ace/mode/ocaml_ocp");
+      var container = document.getElementById("main_content");
+      makeEditor(container);
     </script>
-    <!-- <script src="./tabs.js" type="text/javascript" -->
-    <!-- 	  charset="utf-8"></script> -->
   </body>
-
 </html>
-

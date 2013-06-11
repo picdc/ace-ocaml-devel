@@ -5,6 +5,9 @@ let kind_num result = IndentPrinter.Numeric
 let kind_print result = IndentPrinter.Print (fun s ->
   Buffer.add_string result s)
 
+let kind_multinum result = IndentPrinter.Numeric
+  (fun n -> Queue.add n result) 
+    
 
 let my_indent_channel kind result str lines =
 
@@ -47,8 +50,8 @@ let my_indent_channel kind result str lines =
 
   result
 
-let indent_line_num str start last =
-  let c = start, last in
+let indent_line_num str row =
+  let c = row, row in
   let res = ref 0 in
   let str = Js.to_string str in
   !(my_indent_channel kind_num res str c)
@@ -62,40 +65,41 @@ let indent_line_print str start last =
   let res = Buffer.contents res in
   Js.string res
 
-let () =
+let indent_line_multinum str start last =
+  let res = my_indent_channel kind_multinum
+    (Queue.create ())
+    (Js.to_string str)
+    (start, last)
+  in
+  (* let ret = Array.make (Queue.length res) 0 in *)
+  let ret = jsnew Js.array_length (Queue.length res) in
+  ignore(Queue.fold (fun acc el ->
+    Js.array_set ret acc el;
+    (* Array.set ret acc el; *)
+    acc+1) 0 res);
+  ret
+
+let _ =
   (Js.Unsafe.coerce Dom_html.window)##ocpiNum <- Js.wrap_callback
-  indent_line_num;
+    indent_line_num;
   
   (Js.Unsafe.coerce Dom_html.window)##ocpiPrint <- Js.wrap_callback
-  indent_line_print;
- (*  let code = "let x = *)
-(*   let y = *)
-(*   10 *)
-(*   in *)
-(*   let z = 10 in *)
-(*   y + z *)
+    indent_line_print;
 
-(* let kind_num result = IndentPrinter.Numeric *)
-(*     (fun n -> result := n) *)
-    
-(* let kind_print result = IndentPrinter.Print (fun s -> *)
-(*     Buffer.add_string result s) *)
-    
+  (Js.Unsafe.coerce Dom_html.window)##ocpiMultinum <- Js.wrap_callback
+    indent_line_multinum
+  (* let file = open_in "ocp-indent-src/indentBlock.ml" in *)
+  (* let buf = Buffer.create 5003 in *)
+  (* try *)
+  (*   while true do *)
+  (*     Buffer.add_string buf (input_line file); *)
+  (*     Buffer.add_string buf "\n" *)
+  (*   done *)
+  (* with End_of_file -> *)
+  (*   begin *)
+  (*     print_endline (string_of_float (Sys.time ())); *)
+  (*     let tab = indent_line_multinum (Buffer.contents buf) 10 900 in *)
+  (*     print_endline (string_of_float (Sys.time ())) *)
+  (* 		       (\* Array.iter (fun n -> print_endline (string_of_int n)) tab *\) *)
 
-(* let my_indent_channel kind result str lines = *)
-  
-(*   let kind = kind result in *)
-(*   let r = ref 0 in *)
-(*   let start, last = lines in *)
-  
-(*   let f_config = IndentConfig.default in *)
-(*   let f_in_lines n = (n >= start && n <= last) in *)
-(*   let output = { *)
-(*     IndentPrinter. *)
-(*     debug = false; *)
-(*     config = f_config; *)
-(*     in_lines = f_in_lines; *)
-(*     indent_empty" *)
-(*   in *)
-(*   let s = indent_line_print code 0 500 in *)
-(*   Format.printf "@.@.Result:@.@.%s" s *)
+  (*   end *)

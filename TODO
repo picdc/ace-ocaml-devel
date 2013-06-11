@@ -3,11 +3,11 @@
   - discuter pour savoir comment le faire
      -> script CGI en ocaml ?
 
-* Amélioration du CSS
-  - pour les Tabs
-
 * Les onglets
   ! Voir si on peut pas mettre le code dans le DOM a la place du Htbl 
+    -> Difficile avec nos editSession de stockée
+  - Mieux gérer l'onglet de départ (ie on a une edit session perdue dans
+    le vide)
 
 * Coloration synthaxique
   - Coloration des fonctions
@@ -21,14 +21,10 @@
 * Auto-complétion
   - ocp-index (courage Pierrick !)
 
-* Ouverture de plusieurs fichiers à la fois
-
 * Indentation
   - Bug quand sélection trop grosse
   - Adapter la méthode par block pour les modules
   - Quand on appuye sur Tab, placer cursor juste apres l'indentation
-  - Bug commentaire --- Apparament non, juste bug selection
-   de plusieurs block
   - Bug d'un let après un match dans l'édition de indentBlock.ml
   - Configurer l'indentation
 

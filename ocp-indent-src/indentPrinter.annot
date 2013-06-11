@@ -4352,84 +4352,45 @@ type(
   string -> Pos.Position.t * IndentBlock.t
 )
 ident(
-  def load "indentPrinter.ml" 246 8952 8952 "_none_" 1 0 -1
+  def load "indentPrinter.ml" 245 8919 8919 "_none_" 1 0 -1
 )
 "indentPrinter.ml" 236 8680 8689 "indentPrinter.ml" 236 8680 8692
 type(
   string
 )
 ident(
-  def str "indentPrinter.ml" 237 8695 8697 "indentPrinter.ml" 244 8897 8950
+  def str "indentPrinter.ml" 237 8695 8697 "indentPrinter.ml" 243 8864 8917
 )
-"indentPrinter.ml" 237 8695 8697 "indentPrinter.ml" 237 8695 8710
-type(
-  string -> unit
-)
-ident(
-  ext_ref Pervasives.print_endline
-)
-"indentPrinter.ml" 237 8695 8712 "indentPrinter.ml" 237 8695 8721
-type(
-  string
-)
-"indentPrinter.ml" 237 8695 8721 "indentPrinter.ml" 237 8695 8722
-type(
-  string -> string -> string
-)
-ident(
-  ext_ref Pervasives.( ^ )
-)
-"indentPrinter.ml" 237 8695 8722 "indentPrinter.ml" 237 8695 8725
+"indentPrinter.ml" 237 8695 8700 "indentPrinter.ml" 237 8695 8703
 type(
   string
 )
 ident(
   int_ref str "indentPrinter.ml" 236 8680 8689 "indentPrinter.ml" 236 8680 8692
 )
-"indentPrinter.ml" 237 8695 8711 "indentPrinter.ml" 237 8695 8726
-call(
-  stack
-)
-type(
-  string
-)
-"indentPrinter.ml" 237 8695 8697 "indentPrinter.ml" 237 8695 8726
-call(
-  stack
-)
-type(
-  unit
-)
-"indentPrinter.ml" 238 8728 8733 "indentPrinter.ml" 238 8728 8736
-type(
-  string
-)
-ident(
-  int_ref str "indentPrinter.ml" 236 8680 8689 "indentPrinter.ml" 236 8680 8692
-)
-"indentPrinter.ml" 238 8728 8737 "indentPrinter.ml" 238 8728 8738
+"indentPrinter.ml" 237 8695 8704 "indentPrinter.ml" 237 8695 8705
 type(
   string -> string -> bool
 )
 ident(
   ext_ref Pervasives.( = )
 )
-"indentPrinter.ml" 238 8728 8739 "indentPrinter.ml" 238 8728 8741
+"indentPrinter.ml" 237 8695 8706 "indentPrinter.ml" 237 8695 8708
 type(
   string
 )
-"indentPrinter.ml" 238 8728 8733 "indentPrinter.ml" 238 8728 8741
+"indentPrinter.ml" 237 8695 8700 "indentPrinter.ml" 237 8695 8708
 type(
   bool
 )
-"indentPrinter.ml" 239 8742 8749 "indentPrinter.ml" 239 8742 8756
+"indentPrinter.ml" 238 8709 8716 "indentPrinter.ml" 238 8709 8723
 type(
   Pos.Position.t * IndentBlock.t
 )
 ident(
   int_ref initial "indentPrinter.ml" 224 8378 8382 "indentPrinter.ml" 224 8378 8389
 )
-"indentPrinter.ml" 240 8757 8764 "indentPrinter.ml" 240 8757 8776
+"indentPrinter.ml" 239 8724 8731 "indentPrinter.ml" 239 8724 8743
 type(
   string ->
   (int -> int -> string -> Pos.Position.t * IndentBlock.t, '_a,
@@ -4440,14 +4401,14 @@ type(
 ident(
   ext_ref Scanf.sscanf
 )
-"indentPrinter.ml" 240 8757 8777 "indentPrinter.ml" 240 8757 8780
+"indentPrinter.ml" 239 8724 8744 "indentPrinter.ml" 239 8724 8747
 type(
   string
 )
 ident(
   int_ref str "indentPrinter.ml" 236 8680 8689 "indentPrinter.ml" 236 8680 8692
 )
-"indentPrinter.ml" 241 8781 8785 "indentPrinter.ml" 241 8781 8795
+"indentPrinter.ml" 240 8748 8752 "indentPrinter.ml" 240 8748 8762
 type(
   (int -> int -> string -> Pos.Position.t * IndentBlock.t,
    Scanf.Scanning.in_channel, '_a,
@@ -4457,136 +4418,132 @@ type(
    Pos.Position.t * IndentBlock.t, Pos.Position.t * IndentBlock.t)
   format6
 )
-"indentPrinter.ml" 242 8796 8805 "indentPrinter.ml" 242 8796 8813
+"indentPrinter.ml" 241 8763 8772 "indentPrinter.ml" 241 8763 8780
 type(
   int
 )
 ident(
-  def pos_lnum "indentPrinter.ml" 242 8796 8814 "indentPrinter.ml" 244 8897 8949
+  def pos_lnum "indentPrinter.ml" 241 8763 8781 "indentPrinter.ml" 243 8864 8916
 )
-"indentPrinter.ml" 242 8796 8814 "indentPrinter.ml" 242 8796 8822
+"indentPrinter.ml" 241 8763 8781 "indentPrinter.ml" 241 8763 8789
 type(
   int
 )
 ident(
-  def pos_cnum "indentPrinter.ml" 242 8796 8823 "indentPrinter.ml" 244 8897 8949
+  def pos_cnum "indentPrinter.ml" 241 8763 8790 "indentPrinter.ml" 243 8864 8916
 )
-"indentPrinter.ml" 242 8796 8823 "indentPrinter.ml" 242 8796 8826
+"indentPrinter.ml" 241 8763 8790 "indentPrinter.ml" 241 8763 8793
 type(
   string
 )
 ident(
-  def str "indentPrinter.ml" 243 8830 8836 "indentPrinter.ml" 244 8897 8949
+  def str "indentPrinter.ml" 242 8797 8803 "indentPrinter.ml" 243 8864 8916
 )
-"indentPrinter.ml" 243 8830 8858 "indentPrinter.ml" 243 8830 8860
+"indentPrinter.ml" 242 8797 8825 "indentPrinter.ml" 242 8797 8827
 type(
   string
 )
-"indentPrinter.ml" 243 8830 8872 "indentPrinter.ml" 243 8830 8873
+"indentPrinter.ml" 242 8797 8839 "indentPrinter.ml" 242 8797 8840
 type(
   int
 )
-"indentPrinter.ml" 243 8830 8875 "indentPrinter.ml" 243 8830 8883
-type(
-  int
-)
-ident(
-  int_ref pos_lnum "indentPrinter.ml" 242 8796 8805 "indentPrinter.ml" 242 8796 8813
-)
-"indentPrinter.ml" 243 8830 8885 "indentPrinter.ml" 243 8830 8893
+"indentPrinter.ml" 242 8797 8842 "indentPrinter.ml" 242 8797 8850
 type(
   int
 )
 ident(
-  int_ref pos_cnum "indentPrinter.ml" 242 8796 8814 "indentPrinter.ml" 242 8796 8822
+  int_ref pos_lnum "indentPrinter.ml" 241 8763 8772 "indentPrinter.ml" 241 8763 8780
 )
-"indentPrinter.ml" 243 8830 8836 "indentPrinter.ml" 243 8830 8895
+"indentPrinter.ml" 242 8797 8852 "indentPrinter.ml" 242 8797 8860
+type(
+  int
+)
+ident(
+  int_ref pos_cnum "indentPrinter.ml" 241 8763 8781 "indentPrinter.ml" 241 8763 8789
+)
+"indentPrinter.ml" 242 8797 8803 "indentPrinter.ml" 242 8797 8862
 type(
   Pos.Position.t
 )
-"indentPrinter.ml" 244 8897 8903 "indentPrinter.ml" 244 8897 8922
+"indentPrinter.ml" 243 8864 8870 "indentPrinter.ml" 243 8864 8889
 type(
   string -> int -> IndentBlock.t
 )
 ident(
   ext_ref Marshal.from_string
 )
-"indentPrinter.ml" 244 8897 8924 "indentPrinter.ml" 244 8897 8942
+"indentPrinter.ml" 243 8864 8891 "indentPrinter.ml" 243 8864 8909
 type(
   string -> string
 )
 ident(
   ext_ref Util.string_of_hex
 )
-"indentPrinter.ml" 244 8897 8943 "indentPrinter.ml" 244 8897 8946
+"indentPrinter.ml" 243 8864 8910 "indentPrinter.ml" 243 8864 8913
 type(
   string
 )
 ident(
-  int_ref str "indentPrinter.ml" 242 8796 8823 "indentPrinter.ml" 242 8796 8826
+  int_ref str "indentPrinter.ml" 241 8763 8790 "indentPrinter.ml" 241 8763 8793
 )
-"indentPrinter.ml" 244 8897 8923 "indentPrinter.ml" 244 8897 8947
+"indentPrinter.ml" 243 8864 8890 "indentPrinter.ml" 243 8864 8914
 call(
   stack
 )
 type(
   string
 )
-"indentPrinter.ml" 244 8897 8948 "indentPrinter.ml" 244 8897 8949
+"indentPrinter.ml" 243 8864 8915 "indentPrinter.ml" 243 8864 8916
 type(
   int
 )
-"indentPrinter.ml" 244 8897 8903 "indentPrinter.ml" 244 8897 8949
+"indentPrinter.ml" 243 8864 8870 "indentPrinter.ml" 243 8864 8916
 call(
   stack
 )
 type(
   IndentBlock.t
 )
-"indentPrinter.ml" 243 8830 8836 "indentPrinter.ml" 244 8897 8949
+"indentPrinter.ml" 242 8797 8803 "indentPrinter.ml" 243 8864 8916
 type(
   Pos.Position.t * IndentBlock.t
 )
-"indentPrinter.ml" 242 8796 8800 "indentPrinter.ml" 244 8897 8950
+"indentPrinter.ml" 241 8763 8767 "indentPrinter.ml" 243 8864 8917
 type(
   int -> int -> string -> Pos.Position.t * IndentBlock.t
 )
-"indentPrinter.ml" 240 8757 8764 "indentPrinter.ml" 244 8897 8950
+"indentPrinter.ml" 239 8724 8731 "indentPrinter.ml" 243 8864 8917
 call(
   tail
 )
 type(
   Pos.Position.t * IndentBlock.t
 )
-"indentPrinter.ml" 238 8728 8730 "indentPrinter.ml" 244 8897 8950
+"indentPrinter.ml" 237 8695 8697 "indentPrinter.ml" 243 8864 8917
 type(
   Pos.Position.t * IndentBlock.t
 )
-"indentPrinter.ml" 237 8695 8697 "indentPrinter.ml" 244 8897 8950
-type(
-  Pos.Position.t * IndentBlock.t
-)
-"indentPrinter.ml" 246 8952 8956 "indentPrinter.ml" 246 8952 8962
+"indentPrinter.ml" 245 8919 8923 "indentPrinter.ml" 245 8919 8929
 type(
   output ->
   ?resume:Pos.Position.t * IndentBlock.t ->
   Nstream.t -> Pos.Position.t * IndentBlock.t
 )
 ident(
-  def stream "indentPrinter.ml" 247 8997 9024 "_none_" 1 0 -1
+  def stream "indentPrinter.ml" 246 8964 8991 "_none_" 1 0 -1
 )
-"indentPrinter.ml" 246 8952 8963 "indentPrinter.ml" 246 8952 8969
+"indentPrinter.ml" 245 8919 8930 "indentPrinter.ml" 245 8919 8936
 type(
   output
 )
 ident(
-  def output "indentPrinter.ml" 246 8952 8970 "indentPrinter.ml" 247 8997 9024
+  def output "indentPrinter.ml" 245 8919 8937 "indentPrinter.ml" 246 8964 8991
 )
-"indentPrinter.ml" 246 8952 8972 "indentPrinter.ml" 246 8952 8978
+"indentPrinter.ml" 245 8919 8939 "indentPrinter.ml" 245 8919 8945
 type(
   Pos.Position.t * IndentBlock.t
 )
-"indentPrinter.ml" 246 8952 8979 "indentPrinter.ml" 246 8952 8986
+"indentPrinter.ml" 245 8919 8946 "indentPrinter.ml" 245 8919 8953
 type(
   Pos.Position.t * IndentBlock.t
 )
@@ -4597,7 +4554,7 @@ type(
   Pos.Position.t * IndentBlock.t
 )
 ident(
-  int_ref *sth* "indentPrinter.ml" 246 8952 8979 "indentPrinter.ml" 246 8952 8986
+  int_ref *sth* "indentPrinter.ml" 245 8919 8946 "indentPrinter.ml" 245 8919 8953
 )
 type(
   (Pos.Position.t * IndentBlock.t) option
@@ -4608,14 +4565,14 @@ type(
 type(
   Pos.Position.t * IndentBlock.t
 )
-"indentPrinter.ml" 246 8952 8988 "indentPrinter.ml" 246 8952 8994
+"indentPrinter.ml" 245 8919 8955 "indentPrinter.ml" 245 8919 8961
 type(
   Nstream.t
 )
 ident(
-  def stream "indentPrinter.ml" 247 8997 8999 "indentPrinter.ml" 247 8997 9024
+  def stream "indentPrinter.ml" 246 8964 8966 "indentPrinter.ml" 246 8964 8991
 )
-"indentPrinter.ml" 247 8997 8999 "indentPrinter.ml" 247 8997 9003
+"indentPrinter.ml" 246 8964 8966 "indentPrinter.ml" 246 8964 8970
 type(
   output ->
   Pos.Position.t * IndentBlock.t ->
@@ -4624,28 +4581,28 @@ type(
 ident(
   int_ref loop "indentPrinter.ml" 167 6307 6315 "indentPrinter.ml" 167 6307 6319
 )
-"indentPrinter.ml" 247 8997 9004 "indentPrinter.ml" 247 8997 9010
+"indentPrinter.ml" 246 8964 8971 "indentPrinter.ml" 246 8964 8977
 type(
   output
 )
 ident(
-  int_ref output "indentPrinter.ml" 246 8952 8963 "indentPrinter.ml" 246 8952 8969
+  int_ref output "indentPrinter.ml" 245 8919 8930 "indentPrinter.ml" 245 8919 8936
 )
-"indentPrinter.ml" 247 8997 9011 "indentPrinter.ml" 247 8997 9017
+"indentPrinter.ml" 246 8964 8978 "indentPrinter.ml" 246 8964 8984
 type(
   Pos.Position.t * IndentBlock.t
 )
 ident(
-  int_ref resume "indentPrinter.ml" 246 8952 8972 "indentPrinter.ml" 246 8952 8978
+  int_ref resume "indentPrinter.ml" 245 8919 8939 "indentPrinter.ml" 245 8919 8945
 )
-"indentPrinter.ml" 247 8997 9018 "indentPrinter.ml" 247 8997 9024
+"indentPrinter.ml" 246 8964 8985 "indentPrinter.ml" 246 8964 8991
 type(
   Nstream.t
 )
 ident(
-  int_ref stream "indentPrinter.ml" 246 8952 8988 "indentPrinter.ml" 246 8952 8994
+  int_ref stream "indentPrinter.ml" 245 8919 8955 "indentPrinter.ml" 245 8919 8961
 )
-"indentPrinter.ml" 247 8997 8999 "indentPrinter.ml" 247 8997 9024
+"indentPrinter.ml" 246 8964 8966 "indentPrinter.ml" 246 8964 8991
 call(
   tail
 )
