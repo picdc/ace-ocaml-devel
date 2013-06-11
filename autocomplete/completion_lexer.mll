@@ -5,8 +5,8 @@
 {
   open Completion_data
 
-  let keywords = ["let", "in", "match", "with", "begin", "end", "try",
-  "failwith"]
+  let keywords = ["let"; "in"; "match"; "with"; "begin"; "end"; "try";
+  "failwith"; "raise"; "assert"]
 
   let keywords_htbl = 
     let h = Hashtbl.create 19 in

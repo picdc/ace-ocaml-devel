@@ -7,6 +7,9 @@ SOURCES= ace_utils.ml tabs.ml
 OCPDIR= ocp-indent-src
 OCPLIB= -I $(OCPDIR) ocp_indent.cma
 
+ACDIR= autocomplete
+ACLIB= -I $(ACDIR) autocomplete.cma
+
 RELIB= -I ~/.opam/4.00.1/lib/re re.cma re_emacs.cma re_str.cma
 
 #TOPLVLDIR= tryocaml/toplevel
@@ -14,7 +17,7 @@ RELIB= -I ~/.opam/4.00.1/lib/re re.cma re_emacs.cma re_str.cma
 
 OBJS= $(SOURCES:.ml=.cmo)
 
-LIBS= $(OCPLIB) $(RELIB)
+LIBS= $(OCPLIB) $(RELIB) $(ACLIB)
 
 JSFLAGS = -pretty -noinline
 
@@ -26,7 +29,7 @@ main.js: main.byte
 	js_of_ocaml $(JSFLAGS) $<
 
 
-main.byte: $(OBJS) indent_js.cmo autocomplete.cmo
+main.byte: $(OBJS) completion_js.cmo indent_js.cmo
 	$(CAMLJS) $(LIBS) -o $@ $^ $*.ml
 
 
@@ -34,9 +37,9 @@ indent_js.cmo:
 	$(MAKE) -C $(OCPDIR)
 	$(CAMLJS) -c $(OCPLIB) $*.ml
 
-
-autocomplete.cmo: ace_utils.cmo 
-	$(CAMLJS) $(RELIB) $^ -c $*.ml
+completion_js.cmo: 
+	$(MAKE) -C $(ACDIR)
+	$(CAMLJS) -c $(ACLIB) $*.ml
 
 $(OBJS): $(SOURCES)
 	$(CAMLJS) -c $*.ml
@@ -51,6 +54,7 @@ clean:
 
 clean-all: clean
 	$(MAKE) -C $(OCPDIR) clean
+	$(MAKE) -C ./autocomplete clean
 
 
 depend: $(SOURCES)
