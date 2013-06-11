@@ -133,14 +133,14 @@ function get_indent_lines(start, end) {
 	    indented_lines += '\n';
     }
 
-    console.log("start = "+start);
-    console.log("start2 = "+start2);
-    console.log("end = "+end);
-    console.log("last_anchor = "+last_anchor);
-    console.log("start_indent_in_block = "+start_indent_in_block);
-    console.log("end_indent_in_block = "+end_indent_in_block);
-    console.log("text = \n----\n"+text+"\n----");
-    console.log("code = \n----\n"+code+"\n----");
+    // console.log("start = "+start);
+    // console.log("start2 = "+start2);
+    // console.log("end = "+end);
+    // console.log("last_anchor = "+last_anchor);
+    // console.log("start_indent_in_block = "+start_indent_in_block);
+    // console.log("end_indent_in_block = "+end_indent_in_block);
+    // console.log("text = \n----\n"+text+"\n----");
+    // console.log("code = \n----\n"+code+"\n----");
 
 
     // Résultat final = code indenté des blocs précédent +
@@ -171,6 +171,11 @@ function indent_lines(start, end) {
 editor.getSession().setTabSize(2);
 
 
+/* Utils for auto-completion */
+
+var in_completion_mode = false;
+
+
 /* Config des keybindings */
 editor.commands.addCommand({
     name: 'indent-lines',
@@ -181,6 +186,7 @@ editor.commands.addCommand({
     },
     readOnly: false
 });
+
 editor.commands.addCommand({
     name: 'comment-lines',
     bindKey: {win: 'Ctrl-B', mac: 'Control-B'},
@@ -190,6 +196,43 @@ editor.commands.addCommand({
     readOnly: false
 });
 
+
+editor.commands.addCommand({
+    name: 'complete-word',
+    bindKey: {win: 'Ctrl-Q'// , mac: 'Control-L'
+             },
+    exec: function(editor) {
+        console.log("Completion");
+        var c = editor.getCursorPosition();
+        var token = editor.getSession().getTokenAt(c.row, c.column);
+        var range = new Range(c.row, token.start, c.row, c.column);
+
+        console.log(token);
+        if (token != null && token.type == 'identifier' 
+            || token.type == 'support.function'
+            || token.type == 'keyword') {
+            var v = token.value;
+            if (!in_completion_mode) {
+                computeCompletions(v);
+                in_completion_mode = true;
+            }
+            var next = nextCompletion();
+            console.log(next);
+            if (next != undefined)
+                editor.getSession().replace(range, next);
+        }
+    },
+    readOnly: false
+});
+
+// editor.commands.addCommand({
+//     name:'find-commpletion',
+//     bindKey: {win 'Ctrl-/', mac: 'Control-/'},
+//     exec: function(editor) {
+//         console.log("Completions possibles :");
+//     },
+//     readOnly: false
+// });
 
 
 
@@ -237,9 +280,15 @@ var outdenter_list = /(in|let|end)/;
 
 	if ( token == null )
 	    return false;
-
-	if ( input == '\n' || input == ' ' ) {
+        
+        if ( input == '\n' || input == ' ' ) {
 	    var next_token = session.getTokenAt(curpos.row, curpos.column+1);
+            in_completion_mode = false;
+
+            if ( token.type == "support.function" || token.type == "identifier"
+            || token.type == "keyword") {
+                newWord(token.value);
+            }
 
 	    if ( token.type == "keyword" &&
 		 outdenter_list.test(token.value) &&
