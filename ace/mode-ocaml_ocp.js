@@ -59,7 +59,7 @@ function get_indent(line) {
 }
 
 /* Ici les lignes commencent à l'index 0 */
-function get_last_anchor(start, end) {
+function OLD_get_last_anchor(start, end) {
     var session = editor.getSession();
     var currline = start;// editor.getCursorPosition().row;
     var count = 0;
@@ -98,9 +98,9 @@ function get_last_anchor(start, end) {
 /* Attention start et end sont les numéros de lignes du document
    qu'on souhaite indenté.
    La première ligne commence avec un index de 1 */
-function get_indent_lines(start, end) {
+function OLD_get_indent_lines(start, end) {
     var session = editor.getSession();
-    var last_anchor = get_last_anchor(start-1, end-1);
+    var last_anchor = OLD_get_last_anchor(start-1, end-1);
 
     // Traitement si la sélection a plusieurs "blocs"
     var start2 = start;
@@ -149,11 +149,11 @@ function get_indent_lines(start, end) {
 }
 
 /* Idem que get_indent_lines */
-function indent_lines(start, end) {
+function OLD_indent_lines(start, end) {
     var curpos = editor.getCursorPosition();
     var document = editor.getSession().getDocument();
     var fvr = editor.getFirstVisibleRow();
-    var indented_code = get_indent_lines(start, end);
+    var indented_code = OLD_get_indent_lines(start, end);
 
     /* Remplacement partiel du document par notre code indenté */
     var col_end = document.getLine(end-1).length
@@ -164,6 +164,28 @@ function indent_lines(start, end) {
     editor.moveCursorToPosition(curpos);
     editor.scrollToRow(fvr);
     editor.clearSelection();
+}
+
+function indent_line(row, nb_indent) {
+    var doc = editor.getSession().getDocument();
+    var line = doc.getLine(row);
+    var col = get_indent(line).length;
+    var rng = new Range(row, 0, row, col);
+    var new_indent = "";
+    for ( var i = 0 ; i < nb_indent ; i++ )
+	new_indent += " ";
+    doc.replace(rng, new_indent);
+}
+
+function indent_region(range, array_nb_indent) {
+    var start = range.start.row;
+    var end = range.end.row;
+    var length = array_nb_indent.length;
+    if ( length > (end - start + 1) ) 
+	length = end - start + 1;
+
+    for ( var i=0 ; i < length ; i++ )
+	indent_line(start+i, array_nb_indent[i]);
 }
  
 
@@ -181,8 +203,16 @@ editor.commands.addCommand({
     name: 'indent-lines',
     bindKey: {win: 'Tab', mac: 'Tab'},
     exec: function(editor) {
+	// OLD VERSION
 	var r = editor.getSelectionRange();
-	indent_lines(r.start.row+1, r.end.row+1);
+	OLD_indent_lines(r.start.row+1, r.end.row+1);
+	// NEW VERSION
+	// var text = editor.getValue();
+	// var r = editor.getSelectionRange();
+	// console.time("indent_region_via_tab")
+	// var n = ocpiMultinum(text, r.start.row+1, r.end.row+1);
+	// console.timeEnd("indent_region_via_tab");
+	// indent_region(r, n);
     },
     readOnly: false
 });
@@ -241,6 +271,7 @@ editor.commands.addCommand({
 
 var outdenter_list = /(in|let|end)/;
 
+
 (function() {
 
     this.toggleCommentLines = function(state, doc, startRow, endRow) {
@@ -269,7 +300,7 @@ var outdenter_list = /(in|let|end)/;
  
     this.getNextLineIndent = function(state, line, tab) {
 	var currline = editor.getCursorPosition().row + 1;
-	var indented_line = get_indent_lines(currline, currline);
+	var indented_line = OLD_get_indent_lines(currline, currline);
         return get_indent(indented_line);
     };
 
@@ -304,7 +335,7 @@ var outdenter_list = /(in|let|end)/;
     };
 
     this.autoOutdent = function(state, doc, row) {
-	indent_lines(row + 1, editor.getCursorPosition().row + 1);
+	OLD_indent_lines(row + 1, editor.getCursorPosition().row + 1);
     };
 
 }).call(Mode.prototype);
