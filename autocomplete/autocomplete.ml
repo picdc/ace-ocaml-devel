@@ -5,7 +5,38 @@
 
 open Completion_data
 
+(** (* Creation functions *) **)
+
+let reset_env () =
+  actual_env := empty_env ()
+
 let add_word = new_word
+
+let create_from_string str =
+  Completion_lexer.token (Lexing.from_string str)
+
+
+let create_from_channel ch =
+  Completion_lexer.token (Lexing.from_channel ch)
+
+(** Utils functions **)
+
+let set_to_list s =
+  List.rev (Words.fold (fun elt l -> elt :: l) s [])
+
+let set_to_array s =
+  let a = Array.make (Words.cardinal s) "" in
+  ignore (Words.fold (fun elt i -> a.(i) <- elt; i+1) s 0);
+  a
+
+let print_word_from_set s =
+  let rec print = function
+    | [] -> []
+    | w :: l -> Format.printf "%s@." w; print l
+  in
+  print (set_to_list s)
+
+(** Functions to compute completion **)
 
 let find_completion w =
   let re = "^" ^ w ^ "*" in
@@ -24,20 +55,10 @@ let find_completion w =
       env.actual
       acc
     in
-    if env == glob_env then acc
+    if env == env.parent then acc
     else step env.parent acc
   in
   step !actual_env Words.empty
-
-let set_to_list s =
-  List.rev (Words.fold (fun elt l -> elt :: l) s [])
-
-let set_to_array s =
-  let a = Array.make (Words.cardinal s) "" in
-  ignore (Words.fold (fun elt i -> a.(i) <- elt; i+1) s 0);
-  a
-
-(** Functions to compute completion **)
 
 let compute_completions w =
   let words = find_completion w in
@@ -50,6 +71,21 @@ let next_completion () =
   actual_index := (!actual_index + 1) mod Array.length !completions;
   n
 
+let _ =
+  reset_env ();
+  new_word "get_use";
+  new_word "get_i";
+  new_word "match_stg";
+  let f = open_in "autocomplete.ml" in
+  reset_env ();
+  create_from_channel f;
+  compute_completions "comp";
+  let n = next_completion () in
+  Format.printf "%s@." n;
+  let n = next_completion () in
+  Format.printf "%s@." n;
+  let n = next_completion () in
+  Format.printf "%s@." n
 
   
    
