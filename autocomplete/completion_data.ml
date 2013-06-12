@@ -2,7 +2,6 @@ module Words = Set.Make(String)
 
 let words = ref Words.empty
 
-
 type env =
     { mutable actual : Words.t;
       parent : env }
@@ -15,6 +14,13 @@ let rec glob_env =
     parent = glob_env }
 
 let actual_env = ref glob_env
+
+let empty_env () =
+  let rec env = 
+    { actual = Words.empty;
+      parent = env }
+  in
+  env
 
 let new_block env = 
   { actual = Words.empty; parent = env }
