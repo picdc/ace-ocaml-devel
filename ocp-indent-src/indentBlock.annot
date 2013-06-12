@@ -7836,7 +7836,7 @@ ident(
 )
 "indentBlock.ml" 549 17155 17169 "indentBlock.ml" 549 17155 17198
 call(
-  tail
+  stack
 )
 type(
   Node.t list
@@ -7921,7 +7921,7 @@ ident(
 )
 "indentBlock.ml" 551 17221 17235 "indentBlock.ml" 553 17327 17344
 call(
-  tail
+  stack
 )
 type(
   Node.t list

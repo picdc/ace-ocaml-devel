@@ -54,139 +54,81 @@ oop.inherits(Mode, TextMode);
 /**********************************************************/
 
 
-function get_indent(line) {
-    return line.match(/^\s*/)[0];
-}
+// function get_indent(line) {
+//     return line.match(/^\s*/)[0];
+// }
 
-/* Ici les lignes commencent à l'index 0 */
-function OLD_get_last_anchor(start, end) {
-    var session = editor.getSession();
-    var currline = start;// editor.getCursorPosition().row;
-    var count = 0;
+// var anchor_inc = /(in|end|done)/;
+// var anchor_dec = /(let|begin|do)/;
 
-    // initialisation du count à partir du nombre de in de la currline
-    /* Inutile car on va forcer ocp-indent a prendre en compte 
-       l'indentation déjà existante, et donc juste le block courrant
-       est nécessaire */
-    // for ( var i = end-1 ; i >= start-1 ; i-- ) {
-    	// var tokens_curr = session.getTokens(end);
-    	// for ( var j = tokens_curr.length-1 ; j>=0 ; j-- ) {
-    	//     if ( tokens_curr[j].type == "keyword" &&
-    	// 	 tokens_curr[j].value == "in" )
-    	// 	count++;
-    	// }
-    // }
-    // recherche de la dernière ancre
-    for ( var i = end-1 ; i >= 0 ; i-- ) {
-	var tokens = session.getTokens(i);
-	for ( var j = tokens.length-1 ; j >= 0 ; j-- ) {
-	    if ( tokens[j].type == "keyword" ) {
-		var v = tokens[j].value;
-		if ( v == "in" )
-		    count++;
-		else if ( v == "let" ) {
-		    if ( count == 0 )
-			return i;
-		    else count--;
-		}
-	    }
-	}
-    }
-    return 0;
-}
+// function get_last_anchor(row) {
+//     var count = 0;
+//     for ( var i = row-1 ; i >= 0 ; i-- ) {
+// 	var tokens = editor.getSession().getTokens(i);
+// 	for ( var j = tokens.length-1 ; j >= 0 ; j-- ) {
+// 	    if ( tokens[j].type == "keyword" ) {
+// 		var v = tokens[j].value;
+// 		if ( anchor_inc.test(v) )
+// 		    count++;
+// 		else if ( anchor_dec.test(v) ) {
+// 		    if ( count == 0 )
+// 			return i;
+// 		    else count--;
+// 		} else if ( v == "match" && count == 0 )
+// 		    return i;
+// 	    }
+// 	}
+//     }
+//     return 0;
+// }
 
-/* Attention start et end sont les numéros de lignes du document
-   qu'on souhaite indenté.
-   La première ligne commence avec un index de 1 */
-function OLD_get_indent_lines(start, end) {
-    var session = editor.getSession();
-    var last_anchor = OLD_get_last_anchor(start-1, end-1);
-
-    // Traitement si la sélection a plusieurs "blocs"
-    var start2 = start;
-    var prev_code = "";
-    if ( start-1 < last_anchor ) {
-	prev_code = get_indent_lines(start, last_anchor)+'\n';
-	start2 = last_anchor+1;
-    }
-
-    var text = session.getLines(last_anchor, end-1).join('\n');
-
-    // Création d'une ligne vide pour qu'ocp-indent se scale dessus
-    //  pour l'indentation relative
-    var fictive_line = get_indent(text.split('\n')[0])+';\n';
-
-    // On repère la sélection du texte à indenter
-    //    +1 pour notre ligne fictive  
-    var start_indent_in_block = start2 - last_anchor + 1;
-    var end_indent_in_block = end - last_anchor + 1;
-    var code = ocpiPrint(fictive_line+text,
-			 start_indent_in_block,
-			 end_indent_in_block);
-
-    // On récupère que les lignes du code indenté qui ont changées
-    var indented_lines = "";
-    code = code.split('\n');
-    for ( var i=start_indent_in_block-1 ; i < end_indent_in_block ; i++ ) {
-	indented_lines += code[i];
-	if ( i != end_indent_in_block-1 )
-	    indented_lines += '\n';
-    }
-
-    // console.log("start = "+start);
-    // console.log("start2 = "+start2);
-    // console.log("end = "+end);
-    // console.log("last_anchor = "+last_anchor);
-    // console.log("start_indent_in_block = "+start_indent_in_block);
-    // console.log("end_indent_in_block = "+end_indent_in_block);
-    // console.log("text = \n----\n"+text+"\n----");
-    // console.log("code = \n----\n"+code+"\n----");
+// function get_indent_line(row) {
+//     var last_anchor = get_last_anchor(row);
+//     var text = editor.getSession().getLines(last_anchor, row).join('\n');
+//     var add = get_indent(text.split('\n')[0]).length;
+//     console.debug(text);
+//     console.debug(add);
+//     console.debug(row-last_anchor);
+//     return getIndentLine(text, row-last_anchor, add);
+// }
 
 
-    // Résultat final = code indenté des blocs précédent +
-    //   celui du bloc actuel
-    return prev_code+indented_lines;
-}
+// function indent_line(row) {
+//     var last_anchor = get_last_anchor(row);
+//     var text = editor.getSession().getLines(last_anchor, row).join('\n');
+//     var add = get_indent(text.split('\n')[0]).length;
+//     console.debug(text);
+//     console.debug(add);
+//     console.debug(row-last_anchor);
+//     indentLine(text, last_anchor, row-last_anchor, add);
+// }
 
-/* Idem que get_indent_lines */
-function OLD_indent_lines(start, end) {
-    var curpos = editor.getCursorPosition();
-    var document = editor.getSession().getDocument();
-    var fvr = editor.getFirstVisibleRow();
-    var indented_code = OLD_get_indent_lines(start, end);
 
-    /* Remplacement partiel du document par notre code indenté */
-    var col_end = document.getLine(end-1).length
-    var r = new Range(start-1, 0, end-1, col_end);
-    document.replace(r, indented_code);
+// function indent_region(row_start, row_end) {
+//     if ( row_start == row_end ) {
+// 	indentLine(row_start);
+//     } else {
+// 	var session = editor.getSession();
+// 	var last_anchor = get_last_anchor(row_end);
+	
+// 	// Traitement si la sélection a plusieurs "blocs"
+// 	while ( row_start < last_anchor )
+// 	    last_anchor = get_last_anchor(last_anchor);
 
-    /* Repositionnement du curseur */
-    editor.moveCursorToPosition(curpos);
-    editor.scrollToRow(fvr);
-    editor.clearSelection();
-}
+// 	var text = editor.getSession().getLines(last_anchor, row_end).join('\n');
+// 	var add = get_indent(text.split('\n')[0]).length;
 
-function indent_line(row, nb_indent) {
-    var doc = editor.getSession().getDocument();
-    var line = doc.getLine(row);
-    var col = get_indent(line).length;
-    var rng = new Range(row, 0, row, col);
-    var new_indent = "";
-    for ( var i = 0 ; i < nb_indent ; i++ )
-	new_indent += " ";
-    doc.replace(rng, new_indent);
-}
-
-function indent_region(range, array_nb_indent) {
-    var start = range.start.row;
-    var end = range.end.row;
-    var length = array_nb_indent.length;
-    if ( length > (end - start + 1) ) 
-	length = end - start + 1;
-
-    for ( var i=0 ; i < length ; i++ )
-	indent_line(start+i, array_nb_indent[i]);
-}
+// 	// On repère la sélection du texte à indenter)
+// 	var start = row_start - last_anchor;
+// 	var end = row_end - last_anchor;
+// 	console.debug(text);
+// 	console.debug(add);
+// 	console.debug(last_anchor);
+// 	console.debug(start);
+// 	console.debug(end);
+// 	indentRegion(text, last_anchor, start, end, add);
+//     }
+// }
  
 
 /* Config de l'éditeur */
@@ -203,16 +145,10 @@ editor.commands.addCommand({
     name: 'indent-lines',
     bindKey: {win: 'Tab', mac: 'Tab'},
     exec: function(editor) {
-	// OLD VERSION
 	var r = editor.getSelectionRange();
-	OLD_indent_lines(r.start.row+1, r.end.row+1);
-	// NEW VERSION
-	// var text = editor.getValue();
-	// var r = editor.getSelectionRange();
-	// console.time("indent_region_via_tab")
-	// var n = ocpiMultinum(text, r.start.row+1, r.end.row+1);
-	// console.timeEnd("indent_region_via_tab");
-	// indent_region(r, n);
+	console.time("indent_via_tab");
+	indentRegion(r.start.row, r.end.row);
+	console.timeEnd("indent_via_tab");
     },
     readOnly: false
 });
@@ -222,6 +158,16 @@ editor.commands.addCommand({
     bindKey: {win: 'Ctrl-B', mac: 'Control-B'},
     exec: function(editor) {
 	editor.toggleCommentLines();
+    },
+    readOnly: false
+});
+
+/* FOR TEST */
+editor.commands.addCommand({
+    name: 'test',
+    bindKey: {win: 'Ctrl-A', mac: 'Control-A'},
+    exec: function(editor) {
+	indentTest();
     },
     readOnly: false
 });
@@ -269,7 +215,7 @@ editor.commands.addCommand({
 //var indenter = /(?:[({[=:]|[-=]>|\b(?:else|try|with))\s*$/;
 //var outdenter = /^[' '|'\t']*(in|(end[' '|'\t']*;?)|let)[' '|'\t']*$/;
 
-var outdenter_list = /(in|let|end)/;
+var outdenter_list = /(in|let|end|done)/;
 
 
 (function() {
@@ -299,9 +245,10 @@ var outdenter_list = /(in|let|end)/;
 
  
     this.getNextLineIndent = function(state, line, tab) {
-	var currline = editor.getCursorPosition().row + 1;
-	var indented_line = OLD_get_indent_lines(currline, currline);
-        return get_indent(indented_line);
+	console.time("indent_next_line");
+	var t = getIndentLine(editor.getCursorPosition().row);
+	console.timeEnd("indent_next_line");
+	return t;
     };
 
     this.checkOutdent = function(state, line, input) {
@@ -314,19 +261,22 @@ var outdenter_list = /(in|let|end)/;
         
         if ( input == '\n' || input == ' ' ) {
 	    var next_token = session.getTokenAt(curpos.row, curpos.column+1);
+	    /* Traitement d'auto-complétion */
             in_completion_mode = false;
-
-            if ( token.type == "support.function" || token.type == "identifier"
-            || token.type == "keyword") {
+            if ( token.type == "support.function" ||
+		 token.type == "identifier" ||
+		 token.type == "keyword") {
                 newWord(token.value);
             }
-
+	    
+	    /* Traitement de l'outdent */
 	    if ( token.type == "keyword" &&
 		 outdenter_list.test(token.value) &&
 		 token != next_token ) {
 		return true;
 	    } 
 	}
+
 	if ( token.type == "keyword.operator" &&
 	     token.value == "|" )
 	    return true;
@@ -335,7 +285,9 @@ var outdenter_list = /(in|let|end)/;
     };
 
     this.autoOutdent = function(state, doc, row) {
-	OLD_indent_lines(row + 1, editor.getCursorPosition().row + 1);
+	console.time("outdent");
+	indentRegion(row, editor.getCursorPosition().row);
+	console.timeEnd("outdent");
     };
 
 }).call(Mode.prototype);

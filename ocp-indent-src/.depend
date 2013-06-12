@@ -1,3 +1,4 @@
+NEW_SHITnstream.cmi : pos.cmi approx_lexer.cmo
 approx_common.cmi :
 indentArgs.cmi : indentPrinter.cmi
 indentBlock.cmi : nstream.cmi indentConfig.cmi
@@ -5,6 +6,8 @@ indentConfig.cmi :
 indentPrinter.cmi : pos.cmi nstream.cmi indentConfig.cmi
 nstream.cmi : pos.cmi approx_lexer.cmo
 pos.cmi :
+NEW_SHITnstream.cmo : pos.cmi approx_lexer.cmo NEW_SHITnstream.cmi
+NEW_SHITnstream.cmx : pos.cmx approx_lexer.cmx NEW_SHITnstream.cmi
 approx_lexer.cmo : approx_tokens.cmo approx_common.cmi
 approx_lexer.cmx : approx_tokens.cmx approx_common.cmi
 approx_tokens.cmo : approx_common.cmi

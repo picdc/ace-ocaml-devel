@@ -1,9 +1,9 @@
 
 open Ace_utils
-open Indent_js
+open Indent
 
 
-let make_editor container =
+let make_editor (container: Dom_html.element Js.t) : unit =
   let doc = Dom_html.document in
   let div_input = Dom_html.createDiv doc in
   let div_tabs = Dom_html.createDiv doc in
@@ -18,8 +18,8 @@ let make_editor container =
   div_editor##id <- Js.string "editor";
   script_ace_init##text <- Js.string
     "var editor = ace.edit(\"editor\");
-      editor.setTheme(\"ace/theme/eclipse\");
-      editor.getSession().setMode(\"ace/mode/ocaml_ocp\");";
+     editor.setTheme(\"ace/theme/eclipse\");
+     editor.getSession().setMode(\"ace/mode/ocaml_ocp\");";
   container##style##zIndex <- Js.string "5";
   container##style##minWidth <- Js.string "620px";
   css_tabs##href <- Js.string "./tabs.css";

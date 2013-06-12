@@ -22,10 +22,9 @@
   - ocp-index (courage Pierrick !)
 
 * Indentation
-  - Bug quand sélection trop grosse
   - Adapter la méthode par block pour les modules
+  - Bug avec les if et/ou autre chance
   - Quand on appuye sur Tab, placer cursor juste apres l'indentation
-  - Bug d'un let après un match dans l'édition de indentBlock.ml
   - Configurer l'indentation
 
 * Code folding

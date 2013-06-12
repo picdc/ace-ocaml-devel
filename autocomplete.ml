@@ -3,43 +3,43 @@
 **)
 
 
-open Completion_data
+(* open Completion_data *)
 
-(* module Words = Set.Make(String) *)
+module Words = Set.Make(String)
 
-(* let words = ref Words.empty *)
+let words = ref Words.empty
 
-(* type env = *)
-(*     { mutable actual : Words.t; *)
-(*       parent : env } *)
+type env =
+    { mutable actual : Words.t;
+      parent : env }
 
-(* let completions = ref (Array.make 0 "") *)
-(* let actual_index = ref 0 *)
+let completions = ref (Array.make 0 "")
+let actual_index = ref 0
 
-(* let rec glob_env =  *)
-(*   { actual = Words.empty; *)
-(*     parent = glob_env } *)
+let rec glob_env =
+  { actual = Words.empty;
+    parent = glob_env }
 
-(* let actual_env = ref glob_env *)
+let actual_env = ref glob_env
 
-(* let new_block env =  *)
-(*   { actual = Words.empty; parent = env } *)
+let new_block env =
+  { actual = Words.empty; parent = env }
 
-(* let end_block env = *)
-(*   env.parent *)
+let end_block env =
+  env.parent
   
-(* let begin_block () = *)
-(*   actual_env := new_block !actual_env *)
+let begin_block () =
+  actual_env := new_block !actual_env
 
-(* let close_block () = *)
-(*   actual_env := end_block !actual_env *)
+let close_block () =
+  actual_env := end_block !actual_env
 
-(* let new_word w = *)
-(*   !actual_env.actual <- Words.add w !actual_env.actual *)
+let new_word w =
+  !actual_env.actual <- Words.add w !actual_env.actual
 
 let rec print_words = function
   | [] -> ()
-  | w :: l -> Ace_utils.console w; print_words l
+  | w :: l -> Ace_utils.console_log w; print_words l
 
 (* let change_glob_env env = *)
 (*   glob_env := env *)
