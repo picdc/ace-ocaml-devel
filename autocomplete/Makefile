@@ -14,14 +14,14 @@ OBJS= $(SOURCES1:.ml=.cmo)
 all: depend autocomplete.cmo
 
 byte: $(OBJS)
-	$(CAMLFIND) $(CAMLC) $(INCLUDES) $^ \
+	$(CAMLFIND) $(CAMLC) -g $(INCLUDES) $^ \
 	-linkpkg -o autocomplete.byte autocomplete.ml
 
 depend: $(SOURCES)
 	$(CAMLDEP) -pp $(PP) *.mli *.ml > .depend
 
 autocomplete.cmo: $(OBJS)
-	$(CAMLFIND) $(CAMLC) -package re $^ \
+	$(CAMLFIND) $(CAMLC) -g -package re $^ \
 	-linkpkg -o autocomplete.cma -a $*.ml
 
 clean:

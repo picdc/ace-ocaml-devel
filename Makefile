@@ -29,7 +29,7 @@ main.js: main.byte
 	js_of_ocaml $(JSFLAGS) $<
 
 
-main.byte: $(OBJS) completion_js.cmo indent_js.cmo
+main.byte: ace_utils.cmo completion_js.cmo $(OBJS) indent_js.cmo
 	$(CAMLJS) $(LIBS) -o $@ $^ $*.ml
 
 

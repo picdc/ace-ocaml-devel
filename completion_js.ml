@@ -12,7 +12,14 @@ let compute_completions w =
   Autocomplete.compute_completions w
 
 let next_completion () =
-  Js.string (Autocomplete.next_completion () )
+  try
+    Js.string (Autocomplete.next_completion () )
+  with
+      _ -> Js.string ""
+
+let add_words_from_string str =
+  let str = Js.to_string str in
+  Autocomplete.create_from_string str
   
 
 

@@ -76,7 +76,7 @@ let _ =
   new_word "get_use";
   new_word "get_i";
   new_word "match_stg";
-  let f = open_in "autocomplete.ml" in
+  let f = open_in "indentBlock.ml" in
   reset_env ();
   create_from_channel f;
   compute_completions "comp";

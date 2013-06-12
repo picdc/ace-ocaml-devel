@@ -11,12 +11,17 @@
                   "in", IN; 
                   "match", MATCH; 
                   "with", WITH; 
+                  "function", MATCH;
                   "begin", BEGIN; 
                   "end", END; 
                   "try", TRY;
                   "for", FOR;
+                  "type", TYPE;
                   "while", WHILE;
                   "do", DO;
+                  "if", OTHER;
+                  "then", OTHER;
+                  "else", OTHER;
                   "done", DONE;
                   "failwith", OTHER; 
                   "raise", OTHER; 
@@ -46,6 +51,12 @@ rule token = parse
   | ";" { compute SEMICOL; token lexbuf }
   | ";;" { compute DBLSEMC; token lexbuf }
   | "=" { compute EQ; token lexbuf }
+  (* | "->" { compute BLOCK; token lexbuf } *)
+  | ("|" ([^'-'][^'>'])*  "->" as s) { 
+    (* Format.printf "MATCHCASE : %s@." s; *)
+    compute MATCHCASE; 
+    token lexbuf }
+  | "()" { compute (IDENT "unit"); token lexbuf }
   | (digit)+(".")?(digit)* {compute (IDENT "constant_number"); token lexbuf }
   | (ident as s) space
       { 
