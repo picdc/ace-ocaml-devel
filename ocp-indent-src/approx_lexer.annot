@@ -12480,7 +12480,7 @@ type(
 )
 "approx_lexer.mll" 745 113833 113848 "approx_lexer.mll" 745 113833 113855
 call(
-  tail
+  stack
 )
 type(
   (token * (int * int)) list
@@ -12706,7 +12706,7 @@ type(
 )
 "approx_lexer.mll" 757 114091 114106 "approx_lexer.mll" 757 114091 114113
 call(
-  tail
+  stack
 )
 type(
   token list
