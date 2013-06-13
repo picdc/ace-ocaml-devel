@@ -2,7 +2,6 @@
 open Ace_utils
 open Indent
 
-
 let make_editor (container: Dom_html.element Js.t) : unit =
   let doc = Dom_html.document in
   let div_input = Dom_html.createDiv doc in
@@ -27,13 +26,14 @@ let make_editor (container: Dom_html.element Js.t) : unit =
   css_tabs##_type <- Js.string "text/css";
 
   Dom.appendChild container div_input;
-  Dom.appendChild container div_tabs;
+  Dom.appendChild container div_tabs; (* A METTRE DANS TABS.init() *)
   Dom.appendChild container div_listtabs;
   Dom.appendChild container div_editor;
   Dom.appendChild doc##body script_ace_init;
   Dom.appendChild doc##body css_tabs;
 
-  Tabs.main ()
+  Tabs.main ();
+  Mytoplevel.init container
 
   
 

@@ -1718,28 +1718,28 @@ type(
   ?extra:(string -> (string -> 'a) option) -> t -> string -> t
 )
 ident(
-  def update_from_string "indentConfig.ml" 174 5991 5991 "_none_" 1 0 -1
+  def update_from_string "indentConfig.ml" 174 5997 5997 "_none_" 1 0 -1
 )
 "indentConfig.ml" 157 5300 5324 "indentConfig.ml" 157 5300 5329
 type(
   (string -> (string -> 'a) option) option
 )
 ident(
-  def extra "indentConfig.ml" 157 5300 5330 "indentConfig.ml" 171 5873 5910
+  def extra "indentConfig.ml" 157 5300 5330 "indentConfig.ml" 171 5876 5916
 )
 "indentConfig.ml" 157 5300 5330 "indentConfig.ml" 157 5300 5336
 type(
   t
 )
 ident(
-  def indent "indentConfig.ml" 157 5300 5337 "indentConfig.ml" 171 5873 5910
+  def indent "indentConfig.ml" 157 5300 5337 "indentConfig.ml" 171 5876 5916
 )
 "indentConfig.ml" 157 5300 5337 "indentConfig.ml" 157 5300 5338
 type(
   string
 )
 ident(
-  def s "indentConfig.ml" 158 5341 5343 "indentConfig.ml" 171 5873 5910
+  def s "indentConfig.ml" 158 5341 5343 "indentConfig.ml" 171 5876 5916
 )
 "indentConfig.ml" 158 5341 5343 "indentConfig.ml" 158 5341 5357
 type(
@@ -1753,415 +1753,415 @@ type(
   t
 )
 ident(
-  def indent "indentConfig.ml" 159 5358 5374 "indentConfig.ml" 169 5824 5860
+  def indent "indentConfig.ml" 159 5358 5374 "indentConfig.ml" 169 5827 5863
 )
 "indentConfig.ml" 159 5358 5374 "indentConfig.ml" 159 5358 5375
 type(
   string
 )
 ident(
-  def s "indentConfig.ml" 159 5358 5379 "indentConfig.ml" 169 5824 5860
+  def s "indentConfig.ml" 159 5358 5379 "indentConfig.ml" 169 5827 5863
 )
-"indentConfig.ml" 159 5358 5385 "indentConfig.ml" 159 5358 5402
+"indentConfig.ml" 159 5358 5385 "indentConfig.ml" 159 5358 5405
 type(
   char -> string -> string list
 )
 ident(
-  ext_ref Util.string_split
+  ext_ref OcpUtil.string_split
 )
-"indentConfig.ml" 159 5358 5403 "indentConfig.ml" 159 5358 5406
+"indentConfig.ml" 159 5358 5406 "indentConfig.ml" 159 5358 5409
 type(
   char
 )
-"indentConfig.ml" 159 5358 5407 "indentConfig.ml" 159 5358 5408
+"indentConfig.ml" 159 5358 5410 "indentConfig.ml" 159 5358 5411
 type(
   string
 )
 ident(
   int_ref s "indentConfig.ml" 159 5358 5374 "indentConfig.ml" 159 5358 5375
 )
-"indentConfig.ml" 159 5358 5385 "indentConfig.ml" 159 5358 5408
+"indentConfig.ml" 159 5358 5385 "indentConfig.ml" 159 5358 5411
 call(
   stack
 )
 type(
   string list
 )
-"indentConfig.ml" 160 5414 5422 "indentConfig.ml" 160 5414 5424
+"indentConfig.ml" 160 5417 5425 "indentConfig.ml" 160 5417 5427
 type(
   string list
 )
-"indentConfig.ml" 160 5414 5428 "indentConfig.ml" 160 5414 5430
+"indentConfig.ml" 160 5417 5431 "indentConfig.ml" 160 5417 5433
 type(
   string
 )
-"indentConfig.ml" 160 5414 5427 "indentConfig.ml" 160 5414 5431
+"indentConfig.ml" 160 5417 5430 "indentConfig.ml" 160 5417 5434
 type(
   string list
 )
-"indentConfig.ml" 160 5414 5422 "indentConfig.ml" 160 5414 5431
+"indentConfig.ml" 160 5417 5425 "indentConfig.ml" 160 5417 5434
 type(
   string list
 )
-"indentConfig.ml" 160 5414 5435 "indentConfig.ml" 160 5414 5441
+"indentConfig.ml" 160 5417 5438 "indentConfig.ml" 160 5417 5444
 type(
   t
 )
 ident(
   int_ref indent "indentConfig.ml" 159 5358 5367 "indentConfig.ml" 159 5358 5373
 )
-"indentConfig.ml" 161 5442 5451 "indentConfig.ml" 161 5442 5454
+"indentConfig.ml" 161 5445 5454 "indentConfig.ml" 161 5445 5457
 type(
   string
 )
 ident(
-  def var "indentConfig.ml" 161 5442 5465 "indentConfig.ml" 161 5442 5520
+  def var "indentConfig.ml" 161 5445 5468 "indentConfig.ml" 161 5445 5523
 )
-"indentConfig.ml" 161 5442 5455 "indentConfig.ml" 161 5442 5460
+"indentConfig.ml" 161 5445 5458 "indentConfig.ml" 161 5445 5463
 type(
   string
 )
 ident(
-  def value "indentConfig.ml" 161 5442 5465 "indentConfig.ml" 161 5442 5520
+  def value "indentConfig.ml" 161 5445 5468 "indentConfig.ml" 161 5445 5523
 )
-"indentConfig.ml" 161 5442 5450 "indentConfig.ml" 161 5442 5461
+"indentConfig.ml" 161 5445 5453 "indentConfig.ml" 161 5445 5464
 type(
   string list
 )
-"indentConfig.ml" 161 5442 5465 "indentConfig.ml" 161 5442 5468
+"indentConfig.ml" 161 5445 5468 "indentConfig.ml" 161 5445 5471
 type(
   ?extra:(string -> (string -> 'a) option) -> t -> string -> string -> t
 )
 ident(
   int_ref set "indentConfig.ml" 110 3369 3373 "indentConfig.ml" 110 3369 3376
 )
-"indentConfig.ml" 161 5442 5470 "indentConfig.ml" 161 5442 5475
+"indentConfig.ml" 161 5445 5473 "indentConfig.ml" 161 5445 5478
 type(
   (string -> (string -> 'a) option) option
 )
 ident(
   int_ref extra "indentConfig.ml" 157 5300 5324 "indentConfig.ml" 157 5300 5329
 )
-"indentConfig.ml" 161 5442 5476 "indentConfig.ml" 161 5442 5482
+"indentConfig.ml" 161 5445 5479 "indentConfig.ml" 161 5445 5485
 type(
   t
 )
 ident(
   int_ref indent "indentConfig.ml" 159 5358 5367 "indentConfig.ml" 159 5358 5373
 )
-"indentConfig.ml" 161 5442 5484 "indentConfig.ml" 161 5442 5495
+"indentConfig.ml" 161 5445 5487 "indentConfig.ml" 161 5445 5498
 type(
   string -> string
 )
 ident(
   ext_ref Compat.String.trim
 )
-"indentConfig.ml" 161 5442 5496 "indentConfig.ml" 161 5442 5499
+"indentConfig.ml" 161 5445 5499 "indentConfig.ml" 161 5445 5502
 type(
   string
 )
 ident(
-  int_ref var "indentConfig.ml" 161 5442 5451 "indentConfig.ml" 161 5442 5454
+  int_ref var "indentConfig.ml" 161 5445 5454 "indentConfig.ml" 161 5445 5457
 )
-"indentConfig.ml" 161 5442 5483 "indentConfig.ml" 161 5442 5500
+"indentConfig.ml" 161 5445 5486 "indentConfig.ml" 161 5445 5503
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 161 5442 5502 "indentConfig.ml" 161 5442 5513
+"indentConfig.ml" 161 5445 5505 "indentConfig.ml" 161 5445 5516
 type(
   string -> string
 )
 ident(
   ext_ref Compat.String.trim
 )
-"indentConfig.ml" 161 5442 5514 "indentConfig.ml" 161 5442 5519
+"indentConfig.ml" 161 5445 5517 "indentConfig.ml" 161 5445 5522
 type(
   string
 )
 ident(
-  int_ref value "indentConfig.ml" 161 5442 5455 "indentConfig.ml" 161 5442 5460
+  int_ref value "indentConfig.ml" 161 5445 5458 "indentConfig.ml" 161 5445 5463
 )
-"indentConfig.ml" 161 5442 5501 "indentConfig.ml" 161 5442 5520
+"indentConfig.ml" 161 5445 5504 "indentConfig.ml" 161 5445 5523
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 161 5442 5465 "indentConfig.ml" 161 5442 5520
+"indentConfig.ml" 161 5445 5468 "indentConfig.ml" 161 5445 5523
 call(
   tail
 )
 type(
   t
 )
-"indentConfig.ml" 162 5521 5530 "indentConfig.ml" 162 5521 5536
+"indentConfig.ml" 162 5524 5533 "indentConfig.ml" 162 5524 5539
 type(
   string
 )
 ident(
-  def preset "indentConfig.ml" 163 5541 5551 "indentConfig.ml" 166 5695 5737
+  def preset "indentConfig.ml" 163 5544 5554 "indentConfig.ml" 166 5698 5740
 )
-"indentConfig.ml" 162 5521 5529 "indentConfig.ml" 162 5521 5537
+"indentConfig.ml" 162 5524 5532 "indentConfig.ml" 162 5524 5540
 type(
   string list
 )
-"indentConfig.ml" 163 5541 5556 "indentConfig.ml" 163 5541 5566
+"indentConfig.ml" 163 5544 5559 "indentConfig.ml" 163 5544 5569
 type(
   string -> (string * t) list -> t
 )
 ident(
   ext_ref List.assoc
 )
-"indentConfig.ml" 163 5541 5568 "indentConfig.ml" 163 5541 5579
+"indentConfig.ml" 163 5544 5571 "indentConfig.ml" 163 5544 5582
 type(
   string -> string
 )
 ident(
   ext_ref Compat.String.trim
 )
-"indentConfig.ml" 163 5541 5580 "indentConfig.ml" 163 5541 5586
+"indentConfig.ml" 163 5544 5583 "indentConfig.ml" 163 5544 5589
 type(
   string
 )
 ident(
-  int_ref preset "indentConfig.ml" 162 5521 5530 "indentConfig.ml" 162 5521 5536
+  int_ref preset "indentConfig.ml" 162 5524 5533 "indentConfig.ml" 162 5524 5539
 )
-"indentConfig.ml" 163 5541 5567 "indentConfig.ml" 163 5541 5587
+"indentConfig.ml" 163 5544 5570 "indentConfig.ml" 163 5544 5590
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 163 5541 5588 "indentConfig.ml" 163 5541 5595
+"indentConfig.ml" 163 5544 5591 "indentConfig.ml" 163 5544 5598
 type(
   (string * t) list
 )
 ident(
   int_ref presets "indentConfig.ml" 48 1647 1651 "indentConfig.ml" 48 1647 1658
 )
-"indentConfig.ml" 163 5541 5556 "indentConfig.ml" 163 5541 5595
+"indentConfig.ml" 163 5544 5559 "indentConfig.ml" 163 5544 5598
 call(
   stack
 )
 type(
   t
 )
-"indentConfig.ml" 164 5601 5614 "indentConfig.ml" 164 5601 5623
+"indentConfig.ml" 164 5604 5617 "indentConfig.ml" 164 5604 5626
 type(
   exn
 )
-"indentConfig.ml" 165 5627 5646 "indentConfig.ml" 165 5627 5647
+"indentConfig.ml" 165 5630 5649 "indentConfig.ml" 165 5630 5650
 type(
   string
 )
 ident(
-  def e "indentConfig.ml" 166 5695 5710 "indentConfig.ml" 166 5695 5736
+  def e "indentConfig.ml" 166 5698 5713 "indentConfig.ml" 166 5698 5739
 )
-"indentConfig.ml" 165 5627 5650 "indentConfig.ml" 165 5627 5664
+"indentConfig.ml" 165 5630 5653 "indentConfig.ml" 165 5630 5667
 type(
   (string -> string, unit, string) format -> string -> string
 )
 ident(
   ext_ref Printf.sprintf
 )
-"indentConfig.ml" 165 5627 5665 "indentConfig.ml" 165 5627 5684
+"indentConfig.ml" 165 5630 5668 "indentConfig.ml" 165 5630 5687
 type(
   (string -> string, unit, string) format
 )
-"indentConfig.ml" 165 5627 5685 "indentConfig.ml" 165 5627 5691
+"indentConfig.ml" 165 5630 5688 "indentConfig.ml" 165 5630 5694
 type(
   string
 )
 ident(
-  int_ref preset "indentConfig.ml" 162 5521 5530 "indentConfig.ml" 162 5521 5536
+  int_ref preset "indentConfig.ml" 162 5524 5533 "indentConfig.ml" 162 5524 5539
 )
-"indentConfig.ml" 165 5627 5650 "indentConfig.ml" 165 5627 5691
+"indentConfig.ml" 165 5630 5653 "indentConfig.ml" 165 5630 5694
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 166 5695 5710 "indentConfig.ml" 166 5695 5715
+"indentConfig.ml" 166 5698 5713 "indentConfig.ml" 166 5698 5718
 type(
   exn -> t
 )
 ident(
   ext_ref Pervasives.raise
 )
-"indentConfig.ml" 166 5695 5734 "indentConfig.ml" 166 5695 5735
+"indentConfig.ml" 166 5698 5737 "indentConfig.ml" 166 5698 5738
 type(
   string
 )
 ident(
-  int_ref e "indentConfig.ml" 165 5627 5646 "indentConfig.ml" 165 5627 5647
+  int_ref e "indentConfig.ml" 165 5630 5649 "indentConfig.ml" 165 5630 5650
 )
-"indentConfig.ml" 166 5695 5716 "indentConfig.ml" 166 5695 5736
+"indentConfig.ml" 166 5698 5719 "indentConfig.ml" 166 5698 5739
 type(
   exn
 )
-"indentConfig.ml" 166 5695 5710 "indentConfig.ml" 166 5695 5736
+"indentConfig.ml" 166 5698 5713 "indentConfig.ml" 166 5698 5739
 type(
   t
 )
-"indentConfig.ml" 165 5627 5642 "indentConfig.ml" 166 5695 5736
+"indentConfig.ml" 165 5630 5645 "indentConfig.ml" 166 5698 5739
 type(
   t
 )
-"indentConfig.ml" 163 5541 5551 "indentConfig.ml" 166 5695 5737
+"indentConfig.ml" 163 5544 5554 "indentConfig.ml" 166 5698 5740
 type(
   t
 )
-"indentConfig.ml" 167 5738 5746 "indentConfig.ml" 167 5738 5747
+"indentConfig.ml" 167 5741 5749 "indentConfig.ml" 167 5741 5750
 type(
   string list
 )
-"indentConfig.ml" 168 5751 5765 "indentConfig.ml" 168 5751 5766
+"indentConfig.ml" 168 5754 5768 "indentConfig.ml" 168 5754 5769
 type(
   string
 )
 ident(
-  def e "indentConfig.ml" 169 5824 5834 "indentConfig.ml" 169 5824 5860
+  def e "indentConfig.ml" 169 5827 5837 "indentConfig.ml" 169 5827 5863
 )
-"indentConfig.ml" 168 5751 5769 "indentConfig.ml" 168 5751 5783
+"indentConfig.ml" 168 5754 5772 "indentConfig.ml" 168 5754 5786
 type(
   (string -> string, unit, string) format -> string -> string
 )
 ident(
   ext_ref Printf.sprintf
 )
-"indentConfig.ml" 168 5751 5784 "indentConfig.ml" 168 5751 5818
+"indentConfig.ml" 168 5754 5787 "indentConfig.ml" 168 5754 5821
 type(
   (string -> string, unit, string) format
 )
-"indentConfig.ml" 168 5751 5819 "indentConfig.ml" 168 5751 5820
+"indentConfig.ml" 168 5754 5822 "indentConfig.ml" 168 5754 5823
 type(
   string
 )
 ident(
   int_ref s "indentConfig.ml" 159 5358 5374 "indentConfig.ml" 159 5358 5375
 )
-"indentConfig.ml" 168 5751 5769 "indentConfig.ml" 168 5751 5820
+"indentConfig.ml" 168 5754 5772 "indentConfig.ml" 168 5754 5823
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 169 5824 5834 "indentConfig.ml" 169 5824 5839
+"indentConfig.ml" 169 5827 5837 "indentConfig.ml" 169 5827 5842
 type(
   exn -> t
 )
 ident(
   ext_ref Pervasives.raise
 )
-"indentConfig.ml" 169 5824 5858 "indentConfig.ml" 169 5824 5859
+"indentConfig.ml" 169 5827 5861 "indentConfig.ml" 169 5827 5862
 type(
   string
 )
 ident(
-  int_ref e "indentConfig.ml" 168 5751 5765 "indentConfig.ml" 168 5751 5766
+  int_ref e "indentConfig.ml" 168 5754 5768 "indentConfig.ml" 168 5754 5769
 )
-"indentConfig.ml" 169 5824 5840 "indentConfig.ml" 169 5824 5860
+"indentConfig.ml" 169 5827 5843 "indentConfig.ml" 169 5827 5863
 type(
   exn
 )
-"indentConfig.ml" 169 5824 5834 "indentConfig.ml" 169 5824 5860
+"indentConfig.ml" 169 5827 5837 "indentConfig.ml" 169 5827 5863
 type(
   t
 )
-"indentConfig.ml" 168 5751 5761 "indentConfig.ml" 169 5824 5860
+"indentConfig.ml" 168 5754 5764 "indentConfig.ml" 169 5827 5863
 type(
   t
 )
-"indentConfig.ml" 159 5358 5379 "indentConfig.ml" 169 5824 5860
+"indentConfig.ml" 159 5358 5379 "indentConfig.ml" 169 5827 5863
 type(
   t
 )
-"indentConfig.ml" 159 5358 5362 "indentConfig.ml" 169 5824 5861
+"indentConfig.ml" 159 5358 5362 "indentConfig.ml" 169 5827 5864
 type(
   t -> string -> t
 )
-"indentConfig.ml" 170 5862 5866 "indentConfig.ml" 170 5862 5872
+"indentConfig.ml" 170 5865 5869 "indentConfig.ml" 170 5865 5875
 type(
   t
 )
 ident(
   int_ref indent "indentConfig.ml" 157 5300 5330 "indentConfig.ml" 157 5300 5336
 )
-"indentConfig.ml" 171 5873 5878 "indentConfig.ml" 171 5873 5901
+"indentConfig.ml" 171 5876 5881 "indentConfig.ml" 171 5876 5907
 type(
   string -> string -> string list
 )
 ident(
-  ext_ref Util.string_split_chars
+  ext_ref OcpUtil.string_split_chars
 )
-"indentConfig.ml" 171 5873 5902 "indentConfig.ml" 171 5873 5907
+"indentConfig.ml" 171 5876 5908 "indentConfig.ml" 171 5876 5913
 type(
   string
 )
-"indentConfig.ml" 171 5873 5908 "indentConfig.ml" 171 5873 5909
+"indentConfig.ml" 171 5876 5914 "indentConfig.ml" 171 5876 5915
 type(
   string
 )
 ident(
   int_ref s "indentConfig.ml" 157 5300 5337 "indentConfig.ml" 157 5300 5338
 )
-"indentConfig.ml" 171 5873 5877 "indentConfig.ml" 171 5873 5910
+"indentConfig.ml" 171 5876 5880 "indentConfig.ml" 171 5876 5916
 call(
   stack
 )
 type(
   string list
 )
-"indentConfig.ml" 158 5341 5343 "indentConfig.ml" 171 5873 5910
+"indentConfig.ml" 158 5341 5343 "indentConfig.ml" 171 5876 5916
 call(
   tail
 )
 type(
   t
 )
-"indentConfig.ml" 174 5991 5995 "indentConfig.ml" 174 5991 5998
+"indentConfig.ml" 174 5997 6001 "indentConfig.ml" 174 5997 6004
 type(
   [> `I of string * string | `Noblank | `P of string ] list
 )
 ident(
-  def man "indentConfig.ml" 299 11391 11391 "_none_" 1 0 -1
+  def man "indentConfig.ml" 299 11400 11400 "_none_" 1 0 -1
 )
-"indentConfig.ml" 175 6001 6007 "indentConfig.ml" 175 6001 6018
+"indentConfig.ml" 175 6007 6013 "indentConfig.ml" 175 6007 6024
 type(
   string -> string -> string -> string
 )
 ident(
-  def option_name "indentConfig.ml" 178 6107 6109 "indentConfig.ml" 296 11385 11388
+  def option_name "indentConfig.ml" 178 6113 6115 "indentConfig.ml" 296 11394 11397
 )
-"indentConfig.ml" 175 6001 6019 "indentConfig.ml" 175 6001 6023
+"indentConfig.ml" 175 6007 6025 "indentConfig.ml" 175 6007 6029
 type(
   string
 )
 ident(
-  def name "indentConfig.ml" 175 6001 6024 "indentConfig.ml" 176 6039 6101
+  def name "indentConfig.ml" 175 6007 6030 "indentConfig.ml" 176 6045 6107
 )
-"indentConfig.ml" 175 6001 6024 "indentConfig.ml" 175 6001 6028
+"indentConfig.ml" 175 6007 6030 "indentConfig.ml" 175 6007 6034
 type(
   string
 )
 ident(
-  def kind "indentConfig.ml" 175 6001 6029 "indentConfig.ml" 176 6039 6101
+  def kind "indentConfig.ml" 175 6007 6035 "indentConfig.ml" 176 6045 6107
 )
-"indentConfig.ml" 175 6001 6029 "indentConfig.ml" 175 6001 6036
+"indentConfig.ml" 175 6007 6035 "indentConfig.ml" 175 6007 6042
 type(
   string
 )
 ident(
-  def default "indentConfig.ml" 176 6039 6043 "indentConfig.ml" 176 6039 6101
+  def default "indentConfig.ml" 176 6045 6049 "indentConfig.ml" 176 6045 6107
 )
-"indentConfig.ml" 176 6039 6043 "indentConfig.ml" 176 6039 6057
+"indentConfig.ml" 176 6045 6049 "indentConfig.ml" 176 6045 6063
 type(
   (string -> string -> string -> string, unit, string) format ->
   string -> string -> string -> string
@@ -2169,53 +2169,53 @@ type(
 ident(
   ext_ref Printf.sprintf
 )
-"indentConfig.ml" 176 6039 6058 "indentConfig.ml" 176 6039 6083
+"indentConfig.ml" 176 6045 6064 "indentConfig.ml" 176 6045 6089
 type(
   (string -> string -> string -> string, unit, string) format
 )
-"indentConfig.ml" 176 6039 6084 "indentConfig.ml" 176 6039 6088
+"indentConfig.ml" 176 6045 6090 "indentConfig.ml" 176 6045 6094
 type(
   string
 )
 ident(
-  int_ref name "indentConfig.ml" 175 6001 6019 "indentConfig.ml" 175 6001 6023
+  int_ref name "indentConfig.ml" 175 6007 6025 "indentConfig.ml" 175 6007 6029
 )
-"indentConfig.ml" 176 6039 6089 "indentConfig.ml" 176 6039 6093
+"indentConfig.ml" 176 6045 6095 "indentConfig.ml" 176 6045 6099
 type(
   string
 )
 ident(
-  int_ref kind "indentConfig.ml" 175 6001 6024 "indentConfig.ml" 175 6001 6028
+  int_ref kind "indentConfig.ml" 175 6007 6030 "indentConfig.ml" 175 6007 6034
 )
-"indentConfig.ml" 176 6039 6094 "indentConfig.ml" 176 6039 6101
+"indentConfig.ml" 176 6045 6100 "indentConfig.ml" 176 6045 6107
 type(
   string
 )
 ident(
-  int_ref default "indentConfig.ml" 175 6001 6029 "indentConfig.ml" 175 6001 6036
+  int_ref default "indentConfig.ml" 175 6007 6035 "indentConfig.ml" 175 6007 6042
 )
-"indentConfig.ml" 176 6039 6043 "indentConfig.ml" 176 6039 6101
+"indentConfig.ml" 176 6045 6049 "indentConfig.ml" 176 6045 6107
 call(
   tail
 )
 type(
   string
 )
-"indentConfig.ml" 178 6107 6113 "indentConfig.ml" 178 6107 6116
+"indentConfig.ml" 178 6113 6119 "indentConfig.ml" 178 6113 6122
 type(
   string -> [> `Noblank | `P of string ] list
 )
 ident(
-  def pre "indentConfig.ml" 187 6429 6431 "indentConfig.ml" 296 11385 11388
+  def pre "indentConfig.ml" 187 6438 6440 "indentConfig.ml" 296 11394 11397
 )
-"indentConfig.ml" 178 6107 6117 "indentConfig.ml" 178 6107 6118
+"indentConfig.ml" 178 6113 6123 "indentConfig.ml" 178 6113 6124
 type(
   string
 )
 ident(
-  def s "indentConfig.ml" 179 6121 6125 "indentConfig.ml" 185 6388 6423
+  def s "indentConfig.ml" 179 6127 6131 "indentConfig.ml" 185 6394 6432
 )
-"indentConfig.ml" 179 6121 6125 "indentConfig.ml" 179 6121 6140
+"indentConfig.ml" 179 6127 6131 "indentConfig.ml" 179 6127 6146
 type(
   (string -> ([> `Noblank | `P of string ] as 'a) list -> 'a list) ->
   string list -> 'a list -> 'a list
@@ -2223,1860 +2223,1860 @@ type(
 ident(
   ext_ref List.fold_right
 )
-"indentConfig.ml" 180 6141 6152 "indentConfig.ml" 180 6141 6156
+"indentConfig.ml" 180 6147 6158 "indentConfig.ml" 180 6147 6162
 type(
   string
 )
 ident(
-  def line "indentConfig.ml" 180 6141 6157 "indentConfig.ml" 184 6324 6386
+  def line "indentConfig.ml" 180 6147 6163 "indentConfig.ml" 184 6330 6392
 )
-"indentConfig.ml" 180 6141 6157 "indentConfig.ml" 180 6141 6160
+"indentConfig.ml" 180 6147 6163 "indentConfig.ml" 180 6147 6166
 type(
   'a list
 )
 ident(
-  def acc "indentConfig.ml" 181 6164 6173 "indentConfig.ml" 184 6324 6386
+  def acc "indentConfig.ml" 181 6170 6179 "indentConfig.ml" 184 6330 6392
 )
-"indentConfig.ml" 181 6164 6177 "indentConfig.ml" 181 6164 6178
+"indentConfig.ml" 181 6170 6183 "indentConfig.ml" 181 6170 6184
 type(
   int ref
 )
 ident(
-  def i "indentConfig.ml" 182 6218 6227 "indentConfig.ml" 184 6324 6386
+  def i "indentConfig.ml" 182 6224 6233 "indentConfig.ml" 184 6330 6392
 )
-"indentConfig.ml" 181 6164 6181 "indentConfig.ml" 181 6164 6184
+"indentConfig.ml" 181 6170 6187 "indentConfig.ml" 181 6170 6190
 type(
   int -> int ref
 )
 ident(
   ext_ref Pervasives.ref
 )
-"indentConfig.ml" 181 6164 6185 "indentConfig.ml" 181 6164 6186
+"indentConfig.ml" 181 6170 6191 "indentConfig.ml" 181 6170 6192
 type(
   int
 )
-"indentConfig.ml" 181 6164 6181 "indentConfig.ml" 181 6164 6186
+"indentConfig.ml" 181 6170 6187 "indentConfig.ml" 181 6170 6192
 type(
   int ref
 )
-"indentConfig.ml" 181 6164 6191 "indentConfig.ml" 181 6164 6195
+"indentConfig.ml" 181 6170 6197 "indentConfig.ml" 181 6170 6201
 type(
   string
 )
 ident(
-  def line "indentConfig.ml" 182 6218 6227 "indentConfig.ml" 184 6324 6386
+  def line "indentConfig.ml" 182 6224 6233 "indentConfig.ml" 184 6330 6392
 )
-"indentConfig.ml" 181 6164 6198 "indentConfig.ml" 181 6164 6209
+"indentConfig.ml" 181 6170 6204 "indentConfig.ml" 181 6170 6215
 type(
   string -> string
 )
 ident(
   ext_ref Compat.String.copy
 )
-"indentConfig.ml" 181 6164 6210 "indentConfig.ml" 181 6164 6214
+"indentConfig.ml" 181 6170 6216 "indentConfig.ml" 181 6170 6220
 type(
   string
 )
 ident(
-  int_ref line "indentConfig.ml" 180 6141 6152 "indentConfig.ml" 180 6141 6156
+  int_ref line "indentConfig.ml" 180 6147 6158 "indentConfig.ml" 180 6147 6162
 )
-"indentConfig.ml" 181 6164 6198 "indentConfig.ml" 181 6164 6214
+"indentConfig.ml" 181 6170 6204 "indentConfig.ml" 181 6170 6220
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 182 6218 6233 "indentConfig.ml" 182 6218 6234
+"indentConfig.ml" 182 6224 6239 "indentConfig.ml" 182 6224 6240
 type(
   int ref -> int
 )
 ident(
   ext_ref Pervasives.( ! )
 )
-"indentConfig.ml" 182 6218 6234 "indentConfig.ml" 182 6218 6235
+"indentConfig.ml" 182 6224 6240 "indentConfig.ml" 182 6224 6241
 type(
   int ref
 )
 ident(
-  int_ref i "indentConfig.ml" 181 6164 6177 "indentConfig.ml" 181 6164 6178
+  int_ref i "indentConfig.ml" 181 6170 6183 "indentConfig.ml" 181 6170 6184
 )
-"indentConfig.ml" 182 6218 6233 "indentConfig.ml" 182 6218 6235
+"indentConfig.ml" 182 6224 6239 "indentConfig.ml" 182 6224 6241
 type(
   int
 )
-"indentConfig.ml" 182 6218 6236 "indentConfig.ml" 182 6218 6237
+"indentConfig.ml" 182 6224 6242 "indentConfig.ml" 182 6224 6243
 type(
   int -> int -> bool
 )
 ident(
   ext_ref Pervasives.( < )
 )
-"indentConfig.ml" 182 6218 6238 "indentConfig.ml" 182 6218 6251
+"indentConfig.ml" 182 6224 6244 "indentConfig.ml" 182 6224 6257
 type(
   string -> int
 )
 ident(
   ext_ref Compat.String.length
 )
-"indentConfig.ml" 182 6218 6252 "indentConfig.ml" 182 6218 6256
+"indentConfig.ml" 182 6224 6258 "indentConfig.ml" 182 6224 6262
 type(
   string
 )
 ident(
-  int_ref line "indentConfig.ml" 181 6164 6191 "indentConfig.ml" 181 6164 6195
+  int_ref line "indentConfig.ml" 181 6170 6197 "indentConfig.ml" 181 6170 6201
 )
-"indentConfig.ml" 182 6218 6238 "indentConfig.ml" 182 6218 6256
+"indentConfig.ml" 182 6224 6244 "indentConfig.ml" 182 6224 6262
 type(
   int
 )
-"indentConfig.ml" 182 6218 6233 "indentConfig.ml" 182 6218 6256
+"indentConfig.ml" 182 6224 6239 "indentConfig.ml" 182 6224 6262
 type(
   bool
 )
-"indentConfig.ml" 182 6218 6257 "indentConfig.ml" 182 6218 6259
+"indentConfig.ml" 182 6224 6263 "indentConfig.ml" 182 6224 6265
 type(
   bool -> bool -> bool
 )
 ident(
   ext_ref Pervasives.( && )
 )
-"indentConfig.ml" 182 6218 6260 "indentConfig.ml" 182 6218 6264
+"indentConfig.ml" 182 6224 6266 "indentConfig.ml" 182 6224 6270
 type(
   string
 )
 ident(
-  int_ref line "indentConfig.ml" 181 6164 6191 "indentConfig.ml" 181 6164 6195
+  int_ref line "indentConfig.ml" 181 6170 6197 "indentConfig.ml" 181 6170 6201
 )
-"indentConfig.ml" 182 6218 6266 "indentConfig.ml" 182 6218 6267
+"indentConfig.ml" 182 6224 6272 "indentConfig.ml" 182 6224 6273
 type(
   int ref -> int
 )
 ident(
   ext_ref Pervasives.( ! )
 )
-"indentConfig.ml" 182 6218 6267 "indentConfig.ml" 182 6218 6268
+"indentConfig.ml" 182 6224 6273 "indentConfig.ml" 182 6224 6274
 type(
   int ref
 )
 ident(
-  int_ref i "indentConfig.ml" 181 6164 6177 "indentConfig.ml" 181 6164 6178
+  int_ref i "indentConfig.ml" 181 6170 6183 "indentConfig.ml" 181 6170 6184
 )
-"indentConfig.ml" 182 6218 6266 "indentConfig.ml" 182 6218 6268
+"indentConfig.ml" 182 6224 6272 "indentConfig.ml" 182 6224 6274
 type(
   int
 )
-"indentConfig.ml" 182 6218 6260 "indentConfig.ml" 182 6218 6269
+"indentConfig.ml" 182 6224 6266 "indentConfig.ml" 182 6224 6275
 type(
   char
 )
-"indentConfig.ml" 182 6218 6270 "indentConfig.ml" 182 6218 6271
+"indentConfig.ml" 182 6224 6276 "indentConfig.ml" 182 6224 6277
 type(
   char -> char -> bool
 )
 ident(
   ext_ref Pervasives.( = )
 )
-"indentConfig.ml" 182 6218 6272 "indentConfig.ml" 182 6218 6275
+"indentConfig.ml" 182 6224 6278 "indentConfig.ml" 182 6224 6281
 type(
   char
 )
-"indentConfig.ml" 182 6218 6260 "indentConfig.ml" 182 6218 6275
+"indentConfig.ml" 182 6224 6266 "indentConfig.ml" 182 6224 6281
 type(
   bool
 )
-"indentConfig.ml" 182 6218 6233 "indentConfig.ml" 182 6218 6275
+"indentConfig.ml" 182 6224 6239 "indentConfig.ml" 182 6224 6281
 type(
   bool
 )
-"indentConfig.ml" 183 6279 6290 "indentConfig.ml" 183 6279 6294
+"indentConfig.ml" 183 6285 6296 "indentConfig.ml" 183 6285 6300
 type(
   string
 )
 ident(
-  int_ref line "indentConfig.ml" 181 6164 6191 "indentConfig.ml" 181 6164 6195
+  int_ref line "indentConfig.ml" 181 6170 6197 "indentConfig.ml" 181 6170 6201
 )
-"indentConfig.ml" 183 6279 6296 "indentConfig.ml" 183 6279 6297
+"indentConfig.ml" 183 6285 6302 "indentConfig.ml" 183 6285 6303
 type(
   int ref -> int
 )
 ident(
   ext_ref Pervasives.( ! )
 )
-"indentConfig.ml" 183 6279 6297 "indentConfig.ml" 183 6279 6298
+"indentConfig.ml" 183 6285 6303 "indentConfig.ml" 183 6285 6304
 type(
   int ref
 )
 ident(
-  int_ref i "indentConfig.ml" 181 6164 6177 "indentConfig.ml" 181 6164 6178
+  int_ref i "indentConfig.ml" 181 6170 6183 "indentConfig.ml" 181 6170 6184
 )
-"indentConfig.ml" 183 6279 6296 "indentConfig.ml" 183 6279 6298
+"indentConfig.ml" 183 6285 6302 "indentConfig.ml" 183 6285 6304
 type(
   int
 )
-"indentConfig.ml" 183 6279 6303 "indentConfig.ml" 183 6279 6309
+"indentConfig.ml" 183 6285 6309 "indentConfig.ml" 183 6285 6315
 type(
   char
 )
-"indentConfig.ml" 183 6279 6290 "indentConfig.ml" 183 6279 6309
+"indentConfig.ml" 183 6285 6296 "indentConfig.ml" 183 6285 6315
 type(
   unit
 )
-"indentConfig.ml" 183 6279 6311 "indentConfig.ml" 183 6279 6315
+"indentConfig.ml" 183 6285 6317 "indentConfig.ml" 183 6285 6321
 type(
   int ref -> unit
 )
 ident(
   ext_ref Pervasives.incr
 )
-"indentConfig.ml" 183 6279 6316 "indentConfig.ml" 183 6279 6317
+"indentConfig.ml" 183 6285 6322 "indentConfig.ml" 183 6285 6323
 type(
   int ref
 )
 ident(
-  int_ref i "indentConfig.ml" 181 6164 6177 "indentConfig.ml" 181 6164 6178
+  int_ref i "indentConfig.ml" 181 6170 6183 "indentConfig.ml" 181 6170 6184
 )
-"indentConfig.ml" 183 6279 6311 "indentConfig.ml" 183 6279 6317
+"indentConfig.ml" 183 6285 6317 "indentConfig.ml" 183 6285 6323
 type(
   unit
 )
-"indentConfig.ml" 183 6279 6290 "indentConfig.ml" 183 6279 6317
+"indentConfig.ml" 183 6285 6296 "indentConfig.ml" 183 6285 6323
 type(
   unit
 )
-"indentConfig.ml" 182 6218 6227 "indentConfig.ml" 183 6279 6322
+"indentConfig.ml" 182 6224 6233 "indentConfig.ml" 183 6285 6328
 type(
   unit
 )
-"indentConfig.ml" 184 6324 6336 "indentConfig.ml" 184 6324 6340
+"indentConfig.ml" 184 6330 6342 "indentConfig.ml" 184 6330 6346
 type(
   string
 )
 ident(
-  int_ref line "indentConfig.ml" 181 6164 6191 "indentConfig.ml" 181 6164 6195
+  int_ref line "indentConfig.ml" 181 6170 6197 "indentConfig.ml" 181 6170 6201
 )
-"indentConfig.ml" 184 6324 6333 "indentConfig.ml" 184 6324 6340
+"indentConfig.ml" 184 6330 6339 "indentConfig.ml" 184 6330 6346
 type(
   'a
 )
-"indentConfig.ml" 184 6324 6348 "indentConfig.ml" 184 6324 6351
+"indentConfig.ml" 184 6330 6354 "indentConfig.ml" 184 6330 6357
 type(
   'a list
 )
 ident(
-  int_ref acc "indentConfig.ml" 180 6141 6157 "indentConfig.ml" 180 6141 6160
+  int_ref acc "indentConfig.ml" 180 6147 6163 "indentConfig.ml" 180 6147 6166
 )
-"indentConfig.ml" 184 6324 6352 "indentConfig.ml" 184 6324 6353
+"indentConfig.ml" 184 6330 6358 "indentConfig.ml" 184 6330 6359
 type(
   'a list -> 'a list -> bool
 )
 ident(
   ext_ref Pervasives.( = )
 )
-"indentConfig.ml" 184 6324 6354 "indentConfig.ml" 184 6324 6356
+"indentConfig.ml" 184 6330 6360 "indentConfig.ml" 184 6330 6362
 type(
   'a list
 )
-"indentConfig.ml" 184 6324 6348 "indentConfig.ml" 184 6324 6356
+"indentConfig.ml" 184 6330 6354 "indentConfig.ml" 184 6330 6362
 type(
   bool
 )
-"indentConfig.ml" 184 6324 6362 "indentConfig.ml" 184 6324 6364
+"indentConfig.ml" 184 6330 6368 "indentConfig.ml" 184 6330 6370
 type(
   'a list
 )
-"indentConfig.ml" 184 6324 6370 "indentConfig.ml" 184 6324 6378
+"indentConfig.ml" 184 6330 6376 "indentConfig.ml" 184 6330 6384
 type(
   'a
 )
-"indentConfig.ml" 184 6324 6382 "indentConfig.ml" 184 6324 6385
+"indentConfig.ml" 184 6330 6388 "indentConfig.ml" 184 6330 6391
 type(
   'a list
 )
 ident(
-  int_ref acc "indentConfig.ml" 180 6141 6157 "indentConfig.ml" 180 6141 6160
+  int_ref acc "indentConfig.ml" 180 6147 6163 "indentConfig.ml" 180 6147 6166
 )
-"indentConfig.ml" 184 6324 6370 "indentConfig.ml" 184 6324 6385
+"indentConfig.ml" 184 6330 6376 "indentConfig.ml" 184 6330 6391
 type(
   'a list
 )
-"indentConfig.ml" 184 6324 6344 "indentConfig.ml" 184 6324 6386
+"indentConfig.ml" 184 6330 6350 "indentConfig.ml" 184 6330 6392
 type(
   'a list
 )
-"indentConfig.ml" 184 6324 6333 "indentConfig.ml" 184 6324 6386
+"indentConfig.ml" 184 6330 6339 "indentConfig.ml" 184 6330 6392
 type(
   'a list
 )
-"indentConfig.ml" 182 6218 6227 "indentConfig.ml" 184 6324 6386
+"indentConfig.ml" 182 6224 6233 "indentConfig.ml" 184 6330 6392
 type(
   'a list
 )
-"indentConfig.ml" 181 6164 6173 "indentConfig.ml" 184 6324 6386
+"indentConfig.ml" 181 6170 6179 "indentConfig.ml" 184 6330 6392
 type(
   'a list
 )
-"indentConfig.ml" 180 6141 6147 "indentConfig.ml" 184 6324 6387
+"indentConfig.ml" 180 6147 6153 "indentConfig.ml" 184 6330 6393
 type(
   string -> 'a list -> 'a list
 )
-"indentConfig.ml" 185 6388 6395 "indentConfig.ml" 185 6388 6412
+"indentConfig.ml" 185 6394 6401 "indentConfig.ml" 185 6394 6421
 type(
   char -> string -> string list
 )
 ident(
-  ext_ref Util.string_split
+  ext_ref OcpUtil.string_split
 )
-"indentConfig.ml" 185 6388 6413 "indentConfig.ml" 185 6388 6417
+"indentConfig.ml" 185 6394 6422 "indentConfig.ml" 185 6394 6426
 type(
   char
 )
-"indentConfig.ml" 185 6388 6418 "indentConfig.ml" 185 6388 6419
+"indentConfig.ml" 185 6394 6427 "indentConfig.ml" 185 6394 6428
 type(
   string
 )
 ident(
-  int_ref s "indentConfig.ml" 178 6107 6117 "indentConfig.ml" 178 6107 6118
+  int_ref s "indentConfig.ml" 178 6113 6123 "indentConfig.ml" 178 6113 6124
 )
-"indentConfig.ml" 185 6388 6394 "indentConfig.ml" 185 6388 6420
+"indentConfig.ml" 185 6394 6400 "indentConfig.ml" 185 6394 6429
 call(
   stack
 )
 type(
   string list
 )
-"indentConfig.ml" 185 6388 6421 "indentConfig.ml" 185 6388 6423
+"indentConfig.ml" 185 6394 6430 "indentConfig.ml" 185 6394 6432
 type(
   'a list
 )
-"indentConfig.ml" 179 6121 6125 "indentConfig.ml" 185 6388 6423
+"indentConfig.ml" 179 6127 6131 "indentConfig.ml" 185 6394 6432
 call(
   tail
 )
 type(
   'a list
 )
-"indentConfig.ml" 187 6429 6436 "indentConfig.ml" 188 6500 6575
+"indentConfig.ml" 187 6438 6445 "indentConfig.ml" 188 6509 6584
 type(
   string
 )
-"indentConfig.ml" 187 6429 6433 "indentConfig.ml" 188 6500 6575
+"indentConfig.ml" 187 6438 6442 "indentConfig.ml" 188 6509 6584
 type(
   [> `I of string * string | `Noblank | `P of string ] as 'b
 )
-"indentConfig.ml" 189 6577 6584 "indentConfig.ml" 189 6577 6632
+"indentConfig.ml" 189 6586 6593 "indentConfig.ml" 189 6586 6641
 type(
   string
 )
-"indentConfig.ml" 189 6577 6581 "indentConfig.ml" 189 6577 6632
+"indentConfig.ml" 189 6586 6590 "indentConfig.ml" 189 6586 6641
 type(
   'b
 )
-"indentConfig.ml" 187 6429 6431 "indentConfig.ml" 190 6633 6636
+"indentConfig.ml" 187 6438 6440 "indentConfig.ml" 190 6642 6645
 type(
   'b list
 )
-"indentConfig.ml" 191 6637 6639 "indentConfig.ml" 191 6637 6640
+"indentConfig.ml" 191 6646 6648 "indentConfig.ml" 191 6646 6649
 type(
   'b list -> 'b list -> 'b list
 )
 ident(
   ext_ref Pervasives.( @ )
 )
-"indentConfig.ml" 192 6641 6649 "indentConfig.ml" 192 6641 6660
+"indentConfig.ml" 192 6650 6658 "indentConfig.ml" 192 6650 6669
 type(
   string -> string -> string -> string
 )
 ident(
-  int_ref option_name "indentConfig.ml" 175 6001 6007 "indentConfig.ml" 175 6001 6018
+  int_ref option_name "indentConfig.ml" 175 6007 6013 "indentConfig.ml" 175 6007 6024
 )
-"indentConfig.ml" 192 6641 6661 "indentConfig.ml" 192 6641 6667
+"indentConfig.ml" 192 6650 6670 "indentConfig.ml" 192 6650 6676
 type(
   string
 )
-"indentConfig.ml" 192 6641 6668 "indentConfig.ml" 192 6641 6673
+"indentConfig.ml" 192 6650 6677 "indentConfig.ml" 192 6650 6682
 type(
   string
 )
-"indentConfig.ml" 192 6641 6675 "indentConfig.ml" 192 6641 6688
+"indentConfig.ml" 192 6650 6684 "indentConfig.ml" 192 6650 6697
 type(
   int -> string
 )
 ident(
   ext_ref Pervasives.string_of_int
 )
-"indentConfig.ml" 192 6641 6689 "indentConfig.ml" 192 6641 6696
+"indentConfig.ml" 192 6650 6698 "indentConfig.ml" 192 6650 6705
 type(
   t
 )
 ident(
   int_ref default "indentConfig.ml" 34 1400 1404 "indentConfig.ml" 34 1400 1411
 )
-"indentConfig.ml" 192 6641 6689 "indentConfig.ml" 192 6641 6703
+"indentConfig.ml" 192 6650 6698 "indentConfig.ml" 192 6650 6712
 type(
   int
 )
-"indentConfig.ml" 192 6641 6674 "indentConfig.ml" 192 6641 6704
+"indentConfig.ml" 192 6650 6683 "indentConfig.ml" 192 6650 6713
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 192 6641 6649 "indentConfig.ml" 192 6641 6704
+"indentConfig.ml" 192 6650 6658 "indentConfig.ml" 192 6650 6713
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 193 6706 6714 "indentConfig.ml" 193 6706 6756
+"indentConfig.ml" 193 6715 6723 "indentConfig.ml" 193 6715 6765
 type(
   string
 )
-"indentConfig.ml" 192 6641 6648 "indentConfig.ml" 193 6706 6757
+"indentConfig.ml" 192 6650 6657 "indentConfig.ml" 193 6715 6766
 type(
   string * string
 )
-"indentConfig.ml" 192 6641 6645 "indentConfig.ml" 193 6706 6757
+"indentConfig.ml" 192 6650 6654 "indentConfig.ml" 193 6715 6766
 type(
   'b
 )
-"indentConfig.ml" 194 6758 6765 "indentConfig.ml" 194 6758 6768
+"indentConfig.ml" 194 6767 6774 "indentConfig.ml" 194 6767 6777
 type(
   string -> 'b list
 )
 ident(
-  int_ref pre "indentConfig.ml" 178 6107 6113 "indentConfig.ml" 178 6107 6116
+  int_ref pre "indentConfig.ml" 178 6113 6119 "indentConfig.ml" 178 6113 6122
 )
-"indentConfig.ml" 194 6758 6769 "indentConfig.ml" 195 6791 6822
+"indentConfig.ml" 194 6767 6778 "indentConfig.ml" 195 6800 6831
 type(
   string
 )
-"indentConfig.ml" 194 6758 6765 "indentConfig.ml" 195 6791 6822
+"indentConfig.ml" 194 6767 6774 "indentConfig.ml" 195 6800 6831
 call(
   stack
 )
 type(
   'b list
 )
-"indentConfig.ml" 192 6641 6645 "indentConfig.ml" 195 6791 6822
+"indentConfig.ml" 192 6650 6654 "indentConfig.ml" 195 6800 6831
 type(
   'b list
 )
-"indentConfig.ml" 196 6823 6825 "indentConfig.ml" 196 6823 6826
+"indentConfig.ml" 196 6832 6834 "indentConfig.ml" 196 6832 6835
 type(
   'b list -> 'b list -> 'b list
 )
 ident(
   ext_ref Pervasives.( @ )
 )
-"indentConfig.ml" 197 6827 6835 "indentConfig.ml" 197 6827 6846
+"indentConfig.ml" 197 6836 6844 "indentConfig.ml" 197 6836 6855
 type(
   string -> string -> string -> string
 )
 ident(
-  int_ref option_name "indentConfig.ml" 175 6001 6007 "indentConfig.ml" 175 6001 6018
+  int_ref option_name "indentConfig.ml" 175 6007 6013 "indentConfig.ml" 175 6007 6024
 )
-"indentConfig.ml" 197 6827 6847 "indentConfig.ml" 197 6827 6853
+"indentConfig.ml" 197 6836 6856 "indentConfig.ml" 197 6836 6862
 type(
   string
 )
-"indentConfig.ml" 197 6827 6854 "indentConfig.ml" 197 6827 6859
+"indentConfig.ml" 197 6836 6863 "indentConfig.ml" 197 6836 6868
 type(
   string
 )
-"indentConfig.ml" 197 6827 6861 "indentConfig.ml" 197 6827 6874
+"indentConfig.ml" 197 6836 6870 "indentConfig.ml" 197 6836 6883
 type(
   int -> string
 )
 ident(
   ext_ref Pervasives.string_of_int
 )
-"indentConfig.ml" 197 6827 6875 "indentConfig.ml" 197 6827 6882
+"indentConfig.ml" 197 6836 6884 "indentConfig.ml" 197 6836 6891
 type(
   t
 )
 ident(
   int_ref default "indentConfig.ml" 34 1400 1404 "indentConfig.ml" 34 1400 1411
 )
-"indentConfig.ml" 197 6827 6875 "indentConfig.ml" 197 6827 6889
+"indentConfig.ml" 197 6836 6884 "indentConfig.ml" 197 6836 6898
 type(
   int
 )
-"indentConfig.ml" 197 6827 6860 "indentConfig.ml" 197 6827 6890
+"indentConfig.ml" 197 6836 6869 "indentConfig.ml" 197 6836 6899
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 197 6827 6835 "indentConfig.ml" 197 6827 6890
+"indentConfig.ml" 197 6836 6844 "indentConfig.ml" 197 6836 6899
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 198 6892 6900 "indentConfig.ml" 198 6892 6930
+"indentConfig.ml" 198 6901 6909 "indentConfig.ml" 198 6901 6939
 type(
   string
 )
-"indentConfig.ml" 197 6827 6834 "indentConfig.ml" 198 6892 6931
+"indentConfig.ml" 197 6836 6843 "indentConfig.ml" 198 6901 6940
 type(
   string * string
 )
-"indentConfig.ml" 197 6827 6831 "indentConfig.ml" 198 6892 6931
+"indentConfig.ml" 197 6836 6840 "indentConfig.ml" 198 6901 6940
 type(
   'b
 )
-"indentConfig.ml" 199 6932 6939 "indentConfig.ml" 199 6932 6942
+"indentConfig.ml" 199 6941 6948 "indentConfig.ml" 199 6941 6951
 type(
   string -> 'b list
 )
 ident(
-  int_ref pre "indentConfig.ml" 178 6107 6113 "indentConfig.ml" 178 6107 6116
+  int_ref pre "indentConfig.ml" 178 6113 6119 "indentConfig.ml" 178 6113 6122
 )
-"indentConfig.ml" 199 6932 6943 "indentConfig.ml" 200 6964 6995
+"indentConfig.ml" 199 6941 6952 "indentConfig.ml" 200 6973 7004
 type(
   string
 )
-"indentConfig.ml" 199 6932 6939 "indentConfig.ml" 200 6964 6995
+"indentConfig.ml" 199 6941 6948 "indentConfig.ml" 200 6973 7004
 call(
   stack
 )
 type(
   'b list
 )
-"indentConfig.ml" 197 6827 6831 "indentConfig.ml" 200 6964 6995
+"indentConfig.ml" 197 6836 6840 "indentConfig.ml" 200 6973 7004
 type(
   'b list
 )
-"indentConfig.ml" 201 6996 6998 "indentConfig.ml" 201 6996 6999
+"indentConfig.ml" 201 7005 7007 "indentConfig.ml" 201 7005 7008
 type(
   'b list -> 'b list -> 'b list
 )
 ident(
   ext_ref Pervasives.( @ )
 )
-"indentConfig.ml" 202 7000 7008 "indentConfig.ml" 202 7000 7019
+"indentConfig.ml" 202 7009 7017 "indentConfig.ml" 202 7009 7028
 type(
   string -> string -> string -> string
 )
 ident(
-  int_ref option_name "indentConfig.ml" 175 6001 6007 "indentConfig.ml" 175 6001 6018
+  int_ref option_name "indentConfig.ml" 175 6007 6013 "indentConfig.ml" 175 6007 6024
 )
-"indentConfig.ml" 202 7000 7020 "indentConfig.ml" 202 7000 7024
+"indentConfig.ml" 202 7009 7029 "indentConfig.ml" 202 7009 7033
 type(
   string
 )
-"indentConfig.ml" 202 7000 7025 "indentConfig.ml" 202 7000 7030
+"indentConfig.ml" 202 7009 7034 "indentConfig.ml" 202 7009 7039
 type(
   string
 )
-"indentConfig.ml" 202 7000 7032 "indentConfig.ml" 202 7000 7045
+"indentConfig.ml" 202 7009 7041 "indentConfig.ml" 202 7009 7054
 type(
   int -> string
 )
 ident(
   ext_ref Pervasives.string_of_int
 )
-"indentConfig.ml" 202 7000 7046 "indentConfig.ml" 202 7000 7053
+"indentConfig.ml" 202 7009 7055 "indentConfig.ml" 202 7009 7062
 type(
   t
 )
 ident(
   int_ref default "indentConfig.ml" 34 1400 1404 "indentConfig.ml" 34 1400 1411
 )
-"indentConfig.ml" 202 7000 7046 "indentConfig.ml" 202 7000 7058
+"indentConfig.ml" 202 7009 7055 "indentConfig.ml" 202 7009 7067
 type(
   int
 )
-"indentConfig.ml" 202 7000 7031 "indentConfig.ml" 202 7000 7059
+"indentConfig.ml" 202 7009 7040 "indentConfig.ml" 202 7009 7068
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 202 7000 7008 "indentConfig.ml" 202 7000 7059
+"indentConfig.ml" 202 7009 7017 "indentConfig.ml" 202 7009 7068
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 203 7061 7069 "indentConfig.ml" 203 7061 7127
+"indentConfig.ml" 203 7070 7078 "indentConfig.ml" 203 7070 7136
 type(
   string
 )
-"indentConfig.ml" 202 7000 7007 "indentConfig.ml" 203 7061 7128
+"indentConfig.ml" 202 7009 7016 "indentConfig.ml" 203 7070 7137
 type(
   string * string
 )
-"indentConfig.ml" 202 7000 7004 "indentConfig.ml" 203 7061 7128
+"indentConfig.ml" 202 7009 7013 "indentConfig.ml" 203 7070 7137
 type(
   'b
 )
-"indentConfig.ml" 204 7129 7136 "indentConfig.ml" 204 7129 7139
+"indentConfig.ml" 204 7138 7145 "indentConfig.ml" 204 7138 7148
 type(
   string -> 'b list
 )
 ident(
-  int_ref pre "indentConfig.ml" 178 6107 6113 "indentConfig.ml" 178 6107 6116
+  int_ref pre "indentConfig.ml" 178 6113 6119 "indentConfig.ml" 178 6113 6122
 )
-"indentConfig.ml" 204 7129 7140 "indentConfig.ml" 205 7168 7199
+"indentConfig.ml" 204 7138 7149 "indentConfig.ml" 205 7177 7208
 type(
   string
 )
-"indentConfig.ml" 204 7129 7136 "indentConfig.ml" 205 7168 7199
+"indentConfig.ml" 204 7138 7145 "indentConfig.ml" 205 7177 7208
 call(
   stack
 )
 type(
   'b list
 )
-"indentConfig.ml" 202 7000 7004 "indentConfig.ml" 205 7168 7199
+"indentConfig.ml" 202 7009 7013 "indentConfig.ml" 205 7177 7208
 type(
   'b list
 )
-"indentConfig.ml" 206 7200 7202 "indentConfig.ml" 206 7200 7203
+"indentConfig.ml" 206 7209 7211 "indentConfig.ml" 206 7209 7212
 type(
   'b list -> 'b list -> 'b list
 )
 ident(
   ext_ref Pervasives.( @ )
 )
-"indentConfig.ml" 207 7204 7212 "indentConfig.ml" 207 7204 7223
+"indentConfig.ml" 207 7213 7221 "indentConfig.ml" 207 7213 7232
 type(
   string -> string -> string -> string
 )
 ident(
-  int_ref option_name "indentConfig.ml" 175 6001 6007 "indentConfig.ml" 175 6001 6018
+  int_ref option_name "indentConfig.ml" 175 6007 6013 "indentConfig.ml" 175 6007 6024
 )
-"indentConfig.ml" 207 7204 7224 "indentConfig.ml" 207 7204 7230
+"indentConfig.ml" 207 7213 7233 "indentConfig.ml" 207 7213 7239
 type(
   string
 )
-"indentConfig.ml" 207 7204 7231 "indentConfig.ml" 207 7204 7236
+"indentConfig.ml" 207 7213 7240 "indentConfig.ml" 207 7213 7245
 type(
   string
 )
-"indentConfig.ml" 207 7204 7238 "indentConfig.ml" 207 7204 7251
+"indentConfig.ml" 207 7213 7247 "indentConfig.ml" 207 7213 7260
 type(
   int -> string
 )
 ident(
   ext_ref Pervasives.string_of_int
 )
-"indentConfig.ml" 207 7204 7252 "indentConfig.ml" 207 7204 7259
+"indentConfig.ml" 207 7213 7261 "indentConfig.ml" 207 7213 7268
 type(
   t
 )
 ident(
   int_ref default "indentConfig.ml" 34 1400 1404 "indentConfig.ml" 34 1400 1411
 )
-"indentConfig.ml" 207 7204 7252 "indentConfig.ml" 207 7204 7266
+"indentConfig.ml" 207 7213 7261 "indentConfig.ml" 207 7213 7275
 type(
   int
 )
-"indentConfig.ml" 207 7204 7237 "indentConfig.ml" 207 7204 7267
+"indentConfig.ml" 207 7213 7246 "indentConfig.ml" 207 7213 7276
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 207 7204 7212 "indentConfig.ml" 207 7204 7267
+"indentConfig.ml" 207 7213 7221 "indentConfig.ml" 207 7213 7276
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 208 7269 7277 "indentConfig.ml" 208 7269 7331
+"indentConfig.ml" 208 7278 7286 "indentConfig.ml" 208 7278 7340
 type(
   string
 )
-"indentConfig.ml" 207 7204 7211 "indentConfig.ml" 208 7269 7332
+"indentConfig.ml" 207 7213 7220 "indentConfig.ml" 208 7278 7341
 type(
   string * string
 )
-"indentConfig.ml" 207 7204 7208 "indentConfig.ml" 208 7269 7332
+"indentConfig.ml" 207 7213 7217 "indentConfig.ml" 208 7278 7341
 type(
   'b
 )
-"indentConfig.ml" 209 7333 7340 "indentConfig.ml" 209 7333 7343
+"indentConfig.ml" 209 7342 7349 "indentConfig.ml" 209 7342 7352
 type(
   string -> 'b list
 )
 ident(
-  int_ref pre "indentConfig.ml" 178 6107 6113 "indentConfig.ml" 178 6107 6116
+  int_ref pre "indentConfig.ml" 178 6113 6119 "indentConfig.ml" 178 6113 6122
 )
-"indentConfig.ml" 209 7333 7344 "indentConfig.ml" 210 7371 7409
+"indentConfig.ml" 209 7342 7353 "indentConfig.ml" 210 7380 7418
 type(
   string
 )
-"indentConfig.ml" 209 7333 7340 "indentConfig.ml" 210 7371 7409
+"indentConfig.ml" 209 7342 7349 "indentConfig.ml" 210 7380 7418
 call(
   stack
 )
 type(
   'b list
 )
-"indentConfig.ml" 207 7204 7208 "indentConfig.ml" 210 7371 7409
+"indentConfig.ml" 207 7213 7217 "indentConfig.ml" 210 7380 7418
 type(
   'b list
 )
-"indentConfig.ml" 211 7410 7412 "indentConfig.ml" 211 7410 7413
+"indentConfig.ml" 211 7419 7421 "indentConfig.ml" 211 7419 7422
 type(
   'b list -> 'b list -> 'b list
 )
 ident(
   ext_ref Pervasives.( @ )
 )
-"indentConfig.ml" 212 7414 7422 "indentConfig.ml" 212 7414 7433
+"indentConfig.ml" 212 7423 7431 "indentConfig.ml" 212 7423 7442
 type(
   string -> string -> string -> string
 )
 ident(
-  int_ref option_name "indentConfig.ml" 175 6001 6007 "indentConfig.ml" 175 6001 6018
+  int_ref option_name "indentConfig.ml" 175 6007 6013 "indentConfig.ml" 175 6007 6024
 )
-"indentConfig.ml" 212 7414 7434 "indentConfig.ml" 212 7414 7448
+"indentConfig.ml" 212 7423 7443 "indentConfig.ml" 212 7423 7457
 type(
   string
 )
-"indentConfig.ml" 212 7414 7449 "indentConfig.ml" 212 7414 7454
+"indentConfig.ml" 212 7423 7458 "indentConfig.ml" 212 7423 7463
 type(
   string
 )
-"indentConfig.ml" 212 7414 7456 "indentConfig.ml" 212 7414 7469
+"indentConfig.ml" 212 7423 7465 "indentConfig.ml" 212 7423 7478
 type(
   int -> string
 )
 ident(
   ext_ref Pervasives.string_of_int
 )
-"indentConfig.ml" 212 7414 7470 "indentConfig.ml" 212 7414 7477
+"indentConfig.ml" 212 7423 7479 "indentConfig.ml" 212 7423 7486
 type(
   t
 )
 ident(
   int_ref default "indentConfig.ml" 34 1400 1404 "indentConfig.ml" 34 1400 1411
 )
-"indentConfig.ml" 212 7414 7470 "indentConfig.ml" 212 7414 7492
+"indentConfig.ml" 212 7423 7479 "indentConfig.ml" 212 7423 7501
 type(
   int
 )
-"indentConfig.ml" 212 7414 7455 "indentConfig.ml" 212 7414 7493
+"indentConfig.ml" 212 7423 7464 "indentConfig.ml" 212 7423 7502
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 212 7414 7422 "indentConfig.ml" 212 7414 7493
+"indentConfig.ml" 212 7423 7431 "indentConfig.ml" 212 7423 7502
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 213 7495 7503 "indentConfig.ml" 213 7495 7562
+"indentConfig.ml" 213 7504 7512 "indentConfig.ml" 213 7504 7571
 type(
   string
 )
-"indentConfig.ml" 212 7414 7421 "indentConfig.ml" 213 7495 7563
+"indentConfig.ml" 212 7423 7430 "indentConfig.ml" 213 7504 7572
 type(
   string * string
 )
-"indentConfig.ml" 212 7414 7418 "indentConfig.ml" 213 7495 7563
+"indentConfig.ml" 212 7423 7427 "indentConfig.ml" 213 7504 7572
 type(
   'b
 )
-"indentConfig.ml" 214 7564 7571 "indentConfig.ml" 214 7564 7574
+"indentConfig.ml" 214 7573 7580 "indentConfig.ml" 214 7573 7583
 type(
   string -> 'b list
 )
 ident(
-  int_ref pre "indentConfig.ml" 178 6107 6113 "indentConfig.ml" 178 6107 6116
+  int_ref pre "indentConfig.ml" 178 6113 6119 "indentConfig.ml" 178 6113 6122
 )
-"indentConfig.ml" 214 7564 7575 "indentConfig.ml" 216 7632 7663
+"indentConfig.ml" 214 7573 7584 "indentConfig.ml" 216 7641 7672
 type(
   string
 )
-"indentConfig.ml" 214 7564 7571 "indentConfig.ml" 216 7632 7663
+"indentConfig.ml" 214 7573 7580 "indentConfig.ml" 216 7641 7672
 call(
   stack
 )
 type(
   'b list
 )
-"indentConfig.ml" 212 7414 7418 "indentConfig.ml" 216 7632 7663
+"indentConfig.ml" 212 7423 7427 "indentConfig.ml" 216 7641 7672
 type(
   'b list
 )
-"indentConfig.ml" 217 7664 7666 "indentConfig.ml" 217 7664 7667
+"indentConfig.ml" 217 7673 7675 "indentConfig.ml" 217 7673 7676
 type(
   'b list -> 'b list -> 'b list
 )
 ident(
   ext_ref Pervasives.( @ )
 )
-"indentConfig.ml" 218 7668 7676 "indentConfig.ml" 218 7668 7687
+"indentConfig.ml" 218 7677 7685 "indentConfig.ml" 218 7677 7696
 type(
   string -> string -> string -> string
 )
 ident(
-  int_ref option_name "indentConfig.ml" 175 6001 6007 "indentConfig.ml" 175 6001 6018
+  int_ref option_name "indentConfig.ml" 175 6007 6013 "indentConfig.ml" 175 6007 6024
 )
-"indentConfig.ml" 218 7668 7688 "indentConfig.ml" 218 7668 7700
+"indentConfig.ml" 218 7677 7697 "indentConfig.ml" 218 7677 7709
 type(
   string
 )
-"indentConfig.ml" 218 7668 7701 "indentConfig.ml" 218 7668 7713
+"indentConfig.ml" 218 7677 7710 "indentConfig.ml" 218 7677 7722
 type(
   string
 )
-"indentConfig.ml" 219 7714 7725 "indentConfig.ml" 219 7714 7744
+"indentConfig.ml" 219 7723 7734 "indentConfig.ml" 219 7723 7753
 type(
   int option -> string
 )
 ident(
   int_ref string_of_intoption "indentConfig.ml" 81 2601 2605 "indentConfig.ml" 81 2601 2624
 )
-"indentConfig.ml" 219 7714 7745 "indentConfig.ml" 219 7714 7752
+"indentConfig.ml" 219 7723 7754 "indentConfig.ml" 219 7723 7761
 type(
   t
 )
 ident(
   int_ref default "indentConfig.ml" 34 1400 1404 "indentConfig.ml" 34 1400 1411
 )
-"indentConfig.ml" 219 7714 7745 "indentConfig.ml" 219 7714 7765
+"indentConfig.ml" 219 7723 7754 "indentConfig.ml" 219 7723 7774
 type(
   int option
 )
-"indentConfig.ml" 219 7714 7724 "indentConfig.ml" 219 7714 7766
+"indentConfig.ml" 219 7723 7733 "indentConfig.ml" 219 7723 7775
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 218 7668 7676 "indentConfig.ml" 219 7714 7766
+"indentConfig.ml" 218 7677 7685 "indentConfig.ml" 219 7723 7775
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 220 7768 7776 "indentConfig.ml" 225 8166 8184
+"indentConfig.ml" 220 7777 7785 "indentConfig.ml" 225 8175 8193
 type(
   string
 )
-"indentConfig.ml" 218 7668 7675 "indentConfig.ml" 225 8166 8185
+"indentConfig.ml" 218 7677 7684 "indentConfig.ml" 225 8175 8194
 type(
   string * string
 )
-"indentConfig.ml" 218 7668 7672 "indentConfig.ml" 225 8166 8185
+"indentConfig.ml" 218 7677 7681 "indentConfig.ml" 225 8175 8194
 type(
   'b
 )
-"indentConfig.ml" 226 8186 8193 "indentConfig.ml" 226 8186 8196
+"indentConfig.ml" 226 8195 8202 "indentConfig.ml" 226 8195 8205
 type(
   string -> 'b list
 )
 ident(
-  int_ref pre "indentConfig.ml" 178 6107 6113 "indentConfig.ml" 178 6107 6116
+  int_ref pre "indentConfig.ml" 178 6113 6119 "indentConfig.ml" 178 6113 6122
 )
-"indentConfig.ml" 226 8186 8197 "indentConfig.ml" 229 8297 8319
+"indentConfig.ml" 226 8195 8206 "indentConfig.ml" 229 8306 8328
 type(
   string
 )
-"indentConfig.ml" 226 8186 8193 "indentConfig.ml" 229 8297 8319
+"indentConfig.ml" 226 8195 8202 "indentConfig.ml" 229 8306 8328
 call(
   stack
 )
 type(
   'b list
 )
-"indentConfig.ml" 218 7668 7672 "indentConfig.ml" 229 8297 8319
+"indentConfig.ml" 218 7677 7681 "indentConfig.ml" 229 8306 8328
 type(
   'b list
 )
-"indentConfig.ml" 230 8320 8322 "indentConfig.ml" 230 8320 8323
+"indentConfig.ml" 230 8329 8331 "indentConfig.ml" 230 8329 8332
 type(
   'b list -> 'b list -> 'b list
 )
 ident(
   ext_ref Pervasives.( @ )
 )
-"indentConfig.ml" 231 8324 8332 "indentConfig.ml" 231 8324 8343
+"indentConfig.ml" 231 8333 8341 "indentConfig.ml" 231 8333 8352
 type(
   string -> string -> string -> string
 )
 ident(
-  int_ref option_name "indentConfig.ml" 175 6001 6007 "indentConfig.ml" 175 6001 6018
+  int_ref option_name "indentConfig.ml" 175 6007 6013 "indentConfig.ml" 175 6007 6024
 )
-"indentConfig.ml" 231 8324 8344 "indentConfig.ml" 231 8324 8357
+"indentConfig.ml" 231 8333 8353 "indentConfig.ml" 231 8333 8366
 type(
   string
 )
-"indentConfig.ml" 231 8324 8358 "indentConfig.ml" 231 8324 8379
+"indentConfig.ml" 231 8333 8367 "indentConfig.ml" 231 8333 8388
 type(
   string
 )
-"indentConfig.ml" 232 8380 8391 "indentConfig.ml" 232 8380 8413
+"indentConfig.ml" 232 8389 8400 "indentConfig.ml" 232 8389 8422
 type(
   threechoices -> string
 )
 ident(
   int_ref string_of_threechoices "indentConfig.ml" 69 2314 2318 "indentConfig.ml" 69 2314 2340
 )
-"indentConfig.ml" 232 8380 8414 "indentConfig.ml" 232 8380 8421
+"indentConfig.ml" 232 8389 8423 "indentConfig.ml" 232 8389 8430
 type(
   t
 )
 ident(
   int_ref default "indentConfig.ml" 34 1400 1404 "indentConfig.ml" 34 1400 1411
 )
-"indentConfig.ml" 232 8380 8414 "indentConfig.ml" 232 8380 8435
+"indentConfig.ml" 232 8389 8423 "indentConfig.ml" 232 8389 8444
 type(
   threechoices
 )
-"indentConfig.ml" 232 8380 8390 "indentConfig.ml" 232 8380 8436
+"indentConfig.ml" 232 8389 8399 "indentConfig.ml" 232 8389 8445
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 231 8324 8332 "indentConfig.ml" 232 8380 8436
+"indentConfig.ml" 231 8333 8341 "indentConfig.ml" 232 8389 8445
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 233 8438 8446 "indentConfig.ml" 237 8661 8721
+"indentConfig.ml" 233 8447 8455 "indentConfig.ml" 237 8670 8730
 type(
   string
 )
-"indentConfig.ml" 231 8324 8331 "indentConfig.ml" 237 8661 8722
+"indentConfig.ml" 231 8333 8340 "indentConfig.ml" 237 8670 8731
 type(
   string * string
 )
-"indentConfig.ml" 231 8324 8328 "indentConfig.ml" 237 8661 8722
+"indentConfig.ml" 231 8333 8337 "indentConfig.ml" 237 8670 8731
 type(
   'b
 )
-"indentConfig.ml" 238 8723 8730 "indentConfig.ml" 238 8723 8733
+"indentConfig.ml" 238 8732 8739 "indentConfig.ml" 238 8732 8742
 type(
   string -> 'b list
 )
 ident(
-  int_ref pre "indentConfig.ml" 178 6107 6113 "indentConfig.ml" 178 6107 6116
+  int_ref pre "indentConfig.ml" 178 6113 6119 "indentConfig.ml" 178 6113 6122
 )
-"indentConfig.ml" 238 8723 8734 "indentConfig.ml" 241 8876 8900
+"indentConfig.ml" 238 8732 8743 "indentConfig.ml" 241 8885 8909
 type(
   string
 )
-"indentConfig.ml" 238 8723 8730 "indentConfig.ml" 241 8876 8900
+"indentConfig.ml" 238 8732 8739 "indentConfig.ml" 241 8885 8909
 call(
   stack
 )
 type(
   'b list
 )
-"indentConfig.ml" 231 8324 8328 "indentConfig.ml" 241 8876 8900
+"indentConfig.ml" 231 8333 8337 "indentConfig.ml" 241 8885 8909
 type(
   'b list
 )
-"indentConfig.ml" 242 8901 8903 "indentConfig.ml" 242 8901 8904
+"indentConfig.ml" 242 8910 8912 "indentConfig.ml" 242 8910 8913
 type(
   'b list -> 'b list -> 'b list
 )
 ident(
   ext_ref Pervasives.( @ )
 )
-"indentConfig.ml" 243 8905 8913 "indentConfig.ml" 243 8905 8924
+"indentConfig.ml" 243 8914 8922 "indentConfig.ml" 243 8914 8933
 type(
   string -> string -> string -> string
 )
 ident(
-  int_ref option_name "indentConfig.ml" 175 6001 6007 "indentConfig.ml" 175 6001 6018
+  int_ref option_name "indentConfig.ml" 175 6007 6013 "indentConfig.ml" 175 6007 6024
 )
-"indentConfig.ml" 243 8905 8925 "indentConfig.ml" 243 8905 8938
+"indentConfig.ml" 243 8914 8934 "indentConfig.ml" 243 8914 8947
 type(
   string
 )
-"indentConfig.ml" 243 8905 8939 "indentConfig.ml" 243 8905 8960
+"indentConfig.ml" 243 8914 8948 "indentConfig.ml" 243 8914 8969
 type(
   string
 )
-"indentConfig.ml" 244 8961 8972 "indentConfig.ml" 244 8961 8994
+"indentConfig.ml" 244 8970 8981 "indentConfig.ml" 244 8970 9003
 type(
   threechoices -> string
 )
 ident(
   int_ref string_of_threechoices "indentConfig.ml" 69 2314 2318 "indentConfig.ml" 69 2314 2340
 )
-"indentConfig.ml" 244 8961 8995 "indentConfig.ml" 244 8961 9002
+"indentConfig.ml" 244 8970 9004 "indentConfig.ml" 244 8970 9011
 type(
   t
 )
 ident(
   int_ref default "indentConfig.ml" 34 1400 1404 "indentConfig.ml" 34 1400 1411
 )
-"indentConfig.ml" 244 8961 8995 "indentConfig.ml" 244 8961 9016
+"indentConfig.ml" 244 8970 9004 "indentConfig.ml" 244 8970 9025
 type(
   threechoices
 )
-"indentConfig.ml" 244 8961 8971 "indentConfig.ml" 244 8961 9017
+"indentConfig.ml" 244 8970 8980 "indentConfig.ml" 244 8970 9026
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 243 8905 8913 "indentConfig.ml" 244 8961 9017
+"indentConfig.ml" 243 8914 8922 "indentConfig.ml" 244 8970 9026
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 245 9019 9027 "indentConfig.ml" 248 9246 9300
+"indentConfig.ml" 245 9028 9036 "indentConfig.ml" 248 9255 9309
 type(
   string
 )
-"indentConfig.ml" 243 8905 8912 "indentConfig.ml" 248 9246 9301
+"indentConfig.ml" 243 8914 8921 "indentConfig.ml" 248 9255 9310
 type(
   string * string
 )
-"indentConfig.ml" 243 8905 8909 "indentConfig.ml" 248 9246 9301
+"indentConfig.ml" 243 8914 8918 "indentConfig.ml" 248 9255 9310
 type(
   'b
 )
-"indentConfig.ml" 249 9302 9309 "indentConfig.ml" 249 9302 9312
+"indentConfig.ml" 249 9311 9318 "indentConfig.ml" 249 9311 9321
 type(
   string -> 'b list
 )
 ident(
-  int_ref pre "indentConfig.ml" 178 6107 6113 "indentConfig.ml" 178 6107 6116
+  int_ref pre "indentConfig.ml" 178 6113 6119 "indentConfig.ml" 178 6113 6122
 )
-"indentConfig.ml" 249 9302 9313 "indentConfig.ml" 254 9496 9520
+"indentConfig.ml" 249 9311 9322 "indentConfig.ml" 254 9505 9529
 type(
   string
 )
-"indentConfig.ml" 249 9302 9309 "indentConfig.ml" 254 9496 9520
+"indentConfig.ml" 249 9311 9318 "indentConfig.ml" 254 9505 9529
 call(
   stack
 )
 type(
   'b list
 )
-"indentConfig.ml" 243 8905 8909 "indentConfig.ml" 254 9496 9520
+"indentConfig.ml" 243 8914 8918 "indentConfig.ml" 254 9505 9529
 type(
   'b list
 )
-"indentConfig.ml" 255 9521 9523 "indentConfig.ml" 255 9521 9524
+"indentConfig.ml" 255 9530 9532 "indentConfig.ml" 255 9530 9533
 type(
   'b list -> 'b list -> 'b list
 )
 ident(
   ext_ref Pervasives.( @ )
 )
-"indentConfig.ml" 256 9525 9533 "indentConfig.ml" 256 9525 9544
+"indentConfig.ml" 256 9534 9542 "indentConfig.ml" 256 9534 9553
 type(
   string -> string -> string -> string
 )
 ident(
-  int_ref option_name "indentConfig.ml" 175 6001 6007 "indentConfig.ml" 175 6001 6018
+  int_ref option_name "indentConfig.ml" 175 6007 6013 "indentConfig.ml" 175 6007 6024
 )
-"indentConfig.ml" 256 9525 9545 "indentConfig.ml" 256 9525 9562
+"indentConfig.ml" 256 9534 9554 "indentConfig.ml" 256 9534 9571
 type(
   string
 )
-"indentConfig.ml" 256 9525 9563 "indentConfig.ml" 256 9525 9569
+"indentConfig.ml" 256 9534 9572 "indentConfig.ml" 256 9534 9578
 type(
   string
 )
-"indentConfig.ml" 257 9570 9581 "indentConfig.ml" 257 9570 9595
+"indentConfig.ml" 257 9579 9590 "indentConfig.ml" 257 9579 9604
 type(
   bool -> string
 )
 ident(
   ext_ref Pervasives.string_of_bool
 )
-"indentConfig.ml" 257 9570 9596 "indentConfig.ml" 257 9570 9603
+"indentConfig.ml" 257 9579 9605 "indentConfig.ml" 257 9579 9612
 type(
   t
 )
 ident(
   int_ref default "indentConfig.ml" 34 1400 1404 "indentConfig.ml" 34 1400 1411
 )
-"indentConfig.ml" 257 9570 9596 "indentConfig.ml" 257 9570 9621
+"indentConfig.ml" 257 9579 9605 "indentConfig.ml" 257 9579 9630
 type(
   bool
 )
-"indentConfig.ml" 257 9570 9580 "indentConfig.ml" 257 9570 9622
+"indentConfig.ml" 257 9579 9589 "indentConfig.ml" 257 9579 9631
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 256 9525 9533 "indentConfig.ml" 257 9570 9622
+"indentConfig.ml" 256 9534 9542 "indentConfig.ml" 257 9579 9631
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 258 9624 9632 "indentConfig.ml" 261 9862 9890
+"indentConfig.ml" 258 9633 9641 "indentConfig.ml" 261 9871 9899
 type(
   string
 )
-"indentConfig.ml" 256 9525 9532 "indentConfig.ml" 261 9862 9891
+"indentConfig.ml" 256 9534 9541 "indentConfig.ml" 261 9871 9900
 type(
   string * string
 )
-"indentConfig.ml" 256 9525 9529 "indentConfig.ml" 261 9862 9891
+"indentConfig.ml" 256 9534 9538 "indentConfig.ml" 261 9871 9900
 type(
   'b
 )
-"indentConfig.ml" 262 9892 9899 "indentConfig.ml" 262 9892 9901
+"indentConfig.ml" 262 9901 9908 "indentConfig.ml" 262 9901 9910
 type(
   'b list
 )
-"indentConfig.ml" 256 9525 9529 "indentConfig.ml" 262 9892 9901
+"indentConfig.ml" 256 9534 9538 "indentConfig.ml" 262 9901 9910
 type(
   'b list
 )
-"indentConfig.ml" 263 9902 9904 "indentConfig.ml" 263 9902 9905
+"indentConfig.ml" 263 9911 9913 "indentConfig.ml" 263 9911 9914
 type(
   'b list -> 'b list -> 'b list
 )
 ident(
   ext_ref Pervasives.( @ )
 )
-"indentConfig.ml" 264 9906 9914 "indentConfig.ml" 264 9906 9925
+"indentConfig.ml" 264 9915 9923 "indentConfig.ml" 264 9915 9934
 type(
   string -> string -> string -> string
 )
 ident(
-  int_ref option_name "indentConfig.ml" 175 6001 6007 "indentConfig.ml" 175 6001 6018
+  int_ref option_name "indentConfig.ml" 175 6007 6013 "indentConfig.ml" 175 6007 6024
 )
-"indentConfig.ml" 264 9906 9926 "indentConfig.ml" 264 9906 9937
+"indentConfig.ml" 264 9915 9935 "indentConfig.ml" 264 9915 9946
 type(
   string
 )
-"indentConfig.ml" 264 9906 9938 "indentConfig.ml" 264 9906 9944
+"indentConfig.ml" 264 9915 9947 "indentConfig.ml" 264 9915 9953
 type(
   string
 )
-"indentConfig.ml" 265 9945 9956 "indentConfig.ml" 265 9945 9970
+"indentConfig.ml" 265 9954 9965 "indentConfig.ml" 265 9954 9979
 type(
   bool -> string
 )
 ident(
   ext_ref Pervasives.string_of_bool
 )
-"indentConfig.ml" 265 9945 9971 "indentConfig.ml" 265 9945 9978
+"indentConfig.ml" 265 9954 9980 "indentConfig.ml" 265 9954 9987
 type(
   t
 )
 ident(
   int_ref default "indentConfig.ml" 34 1400 1404 "indentConfig.ml" 34 1400 1411
 )
-"indentConfig.ml" 265 9945 9971 "indentConfig.ml" 265 9945 9990
+"indentConfig.ml" 265 9954 9980 "indentConfig.ml" 265 9954 9999
 type(
   bool
 )
-"indentConfig.ml" 265 9945 9955 "indentConfig.ml" 265 9945 9991
+"indentConfig.ml" 265 9954 9964 "indentConfig.ml" 265 9954 10000
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 264 9906 9914 "indentConfig.ml" 265 9945 9991
+"indentConfig.ml" 264 9915 9923 "indentConfig.ml" 265 9954 10000
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 266 9993 10001 "indentConfig.ml" 267 10074 10147
+"indentConfig.ml" 266 10002 10010 "indentConfig.ml" 267 10083 10156
 type(
   string
 )
-"indentConfig.ml" 264 9906 9913 "indentConfig.ml" 267 10074 10148
+"indentConfig.ml" 264 9915 9922 "indentConfig.ml" 267 10083 10157
 type(
   string * string
 )
-"indentConfig.ml" 264 9906 9910 "indentConfig.ml" 267 10074 10148
+"indentConfig.ml" 264 9915 9919 "indentConfig.ml" 267 10083 10157
 type(
   'b
 )
-"indentConfig.ml" 268 10149 10156 "indentConfig.ml" 268 10149 10159
+"indentConfig.ml" 268 10158 10165 "indentConfig.ml" 268 10158 10168
 type(
   string -> 'b list
 )
 ident(
-  int_ref pre "indentConfig.ml" 178 6107 6113 "indentConfig.ml" 178 6107 6116
+  int_ref pre "indentConfig.ml" 178 6113 6119 "indentConfig.ml" 178 6113 6122
 )
-"indentConfig.ml" 268 10149 10160 "indentConfig.ml" 274 10384 10410
+"indentConfig.ml" 268 10158 10169 "indentConfig.ml" 274 10393 10419
 type(
   string
 )
-"indentConfig.ml" 268 10149 10156 "indentConfig.ml" 274 10384 10410
+"indentConfig.ml" 268 10158 10165 "indentConfig.ml" 274 10393 10419
 call(
   stack
 )
 type(
   'b list
 )
-"indentConfig.ml" 264 9906 9910 "indentConfig.ml" 274 10384 10410
+"indentConfig.ml" 264 9915 9919 "indentConfig.ml" 274 10393 10419
 type(
   'b list
 )
-"indentConfig.ml" 275 10411 10413 "indentConfig.ml" 275 10411 10414
+"indentConfig.ml" 275 10420 10422 "indentConfig.ml" 275 10420 10423
 type(
   'b list -> 'b list -> 'b list
 )
 ident(
   ext_ref Pervasives.( @ )
 )
-"indentConfig.ml" 276 10415 10423 "indentConfig.ml" 276 10415 10434
+"indentConfig.ml" 276 10424 10432 "indentConfig.ml" 276 10424 10443
 type(
   string -> string -> string -> string
 )
 ident(
-  int_ref option_name "indentConfig.ml" 175 6001 6007 "indentConfig.ml" 175 6001 6018
+  int_ref option_name "indentConfig.ml" 175 6007 6013 "indentConfig.ml" 175 6007 6024
 )
-"indentConfig.ml" 276 10415 10435 "indentConfig.ml" 276 10415 10449
+"indentConfig.ml" 276 10424 10444 "indentConfig.ml" 276 10424 10458
 type(
   string
 )
-"indentConfig.ml" 276 10415 10450 "indentConfig.ml" 276 10415 10471
+"indentConfig.ml" 276 10424 10459 "indentConfig.ml" 276 10424 10480
 type(
   string
 )
-"indentConfig.ml" 277 10472 10483 "indentConfig.ml" 277 10472 10505
+"indentConfig.ml" 277 10481 10492 "indentConfig.ml" 277 10481 10514
 type(
   threechoices -> string
 )
 ident(
   int_ref string_of_threechoices "indentConfig.ml" 69 2314 2318 "indentConfig.ml" 69 2314 2340
 )
-"indentConfig.ml" 277 10472 10506 "indentConfig.ml" 277 10472 10513
+"indentConfig.ml" 277 10481 10515 "indentConfig.ml" 277 10481 10522
 type(
   t
 )
 ident(
   int_ref default "indentConfig.ml" 34 1400 1404 "indentConfig.ml" 34 1400 1411
 )
-"indentConfig.ml" 277 10472 10506 "indentConfig.ml" 277 10472 10528
+"indentConfig.ml" 277 10481 10515 "indentConfig.ml" 277 10481 10537
 type(
   threechoices
 )
-"indentConfig.ml" 277 10472 10482 "indentConfig.ml" 277 10472 10529
+"indentConfig.ml" 277 10481 10491 "indentConfig.ml" 277 10481 10538
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 276 10415 10423 "indentConfig.ml" 277 10472 10529
+"indentConfig.ml" 276 10424 10432 "indentConfig.ml" 277 10481 10538
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 278 10531 10539 "indentConfig.ml" 282 10790 10818
+"indentConfig.ml" 278 10540 10548 "indentConfig.ml" 282 10799 10827
 type(
   string
 )
-"indentConfig.ml" 276 10415 10422 "indentConfig.ml" 282 10790 10819
+"indentConfig.ml" 276 10424 10431 "indentConfig.ml" 282 10799 10828
 type(
   string * string
 )
-"indentConfig.ml" 276 10415 10419 "indentConfig.ml" 282 10790 10819
+"indentConfig.ml" 276 10424 10428 "indentConfig.ml" 282 10799 10828
 type(
   'b
 )
-"indentConfig.ml" 283 10820 10827 "indentConfig.ml" 283 10820 10830
+"indentConfig.ml" 283 10829 10836 "indentConfig.ml" 283 10829 10839
 type(
   string -> 'b list
 )
 ident(
-  int_ref pre "indentConfig.ml" 178 6107 6113 "indentConfig.ml" 178 6107 6116
+  int_ref pre "indentConfig.ml" 178 6113 6119 "indentConfig.ml" 178 6113 6122
 )
-"indentConfig.ml" 283 10820 10831 "indentConfig.ml" 291 11159 11203
+"indentConfig.ml" 283 10829 10840 "indentConfig.ml" 291 11168 11212
 type(
   string
 )
-"indentConfig.ml" 283 10820 10827 "indentConfig.ml" 291 11159 11203
+"indentConfig.ml" 283 10829 10836 "indentConfig.ml" 291 11168 11212
 call(
   stack
 )
 type(
   'b list
 )
-"indentConfig.ml" 276 10415 10419 "indentConfig.ml" 291 11159 11203
+"indentConfig.ml" 276 10424 10428 "indentConfig.ml" 291 11168 11212
 type(
   'b list
 )
-"indentConfig.ml" 292 11204 11206 "indentConfig.ml" 292 11204 11207
+"indentConfig.ml" 292 11213 11215 "indentConfig.ml" 292 11213 11216
 type(
   'b list -> 'b list -> 'b list
 )
 ident(
   ext_ref Pervasives.( @ )
 )
-"indentConfig.ml" 293 11210 11217 "indentConfig.ml" 295 11362 11384
+"indentConfig.ml" 293 11219 11226 "indentConfig.ml" 295 11371 11393
 type(
   string
 )
-"indentConfig.ml" 293 11210 11214 "indentConfig.ml" 295 11362 11384
+"indentConfig.ml" 293 11219 11223 "indentConfig.ml" 295 11371 11393
 type(
   'b
 )
-"indentConfig.ml" 292 11204 11208 "indentConfig.ml" 296 11385 11388
+"indentConfig.ml" 292 11213 11217 "indentConfig.ml" 296 11394 11397
 type(
   'b list
 )
-"indentConfig.ml" 276 10415 10419 "indentConfig.ml" 296 11385 11388
+"indentConfig.ml" 276 10424 10428 "indentConfig.ml" 296 11394 11397
 call(
   stack
 )
 type(
   'b list
 )
-"indentConfig.ml" 264 9906 9910 "indentConfig.ml" 296 11385 11388
+"indentConfig.ml" 264 9915 9919 "indentConfig.ml" 296 11394 11397
 call(
   stack
 )
 type(
   'b list
 )
-"indentConfig.ml" 256 9525 9529 "indentConfig.ml" 296 11385 11388
+"indentConfig.ml" 256 9534 9538 "indentConfig.ml" 296 11394 11397
 call(
   stack
 )
 type(
   'b list
 )
-"indentConfig.ml" 243 8905 8909 "indentConfig.ml" 296 11385 11388
+"indentConfig.ml" 243 8914 8918 "indentConfig.ml" 296 11394 11397
 call(
   stack
 )
 type(
   'b list
 )
-"indentConfig.ml" 231 8324 8328 "indentConfig.ml" 296 11385 11388
+"indentConfig.ml" 231 8333 8337 "indentConfig.ml" 296 11394 11397
 call(
   stack
 )
 type(
   'b list
 )
-"indentConfig.ml" 218 7668 7672 "indentConfig.ml" 296 11385 11388
+"indentConfig.ml" 218 7677 7681 "indentConfig.ml" 296 11394 11397
 call(
   stack
 )
 type(
   'b list
 )
-"indentConfig.ml" 212 7414 7418 "indentConfig.ml" 296 11385 11388
+"indentConfig.ml" 212 7423 7427 "indentConfig.ml" 296 11394 11397
 call(
   stack
 )
 type(
   'b list
 )
-"indentConfig.ml" 207 7204 7208 "indentConfig.ml" 296 11385 11388
+"indentConfig.ml" 207 7213 7217 "indentConfig.ml" 296 11394 11397
 call(
   stack
 )
 type(
   'b list
 )
-"indentConfig.ml" 202 7000 7004 "indentConfig.ml" 296 11385 11388
+"indentConfig.ml" 202 7009 7013 "indentConfig.ml" 296 11394 11397
 call(
   stack
 )
 type(
   'b list
 )
-"indentConfig.ml" 197 6827 6831 "indentConfig.ml" 296 11385 11388
+"indentConfig.ml" 197 6836 6840 "indentConfig.ml" 296 11394 11397
 call(
   stack
 )
 type(
   'b list
 )
-"indentConfig.ml" 192 6641 6645 "indentConfig.ml" 296 11385 11388
+"indentConfig.ml" 192 6650 6654 "indentConfig.ml" 296 11394 11397
 call(
   stack
 )
 type(
   'b list
 )
-"indentConfig.ml" 187 6429 6431 "indentConfig.ml" 296 11385 11388
+"indentConfig.ml" 187 6438 6440 "indentConfig.ml" 296 11394 11397
 call(
   stack
 )
 type(
   'b list
 )
-"indentConfig.ml" 178 6107 6109 "indentConfig.ml" 296 11385 11388
+"indentConfig.ml" 178 6113 6115 "indentConfig.ml" 296 11394 11397
 type(
   'b list
 )
-"indentConfig.ml" 175 6001 6003 "indentConfig.ml" 296 11385 11388
+"indentConfig.ml" 175 6007 6009 "indentConfig.ml" 296 11394 11397
 type(
   'b list
 )
-"indentConfig.ml" 299 11391 11395 "indentConfig.ml" 299 11391 11399
+"indentConfig.ml" 299 11400 11404 "indentConfig.ml" 299 11400 11408
 type(
   t -> string -> bool
 )
 ident(
-  def save "indentConfig.ml" 311 11674 11674 "_none_" 1 0 -1
+  def save "indentConfig.ml" 311 11683 11683 "_none_" 1 0 -1
 )
-"indentConfig.ml" 299 11391 11400 "indentConfig.ml" 299 11391 11401
+"indentConfig.ml" 299 11400 11409 "indentConfig.ml" 299 11400 11410
 type(
   t
 )
 ident(
-  def t "indentConfig.ml" 299 11391 11402 "indentConfig.ml" 309 11661 11672
+  def t "indentConfig.ml" 299 11400 11411 "indentConfig.ml" 309 11670 11681
 )
-"indentConfig.ml" 299 11391 11402 "indentConfig.ml" 299 11391 11406
+"indentConfig.ml" 299 11400 11411 "indentConfig.ml" 299 11400 11415
 type(
   string
 )
 ident(
-  def file "indentConfig.ml" 300 11409 11411 "indentConfig.ml" 309 11661 11672
+  def file "indentConfig.ml" 300 11418 11420 "indentConfig.ml" 309 11670 11681
 )
-"indentConfig.ml" 301 11415 11423 "indentConfig.ml" 301 11415 11425
+"indentConfig.ml" 301 11424 11432 "indentConfig.ml" 301 11424 11434
 type(
   out_channel
 )
 ident(
-  def oc "indentConfig.ml" 302 11445 11449 "indentConfig.ml" 304 11516 11524
+  def oc "indentConfig.ml" 302 11454 11458 "indentConfig.ml" 304 11525 11533
 )
-"indentConfig.ml" 301 11415 11428 "indentConfig.ml" 301 11415 11436
+"indentConfig.ml" 301 11424 11437 "indentConfig.ml" 301 11424 11445
 type(
   string -> out_channel
 )
 ident(
   ext_ref Pervasives.open_out
 )
-"indentConfig.ml" 301 11415 11437 "indentConfig.ml" 301 11415 11441
+"indentConfig.ml" 301 11424 11446 "indentConfig.ml" 301 11424 11450
 type(
   string
 )
 ident(
-  int_ref file "indentConfig.ml" 299 11391 11402 "indentConfig.ml" 299 11391 11406
+  int_ref file "indentConfig.ml" 299 11400 11411 "indentConfig.ml" 299 11400 11415
 )
-"indentConfig.ml" 301 11415 11428 "indentConfig.ml" 301 11415 11441
+"indentConfig.ml" 301 11424 11437 "indentConfig.ml" 301 11424 11450
 call(
   stack
 )
 type(
   out_channel
 )
-"indentConfig.ml" 302 11445 11449 "indentConfig.ml" 302 11445 11462
+"indentConfig.ml" 302 11454 11458 "indentConfig.ml" 302 11454 11471
 type(
   out_channel -> string -> unit
 )
 ident(
   ext_ref Pervasives.output_string
 )
-"indentConfig.ml" 302 11445 11463 "indentConfig.ml" 302 11445 11465
+"indentConfig.ml" 302 11454 11472 "indentConfig.ml" 302 11454 11474
 type(
   out_channel
 )
 ident(
-  int_ref oc "indentConfig.ml" 301 11415 11423 "indentConfig.ml" 301 11415 11425
+  int_ref oc "indentConfig.ml" 301 11424 11432 "indentConfig.ml" 301 11424 11434
 )
-"indentConfig.ml" 302 11445 11467 "indentConfig.ml" 302 11445 11476
+"indentConfig.ml" 302 11454 11476 "indentConfig.ml" 302 11454 11485
 type(
   ?sep:string -> t -> string
 )
 ident(
   int_ref to_string "indentConfig.ml" 85 2686 2690 "indentConfig.ml" 85 2686 2699
 )
-"indentConfig.ml" 302 11445 11482 "indentConfig.ml" 302 11445 11486
+"indentConfig.ml" 302 11454 11491 "indentConfig.ml" 302 11454 11495
 type(
   string
 )
-"indentConfig.ml" 302 11445 11487 "indentConfig.ml" 302 11445 11488
+"indentConfig.ml" 302 11454 11496 "indentConfig.ml" 302 11454 11497
 type(
   t
 )
 ident(
-  int_ref t "indentConfig.ml" 299 11391 11400 "indentConfig.ml" 299 11391 11401
+  int_ref t "indentConfig.ml" 299 11400 11409 "indentConfig.ml" 299 11400 11410
 )
-"indentConfig.ml" 302 11445 11466 "indentConfig.ml" 302 11445 11489
+"indentConfig.ml" 302 11454 11475 "indentConfig.ml" 302 11454 11498
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 302 11445 11449 "indentConfig.ml" 302 11445 11489
+"indentConfig.ml" 302 11454 11458 "indentConfig.ml" 302 11454 11498
 call(
   stack
 )
 type(
   unit
 )
-"indentConfig.ml" 303 11491 11495 "indentConfig.ml" 303 11491 11506
+"indentConfig.ml" 303 11500 11504 "indentConfig.ml" 303 11500 11515
 type(
   out_channel -> char -> unit
 )
 ident(
   ext_ref Pervasives.output_char
 )
-"indentConfig.ml" 303 11491 11507 "indentConfig.ml" 303 11491 11509
+"indentConfig.ml" 303 11500 11516 "indentConfig.ml" 303 11500 11518
 type(
   out_channel
 )
 ident(
-  int_ref oc "indentConfig.ml" 301 11415 11423 "indentConfig.ml" 301 11415 11425
+  int_ref oc "indentConfig.ml" 301 11424 11432 "indentConfig.ml" 301 11424 11434
 )
-"indentConfig.ml" 303 11491 11510 "indentConfig.ml" 303 11491 11514
+"indentConfig.ml" 303 11500 11519 "indentConfig.ml" 303 11500 11523
 type(
   char
 )
-"indentConfig.ml" 303 11491 11495 "indentConfig.ml" 303 11491 11514
+"indentConfig.ml" 303 11500 11504 "indentConfig.ml" 303 11500 11523
 call(
   stack
 )
 type(
   unit
 )
-"indentConfig.ml" 304 11516 11520 "indentConfig.ml" 304 11516 11524
+"indentConfig.ml" 304 11525 11529 "indentConfig.ml" 304 11525 11533
 type(
   bool
 )
-"indentConfig.ml" 303 11491 11495 "indentConfig.ml" 304 11516 11524
+"indentConfig.ml" 303 11500 11504 "indentConfig.ml" 304 11525 11533
 type(
   bool
 )
-"indentConfig.ml" 302 11445 11449 "indentConfig.ml" 304 11516 11524
+"indentConfig.ml" 302 11454 11458 "indentConfig.ml" 304 11525 11533
 type(
   bool
 )
-"indentConfig.ml" 301 11415 11419 "indentConfig.ml" 304 11516 11524
+"indentConfig.ml" 301 11424 11428 "indentConfig.ml" 304 11525 11533
 type(
   bool
 )
-"indentConfig.ml" 305 11525 11542 "indentConfig.ml" 305 11525 11543
+"indentConfig.ml" 305 11534 11551 "indentConfig.ml" 305 11534 11552
 type(
   string
 )
-"indentConfig.ml" 305 11525 11532 "indentConfig.ml" 305 11525 11543
+"indentConfig.ml" 305 11534 11541 "indentConfig.ml" 305 11534 11552
 type(
   exn
 )
-"indentConfig.ml" 306 11547 11553 "indentConfig.ml" 306 11547 11567
+"indentConfig.ml" 306 11556 11562 "indentConfig.ml" 306 11556 11576
 type(
   (string -> unit, out_channel, unit) format -> string -> unit
 )
 ident(
   ext_ref Printf.eprintf
 )
-"indentConfig.ml" 307 11568 11576 "indentConfig.ml" 307 11568 11646
+"indentConfig.ml" 307 11577 11585 "indentConfig.ml" 307 11577 11655
 type(
   (string -> unit, out_channel, unit) format
 )
-"indentConfig.ml" 308 11647 11655 "indentConfig.ml" 308 11647 11659
+"indentConfig.ml" 308 11656 11664 "indentConfig.ml" 308 11656 11668
 type(
   string
 )
 ident(
-  int_ref file "indentConfig.ml" 299 11391 11402 "indentConfig.ml" 299 11391 11406
+  int_ref file "indentConfig.ml" 299 11400 11411 "indentConfig.ml" 299 11400 11415
 )
-"indentConfig.ml" 306 11547 11553 "indentConfig.ml" 308 11647 11659
+"indentConfig.ml" 306 11556 11562 "indentConfig.ml" 308 11656 11668
 call(
   stack
 )
 type(
   unit
 )
-"indentConfig.ml" 309 11661 11667 "indentConfig.ml" 309 11661 11672
+"indentConfig.ml" 309 11670 11676 "indentConfig.ml" 309 11670 11681
 type(
   bool
 )
-"indentConfig.ml" 306 11547 11553 "indentConfig.ml" 309 11661 11672
+"indentConfig.ml" 306 11556 11562 "indentConfig.ml" 309 11670 11681
 type(
   bool
 )
-"indentConfig.ml" 300 11409 11411 "indentConfig.ml" 309 11661 11672
+"indentConfig.ml" 300 11418 11420 "indentConfig.ml" 309 11670 11681
 type(
   bool
 )
-"indentConfig.ml" 311 11674 11678 "indentConfig.ml" 311 11674 11688
+"indentConfig.ml" 311 11683 11687 "indentConfig.ml" 311 11683 11697
 type(
   string list ref -> string -> (string -> unit) option
 )
 ident(
-  def syntax_ext "indentConfig.ml" 325 12137 12137 "_none_" 1 0 -1
+  def syntax_ext "indentConfig.ml" 325 12149 12149 "_none_" 1 0 -1
 )
-"indentConfig.ml" 311 11674 11689 "indentConfig.ml" 311 11674 11697
+"indentConfig.ml" 311 11683 11698 "indentConfig.ml" 311 11683 11706
 type(
   string list ref
 )
 ident(
-  def list_ref "indentConfig.ml" 311 11674 11700 "indentConfig.ml" 323 12122 12135
+  def list_ref "indentConfig.ml" 311 11683 11709 "indentConfig.ml" 323 12134 12147
 )
-"indentConfig.ml" 312 11709 11713 "indentConfig.ml" 312 11709 11721
+"indentConfig.ml" 312 11718 11722 "indentConfig.ml" 312 11718 11730
 type(
   string
 )
-"indentConfig.ml" 314 11736 11749 "indentConfig.ml" 314 11736 11757
+"indentConfig.ml" 314 11745 11758 "indentConfig.ml" 314 11745 11766
 type(
   string
 )
 ident(
-  def syntaxes "indentConfig.ml" 315 11761 11772 "indentConfig.ml" 322 12075 12120
+  def syntaxes "indentConfig.ml" 315 11770 11781 "indentConfig.ml" 322 12084 12132
 )
-"indentConfig.ml" 315 11761 11772 "indentConfig.ml" 315 11761 11781
+"indentConfig.ml" 315 11770 11781 "indentConfig.ml" 315 11770 11790
 type(
   (string -> unit) -> string list -> unit
 )
 ident(
   ext_ref List.iter
 )
-"indentConfig.ml" 316 11782 11800 "indentConfig.ml" 316 11782 11803
+"indentConfig.ml" 316 11791 11809 "indentConfig.ml" 316 11791 11812
 type(
   string
 )
 ident(
-  def syn "indentConfig.ml" 317 11807 11823 "indentConfig.ml" 321 12029 12073
+  def syn "indentConfig.ml" 317 11816 11832 "indentConfig.ml" 321 12038 12082
 )
-"indentConfig.ml" 317 11807 11826 "indentConfig.ml" 317 11807 11834
+"indentConfig.ml" 317 11816 11835 "indentConfig.ml" 317 11816 11843
 type(
   string -> string list -> bool
 )
 ident(
   ext_ref List.mem
 )
-"indentConfig.ml" 317 11807 11835 "indentConfig.ml" 317 11807 11838
+"indentConfig.ml" 317 11816 11844 "indentConfig.ml" 317 11816 11847
 type(
   string
 )
 ident(
-  int_ref syn "indentConfig.ml" 316 11782 11800 "indentConfig.ml" 316 11782 11803
+  int_ref syn "indentConfig.ml" 316 11791 11809 "indentConfig.ml" 316 11791 11812
 )
-"indentConfig.ml" 317 11807 11840 "indentConfig.ml" 317 11807 11873
+"indentConfig.ml" 317 11816 11849 "indentConfig.ml" 317 11816 11882
 type(
   unit -> string list
 )
 ident(
   ext_ref Approx_lexer.available_extensions
 )
-"indentConfig.ml" 317 11807 11874 "indentConfig.ml" 317 11807 11876
+"indentConfig.ml" 317 11816 11883 "indentConfig.ml" 317 11816 11885
 type(
   unit
 )
-"indentConfig.ml" 317 11807 11839 "indentConfig.ml" 317 11807 11877
+"indentConfig.ml" 317 11816 11848 "indentConfig.ml" 317 11816 11886
 call(
   stack
 )
 type(
   string list
 )
-"indentConfig.ml" 317 11807 11826 "indentConfig.ml" 317 11807 11877
+"indentConfig.ml" 317 11816 11835 "indentConfig.ml" 317 11816 11886
 call(
   stack
 )
 type(
   bool
 )
-"indentConfig.ml" 318 11883 11901 "indentConfig.ml" 318 11883 11909
+"indentConfig.ml" 318 11892 11910 "indentConfig.ml" 318 11892 11918
 type(
   string list ref
 )
 ident(
-  int_ref list_ref "indentConfig.ml" 311 11674 11689 "indentConfig.ml" 311 11674 11697
+  int_ref list_ref "indentConfig.ml" 311 11683 11698 "indentConfig.ml" 311 11683 11706
 )
-"indentConfig.ml" 318 11883 11910 "indentConfig.ml" 318 11883 11912
+"indentConfig.ml" 318 11892 11919 "indentConfig.ml" 318 11892 11921
 type(
   string list ref -> string list -> unit
 )
 ident(
   ext_ref Pervasives.( := )
 )
-"indentConfig.ml" 318 11883 11913 "indentConfig.ml" 318 11883 11916
+"indentConfig.ml" 318 11892 11922 "indentConfig.ml" 318 11892 11925
 type(
   string
 )
 ident(
-  int_ref syn "indentConfig.ml" 316 11782 11800 "indentConfig.ml" 316 11782 11803
+  int_ref syn "indentConfig.ml" 316 11791 11809 "indentConfig.ml" 316 11791 11812
 )
-"indentConfig.ml" 318 11883 11920 "indentConfig.ml" 318 11883 11921
+"indentConfig.ml" 318 11892 11929 "indentConfig.ml" 318 11892 11930
 type(
   string list ref -> string list
 )
 ident(
   ext_ref Pervasives.( ! )
 )
-"indentConfig.ml" 318 11883 11921 "indentConfig.ml" 318 11883 11929
+"indentConfig.ml" 318 11892 11930 "indentConfig.ml" 318 11892 11938
 type(
   string list ref
 )
 ident(
-  int_ref list_ref "indentConfig.ml" 311 11674 11689 "indentConfig.ml" 311 11674 11697
+  int_ref list_ref "indentConfig.ml" 311 11683 11698 "indentConfig.ml" 311 11683 11706
 )
-"indentConfig.ml" 318 11883 11920 "indentConfig.ml" 318 11883 11929
+"indentConfig.ml" 318 11892 11929 "indentConfig.ml" 318 11892 11938
 type(
   string list
 )
-"indentConfig.ml" 318 11883 11913 "indentConfig.ml" 318 11883 11929
+"indentConfig.ml" 318 11892 11922 "indentConfig.ml" 318 11892 11938
 type(
   string list
 )
-"indentConfig.ml" 318 11883 11901 "indentConfig.ml" 318 11883 11929
+"indentConfig.ml" 318 11892 11910 "indentConfig.ml" 318 11892 11938
 type(
   unit
 )
-"indentConfig.ml" 320 11951 11973 "indentConfig.ml" 320 11951 11974
+"indentConfig.ml" 320 11960 11982 "indentConfig.ml" 320 11960 11983
 type(
   string
 )
 ident(
-  def e "indentConfig.ml" 321 12029 12047 "indentConfig.ml" 321 12029 12073
+  def e "indentConfig.ml" 321 12038 12056 "indentConfig.ml" 321 12038 12082
 )
-"indentConfig.ml" 320 11951 11977 "indentConfig.ml" 320 11951 11991
+"indentConfig.ml" 320 11960 11986 "indentConfig.ml" 320 11960 12000
 type(
   (string -> string, unit, string) format -> string -> string
 )
 ident(
   ext_ref Printf.sprintf
 )
-"indentConfig.ml" 320 11951 11992 "indentConfig.ml" 320 11951 12021
+"indentConfig.ml" 320 11960 12001 "indentConfig.ml" 320 11960 12030
 type(
   (string -> string, unit, string) format
 )
-"indentConfig.ml" 320 11951 12022 "indentConfig.ml" 320 11951 12025
+"indentConfig.ml" 320 11960 12031 "indentConfig.ml" 320 11960 12034
 type(
   string
 )
 ident(
-  int_ref syn "indentConfig.ml" 316 11782 11800 "indentConfig.ml" 316 11782 11803
+  int_ref syn "indentConfig.ml" 316 11791 11809 "indentConfig.ml" 316 11791 11812
 )
-"indentConfig.ml" 320 11951 11977 "indentConfig.ml" 320 11951 12025
+"indentConfig.ml" 320 11960 11986 "indentConfig.ml" 320 11960 12034
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 321 12029 12047 "indentConfig.ml" 321 12029 12052
+"indentConfig.ml" 321 12038 12056 "indentConfig.ml" 321 12038 12061
 type(
   exn -> unit
 )
 ident(
   ext_ref Pervasives.raise
 )
-"indentConfig.ml" 321 12029 12071 "indentConfig.ml" 321 12029 12072
+"indentConfig.ml" 321 12038 12080 "indentConfig.ml" 321 12038 12081
 type(
   string
 )
 ident(
-  int_ref e "indentConfig.ml" 320 11951 11973 "indentConfig.ml" 320 11951 11974
+  int_ref e "indentConfig.ml" 320 11960 11982 "indentConfig.ml" 320 11960 11983
 )
-"indentConfig.ml" 321 12029 12053 "indentConfig.ml" 321 12029 12073
+"indentConfig.ml" 321 12038 12062 "indentConfig.ml" 321 12038 12082
 type(
   exn
 )
-"indentConfig.ml" 321 12029 12047 "indentConfig.ml" 321 12029 12073
+"indentConfig.ml" 321 12038 12056 "indentConfig.ml" 321 12038 12082
 type(
   unit
 )
-"indentConfig.ml" 320 11951 11969 "indentConfig.ml" 321 12029 12073
+"indentConfig.ml" 320 11960 11978 "indentConfig.ml" 321 12038 12082
 type(
   unit
 )
-"indentConfig.ml" 317 11807 11823 "indentConfig.ml" 321 12029 12073
+"indentConfig.ml" 317 11816 11832 "indentConfig.ml" 321 12038 12082
 type(
   unit
 )
-"indentConfig.ml" 316 11782 11795 "indentConfig.ml" 321 12029 12074
+"indentConfig.ml" 316 11791 11804 "indentConfig.ml" 321 12038 12083
 type(
   string -> unit
 )
-"indentConfig.ml" 322 12075 12089 "indentConfig.ml" 322 12075 12106
+"indentConfig.ml" 322 12084 12098 "indentConfig.ml" 322 12084 12118
 type(
   char -> string -> string list
 )
 ident(
-  ext_ref Util.string_split
+  ext_ref OcpUtil.string_split
 )
-"indentConfig.ml" 322 12075 12107 "indentConfig.ml" 322 12075 12110
+"indentConfig.ml" 322 12084 12119 "indentConfig.ml" 322 12084 12122
 type(
   char
 )
-"indentConfig.ml" 322 12075 12111 "indentConfig.ml" 322 12075 12119
+"indentConfig.ml" 322 12084 12123 "indentConfig.ml" 322 12084 12131
 type(
   string
 )
 ident(
-  int_ref syntaxes "indentConfig.ml" 314 11736 11749 "indentConfig.ml" 314 11736 11757
+  int_ref syntaxes "indentConfig.ml" 314 11745 11758 "indentConfig.ml" 314 11745 11766
 )
-"indentConfig.ml" 322 12075 12088 "indentConfig.ml" 322 12075 12120
+"indentConfig.ml" 322 12084 12097 "indentConfig.ml" 322 12084 12132
 call(
   stack
 )
 type(
   string list
 )
-"indentConfig.ml" 315 11761 11772 "indentConfig.ml" 322 12075 12120
+"indentConfig.ml" 315 11770 11781 "indentConfig.ml" 322 12084 12132
 call(
   tail
 )
 type(
   unit
 )
-"indentConfig.ml" 314 11736 11744 "indentConfig.ml" 322 12075 12121
+"indentConfig.ml" 314 11745 11753 "indentConfig.ml" 322 12084 12133
 type(
   string -> unit
 )
-"indentConfig.ml" 313 11725 11731 "indentConfig.ml" 322 12075 12121
+"indentConfig.ml" 313 11734 11740 "indentConfig.ml" 322 12084 12133
 type(
   (string -> unit) option
 )
-"indentConfig.ml" 323 12122 12126 "indentConfig.ml" 323 12122 12127
+"indentConfig.ml" 323 12134 12138 "indentConfig.ml" 323 12134 12139
 type(
   string
 )
-"indentConfig.ml" 323 12122 12131 "indentConfig.ml" 323 12122 12135
+"indentConfig.ml" 323 12134 12143 "indentConfig.ml" 323 12134 12147
 type(
   (string -> unit) option
 )
-"indentConfig.ml" 311 11674 11700 "indentConfig.ml" 323 12122 12135
+"indentConfig.ml" 311 11683 11709 "indentConfig.ml" 323 12134 12147
 type(
   string -> (string -> unit) option
 )
-"indentConfig.ml" 325 12137 12141 "indentConfig.ml" 325 12137 12145
+"indentConfig.ml" 325 12149 12153 "indentConfig.ml" 325 12149 12157
 type(
   ?indent:t -> string -> t * string list
 )
 ident(
-  def load "indentConfig.ml" 353 12972 12972 "_none_" 1 0 -1
+  def load "indentConfig.ml" 353 12984 12984 "_none_" 1 0 -1
 )
-"indentConfig.ml" 325 12137 12148 "indentConfig.ml" 325 12137 12154
+"indentConfig.ml" 325 12149 12160 "indentConfig.ml" 325 12149 12166
 type(
   t
 )
-"indentConfig.ml" 325 12137 12155 "indentConfig.ml" 325 12137 12162
+"indentConfig.ml" 325 12149 12167 "indentConfig.ml" 325 12149 12174
 type(
   t
 )
@@ -4087,7 +4087,7 @@ type(
   t
 )
 ident(
-  int_ref *sth* "indentConfig.ml" 325 12137 12155 "indentConfig.ml" 325 12137 12162
+  int_ref *sth* "indentConfig.ml" 325 12149 12167 "indentConfig.ml" 325 12149 12174
 )
 type(
   t option
@@ -4098,471 +4098,471 @@ type(
 type(
   t
 )
-"indentConfig.ml" 325 12137 12164 "indentConfig.ml" 325 12137 12168
+"indentConfig.ml" 325 12149 12176 "indentConfig.ml" 325 12149 12180
 type(
   string
 )
 ident(
-  def file "indentConfig.ml" 326 12171 12173 "indentConfig.ml" 351 12953 12970
+  def file "indentConfig.ml" 326 12183 12185 "indentConfig.ml" 351 12965 12982
 )
-"indentConfig.ml" 327 12177 12185 "indentConfig.ml" 327 12177 12187
+"indentConfig.ml" 327 12189 12197 "indentConfig.ml" 327 12189 12199
 type(
   in_channel
 )
 ident(
-  def ic "indentConfig.ml" 328 12206 12210 "indentConfig.ml" 340 12646 12658
+  def ic "indentConfig.ml" 328 12218 12222 "indentConfig.ml" 340 12658 12670
 )
-"indentConfig.ml" 327 12177 12190 "indentConfig.ml" 327 12177 12197
+"indentConfig.ml" 327 12189 12202 "indentConfig.ml" 327 12189 12209
 type(
   string -> in_channel
 )
 ident(
   ext_ref Pervasives.open_in
 )
-"indentConfig.ml" 327 12177 12198 "indentConfig.ml" 327 12177 12202
+"indentConfig.ml" 327 12189 12210 "indentConfig.ml" 327 12189 12214
 type(
   string
 )
 ident(
-  int_ref file "indentConfig.ml" 325 12137 12164 "indentConfig.ml" 325 12137 12168
+  int_ref file "indentConfig.ml" 325 12149 12176 "indentConfig.ml" 325 12149 12180
 )
-"indentConfig.ml" 327 12177 12190 "indentConfig.ml" 327 12177 12202
+"indentConfig.ml" 327 12189 12202 "indentConfig.ml" 327 12189 12214
 call(
   stack
 )
 type(
   in_channel
 )
-"indentConfig.ml" 328 12206 12214 "indentConfig.ml" 328 12206 12222
+"indentConfig.ml" 328 12218 12226 "indentConfig.ml" 328 12218 12234
 type(
   string
 )
 ident(
-  def contents "indentConfig.ml" 338 12546 12550 "indentConfig.ml" 340 12646 12658
+  def contents "indentConfig.ml" 338 12558 12562 "indentConfig.ml" 340 12658 12670
 )
-"indentConfig.ml" 329 12225 12235 "indentConfig.ml" 329 12225 12236
+"indentConfig.ml" 329 12237 12247 "indentConfig.ml" 329 12237 12248
 type(
   Buffer.t
 )
 ident(
-  def b "indentConfig.ml" 330 12260 12266 "indentConfig.ml" 336 12495 12538
+  def b "indentConfig.ml" 330 12272 12278 "indentConfig.ml" 336 12507 12550
 )
-"indentConfig.ml" 329 12225 12239 "indentConfig.ml" 329 12225 12252
+"indentConfig.ml" 329 12237 12251 "indentConfig.ml" 329 12237 12264
 type(
   int -> Buffer.t
 )
 ident(
   ext_ref Buffer.create
 )
-"indentConfig.ml" 329 12225 12253 "indentConfig.ml" 329 12225 12256
+"indentConfig.ml" 329 12237 12265 "indentConfig.ml" 329 12237 12268
 type(
   int
 )
-"indentConfig.ml" 329 12225 12239 "indentConfig.ml" 329 12225 12256
+"indentConfig.ml" 329 12237 12251 "indentConfig.ml" 329 12237 12268
 call(
   stack
 )
 type(
   Buffer.t
 )
-"indentConfig.ml" 330 12260 12276 "indentConfig.ml" 330 12260 12280
+"indentConfig.ml" 330 12272 12288 "indentConfig.ml" 330 12272 12292
 type(
   bool
 )
-"indentConfig.ml" 331 12284 12298 "indentConfig.ml" 331 12284 12299
+"indentConfig.ml" 331 12296 12310 "indentConfig.ml" 331 12296 12311
 type(
   string
 )
 ident(
-  def s "indentConfig.ml" 332 12319 12329 "indentConfig.ml" 334 12437 12469
+  def s "indentConfig.ml" 332 12331 12341 "indentConfig.ml" 334 12449 12481
 )
-"indentConfig.ml" 331 12284 12302 "indentConfig.ml" 331 12284 12312
+"indentConfig.ml" 331 12296 12314 "indentConfig.ml" 331 12296 12324
 type(
   in_channel -> string
 )
 ident(
   ext_ref Pervasives.input_line
 )
-"indentConfig.ml" 331 12284 12313 "indentConfig.ml" 331 12284 12315
+"indentConfig.ml" 331 12296 12325 "indentConfig.ml" 331 12296 12327
 type(
   in_channel
 )
 ident(
-  int_ref ic "indentConfig.ml" 327 12177 12185 "indentConfig.ml" 327 12177 12187
+  int_ref ic "indentConfig.ml" 327 12189 12197 "indentConfig.ml" 327 12189 12199
 )
-"indentConfig.ml" 331 12284 12302 "indentConfig.ml" 331 12284 12315
+"indentConfig.ml" 331 12296 12314 "indentConfig.ml" 331 12296 12327
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 332 12319 12333 "indentConfig.ml" 332 12319 12334
+"indentConfig.ml" 332 12331 12345 "indentConfig.ml" 332 12331 12346
 type(
   int
 )
 ident(
-  def n "indentConfig.ml" 333 12397 12407 "indentConfig.ml" 334 12437 12469
+  def n "indentConfig.ml" 333 12409 12419 "indentConfig.ml" 334 12449 12481
 )
-"indentConfig.ml" 332 12319 12341 "indentConfig.ml" 332 12319 12353
+"indentConfig.ml" 332 12331 12353 "indentConfig.ml" 332 12331 12365
 type(
   string -> char -> int
 )
 ident(
   ext_ref Compat.String.index
 )
-"indentConfig.ml" 332 12319 12354 "indentConfig.ml" 332 12319 12355
+"indentConfig.ml" 332 12331 12366 "indentConfig.ml" 332 12331 12367
 type(
   string
 )
 ident(
-  int_ref s "indentConfig.ml" 331 12284 12298 "indentConfig.ml" 331 12284 12299
+  int_ref s "indentConfig.ml" 331 12296 12310 "indentConfig.ml" 331 12296 12311
 )
-"indentConfig.ml" 332 12319 12356 "indentConfig.ml" 332 12319 12359
+"indentConfig.ml" 332 12331 12368 "indentConfig.ml" 332 12331 12371
 type(
   char
 )
-"indentConfig.ml" 332 12319 12341 "indentConfig.ml" 332 12319 12359
+"indentConfig.ml" 332 12331 12353 "indentConfig.ml" 332 12331 12371
 call(
   stack
 )
 type(
   int
 )
-"indentConfig.ml" 332 12319 12365 "indentConfig.ml" 332 12319 12374
+"indentConfig.ml" 332 12331 12377 "indentConfig.ml" 332 12331 12386
 type(
   exn
 )
-"indentConfig.ml" 332 12319 12378 "indentConfig.ml" 332 12319 12391
+"indentConfig.ml" 332 12331 12390 "indentConfig.ml" 332 12331 12403
 type(
   string -> int
 )
 ident(
   ext_ref Compat.String.length
 )
-"indentConfig.ml" 332 12319 12392 "indentConfig.ml" 332 12319 12393
+"indentConfig.ml" 332 12331 12404 "indentConfig.ml" 332 12331 12405
 type(
   string
 )
 ident(
-  int_ref s "indentConfig.ml" 331 12284 12298 "indentConfig.ml" 331 12284 12299
+  int_ref s "indentConfig.ml" 331 12296 12310 "indentConfig.ml" 331 12296 12311
 )
-"indentConfig.ml" 332 12319 12378 "indentConfig.ml" 332 12319 12393
+"indentConfig.ml" 332 12331 12390 "indentConfig.ml" 332 12331 12405
 type(
   int
 )
-"indentConfig.ml" 332 12319 12337 "indentConfig.ml" 332 12319 12393
+"indentConfig.ml" 332 12331 12349 "indentConfig.ml" 332 12331 12405
 type(
   int
 )
-"indentConfig.ml" 333 12397 12407 "indentConfig.ml" 333 12397 12427
+"indentConfig.ml" 333 12409 12419 "indentConfig.ml" 333 12409 12439
 type(
   Buffer.t -> string -> int -> int -> unit
 )
 ident(
   ext_ref Buffer.add_substring
 )
-"indentConfig.ml" 333 12397 12428 "indentConfig.ml" 333 12397 12429
+"indentConfig.ml" 333 12409 12440 "indentConfig.ml" 333 12409 12441
 type(
   Buffer.t
 )
 ident(
-  int_ref b "indentConfig.ml" 329 12225 12235 "indentConfig.ml" 329 12225 12236
+  int_ref b "indentConfig.ml" 329 12237 12247 "indentConfig.ml" 329 12237 12248
 )
-"indentConfig.ml" 333 12397 12430 "indentConfig.ml" 333 12397 12431
+"indentConfig.ml" 333 12409 12442 "indentConfig.ml" 333 12409 12443
 type(
   string
 )
 ident(
-  int_ref s "indentConfig.ml" 331 12284 12298 "indentConfig.ml" 331 12284 12299
+  int_ref s "indentConfig.ml" 331 12296 12310 "indentConfig.ml" 331 12296 12311
 )
-"indentConfig.ml" 333 12397 12432 "indentConfig.ml" 333 12397 12433
+"indentConfig.ml" 333 12409 12444 "indentConfig.ml" 333 12409 12445
 type(
   int
 )
-"indentConfig.ml" 333 12397 12434 "indentConfig.ml" 333 12397 12435
+"indentConfig.ml" 333 12409 12446 "indentConfig.ml" 333 12409 12447
 type(
   int
 )
 ident(
-  int_ref n "indentConfig.ml" 332 12319 12333 "indentConfig.ml" 332 12319 12334
+  int_ref n "indentConfig.ml" 332 12331 12345 "indentConfig.ml" 332 12331 12346
 )
-"indentConfig.ml" 333 12397 12407 "indentConfig.ml" 333 12397 12435
+"indentConfig.ml" 333 12409 12419 "indentConfig.ml" 333 12409 12447
 call(
   stack
 )
 type(
   unit
 )
-"indentConfig.ml" 334 12437 12447 "indentConfig.ml" 334 12437 12462
+"indentConfig.ml" 334 12449 12459 "indentConfig.ml" 334 12449 12474
 type(
   Buffer.t -> char -> unit
 )
 ident(
   ext_ref Buffer.add_char
 )
-"indentConfig.ml" 334 12437 12463 "indentConfig.ml" 334 12437 12464
+"indentConfig.ml" 334 12449 12475 "indentConfig.ml" 334 12449 12476
 type(
   Buffer.t
 )
 ident(
-  int_ref b "indentConfig.ml" 329 12225 12235 "indentConfig.ml" 329 12225 12236
+  int_ref b "indentConfig.ml" 329 12237 12247 "indentConfig.ml" 329 12237 12248
 )
-"indentConfig.ml" 334 12437 12465 "indentConfig.ml" 334 12437 12469
+"indentConfig.ml" 334 12449 12477 "indentConfig.ml" 334 12449 12481
 type(
   char
 )
-"indentConfig.ml" 334 12437 12447 "indentConfig.ml" 334 12437 12469
+"indentConfig.ml" 334 12449 12459 "indentConfig.ml" 334 12449 12481
 call(
   stack
 )
 type(
   unit
 )
-"indentConfig.ml" 333 12397 12407 "indentConfig.ml" 334 12437 12469
+"indentConfig.ml" 333 12409 12419 "indentConfig.ml" 334 12449 12481
 type(
   unit
 )
-"indentConfig.ml" 332 12319 12329 "indentConfig.ml" 334 12437 12469
+"indentConfig.ml" 332 12331 12341 "indentConfig.ml" 334 12449 12481
 type(
   unit
 )
-"indentConfig.ml" 331 12284 12294 "indentConfig.ml" 334 12437 12469
+"indentConfig.ml" 331 12296 12306 "indentConfig.ml" 334 12449 12481
 type(
   unit
 )
-"indentConfig.ml" 330 12260 12270 "indentConfig.ml" 335 12470 12480
+"indentConfig.ml" 330 12272 12282 "indentConfig.ml" 335 12482 12492
 type(
   unit
 )
-"indentConfig.ml" 335 12470 12482 "indentConfig.ml" 335 12470 12494
+"indentConfig.ml" 335 12482 12494 "indentConfig.ml" 335 12482 12506
 type(
   string
 )
-"indentConfig.ml" 330 12260 12270 "indentConfig.ml" 335 12470 12494
+"indentConfig.ml" 330 12272 12282 "indentConfig.ml" 335 12482 12506
 type(
   string
 )
-"indentConfig.ml" 336 12495 12506 "indentConfig.ml" 336 12495 12517
+"indentConfig.ml" 336 12507 12518 "indentConfig.ml" 336 12507 12529
 type(
   exn
 )
-"indentConfig.ml" 336 12495 12521 "indentConfig.ml" 336 12495 12536
+"indentConfig.ml" 336 12507 12533 "indentConfig.ml" 336 12507 12548
 type(
   Buffer.t -> string
 )
 ident(
   ext_ref Buffer.contents
 )
-"indentConfig.ml" 336 12495 12537 "indentConfig.ml" 336 12495 12538
+"indentConfig.ml" 336 12507 12549 "indentConfig.ml" 336 12507 12550
 type(
   Buffer.t
 )
 ident(
-  int_ref b "indentConfig.ml" 329 12225 12235 "indentConfig.ml" 329 12225 12236
+  int_ref b "indentConfig.ml" 329 12237 12247 "indentConfig.ml" 329 12237 12248
 )
-"indentConfig.ml" 336 12495 12521 "indentConfig.ml" 336 12495 12538
+"indentConfig.ml" 336 12507 12533 "indentConfig.ml" 336 12507 12550
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 330 12260 12266 "indentConfig.ml" 336 12495 12538
+"indentConfig.ml" 330 12272 12278 "indentConfig.ml" 336 12507 12550
 type(
   string
 )
-"indentConfig.ml" 329 12225 12231 "indentConfig.ml" 336 12495 12538
+"indentConfig.ml" 329 12237 12243 "indentConfig.ml" 336 12507 12550
 type(
   string
 )
-"indentConfig.ml" 338 12546 12554 "indentConfig.ml" 338 12546 12558
+"indentConfig.ml" 338 12558 12566 "indentConfig.ml" 338 12558 12570
 type(
   string list ref
 )
 ident(
-  def exts "indentConfig.ml" 339 12571 12575 "indentConfig.ml" 340 12646 12658
+  def exts "indentConfig.ml" 339 12583 12587 "indentConfig.ml" 340 12658 12670
 )
-"indentConfig.ml" 338 12546 12561 "indentConfig.ml" 338 12546 12564
+"indentConfig.ml" 338 12558 12573 "indentConfig.ml" 338 12558 12576
 type(
   string list -> string list ref
 )
 ident(
   ext_ref Pervasives.ref
 )
-"indentConfig.ml" 338 12546 12565 "indentConfig.ml" 338 12546 12567
+"indentConfig.ml" 338 12558 12577 "indentConfig.ml" 338 12558 12579
 type(
   string list
 )
-"indentConfig.ml" 338 12546 12561 "indentConfig.ml" 338 12546 12567
+"indentConfig.ml" 338 12558 12573 "indentConfig.ml" 338 12558 12579
 type(
   string list ref
 )
-"indentConfig.ml" 339 12571 12579 "indentConfig.ml" 339 12571 12580
+"indentConfig.ml" 339 12583 12591 "indentConfig.ml" 339 12583 12592
 type(
   t
 )
 ident(
-  def t "indentConfig.ml" 340 12646 12650 "indentConfig.ml" 340 12646 12658
+  def t "indentConfig.ml" 340 12658 12662 "indentConfig.ml" 340 12658 12670
 )
-"indentConfig.ml" 339 12571 12583 "indentConfig.ml" 339 12571 12601
+"indentConfig.ml" 339 12583 12595 "indentConfig.ml" 339 12583 12613
 type(
   ?extra:(string -> (string -> unit) option) -> t -> string -> t
 )
 ident(
   int_ref update_from_string "indentConfig.ml" 157 5300 5304 "indentConfig.ml" 157 5300 5322
 )
-"indentConfig.ml" 339 12571 12610 "indentConfig.ml" 339 12571 12620
+"indentConfig.ml" 339 12583 12622 "indentConfig.ml" 339 12583 12632
 type(
   string list ref -> string -> (string -> unit) option
 )
 ident(
-  int_ref syntax_ext "indentConfig.ml" 311 11674 11678 "indentConfig.ml" 311 11674 11688
+  int_ref syntax_ext "indentConfig.ml" 311 11683 11687 "indentConfig.ml" 311 11683 11697
 )
-"indentConfig.ml" 339 12571 12621 "indentConfig.ml" 339 12571 12625
+"indentConfig.ml" 339 12583 12633 "indentConfig.ml" 339 12583 12637
 type(
   string list ref
 )
 ident(
-  int_ref exts "indentConfig.ml" 338 12546 12554 "indentConfig.ml" 338 12546 12558
+  int_ref exts "indentConfig.ml" 338 12558 12566 "indentConfig.ml" 338 12558 12570
 )
-"indentConfig.ml" 339 12571 12609 "indentConfig.ml" 339 12571 12626
+"indentConfig.ml" 339 12583 12621 "indentConfig.ml" 339 12583 12638
 call(
   stack
 )
 type(
   string -> (string -> unit) option
 )
-"indentConfig.ml" 339 12571 12627 "indentConfig.ml" 339 12571 12633
+"indentConfig.ml" 339 12583 12639 "indentConfig.ml" 339 12583 12645
 type(
   t
 )
 ident(
-  int_ref indent "indentConfig.ml" 325 12137 12148 "indentConfig.ml" 325 12137 12154
+  int_ref indent "indentConfig.ml" 325 12149 12160 "indentConfig.ml" 325 12149 12166
 )
-"indentConfig.ml" 339 12571 12634 "indentConfig.ml" 339 12571 12642
+"indentConfig.ml" 339 12583 12646 "indentConfig.ml" 339 12583 12654
 type(
   string
 )
 ident(
-  int_ref contents "indentConfig.ml" 328 12206 12214 "indentConfig.ml" 328 12206 12222
+  int_ref contents "indentConfig.ml" 328 12218 12226 "indentConfig.ml" 328 12218 12234
 )
-"indentConfig.ml" 339 12571 12583 "indentConfig.ml" 339 12571 12642
+"indentConfig.ml" 339 12583 12595 "indentConfig.ml" 339 12583 12654
 call(
   stack
 )
 type(
   t
 )
-"indentConfig.ml" 340 12646 12650 "indentConfig.ml" 340 12646 12651
+"indentConfig.ml" 340 12658 12662 "indentConfig.ml" 340 12658 12663
 type(
   t
 )
 ident(
-  int_ref t "indentConfig.ml" 339 12571 12579 "indentConfig.ml" 339 12571 12580
+  int_ref t "indentConfig.ml" 339 12583 12591 "indentConfig.ml" 339 12583 12592
 )
-"indentConfig.ml" 340 12646 12653 "indentConfig.ml" 340 12646 12654
+"indentConfig.ml" 340 12658 12665 "indentConfig.ml" 340 12658 12666
 type(
   string list ref -> string list
 )
 ident(
   ext_ref Pervasives.( ! )
 )
-"indentConfig.ml" 340 12646 12654 "indentConfig.ml" 340 12646 12658
+"indentConfig.ml" 340 12658 12666 "indentConfig.ml" 340 12658 12670
 type(
   string list ref
 )
 ident(
-  int_ref exts "indentConfig.ml" 338 12546 12554 "indentConfig.ml" 338 12546 12558
+  int_ref exts "indentConfig.ml" 338 12558 12566 "indentConfig.ml" 338 12558 12570
 )
-"indentConfig.ml" 340 12646 12653 "indentConfig.ml" 340 12646 12658
+"indentConfig.ml" 340 12658 12665 "indentConfig.ml" 340 12658 12670
 type(
   string list
 )
-"indentConfig.ml" 340 12646 12650 "indentConfig.ml" 340 12646 12658
+"indentConfig.ml" 340 12658 12662 "indentConfig.ml" 340 12658 12670
 type(
   t * string list
 )
-"indentConfig.ml" 339 12571 12575 "indentConfig.ml" 340 12646 12658
+"indentConfig.ml" 339 12583 12587 "indentConfig.ml" 340 12658 12670
 type(
   t * string list
 )
-"indentConfig.ml" 338 12546 12550 "indentConfig.ml" 340 12646 12658
+"indentConfig.ml" 338 12558 12562 "indentConfig.ml" 340 12658 12670
 type(
   t * string list
 )
-"indentConfig.ml" 328 12206 12210 "indentConfig.ml" 340 12646 12658
+"indentConfig.ml" 328 12218 12222 "indentConfig.ml" 340 12658 12670
 type(
   t * string list
 )
-"indentConfig.ml" 327 12177 12181 "indentConfig.ml" 340 12646 12658
+"indentConfig.ml" 327 12189 12193 "indentConfig.ml" 340 12658 12670
 type(
   t * string list
 )
-"indentConfig.ml" 342 12666 12680 "indentConfig.ml" 342 12666 12681
+"indentConfig.ml" 342 12678 12692 "indentConfig.ml" 342 12678 12693
 type(
   string
 )
-"indentConfig.ml" 342 12666 12670 "indentConfig.ml" 342 12666 12681
+"indentConfig.ml" 342 12678 12682 "indentConfig.ml" 342 12678 12693
 type(
   exn
 )
-"indentConfig.ml" 343 12685 12691 "indentConfig.ml" 343 12685 12705
+"indentConfig.ml" 343 12697 12703 "indentConfig.ml" 343 12697 12717
 type(
   (string -> unit, out_channel, unit) format -> string -> unit
 )
 ident(
   ext_ref Printf.eprintf
 )
-"indentConfig.ml" 344 12706 12714 "indentConfig.ml" 344 12706 12784
+"indentConfig.ml" 344 12718 12726 "indentConfig.ml" 344 12718 12796
 type(
   (string -> unit, out_channel, unit) format
 )
-"indentConfig.ml" 345 12785 12793 "indentConfig.ml" 345 12785 12797
+"indentConfig.ml" 345 12797 12805 "indentConfig.ml" 345 12797 12809
 type(
   string
 )
 ident(
-  int_ref file "indentConfig.ml" 325 12137 12164 "indentConfig.ml" 325 12137 12168
+  int_ref file "indentConfig.ml" 325 12149 12176 "indentConfig.ml" 325 12149 12180
 )
-"indentConfig.ml" 343 12685 12691 "indentConfig.ml" 345 12785 12797
+"indentConfig.ml" 343 12697 12703 "indentConfig.ml" 345 12797 12809
 call(
   stack
 )
 type(
   unit
 )
-"indentConfig.ml" 346 12799 12805 "indentConfig.ml" 346 12799 12811
+"indentConfig.ml" 346 12811 12817 "indentConfig.ml" 346 12811 12823
 type(
   t
 )
 ident(
-  int_ref indent "indentConfig.ml" 325 12137 12148 "indentConfig.ml" 325 12137 12154
+  int_ref indent "indentConfig.ml" 325 12149 12160 "indentConfig.ml" 325 12149 12166
 )
-"indentConfig.ml" 346 12799 12813 "indentConfig.ml" 346 12799 12815
+"indentConfig.ml" 346 12811 12825 "indentConfig.ml" 346 12811 12827
 type(
   string list
 )
-"indentConfig.ml" 346 12799 12805 "indentConfig.ml" 346 12799 12815
+"indentConfig.ml" 346 12811 12817 "indentConfig.ml" 346 12811 12827
 type(
   t * string list
 )
-"indentConfig.ml" 343 12685 12691 "indentConfig.ml" 346 12799 12815
+"indentConfig.ml" 343 12697 12703 "indentConfig.ml" 346 12811 12827
 type(
   t * string list
 )
-"indentConfig.ml" 347 12816 12837 "indentConfig.ml" 347 12816 12840
+"indentConfig.ml" 347 12828 12849 "indentConfig.ml" 347 12828 12852
 type(
   string
 )
 ident(
-  def err "indentConfig.ml" 348 12844 12850 "indentConfig.ml" 351 12953 12970
+  def err "indentConfig.ml" 348 12856 12862 "indentConfig.ml" 351 12965 12982
 )
-"indentConfig.ml" 347 12816 12820 "indentConfig.ml" 347 12816 12840
+"indentConfig.ml" 347 12828 12832 "indentConfig.ml" 347 12828 12852
 type(
   exn
 )
-"indentConfig.ml" 348 12844 12850 "indentConfig.ml" 348 12844 12864
+"indentConfig.ml" 348 12856 12862 "indentConfig.ml" 348 12856 12876
 type(
   (string -> string -> unit, out_channel, unit) format ->
   string -> string -> unit
@@ -4570,360 +4570,360 @@ type(
 ident(
   ext_ref Printf.eprintf
 )
-"indentConfig.ml" 349 12865 12873 "indentConfig.ml" 349 12865 12934
+"indentConfig.ml" 349 12877 12885 "indentConfig.ml" 349 12877 12946
 type(
   (string -> string -> unit, out_channel, unit) format
 )
-"indentConfig.ml" 350 12935 12943 "indentConfig.ml" 350 12935 12947
+"indentConfig.ml" 350 12947 12955 "indentConfig.ml" 350 12947 12959
 type(
   string
 )
 ident(
-  int_ref file "indentConfig.ml" 325 12137 12164 "indentConfig.ml" 325 12137 12168
+  int_ref file "indentConfig.ml" 325 12149 12176 "indentConfig.ml" 325 12149 12180
 )
-"indentConfig.ml" 350 12935 12948 "indentConfig.ml" 350 12935 12951
+"indentConfig.ml" 350 12947 12960 "indentConfig.ml" 350 12947 12963
 type(
   string
 )
 ident(
-  int_ref err "indentConfig.ml" 347 12816 12837 "indentConfig.ml" 347 12816 12840
+  int_ref err "indentConfig.ml" 347 12828 12849 "indentConfig.ml" 347 12828 12852
 )
-"indentConfig.ml" 348 12844 12850 "indentConfig.ml" 350 12935 12951
+"indentConfig.ml" 348 12856 12862 "indentConfig.ml" 350 12947 12963
 call(
   stack
 )
 type(
   unit
 )
-"indentConfig.ml" 351 12953 12959 "indentConfig.ml" 351 12953 12966
+"indentConfig.ml" 351 12965 12971 "indentConfig.ml" 351 12965 12978
 type(
   t
 )
 ident(
   int_ref default "indentConfig.ml" 34 1400 1404 "indentConfig.ml" 34 1400 1411
 )
-"indentConfig.ml" 351 12953 12968 "indentConfig.ml" 351 12953 12970
+"indentConfig.ml" 351 12965 12980 "indentConfig.ml" 351 12965 12982
 type(
   string list
 )
-"indentConfig.ml" 351 12953 12959 "indentConfig.ml" 351 12953 12970
+"indentConfig.ml" 351 12965 12971 "indentConfig.ml" 351 12965 12982
 type(
   t * string list
 )
-"indentConfig.ml" 348 12844 12850 "indentConfig.ml" 351 12953 12970
+"indentConfig.ml" 348 12856 12862 "indentConfig.ml" 351 12965 12982
 type(
   t * string list
 )
-"indentConfig.ml" 326 12171 12173 "indentConfig.ml" 351 12953 12970
+"indentConfig.ml" 326 12183 12185 "indentConfig.ml" 351 12965 12982
 type(
   t * string list
 )
-"indentConfig.ml" 353 12972 12976 "indentConfig.ml" 353 12972 12990
+"indentConfig.ml" 353 12984 12988 "indentConfig.ml" 353 12984 13002
 type(
   string
 )
 ident(
-  def conf_file_name "indentConfig.ml" 355 13008 13008 "_none_" 1 0 -1
+  def conf_file_name "indentConfig.ml" 355 13020 13020 "_none_" 1 0 -1
 )
-"indentConfig.ml" 353 12972 12993 "indentConfig.ml" 353 12972 13006
+"indentConfig.ml" 353 12984 13005 "indentConfig.ml" 353 12984 13018
 type(
   string
 )
-"indentConfig.ml" 355 13008 13016 "indentConfig.ml" 355 13008 13030
+"indentConfig.ml" 355 13020 13028 "indentConfig.ml" 355 13020 13042
 type(
   string -> string option
 )
 ident(
-  def find_conf_file "indentConfig.ml" 355 13008 13008 "_none_" 1 0 -1
+  def find_conf_file "indentConfig.ml" 355 13020 13020 "_none_" 1 0 -1
 )
-"indentConfig.ml" 355 13008 13031 "indentConfig.ml" 355 13008 13035
+"indentConfig.ml" 355 13020 13043 "indentConfig.ml" 355 13020 13047
 type(
   string
 )
 ident(
-  def path "indentConfig.ml" 356 13038 13040 "indentConfig.ml" 366 13347 13360
+  def path "indentConfig.ml" 356 13050 13052 "indentConfig.ml" 366 13359 13372
 )
-"indentConfig.ml" 356 13038 13044 "indentConfig.ml" 356 13038 13047
+"indentConfig.ml" 356 13050 13056 "indentConfig.ml" 356 13050 13059
 type(
   string -> string -> string
 )
 ident(
-  def / "indentConfig.ml" 357 13069 13071 "indentConfig.ml" 366 13347 13360
+  def / "indentConfig.ml" 357 13081 13083 "indentConfig.ml" 366 13359 13372
 )
-"indentConfig.ml" 356 13038 13050 "indentConfig.ml" 356 13038 13065
+"indentConfig.ml" 356 13050 13062 "indentConfig.ml" 356 13050 13077
 type(
   string -> string -> string
 )
 ident(
   ext_ref Filename.concat
 )
-"indentConfig.ml" 357 13069 13074 "indentConfig.ml" 357 13069 13089
+"indentConfig.ml" 357 13081 13086 "indentConfig.ml" 357 13081 13101
 type(
   string -> bool
 )
 ident(
   ext_ref Sys.file_exists
 )
-"indentConfig.ml" 357 13069 13091 "indentConfig.ml" 357 13069 13095
+"indentConfig.ml" 357 13081 13103 "indentConfig.ml" 357 13081 13107
 type(
   string
 )
 ident(
-  int_ref path "indentConfig.ml" 355 13008 13031 "indentConfig.ml" 355 13008 13035
+  int_ref path "indentConfig.ml" 355 13020 13043 "indentConfig.ml" 355 13020 13047
 )
-"indentConfig.ml" 357 13069 13096 "indentConfig.ml" 357 13069 13097
+"indentConfig.ml" 357 13081 13108 "indentConfig.ml" 357 13081 13109
 type(
   string -> string -> string
 )
 ident(
-  int_ref / "indentConfig.ml" 356 13038 13044 "indentConfig.ml" 356 13038 13047
+  int_ref / "indentConfig.ml" 356 13050 13056 "indentConfig.ml" 356 13050 13059
 )
-"indentConfig.ml" 357 13069 13098 "indentConfig.ml" 357 13069 13112
+"indentConfig.ml" 357 13081 13110 "indentConfig.ml" 357 13081 13124
 type(
   string
 )
 ident(
-  int_ref conf_file_name "indentConfig.ml" 353 12972 12976 "indentConfig.ml" 353 12972 12990
+  int_ref conf_file_name "indentConfig.ml" 353 12984 12988 "indentConfig.ml" 353 12984 13002
 )
-"indentConfig.ml" 357 13069 13090 "indentConfig.ml" 357 13069 13113
+"indentConfig.ml" 357 13081 13102 "indentConfig.ml" 357 13081 13125
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 357 13069 13074 "indentConfig.ml" 357 13069 13113
+"indentConfig.ml" 357 13081 13086 "indentConfig.ml" 357 13081 13125
 type(
   bool
 )
-"indentConfig.ml" 358 13114 13127 "indentConfig.ml" 358 13114 13131
+"indentConfig.ml" 358 13126 13139 "indentConfig.ml" 358 13126 13143
 type(
   string
 )
 ident(
-  int_ref path "indentConfig.ml" 355 13008 13031 "indentConfig.ml" 355 13008 13035
+  int_ref path "indentConfig.ml" 355 13020 13043 "indentConfig.ml" 355 13020 13047
 )
-"indentConfig.ml" 358 13114 13132 "indentConfig.ml" 358 13114 13133
+"indentConfig.ml" 358 13126 13144 "indentConfig.ml" 358 13126 13145
 type(
   string -> string -> string
 )
 ident(
-  int_ref / "indentConfig.ml" 356 13038 13044 "indentConfig.ml" 356 13038 13047
+  int_ref / "indentConfig.ml" 356 13050 13056 "indentConfig.ml" 356 13050 13059
 )
-"indentConfig.ml" 358 13114 13134 "indentConfig.ml" 358 13114 13148
+"indentConfig.ml" 358 13126 13146 "indentConfig.ml" 358 13126 13160
 type(
   string
 )
 ident(
-  int_ref conf_file_name "indentConfig.ml" 353 12972 12976 "indentConfig.ml" 353 12972 12990
+  int_ref conf_file_name "indentConfig.ml" 353 12984 12988 "indentConfig.ml" 353 12984 13002
 )
-"indentConfig.ml" 358 13114 13126 "indentConfig.ml" 358 13114 13149
+"indentConfig.ml" 358 13126 13138 "indentConfig.ml" 358 13126 13161
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 358 13114 13121 "indentConfig.ml" 358 13114 13149
+"indentConfig.ml" 358 13126 13133 "indentConfig.ml" 358 13126 13161
 type(
   string option
 )
-"indentConfig.ml" 360 13157 13165 "indentConfig.ml" 360 13157 13169
+"indentConfig.ml" 360 13169 13177 "indentConfig.ml" 360 13169 13181
 type(
   string
 )
 ident(
-  def path "indentConfig.ml" 364 13256 13260 "indentConfig.ml" 366 13347 13360
+  def path "indentConfig.ml" 364 13268 13272 "indentConfig.ml" 366 13359 13372
 )
-"indentConfig.ml" 361 13172 13181 "indentConfig.ml" 361 13172 13201
+"indentConfig.ml" 361 13184 13193 "indentConfig.ml" 361 13184 13213
 type(
   string -> bool
 )
 ident(
   ext_ref Filename.is_relative
 )
-"indentConfig.ml" 361 13172 13202 "indentConfig.ml" 361 13172 13206
+"indentConfig.ml" 361 13184 13214 "indentConfig.ml" 361 13184 13218
 type(
   string
 )
 ident(
-  int_ref path "indentConfig.ml" 355 13008 13031 "indentConfig.ml" 355 13008 13035
+  int_ref path "indentConfig.ml" 355 13020 13043 "indentConfig.ml" 355 13020 13047
 )
-"indentConfig.ml" 361 13172 13181 "indentConfig.ml" 361 13172 13206
+"indentConfig.ml" 361 13184 13193 "indentConfig.ml" 361 13184 13218
 call(
   stack
 )
 type(
   bool
 )
-"indentConfig.ml" 361 13172 13212 "indentConfig.ml" 361 13172 13222
+"indentConfig.ml" 361 13184 13224 "indentConfig.ml" 361 13184 13234
 type(
   unit -> string
 )
 ident(
   ext_ref Sys.getcwd
 )
-"indentConfig.ml" 361 13172 13223 "indentConfig.ml" 361 13172 13225
+"indentConfig.ml" 361 13184 13235 "indentConfig.ml" 361 13184 13237
 type(
   unit
 )
-"indentConfig.ml" 361 13172 13212 "indentConfig.ml" 361 13172 13225
+"indentConfig.ml" 361 13184 13224 "indentConfig.ml" 361 13184 13237
 type(
   string
 )
-"indentConfig.ml" 361 13172 13226 "indentConfig.ml" 361 13172 13227
+"indentConfig.ml" 361 13184 13238 "indentConfig.ml" 361 13184 13239
 type(
   string -> string -> string
 )
 ident(
-  int_ref / "indentConfig.ml" 356 13038 13044 "indentConfig.ml" 356 13038 13047
+  int_ref / "indentConfig.ml" 356 13050 13056 "indentConfig.ml" 356 13050 13059
 )
-"indentConfig.ml" 361 13172 13228 "indentConfig.ml" 361 13172 13232
+"indentConfig.ml" 361 13184 13240 "indentConfig.ml" 361 13184 13244
 type(
   string
 )
 ident(
-  int_ref path "indentConfig.ml" 355 13008 13031 "indentConfig.ml" 355 13008 13035
+  int_ref path "indentConfig.ml" 355 13020 13043 "indentConfig.ml" 355 13020 13047
 )
-"indentConfig.ml" 361 13172 13212 "indentConfig.ml" 361 13172 13232
+"indentConfig.ml" 361 13184 13224 "indentConfig.ml" 361 13184 13244
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 362 13233 13244 "indentConfig.ml" 362 13233 13248
+"indentConfig.ml" 362 13245 13256 "indentConfig.ml" 362 13245 13260
 type(
   string
 )
 ident(
-  int_ref path "indentConfig.ml" 355 13008 13031 "indentConfig.ml" 355 13008 13035
+  int_ref path "indentConfig.ml" 355 13020 13043 "indentConfig.ml" 355 13020 13047
 )
-"indentConfig.ml" 361 13172 13178 "indentConfig.ml" 362 13233 13248
+"indentConfig.ml" 361 13184 13190 "indentConfig.ml" 362 13245 13260
 type(
   string
 )
-"indentConfig.ml" 364 13256 13264 "indentConfig.ml" 364 13256 13270
+"indentConfig.ml" 364 13268 13276 "indentConfig.ml" 364 13268 13282
 type(
   string
 )
 ident(
-  def parent "indentConfig.ml" 365 13298 13302 "indentConfig.ml" 366 13347 13360
+  def parent "indentConfig.ml" 365 13310 13314 "indentConfig.ml" 366 13359 13372
 )
-"indentConfig.ml" 364 13256 13273 "indentConfig.ml" 364 13256 13289
+"indentConfig.ml" 364 13268 13285 "indentConfig.ml" 364 13268 13301
 type(
   string -> string
 )
 ident(
   ext_ref Filename.dirname
 )
-"indentConfig.ml" 364 13256 13290 "indentConfig.ml" 364 13256 13294
+"indentConfig.ml" 364 13268 13302 "indentConfig.ml" 364 13268 13306
 type(
   string
 )
 ident(
-  int_ref path "indentConfig.ml" 360 13157 13165 "indentConfig.ml" 360 13157 13169
+  int_ref path "indentConfig.ml" 360 13169 13177 "indentConfig.ml" 360 13169 13181
 )
-"indentConfig.ml" 364 13256 13273 "indentConfig.ml" 364 13256 13294
+"indentConfig.ml" 364 13268 13285 "indentConfig.ml" 364 13268 13306
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 365 13298 13305 "indentConfig.ml" 365 13298 13311
+"indentConfig.ml" 365 13310 13317 "indentConfig.ml" 365 13310 13323
 type(
   string
 )
 ident(
-  int_ref parent "indentConfig.ml" 364 13256 13264 "indentConfig.ml" 364 13256 13270
+  int_ref parent "indentConfig.ml" 364 13268 13276 "indentConfig.ml" 364 13268 13282
 )
-"indentConfig.ml" 365 13298 13312 "indentConfig.ml" 365 13298 13314
+"indentConfig.ml" 365 13310 13324 "indentConfig.ml" 365 13310 13326
 type(
   string -> string -> bool
 )
 ident(
   ext_ref Pervasives.( <> )
 )
-"indentConfig.ml" 365 13298 13315 "indentConfig.ml" 365 13298 13319
+"indentConfig.ml" 365 13310 13327 "indentConfig.ml" 365 13310 13331
 type(
   string
 )
 ident(
-  int_ref path "indentConfig.ml" 360 13157 13165 "indentConfig.ml" 360 13157 13169
+  int_ref path "indentConfig.ml" 360 13169 13177 "indentConfig.ml" 360 13169 13181
 )
-"indentConfig.ml" 365 13298 13305 "indentConfig.ml" 365 13298 13319
+"indentConfig.ml" 365 13310 13317 "indentConfig.ml" 365 13310 13331
 type(
   bool
 )
-"indentConfig.ml" 365 13298 13325 "indentConfig.ml" 365 13298 13339
+"indentConfig.ml" 365 13310 13337 "indentConfig.ml" 365 13310 13351
 type(
   string -> string option
 )
 ident(
-  int_ref find_conf_file "indentConfig.ml" 355 13008 13016 "indentConfig.ml" 355 13008 13030
+  int_ref find_conf_file "indentConfig.ml" 355 13020 13028 "indentConfig.ml" 355 13020 13042
 )
-"indentConfig.ml" 365 13298 13340 "indentConfig.ml" 365 13298 13346
+"indentConfig.ml" 365 13310 13352 "indentConfig.ml" 365 13310 13358
 type(
   string
 )
 ident(
-  int_ref parent "indentConfig.ml" 364 13256 13264 "indentConfig.ml" 364 13256 13270
+  int_ref parent "indentConfig.ml" 364 13268 13276 "indentConfig.ml" 364 13268 13282
 )
-"indentConfig.ml" 365 13298 13325 "indentConfig.ml" 365 13298 13346
+"indentConfig.ml" 365 13310 13337 "indentConfig.ml" 365 13310 13358
 call(
   tail
 )
 type(
   string option
 )
-"indentConfig.ml" 366 13347 13356 "indentConfig.ml" 366 13347 13360
+"indentConfig.ml" 366 13359 13368 "indentConfig.ml" 366 13359 13372
 type(
   string option
 )
-"indentConfig.ml" 365 13298 13302 "indentConfig.ml" 366 13347 13360
+"indentConfig.ml" 365 13310 13314 "indentConfig.ml" 366 13359 13372
 type(
   string option
 )
-"indentConfig.ml" 364 13256 13260 "indentConfig.ml" 366 13347 13360
+"indentConfig.ml" 364 13268 13272 "indentConfig.ml" 366 13359 13372
 type(
   string option
 )
-"indentConfig.ml" 360 13157 13161 "indentConfig.ml" 366 13347 13360
+"indentConfig.ml" 360 13169 13173 "indentConfig.ml" 366 13359 13372
 type(
   string option
 )
-"indentConfig.ml" 357 13069 13071 "indentConfig.ml" 366 13347 13360
+"indentConfig.ml" 357 13081 13083 "indentConfig.ml" 366 13359 13372
 type(
   string option
 )
-"indentConfig.ml" 356 13038 13040 "indentConfig.ml" 366 13347 13360
+"indentConfig.ml" 356 13050 13052 "indentConfig.ml" 366 13359 13372
 type(
   string option
 )
-"indentConfig.ml" 368 13362 13366 "indentConfig.ml" 368 13362 13379
+"indentConfig.ml" 368 13374 13378 "indentConfig.ml" 368 13374 13391
 type(
   ?path:string -> unit -> t * string list
 )
 ident(
-  def local_default "indentConfig.ml" 391 14046 14057 "_none_" 1 0 -1
+  def local_default "indentConfig.ml" 391 14058 14069 "_none_" 1 0 -1
 )
-"indentConfig.ml" 368 13362 13382 "indentConfig.ml" 368 13362 13386
+"indentConfig.ml" 368 13374 13394 "indentConfig.ml" 368 13374 13398
 type(
   string
 )
-"indentConfig.ml" 368 13362 13387 "indentConfig.ml" 368 13362 13397
+"indentConfig.ml" 368 13374 13399 "indentConfig.ml" 368 13374 13409
 type(
   unit -> string
 )
 ident(
   ext_ref Sys.getcwd
 )
-"indentConfig.ml" 368 13362 13397 "indentConfig.ml" 368 13362 13399
+"indentConfig.ml" 368 13374 13409 "indentConfig.ml" 368 13374 13411
 type(
   unit
 )
-"indentConfig.ml" 368 13362 13387 "indentConfig.ml" 368 13362 13399
+"indentConfig.ml" 368 13374 13399 "indentConfig.ml" 368 13374 13411
 type(
   string
 )
@@ -4931,7 +4931,7 @@ type(
   string
 )
 ident(
-  int_ref *sth* "indentConfig.ml" 368 13362 13387 "indentConfig.ml" 368 13362 13399
+  int_ref *sth* "indentConfig.ml" 368 13374 13399 "indentConfig.ml" 368 13374 13411
 )
 type(
   string option
@@ -4942,501 +4942,501 @@ type(
 type(
   string
 )
-"indentConfig.ml" 368 13362 13401 "indentConfig.ml" 368 13362 13403
+"indentConfig.ml" 368 13374 13413 "indentConfig.ml" 368 13374 13415
 type(
   unit
 )
-"indentConfig.ml" 369 13406 13412 "indentConfig.ml" 369 13406 13416
+"indentConfig.ml" 369 13418 13424 "indentConfig.ml" 369 13418 13428
 type(
   t
 )
 ident(
-  def conf "indentConfig.ml" 370 13430 13432 "indentConfig.ml" 391 14046 14057
+  def conf "indentConfig.ml" 370 13442 13444 "indentConfig.ml" 391 14058 14069
 )
-"indentConfig.ml" 369 13406 13419 "indentConfig.ml" 369 13406 13426
+"indentConfig.ml" 369 13418 13431 "indentConfig.ml" 369 13418 13438
 type(
   t
 )
 ident(
   int_ref default "indentConfig.ml" 34 1400 1404 "indentConfig.ml" 34 1400 1411
 )
-"indentConfig.ml" 370 13430 13436 "indentConfig.ml" 370 13430 13440
+"indentConfig.ml" 370 13442 13448 "indentConfig.ml" 370 13442 13452
 type(
   t
 )
 ident(
-  def conf "indentConfig.ml" 377 13659 13661 "indentConfig.ml" 391 14046 14057
+  def conf "indentConfig.ml" 377 13671 13673 "indentConfig.ml" 391 14058 14069
 )
-"indentConfig.ml" 370 13430 13442 "indentConfig.ml" 370 13430 13445
+"indentConfig.ml" 370 13442 13454 "indentConfig.ml" 370 13442 13457
 type(
   string list
 )
 ident(
-  def syn "indentConfig.ml" 377 13659 13661 "indentConfig.ml" 391 14046 14057
+  def syn "indentConfig.ml" 377 13671 13673 "indentConfig.ml" 391 14058 14069
 )
-"indentConfig.ml" 370 13430 13436 "indentConfig.ml" 370 13430 13445
+"indentConfig.ml" 370 13442 13448 "indentConfig.ml" 370 13442 13457
 type(
   t * string list
 )
-"indentConfig.ml" 372 13456 13466 "indentConfig.ml" 372 13456 13469
+"indentConfig.ml" 372 13468 13478 "indentConfig.ml" 372 13468 13481
 type(
   string -> string -> string
 )
 ident(
-  def / "indentConfig.ml" 373 13491 13497 "indentConfig.ml" 374 13557 13622
+  def / "indentConfig.ml" 373 13503 13509 "indentConfig.ml" 374 13569 13634
 )
-"indentConfig.ml" 372 13456 13472 "indentConfig.ml" 372 13456 13487
+"indentConfig.ml" 372 13468 13484 "indentConfig.ml" 372 13468 13499
 type(
   string -> string -> string
 )
 ident(
   ext_ref Filename.concat
 )
-"indentConfig.ml" 373 13491 13501 "indentConfig.ml" 373 13491 13502
+"indentConfig.ml" 373 13503 13513 "indentConfig.ml" 373 13503 13514
 type(
   string
 )
 ident(
-  def f "indentConfig.ml" 374 13557 13563 "indentConfig.ml" 374 13557 13622
+  def f "indentConfig.ml" 374 13569 13575 "indentConfig.ml" 374 13569 13634
 )
-"indentConfig.ml" 373 13491 13506 "indentConfig.ml" 373 13491 13516
+"indentConfig.ml" 373 13503 13518 "indentConfig.ml" 373 13503 13528
 type(
   string -> string
 )
 ident(
   ext_ref Sys.getenv
 )
-"indentConfig.ml" 373 13491 13517 "indentConfig.ml" 373 13491 13523
+"indentConfig.ml" 373 13503 13529 "indentConfig.ml" 373 13503 13535
 type(
   string
 )
-"indentConfig.ml" 373 13491 13505 "indentConfig.ml" 373 13491 13524
+"indentConfig.ml" 373 13503 13517 "indentConfig.ml" 373 13503 13536
 type(
   string
 )
-"indentConfig.ml" 373 13491 13525 "indentConfig.ml" 373 13491 13526
+"indentConfig.ml" 373 13503 13537 "indentConfig.ml" 373 13503 13538
 type(
   string -> string -> string
 )
 ident(
-  int_ref / "indentConfig.ml" 372 13456 13466 "indentConfig.ml" 372 13456 13469
+  int_ref / "indentConfig.ml" 372 13468 13478 "indentConfig.ml" 372 13468 13481
 )
-"indentConfig.ml" 373 13491 13527 "indentConfig.ml" 373 13491 13533
+"indentConfig.ml" 373 13503 13539 "indentConfig.ml" 373 13503 13545
 type(
   string
 )
-"indentConfig.ml" 373 13491 13505 "indentConfig.ml" 373 13491 13533
+"indentConfig.ml" 373 13503 13517 "indentConfig.ml" 373 13503 13545
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 373 13491 13534 "indentConfig.ml" 373 13491 13535
+"indentConfig.ml" 373 13503 13546 "indentConfig.ml" 373 13503 13547
 type(
   string -> string -> string
 )
 ident(
-  int_ref / "indentConfig.ml" 372 13456 13466 "indentConfig.ml" 372 13456 13469
+  int_ref / "indentConfig.ml" 372 13468 13478 "indentConfig.ml" 372 13468 13481
 )
-"indentConfig.ml" 373 13491 13536 "indentConfig.ml" 373 13491 13553
+"indentConfig.ml" 373 13503 13548 "indentConfig.ml" 373 13503 13565
 type(
   string
 )
-"indentConfig.ml" 373 13491 13505 "indentConfig.ml" 373 13491 13553
+"indentConfig.ml" 373 13503 13517 "indentConfig.ml" 373 13503 13565
 call(
   stack
 )
 type(
   string
 )
-"indentConfig.ml" 374 13557 13566 "indentConfig.ml" 374 13557 13581
+"indentConfig.ml" 374 13569 13578 "indentConfig.ml" 374 13569 13593
 type(
   string -> bool
 )
 ident(
   ext_ref Sys.file_exists
 )
-"indentConfig.ml" 374 13557 13582 "indentConfig.ml" 374 13557 13583
+"indentConfig.ml" 374 13569 13594 "indentConfig.ml" 374 13569 13595
 type(
   string
 )
 ident(
-  int_ref f "indentConfig.ml" 373 13491 13501 "indentConfig.ml" 373 13491 13502
+  int_ref f "indentConfig.ml" 373 13503 13513 "indentConfig.ml" 373 13503 13514
 )
-"indentConfig.ml" 374 13557 13566 "indentConfig.ml" 374 13557 13583
+"indentConfig.ml" 374 13569 13578 "indentConfig.ml" 374 13569 13595
 type(
   bool
 )
-"indentConfig.ml" 374 13557 13589 "indentConfig.ml" 374 13557 13593
+"indentConfig.ml" 374 13569 13601 "indentConfig.ml" 374 13569 13605
 type(
   ?indent:t -> string -> t * string list
 )
 ident(
-  int_ref load "indentConfig.ml" 325 12137 12141 "indentConfig.ml" 325 12137 12145
+  int_ref load "indentConfig.ml" 325 12149 12153 "indentConfig.ml" 325 12149 12157
 )
-"indentConfig.ml" 374 13557 13602 "indentConfig.ml" 374 13557 13606
+"indentConfig.ml" 374 13569 13614 "indentConfig.ml" 374 13569 13618
 type(
   t
 )
 ident(
-  int_ref conf "indentConfig.ml" 369 13406 13412 "indentConfig.ml" 369 13406 13416
+  int_ref conf "indentConfig.ml" 369 13418 13424 "indentConfig.ml" 369 13418 13428
 )
-"indentConfig.ml" 374 13557 13607 "indentConfig.ml" 374 13557 13608
+"indentConfig.ml" 374 13569 13619 "indentConfig.ml" 374 13569 13620
 type(
   string
 )
 ident(
-  int_ref f "indentConfig.ml" 373 13491 13501 "indentConfig.ml" 373 13491 13502
+  int_ref f "indentConfig.ml" 373 13503 13513 "indentConfig.ml" 373 13503 13514
 )
-"indentConfig.ml" 374 13557 13589 "indentConfig.ml" 374 13557 13608
+"indentConfig.ml" 374 13569 13601 "indentConfig.ml" 374 13569 13620
 call(
   stack
 )
 type(
   t * string list
 )
-"indentConfig.ml" 374 13557 13614 "indentConfig.ml" 374 13557 13618
+"indentConfig.ml" 374 13569 13626 "indentConfig.ml" 374 13569 13630
 type(
   t
 )
 ident(
-  int_ref conf "indentConfig.ml" 369 13406 13412 "indentConfig.ml" 369 13406 13416
+  int_ref conf "indentConfig.ml" 369 13418 13424 "indentConfig.ml" 369 13418 13428
 )
-"indentConfig.ml" 374 13557 13620 "indentConfig.ml" 374 13557 13622
+"indentConfig.ml" 374 13569 13632 "indentConfig.ml" 374 13569 13634
 type(
   string list
 )
-"indentConfig.ml" 374 13557 13614 "indentConfig.ml" 374 13557 13622
+"indentConfig.ml" 374 13569 13626 "indentConfig.ml" 374 13569 13634
 type(
   t * string list
 )
-"indentConfig.ml" 374 13557 13563 "indentConfig.ml" 374 13557 13622
+"indentConfig.ml" 374 13569 13575 "indentConfig.ml" 374 13569 13634
 type(
   t * string list
 )
-"indentConfig.ml" 373 13491 13497 "indentConfig.ml" 374 13557 13622
+"indentConfig.ml" 373 13503 13509 "indentConfig.ml" 374 13569 13634
 type(
   t * string list
 )
-"indentConfig.ml" 372 13456 13462 "indentConfig.ml" 374 13557 13622
+"indentConfig.ml" 372 13468 13474 "indentConfig.ml" 374 13569 13634
 type(
   t * string list
 )
-"indentConfig.ml" 375 13623 13632 "indentConfig.ml" 375 13623 13641
+"indentConfig.ml" 375 13635 13644 "indentConfig.ml" 375 13635 13653
 type(
   exn
 )
-"indentConfig.ml" 375 13623 13645 "indentConfig.ml" 375 13623 13649
+"indentConfig.ml" 375 13635 13657 "indentConfig.ml" 375 13635 13661
 type(
   t
 )
 ident(
-  int_ref conf "indentConfig.ml" 369 13406 13412 "indentConfig.ml" 369 13406 13416
+  int_ref conf "indentConfig.ml" 369 13418 13424 "indentConfig.ml" 369 13418 13428
 )
-"indentConfig.ml" 375 13623 13651 "indentConfig.ml" 375 13623 13653
+"indentConfig.ml" 375 13635 13663 "indentConfig.ml" 375 13635 13665
 type(
   string list
 )
-"indentConfig.ml" 375 13623 13645 "indentConfig.ml" 375 13623 13653
+"indentConfig.ml" 375 13635 13657 "indentConfig.ml" 375 13635 13665
 type(
   t * string list
 )
-"indentConfig.ml" 371 13448 13452 "indentConfig.ml" 375 13623 13653
+"indentConfig.ml" 371 13460 13464 "indentConfig.ml" 375 13635 13665
 type(
   t * string list
 )
-"indentConfig.ml" 377 13659 13665 "indentConfig.ml" 377 13659 13669
+"indentConfig.ml" 377 13671 13677 "indentConfig.ml" 377 13671 13681
 type(
   t
 )
 ident(
-  def conf "indentConfig.ml" 382 13816 13818 "indentConfig.ml" 391 14046 14057
+  def conf "indentConfig.ml" 382 13828 13830 "indentConfig.ml" 391 14058 14069
 )
-"indentConfig.ml" 377 13659 13671 "indentConfig.ml" 377 13659 13674
+"indentConfig.ml" 377 13671 13683 "indentConfig.ml" 377 13671 13686
 type(
   string list
 )
 ident(
-  def syn "indentConfig.ml" 382 13816 13818 "indentConfig.ml" 391 14046 14057
+  def syn "indentConfig.ml" 382 13828 13830 "indentConfig.ml" 391 14058 14069
 )
-"indentConfig.ml" 377 13659 13665 "indentConfig.ml" 377 13659 13674
+"indentConfig.ml" 377 13671 13677 "indentConfig.ml" 377 13671 13686
 type(
   t * string list
 )
-"indentConfig.ml" 377 13659 13683 "indentConfig.ml" 377 13659 13697
+"indentConfig.ml" 377 13671 13695 "indentConfig.ml" 377 13671 13709
 type(
   string -> string option
 )
 ident(
-  int_ref find_conf_file "indentConfig.ml" 355 13008 13016 "indentConfig.ml" 355 13008 13030
+  int_ref find_conf_file "indentConfig.ml" 355 13020 13028 "indentConfig.ml" 355 13020 13042
 )
-"indentConfig.ml" 377 13659 13698 "indentConfig.ml" 377 13659 13702
+"indentConfig.ml" 377 13671 13710 "indentConfig.ml" 377 13671 13714
 type(
   string
 )
 ident(
-  int_ref path "indentConfig.ml" 368 13362 13382 "indentConfig.ml" 368 13362 13386
+  int_ref path "indentConfig.ml" 368 13374 13394 "indentConfig.ml" 368 13374 13398
 )
-"indentConfig.ml" 377 13659 13683 "indentConfig.ml" 377 13659 13702
+"indentConfig.ml" 377 13671 13695 "indentConfig.ml" 377 13671 13714
 call(
   stack
 )
 type(
   string option
 )
-"indentConfig.ml" 378 13708 13719 "indentConfig.ml" 378 13708 13720
+"indentConfig.ml" 378 13720 13731 "indentConfig.ml" 378 13720 13732
 type(
   string
 )
 ident(
-  def c "indentConfig.ml" 379 13724 13732 "indentConfig.ml" 379 13724 13786
+  def c "indentConfig.ml" 379 13736 13744 "indentConfig.ml" 379 13736 13798
 )
-"indentConfig.ml" 378 13708 13714 "indentConfig.ml" 378 13708 13720
+"indentConfig.ml" 378 13720 13726 "indentConfig.ml" 378 13720 13732
 type(
   string option
 )
-"indentConfig.ml" 379 13724 13736 "indentConfig.ml" 379 13724 13740
+"indentConfig.ml" 379 13736 13748 "indentConfig.ml" 379 13736 13752
 type(
   t
 )
 ident(
-  def conf "indentConfig.ml" 379 13724 13772 "indentConfig.ml" 379 13724 13786
+  def conf "indentConfig.ml" 379 13736 13784 "indentConfig.ml" 379 13736 13798
 )
-"indentConfig.ml" 379 13724 13742 "indentConfig.ml" 379 13724 13746
+"indentConfig.ml" 379 13736 13754 "indentConfig.ml" 379 13736 13758
 type(
   string list
 )
 ident(
-  def syn1 "indentConfig.ml" 379 13724 13772 "indentConfig.ml" 379 13724 13786
+  def syn1 "indentConfig.ml" 379 13736 13784 "indentConfig.ml" 379 13736 13798
 )
-"indentConfig.ml" 379 13724 13736 "indentConfig.ml" 379 13724 13746
+"indentConfig.ml" 379 13736 13748 "indentConfig.ml" 379 13736 13758
 type(
   t * string list
 )
-"indentConfig.ml" 379 13724 13749 "indentConfig.ml" 379 13724 13753
+"indentConfig.ml" 379 13736 13761 "indentConfig.ml" 379 13736 13765
 type(
   ?indent:t -> string -> t * string list
 )
 ident(
-  int_ref load "indentConfig.ml" 325 12137 12141 "indentConfig.ml" 325 12137 12145
+  int_ref load "indentConfig.ml" 325 12149 12153 "indentConfig.ml" 325 12149 12157
 )
-"indentConfig.ml" 379 13724 13762 "indentConfig.ml" 379 13724 13766
+"indentConfig.ml" 379 13736 13774 "indentConfig.ml" 379 13736 13778
 type(
   t
 )
 ident(
-  int_ref conf "indentConfig.ml" 370 13430 13436 "indentConfig.ml" 370 13430 13440
+  int_ref conf "indentConfig.ml" 370 13442 13448 "indentConfig.ml" 370 13442 13452
 )
-"indentConfig.ml" 379 13724 13767 "indentConfig.ml" 379 13724 13768
+"indentConfig.ml" 379 13736 13779 "indentConfig.ml" 379 13736 13780
 type(
   string
 )
 ident(
-  int_ref c "indentConfig.ml" 378 13708 13719 "indentConfig.ml" 378 13708 13720
+  int_ref c "indentConfig.ml" 378 13720 13731 "indentConfig.ml" 378 13720 13732
 )
-"indentConfig.ml" 379 13724 13749 "indentConfig.ml" 379 13724 13768
+"indentConfig.ml" 379 13736 13761 "indentConfig.ml" 379 13736 13780
 call(
   stack
 )
 type(
   t * string list
 )
-"indentConfig.ml" 379 13724 13772 "indentConfig.ml" 379 13724 13776
+"indentConfig.ml" 379 13736 13784 "indentConfig.ml" 379 13736 13788
 type(
   t
 )
 ident(
-  int_ref conf "indentConfig.ml" 379 13724 13736 "indentConfig.ml" 379 13724 13740
+  int_ref conf "indentConfig.ml" 379 13736 13748 "indentConfig.ml" 379 13736 13752
 )
-"indentConfig.ml" 379 13724 13778 "indentConfig.ml" 379 13724 13782
+"indentConfig.ml" 379 13736 13790 "indentConfig.ml" 379 13736 13794
 type(
   string list
 )
 ident(
-  int_ref syn1 "indentConfig.ml" 379 13724 13742 "indentConfig.ml" 379 13724 13746
+  int_ref syn1 "indentConfig.ml" 379 13736 13754 "indentConfig.ml" 379 13736 13758
 )
-"indentConfig.ml" 379 13724 13782 "indentConfig.ml" 379 13724 13783
+"indentConfig.ml" 379 13736 13794 "indentConfig.ml" 379 13736 13795
 type(
   string list -> string list -> string list
 )
 ident(
   ext_ref Pervasives.( @ )
 )
-"indentConfig.ml" 379 13724 13783 "indentConfig.ml" 379 13724 13786
+"indentConfig.ml" 379 13736 13795 "indentConfig.ml" 379 13736 13798
 type(
   string list
 )
 ident(
-  int_ref syn "indentConfig.ml" 370 13430 13442 "indentConfig.ml" 370 13430 13445
+  int_ref syn "indentConfig.ml" 370 13442 13454 "indentConfig.ml" 370 13442 13457
 )
-"indentConfig.ml" 379 13724 13778 "indentConfig.ml" 379 13724 13786
+"indentConfig.ml" 379 13736 13790 "indentConfig.ml" 379 13736 13798
 call(
   stack
 )
 type(
   string list
 )
-"indentConfig.ml" 379 13724 13772 "indentConfig.ml" 379 13724 13786
+"indentConfig.ml" 379 13736 13784 "indentConfig.ml" 379 13736 13798
 type(
   t * string list
 )
-"indentConfig.ml" 379 13724 13732 "indentConfig.ml" 379 13724 13786
+"indentConfig.ml" 379 13736 13744 "indentConfig.ml" 379 13736 13798
 type(
   t * string list
 )
-"indentConfig.ml" 380 13787 13793 "indentConfig.ml" 380 13787 13797
+"indentConfig.ml" 380 13799 13805 "indentConfig.ml" 380 13799 13809
 type(
   string option
 )
-"indentConfig.ml" 380 13787 13801 "indentConfig.ml" 380 13787 13805
+"indentConfig.ml" 380 13799 13813 "indentConfig.ml" 380 13799 13817
 type(
   t
 )
 ident(
-  int_ref conf "indentConfig.ml" 370 13430 13436 "indentConfig.ml" 370 13430 13440
+  int_ref conf "indentConfig.ml" 370 13442 13448 "indentConfig.ml" 370 13442 13452
 )
-"indentConfig.ml" 380 13787 13807 "indentConfig.ml" 380 13787 13810
+"indentConfig.ml" 380 13799 13819 "indentConfig.ml" 380 13799 13822
 type(
   string list
 )
 ident(
-  int_ref syn "indentConfig.ml" 370 13430 13442 "indentConfig.ml" 370 13430 13445
+  int_ref syn "indentConfig.ml" 370 13442 13454 "indentConfig.ml" 370 13442 13457
 )
-"indentConfig.ml" 380 13787 13801 "indentConfig.ml" 380 13787 13810
+"indentConfig.ml" 380 13799 13813 "indentConfig.ml" 380 13799 13822
 type(
   t * string list
 )
-"indentConfig.ml" 377 13659 13677 "indentConfig.ml" 380 13787 13810
+"indentConfig.ml" 377 13671 13689 "indentConfig.ml" 380 13799 13822
 type(
   t * string list
 )
-"indentConfig.ml" 382 13816 13822 "indentConfig.ml" 382 13816 13826
+"indentConfig.ml" 382 13828 13834 "indentConfig.ml" 382 13828 13838
 type(
   t
 )
 ident(
-  def conf "indentConfig.ml" 391 14046 14048 "indentConfig.ml" 391 14046 14057
+  def conf "indentConfig.ml" 391 14058 14060 "indentConfig.ml" 391 14058 14069
 )
-"indentConfig.ml" 383 13829 13837 "indentConfig.ml" 383 13829 13855
+"indentConfig.ml" 383 13841 13849 "indentConfig.ml" 383 13841 13867
 type(
   ?extra:(string -> (string -> '_a) option) -> t -> string -> t
 )
 ident(
   int_ref update_from_string "indentConfig.ml" 157 5300 5304 "indentConfig.ml" 157 5300 5322
 )
-"indentConfig.ml" 383 13829 13856 "indentConfig.ml" 383 13829 13860
+"indentConfig.ml" 383 13841 13868 "indentConfig.ml" 383 13841 13872
 type(
   t
 )
 ident(
-  int_ref conf "indentConfig.ml" 377 13659 13665 "indentConfig.ml" 377 13659 13669
+  int_ref conf "indentConfig.ml" 377 13671 13677 "indentConfig.ml" 377 13671 13681
 )
-"indentConfig.ml" 384 13861 13872 "indentConfig.ml" 384 13861 13882
+"indentConfig.ml" 384 13873 13884 "indentConfig.ml" 384 13873 13894
 type(
   string -> string
 )
 ident(
   ext_ref Sys.getenv
 )
-"indentConfig.ml" 384 13861 13883 "indentConfig.ml" 384 13861 13904
+"indentConfig.ml" 384 13873 13895 "indentConfig.ml" 384 13873 13916
 type(
   string
 )
-"indentConfig.ml" 384 13861 13871 "indentConfig.ml" 384 13861 13905
+"indentConfig.ml" 384 13873 13883 "indentConfig.ml" 384 13873 13917
 type(
   string
 )
-"indentConfig.ml" 383 13829 13837 "indentConfig.ml" 384 13861 13905
+"indentConfig.ml" 383 13841 13849 "indentConfig.ml" 384 13873 13917
 call(
   stack
 )
 type(
   t
 )
-"indentConfig.ml" 386 13915 13921 "indentConfig.ml" 386 13915 13930
+"indentConfig.ml" 386 13927 13933 "indentConfig.ml" 386 13927 13942
 type(
   exn
 )
-"indentConfig.ml" 386 13915 13934 "indentConfig.ml" 386 13915 13938
+"indentConfig.ml" 386 13927 13946 "indentConfig.ml" 386 13927 13950
 type(
   t
 )
 ident(
-  int_ref conf "indentConfig.ml" 377 13659 13665 "indentConfig.ml" 377 13659 13669
+  int_ref conf "indentConfig.ml" 377 13671 13677 "indentConfig.ml" 377 13671 13681
 )
-"indentConfig.ml" 387 13939 13962 "indentConfig.ml" 387 13939 13963
+"indentConfig.ml" 387 13951 13974 "indentConfig.ml" 387 13951 13975
 type(
   string
 )
-"indentConfig.ml" 387 13939 13945 "indentConfig.ml" 387 13939 13963
+"indentConfig.ml" 387 13951 13957 "indentConfig.ml" 387 13951 13975
 type(
   exn
 )
-"indentConfig.ml" 388 13967 13975 "indentConfig.ml" 388 13967 13988
+"indentConfig.ml" 388 13979 13987 "indentConfig.ml" 388 13979 14000
 type(
   string -> unit
 )
 ident(
   ext_ref Pervasives.prerr_endline
 )
-"indentConfig.ml" 388 13967 13989 "indentConfig.ml" 388 13967 14026
+"indentConfig.ml" 388 13979 14001 "indentConfig.ml" 388 13979 14038
 type(
   string
 )
-"indentConfig.ml" 388 13967 13975 "indentConfig.ml" 388 13967 14026
+"indentConfig.ml" 388 13979 13987 "indentConfig.ml" 388 13979 14038
 call(
   stack
 )
 type(
   unit
 )
-"indentConfig.ml" 389 14028 14036 "indentConfig.ml" 389 14028 14040
+"indentConfig.ml" 389 14040 14048 "indentConfig.ml" 389 14040 14052
 type(
   t
 )
 ident(
-  int_ref conf "indentConfig.ml" 377 13659 13665 "indentConfig.ml" 377 13659 13669
+  int_ref conf "indentConfig.ml" 377 13671 13677 "indentConfig.ml" 377 13671 13681
 )
-"indentConfig.ml" 388 13967 13975 "indentConfig.ml" 389 14028 14040
+"indentConfig.ml" 388 13979 13987 "indentConfig.ml" 389 14040 14052
 type(
   t
 )
-"indentConfig.ml" 383 13829 13833 "indentConfig.ml" 389 14028 14040
+"indentConfig.ml" 383 13841 13845 "indentConfig.ml" 389 14040 14052
 type(
   t
 )
-"indentConfig.ml" 391 14046 14048 "indentConfig.ml" 391 14046 14052
+"indentConfig.ml" 391 14058 14060 "indentConfig.ml" 391 14058 14064
 type(
   t
 )
 ident(
-  int_ref conf "indentConfig.ml" 382 13816 13822 "indentConfig.ml" 382 13816 13826
+  int_ref conf "indentConfig.ml" 382 13828 13834 "indentConfig.ml" 382 13828 13838
 )
-"indentConfig.ml" 391 14046 14054 "indentConfig.ml" 391 14046 14057
+"indentConfig.ml" 391 14058 14066 "indentConfig.ml" 391 14058 14069
 type(
   string list
 )
 ident(
-  int_ref syn "indentConfig.ml" 377 13659 13671 "indentConfig.ml" 377 13659 13674
+  int_ref syn "indentConfig.ml" 377 13671 13683 "indentConfig.ml" 377 13671 13686
 )
-"indentConfig.ml" 391 14046 14048 "indentConfig.ml" 391 14046 14057
+"indentConfig.ml" 391 14058 14060 "indentConfig.ml" 391 14058 14069
 type(
   t * string list
 )
-"indentConfig.ml" 382 13816 13818 "indentConfig.ml" 391 14046 14057
+"indentConfig.ml" 382 13828 13830 "indentConfig.ml" 391 14058 14069
 type(
   t * string list
 )
-"indentConfig.ml" 377 13659 13661 "indentConfig.ml" 391 14046 14057
+"indentConfig.ml" 377 13671 13673 "indentConfig.ml" 391 14058 14069
 type(
   t * string list
 )
-"indentConfig.ml" 370 13430 13432 "indentConfig.ml" 391 14046 14057
+"indentConfig.ml" 370 13442 13444 "indentConfig.ml" 391 14058 14069
 type(
   t * string list
 )
-"indentConfig.ml" 369 13406 13408 "indentConfig.ml" 391 14046 14057
+"indentConfig.ml" 369 13418 13420 "indentConfig.ml" 391 14058 14069
 type(
   t * string list
 )

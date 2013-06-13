@@ -16,7 +16,7 @@ open Compat
 open Pos
 open Nstream
 open Approx_lexer
-open Util
+open OcpUtil
 
 (* If [Print f], the whole input is fed as strings through f, with expected
    lines reindented.
@@ -230,7 +230,7 @@ let save state =
   let line, col = pos.Lexing.pos_lnum, Position.column pos in
   Printf.sprintf "%d,%d,%a" 
     line col
-    (fun () a -> Util.string_to_hex (Marshal.to_string a []))
+    (fun () a -> OcpUtil.string_to_hex (Marshal.to_string a []))
     (snd state)
 
 let load str =
@@ -240,7 +240,7 @@ let load str =
     "%d,%d,%s"
     (fun pos_lnum pos_cnum str ->
       { Lexing. pos_fname = ""; pos_bol = 0; pos_lnum; pos_cnum },
-      Marshal.from_string (Util.string_of_hex str) 0)
+      Marshal.from_string (OcpUtil.string_of_hex str) 0)
 
 let stream output ?(resume=initial) stream =
   loop output resume stream
