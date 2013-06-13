@@ -16,7 +16,7 @@
 open Pos
 open Nstream
 open Approx_lexer
-open Util
+open OcpUtil
 
 module Node = struct
 

@@ -14,27 +14,27 @@ approx_tokens.cmo : approx_common.cmi
 approx_tokens.cmx : approx_common.cmi
 compat.cmo :
 compat.cmx :
-indentArgs.cmo : util.cmo indentPrinter.cmi indentConfig.cmi \
-    approx_lexer.cmo indentArgs.cmi
-indentArgs.cmx : util.cmx indentPrinter.cmx indentConfig.cmx \
-    approx_lexer.cmx indentArgs.cmi
-indentBlock.cmo : util.cmo pos.cmi nstream.cmi indentConfig.cmi \
+indentArgs.cmo : indentPrinter.cmi indentConfig.cmi approx_lexer.cmo \
+    indentArgs.cmi
+indentArgs.cmx : indentPrinter.cmx indentConfig.cmx approx_lexer.cmx \
+    indentArgs.cmi
+indentBlock.cmo : pos.cmi ocpUtil.cmo nstream.cmi indentConfig.cmi \
     approx_lexer.cmo indentBlock.cmi
-indentBlock.cmx : util.cmx pos.cmx nstream.cmx indentConfig.cmx \
+indentBlock.cmx : pos.cmx ocpUtil.cmx nstream.cmx indentConfig.cmx \
     approx_lexer.cmx indentBlock.cmi
-indentConfig.cmo : util.cmo compat.cmo approx_lexer.cmo indentConfig.cmi
-indentConfig.cmx : util.cmx compat.cmx approx_lexer.cmx indentConfig.cmi
+indentConfig.cmo : ocpUtil.cmo compat.cmo approx_lexer.cmo indentConfig.cmi
+indentConfig.cmx : ocpUtil.cmx compat.cmx approx_lexer.cmx indentConfig.cmi
 indentMain.cmo : nstream.cmi indentPrinter.cmi indentConfig.cmi \
     indentArgs.cmi approx_lexer.cmo
 indentMain.cmx : nstream.cmx indentPrinter.cmx indentConfig.cmx \
     indentArgs.cmx approx_lexer.cmx
-indentPrinter.cmo : util.cmo pos.cmi nstream.cmi indentConfig.cmi \
+indentPrinter.cmo : pos.cmi ocpUtil.cmo nstream.cmi indentConfig.cmi \
     indentBlock.cmi compat.cmo approx_lexer.cmo indentPrinter.cmi
-indentPrinter.cmx : util.cmx pos.cmx nstream.cmx indentConfig.cmx \
+indentPrinter.cmx : pos.cmx ocpUtil.cmx nstream.cmx indentConfig.cmx \
     indentBlock.cmx compat.cmx approx_lexer.cmx indentPrinter.cmi
 nstream.cmo : pos.cmi approx_lexer.cmo nstream.cmi
 nstream.cmx : pos.cmx approx_lexer.cmx nstream.cmi
+ocpUtil.cmo :
+ocpUtil.cmx :
 pos.cmo : pos.cmi
 pos.cmx : pos.cmi
-util.cmo :
-util.cmx :

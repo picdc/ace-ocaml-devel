@@ -156,7 +156,7 @@ let set ?(extra=fun _ -> None) t var_name value =
 
 let update_from_string ?extra indent s =
   List.fold_left
-    (fun indent s -> match Util.string_split '=' s with
+    (fun indent s -> match OcpUtil.string_split '=' s with
       | [] | [""] -> indent
       | [var;value] -> set ?extra indent (String.trim var) (String.trim value)
       | [preset] ->
@@ -168,7 +168,7 @@ let update_from_string ?extra indent s =
           let e = Printf.sprintf "wrong \"param=value\" pair in %S" s in
           raise (Invalid_argument e))
     indent
-    (Util.string_split_chars ",\n" s)
+    (OcpUtil.string_split_chars ",\n" s)
 
 (* Remember to also document the template configuration file ../.ocp-indent *)
 let man =
@@ -182,7 +182,7 @@ let man =
          while !i < String.length line && line.[!i] = ' ' do
            line.[!i] <- '\xa0'; incr i done;
          `P line :: (if acc = [] then [] else `Noblank :: acc))
-      (Util.string_split '\n' s) []
+      (OcpUtil.string_split '\n' s) []
   in
   [ `P "A configuration definition is a list of bindings in the form \
         $(i,NAME=VALUE) or of $(i,PRESET), separated by commas or newlines";
@@ -319,7 +319,7 @@ let syntax_ext list_ref = function
                 else
                   let e = Printf.sprintf "unknown syntax extension %S" syn in
                   raise (Invalid_argument e))
-             (Util.string_split ' ' syntaxes))
+             (OcpUtil.string_split ' ' syntaxes))
   | _ -> None
 
 let load ?(indent=default) file =
