@@ -40,7 +40,7 @@ let print_word_from_set s =
 
 let find_completion w =
   origin := w;
-  let re = "^" ^ w ^ "*" in
+  let re = "^" ^ w ^ ".*" in
   let re = Re_str.regexp re in
   (* let re = Re.compile re in *)
   
