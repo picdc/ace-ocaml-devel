@@ -13,11 +13,11 @@ let reset_env () =
 let add_word = new_word
 
 let create_from_string str =
-  Completion_lexer.token (Lexing.from_string str)
+  Completion_lexer.global (Lexing.from_string str)
 
 
 let create_from_channel ch =
-  Completion_lexer.token (Lexing.from_channel ch)
+  Completion_lexer.global (Lexing.from_channel ch)
 
 (** Utils functions **)
 
@@ -39,6 +39,7 @@ let print_word_from_set s =
 (** Functions to compute completion **)
 
 let find_completion w =
+  origin := w;
   let re = "^" ^ w ^ "*" in
   let re = Re_str.regexp re in
   (* let re = Re.compile re in *)
@@ -66,7 +67,11 @@ let compute_completions w =
   completions := words;
   actual_index := 0
 
+exception No_completion
+
 let next_completion () =
-  let n = !completions.(!actual_index) in
-  actual_index := (!actual_index + 1) mod Array.length !completions;
-  n
+  if Array.length !completions = 0 then !origin
+  else
+    let n = !completions.(!actual_index) in
+    actual_index := (!actual_index + 1) mod Array.length !completions;
+    n
