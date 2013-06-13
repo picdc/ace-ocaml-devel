@@ -6,6 +6,8 @@ type env =
     { mutable actual : Words.t;
       parent : env }
 
+let origin = ref ""
+
 let completions = ref (Array.make 0 "")
 let actual_index = ref 0
 
