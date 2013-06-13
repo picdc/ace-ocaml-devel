@@ -13,9 +13,9 @@ OBJS= $(SOURCES1:.ml=.cmo)
 
 all: depend autocomplete.cmo
 
-byte: $(OBJS)
+byte: $(OBJS) autocomplete.cmo
 	$(CAMLFIND) $(CAMLC) -g $(INCLUDES) $^ \
-	-linkpkg -o autocomplete.byte autocomplete.ml
+	-linkpkg -o test_completion.byte test_completion.ml
 
 depend: $(SOURCES)
 	$(CAMLDEP) -pp $(PP) *.mli *.ml > .depend
