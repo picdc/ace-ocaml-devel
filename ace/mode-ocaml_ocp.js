@@ -181,21 +181,22 @@ editor.commands.addCommand({
         console.log("Completion");
         var c = editor.getCursorPosition();
         var token = editor.getSession().getTokenAt(c.row, c.column);
-        var range = new Range(c.row, token.start, c.row, c.column);
 
-        console.log(token);
-        if (token != null && token.type == 'identifier' 
-            || token.type == 'support.function'
-            || token.type == 'keyword') {
-            var v = token.value;
-            if (!in_completion_mode) {
-                computeCompletions(v);
-                in_completion_mode = true;
+        if (token != null) { 
+            if (token.type == 'identifier' 
+                || token.type == 'support.function'
+                || token.type == 'keyword') {
+                var range = new Range(c.row, token.start, c.row, c.column);
+                var v = token.value;
+                if (!in_completion_mode) {
+                    computeCompletions(v);
+                    in_completion_mode = true;
+                }
+                var next = nextCompletion();
+                console.log(next);
+                if (next != undefined)
+                    editor.getSession().replace(range, next);
             }
-            var next = nextCompletion();
-            console.log(next);
-            if (next != undefined)
-                editor.getSession().replace(range, next);
         }
     },
     readOnly: false
