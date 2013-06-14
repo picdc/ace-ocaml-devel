@@ -51,7 +51,8 @@ let space = (' ' | '\t' | '\r' | '\n')
 
 rule global = parse
   | ("let"|"and") space+ (("rec") space+)? (ident as s) [^'=']* "=" space*
-      { Format.printf "Ajouté : %s@." s;
+      { 
+        (* Format.printf "Ajouté : %s@." s; *)
         new_word s; 
         let_block lexbuf;
         global lexbuf }
@@ -61,22 +62,26 @@ rule global = parse
   | _ { global lexbuf }
 
 and let_block = parse
-  | ("let" ([^'i'][^'n'])* "in" as s) { Format.printf "%s@." s; instr lexbuf }
+  (* | ("let" ([^'i'][^'n'])* "in" as s) { Format.printf "%s@." s; let_block
+  lexbuf } *)
+  | "let" space { let_block lexbuf; let_block lexbuf }
   | "(*" { comment lexbuf; let_block lexbuf }
   | space* { let_block lexbuf }
-  (* | (_ as c) { instr lexbuf } *)
+  | "in" space { }
+  | ";" { let_block lexbuf }
+  | _ { }
 
-and instr = parse
-    | ("let" _* ([^'i'][^'n'])* "in" as s) { Format.printf "let_in : %s@." s; instr lexbuf }
-    | (_* [^';'] ";") as s { Format.printf "intr; : %s@." s; instr lexbuf }
-    | space { instr lexbuf }
-    | _ as c { Format.printf "instr %c@." c }
-
+(* and instr = parse *)
+(*   | space* { instr lexbuf } *)
+(*   | ("let" ([^'i'][^'n'])* "in" as s) { Format.printf "let_in : %s@." s; instr lexbuf } *)
+(*   | (_* [^';'] ";") as s { Format.printf "intr; : %s@." s; instr lexbuf } *)
+(*   | _ as c { Format.printf "instr %c@." c } *)
+      
 and modl = parse
   | "begin" space { beginrule lexbuf; modl lexbuf }
   | "end" { Format.printf "End of module@." }
   | _ { modl lexbuf }
-
+      
 and beginrule = parse
   | "end" (space|';') { }
   | "begin" space { beginrule lexbuf; beginrule lexbuf }
