@@ -429,7 +429,7 @@ let main () =
 		    | Some str -> str
 		in
 		let id = add_tab (Js.to_string f##name) (Js.to_string s) in
-                Completion_js.add_words_from_string s;
+                (* Completion_js.add_words_from_string s; *)
 		change_tab id;
 		Js._false);
 	      reader##readAsText (( f :> (File.blob Js.t)));
