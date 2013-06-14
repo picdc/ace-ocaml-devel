@@ -18,6 +18,17 @@
   - à discuter mais oui
   - "identifiant non déclaré"
 
+* Toplevel
+  - on_scroll : mettre un "vertical align bottom"
+  - activer le bouton Eval select, que quand il y a une sélection
+  - mettre un raccourci
+  - plusieurs onglets pour "Toplevel" et "Output"
+  - un bouton clear
+  - indentation dans le textarea
+  - F7 ????
+  - eval all the file
+  - quand y'a une erreur indiquer le Fichier
+
 * Auto-complétion
   - ocp-index (courage Pierrick !)
 
@@ -36,6 +47,10 @@
 
 * Architecture du projet à revoir
   -> pour être plus propre, notamment les modes ace inutile
+
+* Affichage
+  - Placer le toplevel soit en dessous soit à coté, selon la taille
+    de la fenêtre ? à discuter
 
 * Makefile :
   - faire quelque chose de propre avec ocamlfind pour les libs par exemple

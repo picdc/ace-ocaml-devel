@@ -2,6 +2,7 @@
 open Ace_utils
 open Indent
 
+
 let make_editor (container: Dom_html.element Js.t) : unit =
   let doc = Dom_html.document in
   let div_input = Dom_html.createDiv doc in
@@ -10,6 +11,7 @@ let make_editor (container: Dom_html.element Js.t) : unit =
   let div_editor = Dom_html.createDiv doc in
   let script_ace_init = Dom_html.createScript doc in
   let css_tabs = Dom_html.createLink doc in
+  let css_toplvl = Dom_html.createLink doc in
 
   div_input##id <- Js.string "input";
   div_tabs##id <- Js.string "tabs";
@@ -24,6 +26,9 @@ let make_editor (container: Dom_html.element Js.t) : unit =
   css_tabs##href <- Js.string "./tabs.css";
   css_tabs##rel <- Js.string "stylesheet";
   css_tabs##_type <- Js.string "text/css";
+  css_toplvl##href <- Js.string "./mytoplevel.css";
+  css_toplvl##rel <- Js.string "stylesheet";
+  css_toplvl##_type <- Js.string "text/css";
 
   Dom.appendChild container div_input;
   Dom.appendChild container div_tabs; (* A METTRE DANS TABS.init() *)
@@ -31,6 +36,7 @@ let make_editor (container: Dom_html.element Js.t) : unit =
   Dom.appendChild container div_editor;
   Dom.appendChild doc##body script_ace_init;
   Dom.appendChild doc##body css_tabs;
+  Dom.appendChild doc##body css_toplvl;
 
   Tabs.main ();
   Mytoplevel.init container

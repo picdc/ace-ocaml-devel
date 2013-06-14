@@ -1,6 +1,52 @@
 
 open Dom_html
 
+(* Création de widgets spécifiques *)
+let optionnal_widget_count = ref 0
+let optionnal_widget element init_display =
+  let id = 
+    let i = Js.to_string element##id in
+    if i = "" then
+      (let i = Format.sprintf "optionnal_widget_%d"
+	 !optionnal_widget_count in
+       incr optionnal_widget_count;
+       i)
+    else i
+  in
+  let div = createDiv document in
+  let button = createButton document in
+  let button_text, display_text =
+    if init_display then "-", "" else "+", "none" in
+  
+  element##style##display <- Js.string display_text;
+  button##style##cssFloat <- Js.string "right";
+  button##style##fontSize <- Js.string "8px";
+  button##style##width <- Js.string "15px";
+  button##style##height <- Js.string "15px";
+  button##innerHTML <- Js.string button_text;
+  button##onclick <- handler (fun _ ->
+    let t = Js.to_string element##style##display in
+    if t = "" then 
+      (element##style##display <- Js.string "none";
+       button##innerHTML <- Js.string "+")
+    else (element##style##display <- Js.string "";
+       button##innerHTML <- Js.string "-");
+    Js._true);
+  Dom.appendChild div button;
+  Dom.appendChild div element;
+  div
+
+(* let tabs_widget_count = ref 0 *)
+(* let tabs_widget title_list element_list tab_active = *)
+(*   let nb_tabs = ref 0 in *)
+(*   let div = createDiv document in *)
+(*   List.iter (fun element -> *)
+  
+
+
+
+
+
 (* Bindings des fonctions JS utiles *)
 
 let alert str =
@@ -16,7 +62,15 @@ let get_element_by_id id =
   Js.Opt.get (document##getElementById (Js.string id))
     (fun () -> assert false)
 
+let coerceTo_input el =
+  match Js.Opt.to_option (Dom_html.CoerceTo.input el) with
+  | Some s -> s
+  | None -> failwith "coerco_input failed"
 
+let coerceTo_textarea el =
+  match Js.Opt.to_option (Dom_html.CoerceTo.textarea el) with
+  | Some s -> s
+  | None -> failwith "coerco_textarea failed"
 
 (* Bindings des fonctions Ace *)
 
@@ -87,11 +141,28 @@ let replace (range: range) (text: string) : unit =
 	    [| Js.Unsafe.inject range ;
 	       Js.Unsafe.inject (Js.string text) |])
 
+
+let get_selection_range () =
+  Js.Unsafe.fun_call
+    (Js.Unsafe.variable "editor.getSelectionRange")
+    [||]
+
+
+let get_text_range r =
+  Js.to_string (Js.Unsafe.fun_call
+		  (Js.Unsafe.variable
+		     "editor.getSession().getDocument().getTextRange")
+		     [| Js.Unsafe.inject r |])
+
+
 let get_tokens row : acetoken array =
   Js.to_array (Js.Unsafe.fun_call
 		 (Js.Unsafe.variable
 		    "editor.getSession().getTokens")
 		 [| Js.Unsafe.inject row |])
+
+
+
 
 module AceToken = struct
   type t = acetoken
