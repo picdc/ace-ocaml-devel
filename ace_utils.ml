@@ -1,52 +1,6 @@
 
 open Dom_html
 
-(* Création de widgets spécifiques *)
-let optionnal_widget_count = ref 0
-let optionnal_widget element init_display =
-  let id = 
-    let i = Js.to_string element##id in
-    if i = "" then
-      (let i = Format.sprintf "optionnal_widget_%d"
-	 !optionnal_widget_count in
-       incr optionnal_widget_count;
-       i)
-    else i
-  in
-  let div = createDiv document in
-  let button = createButton document in
-  let button_text, display_text =
-    if init_display then "-", "" else "+", "none" in
-  
-  element##style##display <- Js.string display_text;
-  button##style##cssFloat <- Js.string "right";
-  button##style##fontSize <- Js.string "8px";
-  button##style##width <- Js.string "15px";
-  button##style##height <- Js.string "15px";
-  button##innerHTML <- Js.string button_text;
-  button##onclick <- handler (fun _ ->
-    let t = Js.to_string element##style##display in
-    if t = "" then 
-      (element##style##display <- Js.string "none";
-       button##innerHTML <- Js.string "+")
-    else (element##style##display <- Js.string "";
-       button##innerHTML <- Js.string "-");
-    Js._true);
-  Dom.appendChild div button;
-  Dom.appendChild div element;
-  div
-
-(* let tabs_widget_count = ref 0 *)
-(* let tabs_widget title_list element_list tab_active = *)
-(*   let nb_tabs = ref 0 in *)
-(*   let div = createDiv document in *)
-(*   List.iter (fun element -> *)
-  
-
-
-
-
-
 (* Bindings des fonctions JS utiles *)
 
 let alert str =
@@ -71,6 +25,105 @@ let coerceTo_textarea el =
   match Js.Opt.to_option (Dom_html.CoerceTo.textarea el) with
   | Some s -> s
   | None -> failwith "coerco_textarea failed"
+
+
+
+
+
+(* Création de widgets spécifiques *)
+
+let optionnal_widget_count = ref 0
+let optionnal_widget element init_display =
+  let id = 
+    let i = Js.to_string element##id in
+    if i = "" then
+      (let i = Format.sprintf "optionnal_widget_%d"
+	 !optionnal_widget_count in
+       incr optionnal_widget_count;
+       i)
+    else i
+  in
+  element##id <- Js.string id;
+
+  let div = createDiv document in
+  let button = createButton document in
+  let button_text, display_text =
+    if init_display then "-", "" else "+", "none" in
+  
+  element##style##display <- Js.string display_text;
+  button##style##cssFloat <- Js.string "right";
+  button##style##fontSize <- Js.string "8px";
+  button##style##width <- Js.string "15px";
+  button##style##height <- Js.string "15px";
+  button##innerHTML <- Js.string button_text;
+  button##onclick <- handler (fun _ ->
+    let t = Js.to_string element##style##display in
+    if t = "" then 
+      (element##style##display <- Js.string "none";
+       button##innerHTML <- Js.string "+")
+    else (element##style##display <- Js.string "";
+       button##innerHTML <- Js.string "-");
+    Js._true);
+  Dom.appendChild div button;
+  Dom.appendChild div element;
+  div
+
+let tabs_widget_count = ref 0
+let tabs_widget title_list element_list init_num_tab =
+  let div = createDiv document in
+  let div_titles = createDiv document in
+  let id_tabs = Format.sprintf "tabs_widget_%d" !tabs_widget_count in
+  let letnum = createInput ~_type:(Js.string "hidden") document in
+  letnum##value <- Js.string "0";
+
+  Dom.appendChild div letnum;
+  Dom.appendChild div div_titles;
+  
+  ignore (List.fold_left2 (fun num element title ->
+    let div_tab = createDiv document in
+    let span_title = createSpan document in
+
+    let id_tab = Format.sprintf "%s_tab_%d" id_tabs num in
+
+    if num = init_num_tab then
+      (letnum##value <- Js.string (string_of_int num);
+       span_title##className <- Js.string (id_tabs^"_class_active");
+       div_tab##style##display <- Js.string "")
+    else
+      (span_title##className <- Js.string (id_tabs^"_class_noactive");
+       div_tab##style##display <- Js.string "none");
+
+    div_tab##id <- Js.string (id_tab^"_content");
+    span_title##id <- Js.string (id_tab^"_title");
+    span_title##innerHTML <- Js.string title;
+    span_title##onclick <- handler (fun _ ->
+      let oldnum_active = int_of_string (Js.to_string letnum##value) in
+      let oldid_active = Format.sprintf "%s_tab_%d" id_tabs oldnum_active in
+      let oldtab_active = get_element_by_id (oldid_active^"_title") in
+      let oldcontent_active = get_element_by_id (oldid_active^"_content") in
+      oldtab_active##className <- Js.string (id_tabs^"_class_noactive");
+      oldcontent_active##style##display <- Js.string "none";
+      span_title##className <- Js.string (id_tabs^"_class_active");
+      div_tab##style##display <- Js.string "";
+
+      letnum##value <- Js.string (string_of_int num);
+      Js._true
+    );
+
+    Dom.appendChild div_tab element;
+    Dom.appendChild div_titles span_title;
+    Dom.appendChild div div_tab;
+    num+1
+  ) 0 element_list title_list );
+
+  incr tabs_widget_count;
+  div
+
+
+
+
+
+
 
 (* Bindings des fonctions Ace *)
 

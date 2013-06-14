@@ -38,6 +38,20 @@ let make_editor (container: Dom_html.element Js.t) : unit =
   Dom.appendChild doc##body css_tabs;
   Dom.appendChild doc##body css_toplvl;
 
+  (* TEST *)
+  let div1 = Dom_html.createDiv doc in
+  let div2 = Dom_html.createDiv doc in
+  let div3 = Dom_html.createDiv doc in
+  div1##innerHTML <- Js.string "1";
+  div2##innerHTML <- Js.string "2";
+  div3##innerHTML <- Js.string "3";
+  let titles = [ "tab1"; "tab2"; "tab3" ] in
+  let elements = [ div1 ; div2 ; div3 ] in
+  let init_tab = 1 in
+  let tabs = tabs_widget titles elements init_tab in
+  Dom.appendChild doc##body tabs;
+  (* END TEST *)
+
   Tabs.main ();
   Mytoplevel.init container
 

@@ -28,6 +28,9 @@
   - F7 ????
   - eval all the file
   - quand y'a une erreur indiquer le Fichier
+  - Warning à mettre dans le Toplevel
+  - Enter afet ";;" -> eval
+  - Historique avec les flèches directionnelles
 
 * Auto-complétion
   - ocp-index (courage Pierrick !)

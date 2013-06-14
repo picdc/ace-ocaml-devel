@@ -4,6 +4,7 @@ type range
 type acetoken
 
 val optionnal_widget : Dom_html.element Js.t -> bool -> Dom_html.element Js.t
+val tabs_widget : string list -> Dom_html.element Js.t list -> int -> Dom_html.element Js.t
 
 
 val alert : string -> unit
