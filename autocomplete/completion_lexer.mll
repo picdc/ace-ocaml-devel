@@ -4,30 +4,31 @@
 
 {
   open Completion_data
-  open Completion_tokens
+  
+  exception Eof_exception
 
-  let keywords = ["let", LET; 
-                  "and", LET;
-                  "in", IN; 
-                  "match", MATCH; 
-                  "with", WITH; 
-                  "function", MATCH;
-                  "begin", BEGIN; 
-                  "end", END; 
-                  "try", TRY;
-                  "for", FOR;
-                  "type", TYPE;
-                  "while", WHILE;
-                  "do", DO;
-                  "if", OTHER;
-                  "then", OTHER;
-                  "else", OTHER;
-                  "done", DONE;
-                  "failwith", OTHER; 
-                  "raise", OTHER; 
-                  "assert", OTHER;
-                  "open", OTHER;
-                  "rec", OTHER ]
+  let keywords = ["let", (); 
+                  "and", ();
+                  "in", (); 
+                  "match", (); 
+                  "with", (); 
+                  "function", ();
+                  "begin", (); 
+                  "end", (); 
+                  "try", ();
+                  "for", ();
+                  "type", ();
+                  "while", ();
+                  "do", ();
+                  "if", ();
+                  "then", ();
+                  "else", ();
+                  "done", ();
+                  "failwith", (); 
+                  "raise", (); 
+                  "assert", ();
+                  "open", ();
+                  "rec", () ]
 
   let opening_keywords = ["let"; "begin"; "do"]
 
@@ -43,93 +44,51 @@
 
 let alpha = ['a'-'z' 'A'-'Z']
 let digit = ['0'-'9']
-let number = digit+ ('.') digit*
+let number = digit+ ('.')? digit*
 let char = (alpha | digit | '_' | '-' | '/' | '.')
 let ident = (alpha | '_') (alpha | '_' | digit)*
 let space = (' ' | '\t' | '\r' | '\n')
 
 
 rule global = parse
-  | ("let"|"and") space+ (("rec") space+)? (ident as s) [^'=']* "=" space*
+  | '_' { }
+
+  | ("let"|"and") (space+ "rec")? space+ (ident as s) space+
       { 
-        (* Format.printf "Ajouté : %s@." s; *)
-        new_word s; 
-        let_block lexbuf;
-        global lexbuf }
-  | "module" { Format.printf "Module@."; modl lexbuf; global lexbuf }
-  | "(*" { comment lexbuf; global lexbuf }
-  | eof { }
-  | _ { global lexbuf }
-
-and let_block = parse
-  (* | ("let" ([^'i'][^'n'])* "in" as s) { Format.printf "%s@." s; let_block
-  lexbuf } *)
-  | "let" space { let_block lexbuf; let_block lexbuf }
-  | "(*" { comment lexbuf; let_block lexbuf }
-  | space* { let_block lexbuf }
-  | "in" space { }
-  | ";" { let_block lexbuf }
-  | _ { }
-
-(* and instr = parse *)
-(*   | space* { instr lexbuf } *)
-(*   | ("let" ([^'i'][^'n'])* "in" as s) { Format.printf "let_in : %s@." s; instr lexbuf } *)
-(*   | (_* [^';'] ";") as s { Format.printf "intr; : %s@." s; instr lexbuf } *)
-(*   | _ as c { Format.printf "instr %c@." c } *)
-      
-and modl = parse
-  | "begin" space { beginrule lexbuf; modl lexbuf }
-  | "end" { Format.printf "End of module@." }
-  | _ { modl lexbuf }
-      
-and beginrule = parse
-  | "end" (space|';') { }
-  | "begin" space { beginrule lexbuf; beginrule lexbuf }
-  | _ { beginrule lexbuf }
-
-(* rule global = parse  *)
-(*   | "module" space+ ident space+ "=" space+ "struct" *)
-(*       { module_block lexbuf; *)
-(*         global lexbuf } *)
-(*   | ([^'\r']|[^' ']) ("let"|"and") space+ ("rec")? space? (ident as s) [^'=']* "=" *)
-(*       {  *)
-(*         Format.printf "Ajouté : %s@." s; *)
-(*         new_word s;  *)
-(*         (\* Format.printf "Beginning block@."; *\) *)
-(*         block lexbuf; *)
-(*         (\* Format.printf "End of block@."; *\) *)
-(*         global lexbuf } *)
-(*   | "=" *)
-(*       { block lexbuf; global lexbuf } *)
-(*   | "(\*" { comment lexbuf; global lexbuf } *)
-(*   | eof {} *)
-(*   | _ { global lexbuf } *)
-
-(* and module_block = parse *)
-(*   | "end" { } *)
-(*   | _ { module_block lexbuf } *)
-
-(* and block = parse *)
-(*   | space+ "let" space+ { new_instr lexbuf; block lexbuf } *)
-(*   (\* | "in" space+ { } *\) *)
-(*   | ("let"|"and") space+ ("rec")? space? ident (space* _*\) "=" *)
-(*       { block lexbuf; block lexbuf } *)
-(*   | ([^'\r']|[^' '][^'l'][^'e'][^'t']) { } *)
-(*   | _ { block lexbuf } *)
-
-
-(* and new_instr = parse *)
-(*   | "let" _* [^'i'][^'n'] { new_instr lexbuf } *)
-(*   | space* ((ident|number) space)* [^';']  { } *)
-(*   | _ { new_instr lexbuf } *)
+        if not (Hashtbl.mem keywords_htbl s) then
+          new_word s
+      }
+  | eof 
+      { raise Eof_exception }
+  | "(*"
+      { 
+        comment lexbuf 
+      }
+  | _
+      { }
 
 and comment = parse
   | "*)" { }
   | "(*" { comment lexbuf; comment lexbuf }
   | _ { comment lexbuf }
 
-(* and matching = parse *)
-(*   | (ident as i) space *)
-(*       { if List.mem i closing_keywords then  *)
-(*         else matching lexbuf } *)
-(*   | "->" { block lexbuf; matching lexbuf } *)
+{
+  let parse_channel ch =
+    let lexbuf = Lexing.from_channel ch in
+    try
+      while true do
+        global lexbuf
+      done
+    with
+        _ -> ()
+  
+  let parse_string str =
+    let lexbuf = Lexing.from_string str in
+    try
+      while true do
+        global lexbuf
+      done
+    with
+        _ -> ()
+}
+      

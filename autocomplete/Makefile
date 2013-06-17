@@ -6,7 +6,7 @@ RELIB= -I ~/.opam/4.00.1/lib/re re.cma re_emacs.cma re_str.cma
 
 INCLUDES= -package re -package re.str
 
-SOURCES= completion_data.ml completion_tokens.ml completion_lexer.mll
+SOURCES= completion_data.ml completion_lexer.mll
 
 SOURCES1= $(SOURCES:.mll=.ml)
 OBJS= $(SOURCES1:.ml=.cmo)

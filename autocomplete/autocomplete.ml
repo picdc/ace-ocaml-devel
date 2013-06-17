@@ -13,11 +13,11 @@ let reset_env () =
 let add_word = new_word
 
 let create_from_string str =
-  Completion_lexer.global (Lexing.from_string str)
+  Completion_lexer.parse_string str
 
 
 let create_from_channel ch =
-  Completion_lexer.global (Lexing.from_channel ch)
+  Completion_lexer.parse_channel ch
 
 (** Utils functions **)
 
@@ -45,7 +45,7 @@ let find_completion w =
   (* let re = Re.compile re in *)
   
   let rec step env acc =
-    let acc = Words.fold
+    Words.fold
       (fun s acc ->
         (* Format.printf "%s@." s; *)
         if  Re_str.string_match re s 0 then 
@@ -53,13 +53,10 @@ let find_completion w =
             Words.add s acc
           end
         else acc)
-      env.actual
+      env
       acc
-    in
-    if env == env.parent then acc
-    else step env.parent acc
   in
-  step !actual_env Words.empty
+  step !words Words.empty
 
 let compute_completions w =
   let words = find_completion w in
