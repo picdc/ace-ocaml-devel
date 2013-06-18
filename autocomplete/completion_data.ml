@@ -2,7 +2,7 @@ module Words = Set.Make(String)
 
 let words = ref Words.empty
 
-type env =
+type env = 
     { mutable actual : Words.t;
       parent : env }
 
@@ -37,5 +37,5 @@ let close_block () =
   actual_env := end_block !actual_env
 
 let new_word w =
-  !actual_env.actual <- Words.add w !actual_env.actual
+  words :=  Words.add w !words
 
