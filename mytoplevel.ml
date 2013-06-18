@@ -116,7 +116,12 @@ let reset_toplevel () =
   Toploop.initialize_toplevel_env ()
   
 
-let init (container: Dom_html.element Js.t) =
+let make_output () : Dom_html.element Js.t =
+  let console_output = createPre document in
+  console_output##id <- Js.string "output";
+  console_output
+
+let make_toplevel () : Dom_html.element Js.t =
   let toplevel = createDiv document in
   let toplvl_area = createDiv document in
   let toplvl_buttons = createDiv document in
@@ -128,8 +133,6 @@ let init (container: Dom_html.element Js.t) =
   let input_prompt = new_prompt () in
   let input_textarea = createTextarea document in
 
-  let console_output = createPre document in
-  console_output##id <- Js.string "output";
 
   toplevel##id <- Js.string "toplevel";
   toplvl_area##id <- Js.string "toplvl_area";
@@ -175,10 +178,5 @@ let init (container: Dom_html.element Js.t) =
   Dom.appendChild toplevel toplvl_area;
   Dom.appendChild toplevel toplvl_buttons;
 
-  let opt_div = Ace_utils.optionnal_widget toplevel true in
-  Dom.appendChild container opt_div;
-  
-  let opt_div = Ace_utils.optionnal_widget console_output true in
-  Dom.appendChild container opt_div;
-
-  Toploop.initialize_toplevel_env ()
+  Toploop.initialize_toplevel_env ();
+  toplevel

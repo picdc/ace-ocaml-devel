@@ -1,6 +1,72 @@
 
 open Dom_html
 
+(* class tabs_widget = object (self) *)
+(*   inherit Dom_html.element *)
+
+(*   val id = id *)
+(*   val titles = tl *)
+(*   val contents = cl *)
+(*   val styles = createStyle document *)
+(*   val mutable style_tabs = "border-bottom: 1px solid black;" *)
+(*   val mutable style_contents = "border: 1px solid black; *)
+(*    border-top: none;" *)
+(*   val mutable style_tab_active = "border: 1px solid black; *)
+(*    border-bottom: 1px solid white;" *)
+(*   val mutable style_tab_noactive = "border: 1px solid black;" *)
+(*   val mutable current_tab = 0 *)
+  
+(*   method init () = *)
+(*     let div_titles = create Div in *)
+(*     div_titles##className <- Js.string (id^"_class_tabs"); *)
+(*     Dom.appendChild self style; *)
+(*     Dom.appendChild self div_titles; *)
+(*     ignore (List.fold_left2 (fun num element title  -> *)
+(*       let div_tab = createDiv document in *)
+(*       let span_title = createSpan document in *)
+(*       span_title##className <- Js.string (id^"_class_noactive"); *)
+(*       div_tab##style##display <- Js.string "none"; *)
+(*       div_tab##className <- Js.string (id^"_class_content"); *)
+(*       span_title##innerHTML <- Js.string title; *)
+(*       span_title##onclick <- handler (fun _ -> self#set_current_tab num; *)
+(* 	Js._true); *)
+(*       Dom.appendChild div_tab element; *)
+(*       Dom.appendChild div_titles span_title; *)
+(*       Dom.appendChild self div_tab; *)
+(*       num+1 *)
+(*     ) 0 element_list title_list ) *)
+
+(*   method get_tab i = List.nth titles i *)
+  
+(*   method set_current_tab i =  *)
+(*     let old_tab = List.nth titles current_tab in *)
+(*     let old_content = List.nth contents current_tab in *)
+(*     old_tab##className <- Js.string (id^"_class_noactive"); *)
+(*     old_content##style##display <- Js.string "none"; *)
+(*     let new_tab = List.nth titles i in *)
+(*     let new_content = List.nth contents i in *)
+(*     new_tab##className <- Js.string (id^"_class_active"); *)
+(*     new_content##style##display <- Js.string ""; *)
+(*     current_tab <- i *)
+
+(*   method update_styles () = *)
+(*     let s = Format.sprintf ".%s_class_tab_active { %s } *)
+(*      .%s_class_tab_noactive { %s } *)
+(*      .%s_class_tabs { %s } *)
+(*      .%s_class_contents { %s }" *)
+(*       id style_active id style_tab_noactive *)
+(*       id style_tabs id style_tab_contents in *)
+(*     styles##innerHTML <- Js.string s *)
+
+(*   method set_tabs_style s = style_tabs <- s; self#update_styles () *)
+(*   method set_contents_style s = style_contents <- s; self#update_styles () *)
+(*   method set_tab_active_style s = *)
+(*     style_tab_active <- s; self#update_styles () *)
+(*   method set_tab_noactive_style s = *)
+(*     style_tab_noactive <- s; self#update_styles ()  *)
+
+(* end *)
+
 (* Bindings des fonctions JS utiles *)
 
 let alert str =
@@ -68,14 +134,45 @@ let optionnal_widget element init_display =
   Dom.appendChild div element;
   div
 
+
+
+
+
 let tabs_widget_count = ref 0
-let tabs_widget title_list element_list init_num_tab =
+let tabs_default_style_active = 
+  "border: 1px solid black;
+   border-bottom: 1px solid white;"
+let tabs_default_style_noactive =
+  "border: 1px solid black;"
+let tabs_default_style_tabs =
+  "border-bottom: 1px solid black;"
+let tabs_default_style_content =
+  "border: 1px solid black;
+   border-top: none;"
+let tabs_widget title_list element_list init_num_tab
+    ?(style_active=tabs_default_style_active)
+    ?(style_noactive=tabs_default_style_noactive)
+    ?(style_tabs=tabs_default_style_tabs)
+    ?(style_content=tabs_default_style_content) ()
+    =
+  let style = createStyle document in
   let div = createDiv document in
   let div_titles = createDiv document in
   let id_tabs = Format.sprintf "tabs_widget_%d" !tabs_widget_count in
   let letnum = createInput ~_type:(Js.string "hidden") document in
   letnum##value <- Js.string "0";
+  div_titles##className <- Js.string (id_tabs^"_class_tabs");
 
+  let style_innerHTML = Format.sprintf
+    ".%s_class_active { %s }
+     .%s_class_noactive { %s }
+     .%s_class_tabs { %s }
+     .%s_class_content { %s }"
+    id_tabs style_active id_tabs style_noactive
+    id_tabs style_tabs id_tabs style_content in
+  style##innerHTML <- Js.string style_innerHTML;
+
+  Dom.appendChild div style;
   Dom.appendChild div letnum;
   Dom.appendChild div div_titles;
   
@@ -94,6 +191,7 @@ let tabs_widget title_list element_list init_num_tab =
        div_tab##style##display <- Js.string "none");
 
     div_tab##id <- Js.string (id_tab^"_content");
+    div_tab##className <- Js.string (id_tabs^"_class_content");
     span_title##id <- Js.string (id_tab^"_title");
     span_title##innerHTML <- Js.string title;
     span_title##onclick <- handler (fun _ ->

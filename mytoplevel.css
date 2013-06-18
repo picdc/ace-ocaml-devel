@@ -1,10 +1,7 @@
 
 #toplevel {
-    width: 100%;
     font-size: 12px;
-    border: 1px solid #aaaaaa;
-    border-top: none;
-    padding-left: 10px;
+    height: 235px;
 }
 
 #toplvl_area {
@@ -44,3 +41,8 @@
     color: #444444;
 }
 
+#output {
+    margin: 0px;
+    height: 235px;
+    overflow: auto;
+}

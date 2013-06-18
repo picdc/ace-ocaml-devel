@@ -3,8 +3,22 @@ type editSession
 type range
 type acetoken
 
+(* class type tabs_widget = object *)
+(*   inherit Dom_html.element  *)
+(*   method get_tab : int -> Dom_html.element Js.t *)
+(*   method set_current_tab : int -> unit *)
+(*   method set_tabs_style : string -> unit *)
+(*   method set_contents_style : string -> unit *)
+(*   method set_tab_active_style : string -> unit *)
+(*   method set_tab_noactive_style : string -> unit *)
+(* end *)
+
+
 val optionnal_widget : Dom_html.element Js.t -> bool -> Dom_html.element Js.t
-val tabs_widget : string list -> Dom_html.element Js.t list -> int -> Dom_html.element Js.t
+val tabs_widget : string list -> Dom_html.element Js.t list -> int ->
+  ?style_active:string -> ?style_noactive:string -> 
+  ?style_tabs:string -> ?style_content:string -> unit
+  -> Dom_html.element Js.t
 
 
 val alert : string -> unit
