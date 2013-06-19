@@ -173,7 +173,7 @@ let my_factory =
   (*     with Netcgi.permitted_http_methods = [ `GET ; `POST ]; *)
   (*   } in *)
   Nethttpd_plex.nethttpd_factory
-    ~name:"edit_fact"
+    ~name:"ace-edit_processor"
     (* ~config_cgi:def_config *)
     ~handlers: [ "list_of_projects", project_service ;
 		 "list_of_files", project_list_service ;

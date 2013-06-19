@@ -1,7 +1,8 @@
 
 CAMLFLAGS= -thread -w @a -unsafe
-CAMLOPTFLAGS= $(OCAMLFLAGS) -inline 10000
+CAMLOPTFLAGS= $(CAMLFLAGS) -inline 10000
 CAMLLIBS= unix.cma
+CFLAGS= -I/opt/ocaml/lib/ocaml -arch x86_64 -O3 -Wall -Wextra
 PKGS= -package threads,pcre,netplex,netcgi2,nethttpd,shell
 
 SRC= main.ml
@@ -27,8 +28,11 @@ server: $(OBJ)
 .ml.cmx:
 	ocamlfind ocamlopt $(CAMLOPTFLAGS) $(PKGS) -c $<
 
+.c.o:
+	ocamlfind ocamlc -ccopt "$(CFLAGS)" -c $<
+
 clean:
-	rm -rf *.cmi *.cmo *~ \#*\#
+	rm -rf *.cmi *.cmo *.o *.a *.so *.log *~ \#*\#
 	rm -rf $(EXEC)
 
 depend:
