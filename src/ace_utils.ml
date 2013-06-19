@@ -233,7 +233,7 @@ type acetoken
 
 let create_edit_session (content: string) : editSession =
   let text = Js.Unsafe.inject (Js.string content) in
-  let mode = Js.Unsafe.inject (Js.string "ace/mode/ocaml_ocp") in
+  let mode = Js.Unsafe.inject (Js.string "ace/mode/ocaml") in
   Js.Unsafe.fun_call (Js.Unsafe.variable "ace.createEditSession")
     [| text;mode |]
 
