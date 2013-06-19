@@ -75,16 +75,16 @@ let make_editor (container: Dom_html.element Js.t) : unit =
   script_ace_init##text <- Js.string
     "var editor = ace.edit(\"editor\");
      editor.setTheme(\"ace/theme/eclipse\");
-     editor.getSession().setMode(\"ace/mode/ocaml_ocp\");";
+     editor.getSession().setMode(\"ace/mode/ocaml\");";
   container##style##zIndex <- Js.string "5";
   container##style##minWidth <- Js.string "620px";
-  css_tabs##href <- Js.string "./tabs.css";
+  css_tabs##href <- Js.string "./css/tabs.css";
   css_tabs##rel <- Js.string "stylesheet";
   css_tabs##_type <- Js.string "text/css";
-  css_toplvl##href <- Js.string "./mytoplevel.css";
+  css_toplvl##href <- Js.string "./css/mytoplevel.css";
   css_toplvl##rel <- Js.string "stylesheet";
   css_toplvl##_type <- Js.string "text/css";
-  css_main##href <- Js.string "./main.css";
+  css_main##href <- Js.string "./css/main.css";
   css_main##rel <- Js.string "stylesheet";
   css_main##_type <- Js.string "text/css";
 

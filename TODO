@@ -57,3 +57,6 @@
 
 * Makefile :
   - faire quelque chose de propre avec ocamlfind pour les libs par exemple
+
+* eldoc emacs :
+  - ce dont nous a parler Luca

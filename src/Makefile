@@ -73,7 +73,7 @@ $(OBJSI): $(SOURCESI)
 	$(CAMLJS) -c $*.mli
 
 clean:
-	rm -f *~ \#*\# *.cm[ioa] *.annot
+	rm -f *~ \#*\# *.cm[ioat] *.cmti *.annot
 	rm -f *.byte a.out main.js .depend
 
 clean-all: clean

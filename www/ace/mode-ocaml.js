@@ -28,7 +28,9 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-define('ace/mode/ocaml-ocp', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/text', 'ace/tokenizer', 'ace/mode/ocaml_highlight_rules', 'ace/mode/matching_brace_outdent', 'ace/range'], function(require, exports, module) {
+
+
+define('ace/mode/ocaml', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/text', 'ace/tokenizer', 'ace/mode/ocaml_highlight_rules', 'ace/mode/matching_brace_outdent', 'ace/range'], function(require, exports, module) {
 
 
 var oop = require("../lib/oop");
@@ -44,7 +46,178 @@ var Mode = function() {
 };
 oop.inherits(Mode, TextMode);
 
-var indenter = /(?:[({[=:]|[-=]>|\b(?:else|try|with))\s*$/;
+
+
+
+/**********************************************************/
+/*   Indent definition                                    */
+/**********************************************************/
+
+
+// function get_indent(line) {
+//     return line.match(/^\s*/)[0];
+// }
+
+// var anchor_inc = /(in|end|done)/;
+// var anchor_dec = /(let|begin|do)/;
+
+// function get_last_anchor(row) {
+//     var count = 0;
+//     for ( var i = row-1 ; i >= 0 ; i-- ) {
+// 	var tokens = editor.getSession().getTokens(i);
+// 	for ( var j = tokens.length-1 ; j >= 0 ; j-- ) {
+// 	    if ( tokens[j].type == "keyword" ) {
+// 		var v = tokens[j].value;
+// 		if ( anchor_inc.test(v) )
+// 		    count++;
+// 		else if ( anchor_dec.test(v) ) {
+// 		    if ( count == 0 )
+// 			return i;
+// 		    else count--;
+// 		} else if ( v == "match" && count == 0 )
+// 		    return i;
+// 	    }
+// 	}
+//     }
+//     return 0;
+// }
+
+// function get_indent_line(row) {
+//     var last_anchor = get_last_anchor(row);
+//     var text = editor.getSession().getLines(last_anchor, row).join('\n');
+//     var add = get_indent(text.split('\n')[0]).length;
+//     console.debug(text);
+//     console.debug(add);
+//     console.debug(row-last_anchor);
+//     return getIndentLine(text, row-last_anchor, add);
+// }
+
+
+// function indent_line(row) {
+//     var last_anchor = get_last_anchor(row);
+//     var text = editor.getSession().getLines(last_anchor, row).join('\n');
+//     var add = get_indent(text.split('\n')[0]).length;
+//     console.debug(text);
+//     console.debug(add);
+//     console.debug(row-last_anchor);
+//     indentLine(text, last_anchor, row-last_anchor, add);
+// }
+
+
+// function indent_region(row_start, row_end) {
+//     if ( row_start == row_end ) {
+// 	indentLine(row_start);
+//     } else {
+// 	var session = editor.getSession();
+// 	var last_anchor = get_last_anchor(row_end);
+	
+// 	// Traitement si la sélection a plusieurs "blocs"
+// 	while ( row_start < last_anchor )
+// 	    last_anchor = get_last_anchor(last_anchor);
+
+// 	var text = editor.getSession().getLines(last_anchor, row_end).join('\n');
+// 	var add = get_indent(text.split('\n')[0]).length;
+
+// 	// On repère la sélection du texte à indenter)
+// 	var start = row_start - last_anchor;
+// 	var end = row_end - last_anchor;
+// 	console.debug(text);
+// 	console.debug(add);
+// 	console.debug(last_anchor);
+// 	console.debug(start);
+// 	console.debug(end);
+// 	indentRegion(text, last_anchor, start, end, add);
+//     }
+// }
+ 
+
+/* Config de l'éditeur */
+editor.getSession().setTabSize(2);
+
+
+/* Utils for auto-completion */
+
+var in_completion_mode = false;
+
+
+/* Config des keybindings */
+editor.commands.addCommand({
+    name: 'indent-lines',
+    bindKey: {win: 'Tab', mac: 'Tab'},
+    exec: function(editor) {
+	var r = editor.getSelectionRange();
+	console.time("indent_via_tab");
+	indentRegion(r.start.row, r.end.row);
+	console.timeEnd("indent_via_tab");
+    },
+    readOnly: false
+});
+
+editor.commands.addCommand({
+    name: 'comment-lines',
+    bindKey: {win: 'Ctrl-B', mac: 'Control-B'},
+    exec: function(editor) {
+	editor.toggleCommentLines();
+    },
+    readOnly: false
+});
+
+/* FOR TEST */
+editor.commands.addCommand({
+    name: 'test',
+    bindKey: {win: 'Ctrl-A', mac: 'Control-A'},
+    exec: function(editor) {
+	indentTest();
+    },
+    readOnly: false
+});
+
+
+editor.commands.addCommand({
+    name: 'complete-word',
+    bindKey: {win: 'Ctrl-Q'// , mac: 'Control-L'
+             },
+    exec: function(editor) {
+        console.log("Completion");
+        var c = editor.getCursorPosition();
+        var token = editor.getSession().getTokenAt(c.row, c.column);
+
+        if (token != null) { 
+            if (token.type == 'identifier' 
+                || token.type == 'support.function'
+                || token.type == 'keyword') {
+                var range = new Range(c.row, token.start, c.row, c.column);
+                var v = token.value;
+                if (!in_completion_mode) {
+                    computeCompletions(v);
+                    in_completion_mode = true;
+                }
+                var next = nextCompletion();
+                console.log(next);
+                if (next != undefined)
+                    editor.getSession().replace(range, next);
+            }
+        }
+    },
+    readOnly: false
+});
+
+// editor.commands.addCommand({
+//     name:'find-commpletion',
+//     bindKey: {win 'Ctrl-/', mac: 'Control-/'},
+//     exec: function(editor) {
+//         console.log("Completions possibles :");
+//     },
+//     readOnly: false
+// });
+
+
+
+//var indenter = /(?:[({[=:]|[-=]>|\b(?:else|try|with))\s*$/;
+//var outdenter = /^[' '|'\t']*(in|(end[' '|'\t']*;?)|let)[' '|'\t']*$/;
+
+var outdenter_list = /(in|let|end|done)/;
+
 
 (function() {
 
@@ -71,28 +244,65 @@ var indenter = /(?:[({[=:]|[-=]>|\b(?:else|try|with))\s*$/;
         }
     };
 
+ 
     this.getNextLineIndent = function(state, line, tab) {
-        var indent = this.$getIndent(line);
-        var tokens = this.$tokenizer.getLineTokens(line, state).tokens;
-
-        if (!(tokens.length && tokens[tokens.length - 1].type === 'comment') &&
-            state === 'start' && indenter.test(line))
-            indent += tab;
-        return indent;
+	console.time("indent_next_line");
+	var t = getIndentLine(editor.getCursorPosition().row);
+	console.timeEnd("indent_next_line");
+	return t;
     };
 
     this.checkOutdent = function(state, line, input) {
-        return this.$outdent.checkOutdent(line, input);
+	var curpos = editor.getCursorPosition();
+	var session = editor.getSession();
+	var token = session.getTokenAt(curpos.row, curpos.column);
+
+	if ( token == null )
+	    return false;
+        
+        if ( input == '\n' || input == ' ' ) {
+	    var next_token = session.getTokenAt(curpos.row, curpos.column+1);
+	    /* Traitement d'auto-complétion */
+            in_completion_mode = false;
+            if ( token.type == "support.function" ||
+		 token.type == "identifier" ||
+		 token.type == "keyword") {
+                newWord(token.value);
+            }
+	    
+	    /* Traitement de l'outdent */
+	    if ( token.type == "keyword" &&
+		 outdenter_list.test(token.value) &&
+		 token != next_token ) {
+		return true;
+	    } 
+	}
+
+	if ( token.type == "keyword.operator" &&
+	     token.value == "|" )
+	    return true;
+        return this.$outdent.checkOutdent(line);
+    
     };
 
     this.autoOutdent = function(state, doc, row) {
-        this.$outdent.autoOutdent(doc, row);
+	console.time("outdent");
+	indentRegion(row, editor.getCursorPosition().row);
+	console.timeEnd("outdent");
     };
 
 }).call(Mode.prototype);
 
 exports.Mode = Mode;
 });
+
+
+
+/**********************************************************/
+/*   Highlight definition                                 */
+/**********************************************************/
+
+
 
 define('ace/mode/ocaml_highlight_rules', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/text_highlight_rules'], function(require, exports, module) {
 
@@ -402,6 +612,18 @@ oop.inherits(OcamlHighlightRules, TextHighlightRules);
 exports.OcamlHighlightRules = OcamlHighlightRules;
 });
 
+
+
+
+
+
+
+/**********************************************************/
+/*   ??? definition                                       */
+/**********************************************************/
+
+
+
 define('ace/mode/matching_brace_outdent', ['require', 'exports', 'module' , 'ace/range'], function(require, exports, module) {
 
 
@@ -441,3 +663,5 @@ var MatchingBraceOutdent = function() {};
 
 exports.MatchingBraceOutdent = MatchingBraceOutdent;
 });
+
+
