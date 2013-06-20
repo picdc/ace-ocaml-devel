@@ -13,6 +13,8 @@ let is_list_shown = ref false
 let offset = ref 0
 let len = ref 4
 
+let exist_tab id =
+  H.mem htbl id
 
 
 let get_line_width () =
@@ -41,6 +43,7 @@ let update_len () =
   let l_width = get_line_max_width () in
   let new_len = l_width / t_size in
   len := new_len
+
   
 let get_tab_id_from_html tab =
   let i = Js.to_string tab##id in
@@ -301,6 +304,7 @@ and close_tab id =
   H.remove htbl id;
   Dom.removeChild line tab;
   Dom.removeChild list tabli;
+  
   refresh_tabs ()
 
 
