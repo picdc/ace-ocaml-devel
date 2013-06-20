@@ -32,7 +32,7 @@ server: $(OBJ)
 	ocamlfind ocamlc -ccopt "$(CFLAGS)" -c $<
 
 clean:
-	rm -rf *.cmi *.cmo *.o *.a *.so *.log *~ \#*\#
+	rm -rf *.cm* *.o *.a *.so *.log *~ \#*\#
 	rm -rf $(EXEC)
 
 depend:

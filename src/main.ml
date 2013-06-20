@@ -95,6 +95,11 @@ let make_editor (container: Dom_html.element Js.t) : unit =
   Dom.appendChild doc##body script_ace_init;
   Dom.appendChild doc##body css_tabs;
   Dom.appendChild doc##body css_toplvl;
+
+  let divtest = Dom_html.createDiv doc in
+  divtest##innerHTML <- Js.string (List.hd
+  				      (Request.get_list_of_projects ()));
+  Dom.appendChild doc##body divtest;
   Dom.appendChild doc##body css_main;
 
   Tabs.main ();

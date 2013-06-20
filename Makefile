@@ -5,7 +5,6 @@ all: src server
 
 src:
 	$(MAKE) -C src
-	cp src/main.js www/main.js
 
 server:
 	$(MAKE) -C server
@@ -16,7 +15,7 @@ run:
 
 clean:
 	$(MAKE) -C src clean-all
-	$(MAKE) -C server clean
+#	$(MAKE) -C server clean
 	rm -rf www/main.js
 
 

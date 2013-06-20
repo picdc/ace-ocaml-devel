@@ -2,8 +2,8 @@
 include Makefile.config
 include Makefile.rules
 
-SOURCES= ace_utils.ml tabs.ml
-SOURCESI= ace_utils.mli
+SOURCES= request.ml ace_utils.ml tabs.ml
+SOURCESI= request.mli ace_utils.mli
 
 OCPDIR= ocp-indent-src
 OCPLIB= -I $(OCPDIR) ocp_indent.cma
@@ -46,6 +46,7 @@ JSFLAGS = -pretty -noinline -linkall -toplevel $(INCLUDEJS_TOPLVL)
 .PHONY: depend
 
 all: depend main.js
+	cp main.js ../www/main.js
 
 main.js: main.byte
 	js_of_ocaml $(INCLUDEJS) $<

@@ -1,9 +1,11 @@
 
 
-
 exception Empty_cgi_argument
 exception Bad_cgi_argument
 exception Fail_shell_call
+
+
+let ppath = "/home/dmaison/ace-ocaml/data"
 
 let get_argument (cgi: Netcgi.cgi_activation) name =
   if cgi#argument_exists name then begin
@@ -12,13 +14,17 @@ let get_argument (cgi: Netcgi.cgi_activation) name =
     else raise Empty_cgi_argument end
   else raise Bad_cgi_argument
 
+
+
 let print_string str (cgi: Netcgi.cgi_activation) =
   (* cgi#set_header ~content_type:"plain/text" (); (\* TELECHARGE Oo? *\) *)
   cgi#out_channel#output_string str;
   cgi#out_channel#commit_work ()
 
-let get_list_of_project user =
-  let path = Format.sprintf "/home/dmaison/test_ocamlnet/data/%s" user in
+
+
+let project_function () =
+  let path = Format.sprintf "%s/common_user" ppath in
   let res = Shell.cmd "ls" [ path ] in
   let b = Buffer.create 503 in
   try
@@ -27,9 +33,8 @@ let get_list_of_project user =
   with _ -> raise Fail_shell_call
 
 
-let get_list_of_files user project =
-  let path = Format.sprintf "/home/dmaison/test_ocamlnet/data/%s/%s"
-    user project in
+let project_list_function project =
+  let path = Format.sprintf "%s/common_user/%s"ppath  project in
   let res = Shell.cmd "ls" [ path ] in
   let b = Buffer.create 503 in
   try
@@ -38,9 +43,8 @@ let get_list_of_files user project =
   with _ -> raise Fail_shell_call
 
 
-let get_file_content user project file =
-  let path = Format.sprintf "/home/dmaison/test_ocamlnet/data/%s/%s/%s"
-    user project file in
+let project_load_function project file =
+  let path = Format.sprintf "%s/common_user/%s/%s" ppath project file in
   let res = Shell.cmd "cat" [ path ] in
   let b = Buffer.create 503 in
   try
@@ -48,9 +52,8 @@ let get_file_content user project file =
     Buffer.contents b
   with _ -> raise Fail_shell_call
 
-let create_dir user dir =
-  let path = Format.sprintf "/home/dmaison/test_ocamlnet/data/%s/%s"
-    user dir in
+let create_function dirname =
+  let path = Format.sprintf "%s/common_user/%s" ppath dirname in
   let res = Shell.cmd "mkdir" [ path ] in
   let b = Buffer.create 503 in
   try
@@ -58,9 +61,10 @@ let create_dir user dir =
     Buffer.contents b
   with _ -> raise Fail_shell_call
 
-let create_file user project file =
-  let path = Format.sprintf "/home/dmaison/test_ocamlnet/data/%s/%s/%s"
-    user project file in
+
+let project_create_function project file =
+  let path = Format.sprintf "%s/common_user/%s/%s"
+    ppath project file in
   let res = Shell.cmd "touch" [ path ] in
   let b = Buffer.create 503 in
   try
@@ -68,14 +72,14 @@ let create_file user project file =
     Buffer.contents b
   with _ -> raise Fail_shell_call
 
-let save_file user project file content =
-  let path = Format.sprintf "/home/dmaison/test_ocamlnet/data/%s/%s/%s"
-    user project file in
+let project_save_function project file content =
+  let path = Format.sprintf "%s/common_user/%s/%s" ppath project file in
   let res = Shell.cmd "echo" [ content ] in
   let stdout = Shell.to_file ~append:false path in
   try
     Shell.call ~stdout [ res ]
   with _ -> raise Fail_shell_call
+
 
 let empty_dyn_service = 
   { Nethttpd_services.dyn_handler = (fun _ _ -> ());
@@ -90,8 +94,7 @@ let project_service =
     Nethttpd_services.dyn_handler =
       (fun _ cgi -> 
 	try
-	  let user = get_argument cgi "user" in
-	  let res = get_list_of_project user in
+	  let res = project_function () in
 	  print_string res cgi
 	with
 	  _ -> print_string "Error !" cgi
@@ -102,9 +105,8 @@ let project_list_service =
     Nethttpd_services.dyn_handler =
       (fun _ cgi -> 
 	try
-	  let user = get_argument cgi "user" in
 	  let project = get_argument cgi "project" in
-	  let res = get_list_of_files user project in
+	  let res = project_list_function project in
 	  print_string res cgi
 	with
 	  _ -> print_string "Error !" cgi
@@ -116,11 +118,22 @@ let project_load_service =
     Nethttpd_services.dyn_handler =
       (fun _ cgi -> 
 	try
-	  let user = get_argument cgi "user" in
 	  let project = get_argument cgi "project" in
 	  let file = get_argument cgi "file" in
-	  let res = get_file_content user project file in
+	  let res = project_load_function project file in
 	  print_string res cgi
+	with
+	  _ -> print_string "Error !" cgi
+      ); }
+
+let create_service =
+  { empty_dyn_service with
+    Nethttpd_services.dyn_handler =
+      (fun _ cgi -> 
+	try
+	  let project = get_argument cgi "name" in
+	  let _ = create_function project in
+	  print_string "Project created successfully" cgi
 	with
 	  _ -> print_string "Error !" cgi
       ); }
@@ -130,23 +143,9 @@ let project_create_service =
     Nethttpd_services.dyn_handler =
       (fun _ cgi -> 
 	try
-	  let user = get_argument cgi "user" in
-	  let project = get_argument cgi "dir" in
-	  let _ = create_dir user project in
-	  print_string "Project created successfully" cgi
-	with
-	  _ -> print_string "Error !" cgi
-      ); }
-
-let file_create_service =
-  { empty_dyn_service with
-    Nethttpd_services.dyn_handler =
-      (fun _ cgi -> 
-	try
-	  let user = get_argument cgi "user" in
 	  let project = get_argument cgi "project" in
-	  let file = get_argument cgi "file" in
-	  let _ = create_file user project file in
+	  let file = get_argument cgi "name" in
+	  let _ = project_create_function project file in
 	  print_string "File created successfully" cgi
 	with
 	  _ -> print_string "Error !" cgi
@@ -157,31 +156,24 @@ let project_save_service =
     Nethttpd_services.dyn_handler =
       (fun _ cgi -> 
 	try
-	  let user = get_argument cgi "user" in
 	  let project = get_argument cgi "project" in
 	  let file = get_argument cgi "file" in
 	  let content = get_argument cgi "content" in
-	  save_file user project file content;
+	  project_save_function project file content;
 	  print_string "Saved" cgi
 	with
 	  _ -> print_string "Error !" cgi
       ); }
 
 let my_factory =
-  (* let def_config = *)
-  (*   { Netcgi.default_config  *)
-  (*     with Netcgi.permitted_http_methods = [ `GET ; `POST ]; *)
-  (*   } in *)
   Nethttpd_plex.nethttpd_factory
     ~name:"ace-edit_processor"
-    (* ~config_cgi:def_config *)
-    ~handlers: [ "list_of_projects", project_service ;
-		 "list_of_files", project_list_service ;
-		 "load_file", project_load_service;
-		 "create_project", project_create_service;
-		 "create_file", file_create_service;
-		 "project_save", project_save_service;
-	       ]
+    ~handlers: [ "project_service", project_service ;
+		 "project_list_service", project_list_service ;
+		 "project_load_service", project_load_service;
+		 "project_create_service", project_create_service;
+		 "create_service", create_service;
+		 "project_save_service", project_save_service ]
     ()
 
 let main() =
