@@ -91,8 +91,17 @@ let coerceTo_textarea el =
   match Js.Opt.to_option (Dom_html.CoerceTo.textarea el) with
   | Some s -> s
   | None -> failwith "coerco_textarea failed"
+    
 
-
+let split str del =
+  let str = Js.string str in
+  let astr = Js.str_array (str##split(Js.string del)) in
+  let lstr = Array.to_list (Js.to_array astr) in
+  List.rev (List.fold_left (fun acc el ->
+    let new_el = Js.to_string el in
+    new_el::acc) [] lstr)
+  
+   
 
 
 
@@ -230,6 +239,14 @@ let load_range = ref false
 type editSession
 type range
 type acetoken
+
+let enable_editor () =
+  Js.Unsafe.fun_call (Js.Unsafe.variable "editor.setReadOnly")
+    [| Js.Unsafe.inject Js._false |]
+
+let disable_editor () = 
+  Js.Unsafe.fun_call (Js.Unsafe.variable "editor.setReadOnly")
+    [| Js.Unsafe.inject Js._true |]
 
 let create_edit_session (content: string) : editSession =
   let text = Js.Unsafe.inject (Js.string content) in

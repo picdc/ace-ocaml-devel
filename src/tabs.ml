@@ -66,17 +66,17 @@ let change_offset_from_id id =
   done
 
 
-let rename_tab id new_title =
-  let content = snd (H.find htbl id) in
-  let tab = get_element_by_id (Format.sprintf "tabnum%dtitle" id) in
-  let listli = get_element_by_id (Format.sprintf "listulnum%d" id) in
-  begin
-    match Js.Opt.to_option (Dom_html.CoerceTo.input tab) with
-    | None -> assert false
-    | Some tab -> tab##value <- Js.string new_title
-  end;
-  listli##innerHTML <- Js.string new_title;
-  H.replace htbl id (new_title, content)
+(* let rename_tab id new_title = *)
+(*   let content = snd (H.find htbl id) in *)
+(*   let tab = get_element_by_id (Format.sprintf "tabnum%dtitle" id) in *)
+(*   let listli = get_element_by_id (Format.sprintf "listulnum%d" id) in *)
+(*   begin *)
+(*     match Js.Opt.to_option (Dom_html.CoerceTo.input tab) with *)
+(*     | None -> assert false *)
+(*     | Some tab -> tab##value <- Js.string new_title *)
+(*   end; *)
+(*   listli##innerHTML <- Js.string new_title; *)
+(*   H.replace htbl id (new_title, content) *)
 
 
 let update_element_from_node n f =
@@ -90,6 +90,14 @@ let update_input name f =
     | None -> assert false
     | Some b -> f b
 
+let enable_navigation_buttons b =
+  let b = not b in
+  let b1 = coerceTo_input (get_element_by_id "scrollTabLeft") in
+  let b2 = coerceTo_input (get_element_by_id "scrollTabRight") in
+  let b3 = coerceTo_input (get_element_by_id "showAllTabs") in
+  b1##disabled <- Js.bool b;
+  b2##disabled <- Js.bool b;
+  b3##disabled <- Js.bool b
 
 
 let refresh_tabs () = 
@@ -169,7 +177,7 @@ let refresh_tabs () =
 
 let change_tab id =
   (* Changement du tab *)
-  let es = snd (H.find htbl id) in
+  let es = H.find htbl id in
   change_edit_session es;
 
   (* Changement du focus du tab *)
@@ -180,52 +188,52 @@ let change_tab id =
   curr_tab := id
 
 
-let rec add_tab title content =
+exception No_other_tabs
+
+let rec add_tab id title content =
   (* Choix de l'id *)
-  let i = !id in
   let es = create_edit_session content in
-  H.add htbl i (title, es);
-  incr id;
+  H.add htbl id es;
 
   (* Création du tab *)
   let line = get_element_by_id "tabline" in
   let new_tab = createTd document in
-  let id = Format.sprintf "tabnum%d" i in
+  let sid = Format.sprintf "tabnum%d" id in
   let span_title = createInput
-    ~name:(Js.string id)
+    ~name:(Js.string sid)
     ~_type:(Js.string "text")
     document in
   let span_close = createSpan document in
-  new_tab##id <- Js.string id;
+  new_tab##id <- Js.string sid;
   new_tab##className <- Js.string "tab";
-  span_title##id <- Js.string (id^"title");
+  span_title##id <- Js.string (sid^"title");
   span_title##value <- Js.string title;
   span_title##readOnly <- Js._true;
   span_title##className <- Js.string "tabtitle";
   span_title##onclick <- handler ( fun _ ->
-    if !curr_tab <> i then
-      change_tab i;
+    if !curr_tab <> id then
+      change_tab id;
     Js._true);
   span_title##ondblclick <- handler ( fun _ ->
     span_title##readOnly <- Js._false;
     Js._true);
-  ignore (Dom_html.addEventListener
-    span_title 
-    (Dom_html.Event.make "blur")
-    (handler (fun _ ->
-      span_title##readOnly <- Js._true;
-      rename_tab i (Js.to_string span_title##value);
-      Js._true))
-    Js._true);
-  span_title##onkeypress <- handler (fun kev ->
-    if kev##keyCode == 13 then
-      (span_title##readOnly <- Js._true;
-       rename_tab i (Js.to_string span_title##value));
-    Js._true);
+  (* ignore (Dom_html.addEventListener *)
+  (*   span_title  *)
+  (*   (Dom_html.Event.make "blur") *)
+  (*   (handler (fun _ -> *)
+  (*     span_title##readOnly <- Js._true; *)
+  (*     rename_tab id (Js.to_string span_title##value); *)
+  (*     Js._true)) *)
+  (*   Js._true); *)
+  (* span_title##onkeypress <- handler (fun kev -> *)
+  (*   if kev##keyCode == 13 then *)
+  (*     (span_title##readOnly <- Js._true; *)
+  (*      rename_tab id (Js.to_string span_title##value)); *)
+  (*   Js._true); *)
   span_close##innerHTML <- Js.string "x";
   span_close##className <- Js.string "tabclose";
   span_close##onclick <- handler ( fun _ ->
-    close_tab i;
+    close_tab id;
     Js._true);
 
   Dom.appendChild new_tab span_title;
@@ -236,16 +244,16 @@ let rec add_tab title content =
   (* Création de l'item de la liste des tabs *)
   let listul = get_element_by_id "listul" in
   let li_tab = createLi document in
-  let id = Format.sprintf "listulnum%d" i in
-  li_tab##id <- Js.string id;
+  let sid = Format.sprintf "listulnum%d" id in
+  li_tab##id <- Js.string sid;
   li_tab##innerHTML <- Js.string title;
   li_tab##style##display <- Js.string "none";
   li_tab##onclick <- handler ( fun _ ->
-    change_tab i;
+    change_tab id;
     is_list_shown := false;
     let listtabs = get_element_by_id "listtabs" in
     listtabs##style##display <- Js.string "none";
-    change_offset_from_id i;
+    change_offset_from_id id;
     refresh_tabs ();
     Js._true);
 
@@ -253,21 +261,10 @@ let rec add_tab title content =
 
 
   let nbtabs = H.length htbl in
+  if nbtabs = 1 then Ace_utils.enable_editor ();
   if !offset + !len < nbtabs then
-      offset := nbtabs - !len;
-  refresh_tabs ();
-  i
-
-
-and add_untitled_tab () =
-  let id = !nb_untitled in
-  let title =
-    if id = 0 then "untitled.ml"
-    else Format.sprintf "untitled%d.ml" !nb_untitled
-  in
-  let content = "let _ =\n  print_endline \"Hello world !\"" in
-  incr nb_untitled;
-  add_tab title content
+    offset := nbtabs - !len;
+  refresh_tabs ()
 
 and close_tab id =
   let tab_id = Format.sprintf "tabnum%d" id in
@@ -289,16 +286,18 @@ and close_tab id =
 	    | None -> Js.Opt.empty
 	  end
       in
-      let next_tab =
-	match Js.Opt.to_option sibling with
-	| Some s -> s
-	| None ->
-	  let t = add_untitled_tab () in
-	  let tab_id = Format.sprintf "tabnum%d" t in
-	  get_element_by_id tab_id
-      in
-      let next_id = get_tab_id_from_html next_tab in
-      change_tab next_id
+      try
+	let next_tab =
+	  match Js.Opt.to_option sibling with
+	  | Some s -> s
+	  | None -> raise No_other_tabs
+	in
+	let next_id = get_tab_id_from_html next_tab in
+	change_tab next_id
+      with 
+	No_other_tabs ->
+	  Ace_utils.disable_editor ();
+	  enable_navigation_buttons false
     end;
   
   H.remove htbl id;
@@ -322,10 +321,8 @@ let init_tabs_drawing () =
   let button = createInput ~_type:(Js.string "button") document in
   button##value <- Js.string "+";
   button##id <- Js.string "newEmptyTab";
-  button##onclick <- handler (fun _ ->
-    let id = add_untitled_tab () in
-    change_tab id;    
-    Js._true);
+  button##disabled <- Js._true;
+  button##onclick <- handler (fun _ -> Js._true);
   Dom.appendChild new_tab button;
 
   let button = createInput ~_type:(Js.string "button") document in
@@ -391,8 +388,6 @@ let init_tabs_drawing () =
   Dom.appendChild container new_tab;
   Dom.appendChild container show_all
 
-
-
 let init_listtabs () =
   let container = get_element_by_id "listtabs" in
   let ul = createUl document in
@@ -404,7 +399,6 @@ let init_listtabs () =
 
 
 let main () =
-
   (* Création du bouton d'importation des fichiers *)
   let container = get_element_by_id "input" in
   let button = createInput
@@ -412,45 +406,41 @@ let main () =
     ~_type:(Js.string "file")
     document
   in
-  button##innerHTML <- Js.string "coucou";
   button##setAttribute(Js.string "multiple", Js.string "multiple");
-  button##onchange <- handler (fun _ ->
-    begin
-      match Js.Optdef.to_option button##files with
-      | None -> ()
-      | Some fl ->
-	for i=0 to fl##length do
-	  match Js.Opt.to_option fl##item(i) with
-	  | None -> ()
-	  | Some f -> 
-	    begin
-	      let reader = jsnew File.fileReader () in
-	      reader##onload <- Dom.handler (fun _ ->
-		let s =
-		  match Js.Opt.to_option
-		    (File.CoerceTo.string (reader##result)) with
-		    | None -> assert false
-		    | Some str -> str
-		in
-		let id = add_tab (Js.to_string f##name) (Js.to_string s) in
-                Completion_js.add_words_from_string s;
-		change_tab id;
-		Js._false);
-	      reader##readAsText (( f :> (File.blob Js.t)));
-	    end
-	done
-    end;
-    Js._true
-  );
+  button##disabled <- Js._true;
+  (* button##onchange <- handler (fun _ -> *)
+  (*   begin *)
+  (*     match Js.Optdef.to_option button##files with *)
+  (*     | None -> () *)
+  (*     | Some fl -> *)
+  (* 	for i=0 to fl##length do *)
+  (* 	  match Js.Opt.to_option fl##item(i) with *)
+  (* 	  | None -> () *)
+  (* 	  | Some f ->  *)
+  (* 	    begin *)
+  (* 	      let reader = jsnew File.fileReader () in *)
+  (* 	      reader##onload <- Dom.handler (fun _ -> *)
+  (* 		let s = *)
+  (* 		  match Js.Opt.to_option *)
+  (* 		    (File.CoerceTo.string (reader##result)) with *)
+  (* 		    | None -> assert false *)
+  (* 		    | Some str -> str *)
+  (* 		in *)
+  (* 		let id = add_tab (Js.to_string f##name) (Js.to_string s) in *)
+  (*               Completion_js.add_words_from_string s; *)
+  (* 		change_tab id; *)
+  (* 		Js._false); *)
+  (* 	      reader##readAsText (( f :> (File.blob Js.t))); *)
+  (* 	    end *)
+  (* 	done *)
+  (*   end; *)
+  (*   Js._true *)
+  (* ); *)
   Dom.appendChild container button;
 
   (* Création des tabs *)
   init_tabs_drawing ();
   init_listtabs ();
-  ignore (add_untitled_tab ());
-  change_tab 0;
-  (* let first_tab = get_element_by_id "tabnum0" in *)
-  (* first_tab##className <- Js.string "tab active"; *)
 
 
   (* Création de l'event pour recalculer le nb de tab affiché
@@ -459,7 +449,9 @@ let main () =
   Dom_html.window##onresize <- Dom_html.handler
     (fun _ -> update_len ();
       refresh_tabs ();
-      Js._true)
+      Js._true);
+
+  enable_navigation_buttons false
 
 
 

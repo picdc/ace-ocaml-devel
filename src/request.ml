@@ -1,7 +1,7 @@
 
 exception Bad_request_url of string
 
-let pull_request ~meth ~url ~asyn ~msg =
+let pull_request ~callback ~meth ~url ~asyn ~msg =
 (* let pull_request ~post_args ~url = *)
   (* let open XmlHttpRequest in *)
   (* let urlopt = Url.url_of_string url in *)
@@ -10,43 +10,55 @@ let pull_request ~meth ~url ~asyn ~msg =
   (* | Some url -> *)
   (*   let httpframe = Lwt_main.run (perform ~post_args url) in *)
   (*   httpframe.content *)
-  let b = Buffer.create 5003 in
   let req = XmlHttpRequest.create () in
   req##_open(Js.string meth, Js.string url, Js.bool asyn);
   req##setRequestHeader(Js.string "Content-Type",
 			Js.string "application/x-www-form-urlencoded");
-  let toto = ref 10000 in
-  let rec loop () =
-    Ace_utils.console_debug req##readyState;
+  let f () = 
     match req##readyState with
-    | XmlHttpRequest.DONE ->
-      Buffer.add_string b (Js.to_string req##responseText)
-    | _ -> decr toto; if !toto > 0 then loop () else ()
+    | XmlHttpRequest.DONE -> callback (Js.to_string req##responseText)
+    | _ -> ()
   in
-  let f () = Ace_utils.console_log "coucou" in
   req##onreadystatechange <- Js.wrap_callback f;
-  req##send(Js.some (Js.string msg));
-  loop ();
-  Buffer.contents b
+  req##send(Js.some (Js.string msg))
   
 
 
-let get_list_of_projects () =
-  (* let res = pull_request ~post_args:[] ~url:"project" in *)
-  let res = pull_request "POST" "project" true "" in
-  [res]
 
-let get_list_of_files project =
-  []
 
-let get_content_of_file ~project ~filename =
-  ""
 
-let create_project name =
-  true
+let get_list_of_projects ~callback =
+  let callback str =
+    (* Rappel :
+       dans la réponse de la requête, la derniere ligne est vide *)
+    let l = Ace_utils.split str "\n" in
+    let l = List.rev (List.tl (List.rev l)) in
+    callback l
+  in
+  pull_request ~callback ~meth:"POST" ~url:"project" ~asyn:true ~msg:""
 
-let create_file ~project ~filename =
-  true
 
-let save_content_of_file ~project ~filename =
-  true
+
+let get_list_of_files ~callback project =
+  let callback str =
+    (* Rappel :
+       dans la réponse de la requête, la derniere ligne est vide *)
+    let l = Ace_utils.split str "\n" in
+    let l = List.rev (List.tl (List.rev l)) in
+    callback l
+  in
+  let msg = Format.sprintf "project=%s" project in
+  pull_request ~callback ~meth:"POST" ~url:"project/list" ~asyn:true ~msg
+
+let get_content_of_file ~callback ~project ~filename =
+  let msg = Format.sprintf "project=%s&file=%s" project filename in
+  pull_request ~callback ~meth:"POST" ~url:"project/load" ~asyn:true ~msg
+
+(* let create_project ~callback name = *)
+(*   () *)
+
+(* let create_file ~callback ~project ~filename = *)
+(*   () *)
+
+(* let save_content_of_file ~callback ~project ~filename = *)
+(*   () *)

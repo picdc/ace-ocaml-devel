@@ -1,6 +1,24 @@
 
+#divmain {
+    display: inline-block;
+    width: 75%;
+    min-width: 600px;
+    z-index: 5;
+}
+
+#sidepanel {
+    display: inline-block;
+    width: 149px;
+    height: 640px;
+    vertical-align: top;
+    overflow: hidden;
+    border: 1px solid #aaaaaa;
+    border-right: none;
+}
+
 #bottabs {
     width: 100%;
+    height: 260px;
 }
 
 .bottabs_content {

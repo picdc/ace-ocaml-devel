@@ -59,6 +59,7 @@ let make_bottom_widget () =
 
 let make_editor (container: Dom_html.element Js.t) : unit =
   let doc = Dom_html.document in
+  let div_main = Dom_html.createDiv doc in
   let div_input = Dom_html.createDiv doc in
   let div_tabs = Dom_html.createDiv doc in
   let div_listtabs = Dom_html.createDiv doc in
@@ -67,7 +68,9 @@ let make_editor (container: Dom_html.element Js.t) : unit =
   let css_tabs = Dom_html.createLink doc in
   let css_toplvl = Dom_html.createLink doc in
   let css_main = Dom_html.createLink doc in
+  let css_sidepanel = Dom_html.createLink doc in
 
+  div_main##id <- Js.string "divmain";
   div_input##id <- Js.string "input";
   div_tabs##id <- Js.string "tabs";
   div_listtabs##id <- Js.string "listtabs";
@@ -76,8 +79,6 @@ let make_editor (container: Dom_html.element Js.t) : unit =
     "var editor = ace.edit(\"editor\");
      editor.setTheme(\"ace/theme/eclipse\");
      editor.getSession().setMode(\"ace/mode/ocaml\");";
-  container##style##zIndex <- Js.string "5";
-  container##style##minWidth <- Js.string "620px";
   css_tabs##href <- Js.string "./css/tabs.css";
   css_tabs##rel <- Js.string "stylesheet";
   css_tabs##_type <- Js.string "text/css";
@@ -87,26 +88,30 @@ let make_editor (container: Dom_html.element Js.t) : unit =
   css_main##href <- Js.string "./css/main.css";
   css_main##rel <- Js.string "stylesheet";
   css_main##_type <- Js.string "text/css";
+  css_sidepanel##href <- Js.string "./css/sidepanel.css";
+  css_sidepanel##rel <- Js.string "stylesheet";
+  css_sidepanel##_type <- Js.string "text/css";
+  container##style##minWidth <- Js.string "750px";
+
+  let sidepanel = Sidepanel.make_sidepanel () in
+  let bottabs = make_bottom_widget () in
 
   Dom.appendChild container div_input;
-  Dom.appendChild container div_tabs; (* A METTRE DANS TABS.init() ?? *)
-  Dom.appendChild container div_listtabs;
-  Dom.appendChild container div_editor;
+  Dom.appendChild container sidepanel;
+  Dom.appendChild div_main div_tabs; (* A METTRE DANS TABS.init() ?? *)
+  Dom.appendChild div_main div_listtabs;
+  Dom.appendChild div_main div_editor;
+  Dom.appendChild div_main bottabs;
+  Dom.appendChild container div_main;
   Dom.appendChild doc##body script_ace_init;
   Dom.appendChild doc##body css_tabs;
   Dom.appendChild doc##body css_toplvl;
-
-  let divtest = Dom_html.createDiv doc in
-  divtest##innerHTML <- Js.string (List.hd
-  				      (Request.get_list_of_projects ()));
-  Dom.appendChild doc##body divtest;
   Dom.appendChild doc##body css_main;
+  Dom.appendChild doc##body css_sidepanel;
 
   Tabs.main ();
+  disable_editor ()
 
-  let bottabs = make_bottom_widget () in
-  Dom.appendChild container bottabs
- 
 
 let _ =
   (Js.Unsafe.coerce Dom_html.window)##makeEditor <- Js.wrap_callback

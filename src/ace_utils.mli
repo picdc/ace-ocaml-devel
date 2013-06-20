@@ -29,6 +29,12 @@ val get_element_by_id : string -> Dom_html.element Js.t
 
 val coerceTo_input : Dom_html.element Js.t -> Dom_html.inputElement Js.t
 val coerceTo_textarea : Dom_html.element Js.t -> Dom_html.textAreaElement Js.t
+val split : string -> string -> string list
+
+
+
+val enable_editor : unit -> unit
+val disable_editor : unit -> unit
 
 val create_edit_session : string -> editSession
 val change_edit_session : editSession -> unit
