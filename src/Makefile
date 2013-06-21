@@ -2,9 +2,9 @@
 include Makefile.config
 include Makefile.rules
 
-SOURCES= filemanager.ml request.ml ace_utils.ml dialog.ml tabs.ml \
+SOURCES= ace_utils.ml request.ml filemanager.ml dialog.ml tabs.ml \
 	 sidepanel.ml
-SOURCESI= filemanager.mli request.mli ace_utils.mli dialog.mli tabs.mli
+SOURCESI= ace_utils.mli request.mli filemanager.mli dialog.mli tabs.mli
 
 OCPDIR= ocp-indent-src
 OCPLIB= -I $(OCPDIR) ocp_indent.cma

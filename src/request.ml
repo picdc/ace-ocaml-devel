@@ -57,8 +57,10 @@ let get_content_of_file ~callback ~project ~filename =
 (* let create_project ~callback name = *)
 (*   () *)
 
-(* let create_file ~callback ~project ~filename = *)
-(*   () *)
+let create_file ~callback ~project ~filename =
+  let msg = Format.sprintf "project=%s&name=%s" project filename in
+  let callback _ = callback () in 
+  pull_request ~callback ~meth:"POST" ~url:"project/create" ~asyn:true ~msg
 
 (* let save_content_of_file ~callback ~project ~filename = *)
 (*   () *)
