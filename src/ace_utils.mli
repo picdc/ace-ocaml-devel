@@ -3,6 +3,9 @@ type editSession
 type range
 type acetoken
 
+type handler = (Dom_html.element Js.t, Dom_html.event Js.t)
+           Dom_html.event_listener
+
 (* class type tabs_widget = object *)
 (*   inherit Dom_html.element  *)
 (*   method get_tab : int -> Dom_html.element Js.t *)
@@ -30,6 +33,9 @@ val get_element_by_id : string -> Dom_html.element Js.t
 val coerceTo_input : Dom_html.element Js.t -> Dom_html.inputElement Js.t
 val coerceTo_textarea : Dom_html.element Js.t -> Dom_html.textAreaElement Js.t
 val split : string -> string -> string list
+
+val make_event_oncontextmenu : Dom_html.element Js.t -> handler -> unit
+val make_event_onblur : Dom_html.element Js.t -> handler -> unit
 
 
 

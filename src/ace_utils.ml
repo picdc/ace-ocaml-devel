@@ -1,6 +1,9 @@
 
 open Dom_html
 
+type handler = (Dom_html.element Js.t, Dom_html.event Js.t)
+           Dom_html.event_listener
+
 (* class tabs_widget = object (self) *)
 (*   inherit Dom_html.element *)
 
@@ -329,7 +332,15 @@ let get_tokens row : acetoken array =
 		    "editor.getSession().getTokens")
 		 [| Js.Unsafe.inject row |])
 
+let make_event_oncontextmenu el handler =
+  ignore (Dom_html.addEventListener el
+	    (Dom_html.Event.make "contextmenu")
+	    handler Js._true)
 
+let make_event_onblur el handler =
+  ignore (Dom_html.addEventListener el
+	    (Dom_html.Event.make "blur")
+	    handler Js._true)
 
 
 module AceToken = struct
