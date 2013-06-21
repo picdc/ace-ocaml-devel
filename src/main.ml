@@ -109,6 +109,10 @@ let make_editor (container: Dom_html.element Js.t) : unit =
   Dom.appendChild doc##body css_main;
   Dom.appendChild doc##body css_sidepanel;
 
+  doc##body##onclick <- Dom_html.handler (fun _ ->
+    Dialog.Right_clic_dialog.hide_all ();
+    Js._true);
+
   Tabs.main ();
   disable_editor ()
 
