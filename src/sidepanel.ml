@@ -55,9 +55,9 @@ let create_file project name =
      ouverture, on crée le fichier (donc dans son callback) *)
   if not (Filemanager.is_project_opened project) then
    let callback lstr =
+     create_fun ();
      List.iter (fun el ->
-       add_file container name el) lstr;
-     create_fun () in
+	  add_file container name el) lstr in
    Filemanager.open_project ~callback ~project
 
   (* Sinon on crée directement le fichier *)
