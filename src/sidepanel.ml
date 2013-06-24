@@ -4,36 +4,47 @@ open Dom_html
 module H = Hashtbl
 
 
-let add_file container project title =
+let add_file container file =
+  let id, project, filename =
+    file.Filemanager.id,
+    file.Filemanager.project,
+    file.Filemanager.filename
+  in
   let li = createLi document in
   let is_open = ref false in
 
+  Ace_utils.console_debug id;
+  Ace_utils.console_debug filename;
+
+
   li##className <- Js.string "side_class_file_name";
-  li##innerHTML <- Js.string title;
+  li##id <- Js.string (Format.sprintf "side_file_%d" id);
+  li##innerHTML <- Js.string filename;
   li##onclick <- handler (fun _ -> 
     if not !is_open then 
-      (let callback id s =
-	 Tabs.add_tab id title s;
+      (let callback _ content =
+	 Ace_utils.console_debug id;
+	 Tabs.add_tab id filename content;
 	 Tabs.change_tab id
        in
-       Filemanager.open_file ~callback ~project ~filename:title;
+       Filemanager.open_file ~callback ~project ~filename;
        is_open := true)
     else
       begin
-	let id = Filemanager.get_id project title in
 	if Tabs.exist_tab id then Tabs.change_tab id
 	else 
-	  let callback id s =
-	    Tabs.add_tab id title s;
+	  let callback _ content =
+	    Tabs.add_tab id filename content;
 	    Tabs.change_tab id
 	  in
-	  Filemanager.open_file ~callback ~project ~filename:title
+	  Filemanager.open_file ~callback ~project ~filename
       end;
     Js._true);
   
   Dom.appendChild container li
 
-
+let rename_file container filename =
+  container##innerHTML <- (Js.string filename)
 
 
 
@@ -43,16 +54,6 @@ let create_file project filename =
   let filename = "untitled.ml" in (* FOR TEST *)
   Event_manager.create_file#trigger (project, filename)
 
-
-
-
-let open_project title =
-  let id_container = "side_class_file_list_container_"^title in
-  let container = Ace_utils.get_element_by_id id_container in
-  let callback ls = List.iter (fun el ->
-    add_file container title el
-  ) ls in
-  Filemanager.open_project ~callback ~project:title
 
 let right_clic_dialog_opened_project =
   let lstr = [ "Create new file" ] in
@@ -72,7 +73,7 @@ let right_clic_dialog_closed_project =
     match !focused_project with
     | None -> assert false
     | Some project ->
-      open_project project;
+      Event_manager.open_project#trigger project;
       Js._true)
   in		 
   let lhandler = [ handler_open_project ] in
@@ -86,12 +87,12 @@ let add_project container title =
 
   li##className <- Js.string "side_class_project_item";
   ul##className <- Js.string "side_class_file_list";
-  ul##id <- Js.string ("side_class_file_list_container_"^title);
+  ul##id <- Js.string ("side_project_"^title);
   span##className <- Js.string "side_class_project_name";
   span##innerHTML <- Js.string title;
   span##onclick <- handler (fun ev ->
     if not (Filemanager.is_project_opened title) then
-      (open_project title;
+      (Event_manager.open_project#trigger title;
        is_shown := true)
     else if not !is_shown then
       (ul##style##display <- Js.string "";
@@ -132,16 +133,34 @@ let make_sidepanel () =
   Filemanager.open_workspace ~callback; 
   
 
-  let callback_create_file file =
+  let callback_rename_file file =
     let id, project, filename =
       file.Filemanager.id,
       file.Filemanager.project,
       file.Filemanager.filename in
-    let id_container = "side_class_file_list_container_"^project in
+    let id_container = Format.sprintf "side_file_%d" id in
     let container = Ace_utils.get_element_by_id id_container in
-    add_file container project filename
+    rename_file container filename
   in
+
+  let callback_create_file file =
+    let project = file.Filemanager.project in
+    let id_container = "side_project_"^project in
+    let container = Ace_utils.get_element_by_id id_container in
+    add_file container file
+  in
+
+  let callback_open_project files =
+    let project = (List.hd files).Filemanager.project in
+    let id_container = "side_project_"^project in
+    let container = Ace_utils.get_element_by_id id_container in
+    List.iter (fun file ->
+      add_file container file) files
+  in
+
   Event_manager.create_file#add_event callback_create_file;
+  Event_manager.rename_file#add_event callback_rename_file;
+  Event_manager.open_project#add_event callback_open_project;
 
   Dom.appendChild div sideprojects;
   div

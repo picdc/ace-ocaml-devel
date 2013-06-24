@@ -11,3 +11,5 @@ end
 
 
 let create_file = new event Filemanager.create_file
+let rename_file = new event Filemanager.rename_file
+let open_project = new event Filemanager.open_project

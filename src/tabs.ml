@@ -7,7 +7,7 @@ module H = Hashtbl
 
 let htbl = H.create 19
 
-let curr_tab = ref 0
+let curr_tab = ref None
 let nb_untitled = ref 0
 let is_list_shown = ref false
 let offset = ref 0
@@ -66,17 +66,13 @@ let change_offset_from_id id =
   done
 
 
-(* let rename_tab id new_title = *)
-(*   let content = snd (H.find htbl id) in *)
-(*   let tab = get_element_by_id (Format.sprintf "tabnum%dtitle" id) in *)
-(*   let listli = get_element_by_id (Format.sprintf "listulnum%d" id) in *)
-(*   begin *)
-(*     match Js.Opt.to_option (Dom_html.CoerceTo.input tab) with *)
-(*     | None -> assert false *)
-(*     | Some tab -> tab##value <- Js.string new_title *)
-(*   end; *)
-(*   listli##innerHTML <- Js.string new_title; *)
-(*   H.replace htbl id (new_title, content) *)
+let rename_tab id new_title =
+  let tab = get_element_by_id (Format.sprintf "tabnum%dtitle" id) in
+  let listli = get_element_by_id (Format.sprintf "listulnum%d" id) in
+  let tab = Ace_utils.coerceTo_input tab in
+  tab##value <- Js.string new_title;
+  listli##innerHTML <- Js.string new_title
+
 
 
 let update_element_from_node n f =
@@ -133,9 +129,13 @@ let refresh_tabs () =
   	    else
   	      begin
 	        is_empty := false;
-  	        if i = !curr_tab then
-  	          li##className <- Js.string "listactive"
-  	        else li##className <- Js.string "";
+		begin
+		  match !curr_tab with
+		  | None -> li##className <- Js.string ""
+		  | Some id ->
+  	            if i = id then li##className <- Js.string "listactive"
+  	            else li##className <- Js.string "";
+		end;
   	        cssdecl##display <- Js.string ""
   	      end)
   done;
@@ -181,11 +181,16 @@ let change_tab id =
   change_edit_session es;
 
   (* Changement du focus du tab *)
-  let old_tab = get_element_by_id (Format.sprintf "tabnum%d" !curr_tab) in
-  old_tab##className <- Js.string "tab";
+  begin
+    match !curr_tab with
+    | None -> ()
+    | Some id ->
+      (let old_tab = get_element_by_id (Format.sprintf "tabnum%d" id) in
+       old_tab##className <- Js.string "tab")
+  end;
   let new_tab = get_element_by_id (Format.sprintf "tabnum%d" id) in
   new_tab##className <- Js.string "tab active";
-  curr_tab := id
+  curr_tab := Some id
 
 
 exception No_other_tabs
@@ -194,6 +199,9 @@ let rec add_tab id title content =
   (* Choix de l'id *)
   let es = create_edit_session content in
   H.add htbl id es;
+
+  Ace_utils.console_log "coucou";
+  Ace_utils.console_debug id;
 
   (* Création du tab *)
   let line = get_element_by_id "tabline" in
@@ -211,25 +219,30 @@ let rec add_tab id title content =
   span_title##readOnly <- Js._true;
   span_title##className <- Js.string "tabtitle";
   span_title##onclick <- handler ( fun _ ->
-    if !curr_tab <> id then
-      change_tab id;
-    Js._true);
+    match !curr_tab with
+    | None -> assert false
+    | Some i -> 
+      if i <> id then
+	change_tab id;
+      Js._true);
   span_title##ondblclick <- handler ( fun _ ->
     span_title##readOnly <- Js._false;
     Js._true);
-  (* ignore (Dom_html.addEventListener *)
-  (*   span_title  *)
-  (*   (Dom_html.Event.make "blur") *)
-  (*   (handler (fun _ -> *)
-  (*     span_title##readOnly <- Js._true; *)
-  (*     rename_tab id (Js.to_string span_title##value); *)
-  (*     Js._true)) *)
-  (*   Js._true); *)
-  (* span_title##onkeypress <- handler (fun kev -> *)
-  (*   if kev##keyCode == 13 then *)
-  (*     (span_title##readOnly <- Js._true; *)
-  (*      rename_tab id (Js.to_string span_title##value)); *)
-  (*   Js._true); *)
+  ignore (Dom_html.addEventListener
+    span_title
+    (Dom_html.Event.make "blur")
+    (handler (fun _ ->
+      span_title##readOnly <- Js._true;
+      Event_manager.rename_file#trigger
+	(id, (Js.to_string span_title##value));
+      Js._true))
+    Js._true);
+  span_title##onkeypress <- handler (fun kev ->
+    if kev##keyCode == 13 then
+      (span_title##readOnly <- Js._true;
+       Event_manager.rename_file#trigger 
+	 (id, (Js.to_string span_title##value)));
+    Js._true);
   span_close##innerHTML <- Js.string "x";
   span_close##className <- Js.string "tabclose";
   span_close##onclick <- handler ( fun _ ->
@@ -273,32 +286,37 @@ and close_tab id =
   let list = get_element_by_id "listul" in
   let tabli = get_element_by_id (Format.sprintf "listulnum%d" id) in
 
-  if !curr_tab = id then
-    begin
-    (* Choix du prochain tab à afficher *)
-      let sibling =
-	match Js.Opt.to_option tab##previousSibling with
-	| Some s -> Dom_html.CoerceTo.element s
-	| None -> 
-	  begin
-	    match Js.Opt.to_option tab##nextSibling with
+  begin
+    match !curr_tab with
+    | None -> assert false
+    | Some i ->
+      if i = id then
+	begin
+      (* Choix du prochain tab à afficher *)
+	  let sibling =
+	    match Js.Opt.to_option tab##previousSibling with
 	    | Some s -> Dom_html.CoerceTo.element s
-	    | None -> Js.Opt.empty
-	  end
-      in
-      try
-	let next_tab =
-	  match Js.Opt.to_option sibling with
-	  | Some s -> s
-	  | None -> raise No_other_tabs
-	in
-	let next_id = get_tab_id_from_html next_tab in
-	change_tab next_id
-      with 
-	No_other_tabs ->
-	  Ace_utils.disable_editor ();
-	  enable_navigation_buttons false
-    end;
+	    | None -> 
+	      begin
+		match Js.Opt.to_option tab##nextSibling with
+		| Some s -> Dom_html.CoerceTo.element s
+		| None -> Js.Opt.empty
+	      end
+	  in
+	  try
+	    let next_tab =
+	      match Js.Opt.to_option sibling with
+	      | Some s -> s
+	      | None -> raise No_other_tabs
+	    in
+	    let next_id = get_tab_id_from_html next_tab in
+	    change_tab next_id
+	  with 
+	    No_other_tabs ->
+	      Ace_utils.disable_editor ();
+	      enable_navigation_buttons false
+	end;
+  end;
   
   H.remove htbl id;
   Dom.removeChild line tab;
@@ -455,15 +473,24 @@ let main () =
       Js._true);
 
 
-  let callback_create_file file =
+
+  let callback_rename_file file =
     let id, project, filename =
       file.Filemanager.id,
       file.Filemanager.project,
+      file.Filemanager.filename in
+    if Filemanager.is_file_opened ~project ~filename then
+      rename_tab id filename
+  in
+  let callback_create_file file =
+    let id, filename =
+      file.Filemanager.id,
       file.Filemanager.filename in
     add_tab id filename "";
     change_tab id
   in
   Event_manager.create_file#add_event callback_create_file;
+  Event_manager.rename_file#add_event callback_rename_file;
 
   enable_navigation_buttons false
 

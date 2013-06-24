@@ -83,7 +83,7 @@ let console_debug o =
 
 let get_element_by_id id =
   Js.Opt.get (document##getElementById (Js.string id))
-    (fun () -> assert false)
+    (fun () -> failwith ("fail get_element_by_id : "^id))
 
 let coerceTo_input el =
   match Js.Opt.to_option (Dom_html.CoerceTo.input el) with

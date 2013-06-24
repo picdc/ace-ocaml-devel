@@ -82,7 +82,7 @@ let project_save_function project file content =
 
 
 let project_rename_function project file new_name =
-  let path = Format.sprintf "%s/common_user/%s/%s/" ppath project file in
+  let path = Format.sprintf "%s/common_user/%s/" ppath project in
   let res = Shell.cmd "mv" [ path^file; path^new_name ] in
   let b = Buffer.create 503 in
   try
@@ -182,7 +182,7 @@ let project_rename_service =
 	try
 	  let project = get_argument cgi "project" in
 	  let file = get_argument cgi "file" in
-	  let new_name = get_argument cgi "new_name" in
+	  let new_name = get_argument cgi "newname" in
 	  project_rename_function project file new_name;
 	  print_string "Renamed" cgi
 	with

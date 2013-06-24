@@ -7,3 +7,4 @@ end
 
 val create_file : (Filemanager.file , (string * string)) event 
 val rename_file : (Filemanager.file , (int * string)) event
+val open_project : (Filemanager.file list, string) event
