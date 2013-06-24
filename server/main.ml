@@ -81,6 +81,15 @@ let project_save_function project file content =
   with _ -> raise Fail_shell_call
 
 
+let project_rename_function project file new_name =
+  let path = Format.sprintf "%s/common_user/%s/%s/" ppath project file in
+  let res = Shell.cmd "mv" [ path^file; path^new_name ] in
+  let b = Buffer.create 503 in
+  try
+    Shell.call ~stdout:(Shell.to_buffer b) [ res ]
+  with _ -> raise Fail_shell_call
+
+
 let empty_dyn_service = 
   { Nethttpd_services.dyn_handler = (fun _ _ -> ());
     dyn_activation = Nethttpd_services.std_activation
@@ -165,6 +174,21 @@ let project_save_service =
 	  _ -> print_string "Error !" cgi
       ); }
 
+
+let project_rename_service = 
+  { empty_dyn_service with
+    Nethttpd_services.dyn_handler =
+      (fun _ cgi -> 
+	try
+	  let project = get_argument cgi "project" in
+	  let file = get_argument cgi "file" in
+	  let new_name = get_argument cgi "new_name" in
+	  project_rename_function project file new_name;
+	  print_string "Renamed" cgi
+	with
+	  _ -> print_string "Error !" cgi
+      ); }
+
 let my_factory =
   Nethttpd_plex.nethttpd_factory
     ~name:"ace-edit_processor"
@@ -173,7 +197,8 @@ let my_factory =
 		 "project_load_service", project_load_service;
 		 "project_create_service", project_create_service;
 		 "create_service", create_service;
-		 "project_save_service", project_save_service ]
+		 "project_save_service", project_save_service;
+                 "project_rename_service", project_rename_service ]
     ()
 
 let main() =
