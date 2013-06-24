@@ -38,7 +38,6 @@ let get_list_of_projects ~callback =
   pull_request ~callback ~meth:"POST" ~url:"project" ~asyn:true ~msg:""
 
 
-
 let get_list_of_files ~callback project =
   let callback str =
     (* Rappel :
@@ -50,12 +49,17 @@ let get_list_of_files ~callback project =
   let msg = Format.sprintf "project=%s" project in
   pull_request ~callback ~meth:"POST" ~url:"project/list" ~asyn:true ~msg
 
+
 let get_content_of_file ~callback ~project ~filename =
   let msg = Format.sprintf "project=%s&file=%s" project filename in
   pull_request ~callback ~meth:"POST" ~url:"project/load" ~asyn:true ~msg
 
-(* let create_project ~callback name = *)
-(*   () *)
+
+let create_project ~callback name =
+  let msg = Format.sprintf "name=%s" name in
+  let callback _ = callback () in 
+  pull_request ~callback ~meth:"POST" ~url:"create" ~asyn:true ~msg
+
 
 let create_file ~callback ~project ~filename =
   let msg = Format.sprintf "project=%s&name=%s" project filename in

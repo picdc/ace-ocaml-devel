@@ -8,8 +8,8 @@ val get_list_of_files :
 val get_content_of_file :
   callback:(string -> unit) -> project:string -> filename:string -> unit
 
-(* val create_project : *)
-(*   callback:(unit -> unit) -> unit *)
+val create_project :
+  callback:(unit -> unit) -> string -> unit
 
 val create_file :
   callback:(unit -> unit) -> project:string -> filename:string -> unit
