@@ -45,8 +45,7 @@ let add_new_project name =
   let project = { name ; is_open = true ; files = [] } in
   H.add existing_projects name project
 
-let add_opened_file id project filename =
-  let file = { id ; project ; filename } in
+let add_opened_file file =
   opened_files := file::(!opened_files)
 
 let add_file_to_project project filename =
@@ -95,9 +94,10 @@ let open_file ~callback ~project ~filename =
   let callback =
     if not (is_file_opened ~project ~filename) then
       (let i = !id in
-      add_opened_file i project filename;
-      incr id;
-      callback i)
+       let file = { id = i ; project ; filename } in
+       add_opened_file file;
+       incr id;
+       callback i)
     else
       callback (get_id ~project ~filename)
   in
@@ -119,10 +119,11 @@ let create_file callback (project, filename) =
     if not (file_exists ~project ~filename) then
       let callback () =
 	let i = !id in
-	add_opened_file i project filename;
+	let file = { id = i ; project ; filename } in
+	add_opened_file file;
 	incr id;
 	add_file_to_project project filename;
-	callback i
+	callback file
       in
       Request.create_file ~callback ~project ~filename
     else raise (Bad_file_name (project, filename))

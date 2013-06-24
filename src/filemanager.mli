@@ -30,4 +30,4 @@ val open_file : callback:(int -> string -> unit) -> project:string ->
 val create_project : callback:(unit -> unit) -> project:string -> unit
 
 
-val create_file : (int -> unit) -> (string * string) -> unit
+val create_file : (file -> unit) -> (string * string) -> unit

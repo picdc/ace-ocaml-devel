@@ -323,6 +323,9 @@ let init_tabs_drawing () =
   button##id <- Js.string "newEmptyTab";
   button##disabled <- Js._true;
   button##onclick <- handler (fun _ -> Js._true);
+  (* button##onclick <- handler (fun _ -> *)
+  (*   Event_manager.create_file#trigger ("common_project", "pouet"); *)
+  (*   Js._true); *)
   Dom.appendChild new_tab button;
 
   let button = createInput ~_type:(Js.string "button") document in
@@ -450,6 +453,17 @@ let main () =
     (fun _ -> update_len ();
       refresh_tabs ();
       Js._true);
+
+
+  let callback_create_file file =
+    let id, project, filename =
+      file.Filemanager.id,
+      file.Filemanager.project,
+      file.Filemanager.filename in
+    add_tab id filename "";
+    change_tab id
+  in
+  Event_manager.create_file#add_event callback_create_file;
 
   enable_navigation_buttons false
 

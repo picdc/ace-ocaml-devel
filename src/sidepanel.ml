@@ -41,15 +41,7 @@ let focused_project = ref None
 
 let create_file project filename =
   let filename = "untitled.ml" in (* FOR TEST *)
-  let id_container = "side_class_file_list_container_"^project in
-  let container = Ace_utils.get_element_by_id id_container in
-  
-  let callback id =
-    add_file container project filename;
-    Tabs.add_tab id filename "";
-    Tabs.change_tab id
-  in
-  Filemanager.create_file callback (project, filename)
+  Event_manager.create_file#trigger (project, filename)
 
 
 
@@ -139,6 +131,18 @@ let make_sidepanel () =
     List.iter (fun el -> add_project sideprojects el) ls in
   Filemanager.open_workspace ~callback; 
   
+
+  let callback_create_file file =
+    let id, project, filename =
+      file.Filemanager.id,
+      file.Filemanager.project,
+      file.Filemanager.filename in
+    let id_container = "side_class_file_list_container_"^project in
+    let container = Ace_utils.get_element_by_id id_container in
+    add_file container project filename
+  in
+  Event_manager.create_file#add_event callback_create_file;
+
   Dom.appendChild div sideprojects;
   div
     
