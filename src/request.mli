@@ -14,8 +14,9 @@ val create_project :
 val create_file :
   callback:(unit -> unit) -> project:string -> filename:string -> unit
 
-(* val save_content_of_file : *)
-(*   callback:(unit -> unit) -> project:string -> filename:string -> unit *)
+val save_file :
+  callback:(unit -> unit) -> project:string -> filename:string ->
+  content:string -> unit
 
 val rename_file :
   callback:(unit -> unit) -> project:string -> filename:string -> 

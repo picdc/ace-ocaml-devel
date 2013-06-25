@@ -3,6 +3,23 @@ open Dom_html
 
 module H = Hashtbl
 
+let focused_file = ref None
+
+let right_clic_dialog_file =
+  let lstr = [ "Save file" ] in
+  let handler_save_file = handler (fun _ ->
+    match !focused_file with
+    | None -> assert false
+    | Some file_id ->
+      let content = Tabs.get_content_tab file_id in
+      match content with
+      | None -> Js._true
+      | Some content -> 
+	Event_manager.save_file#trigger (file_id, content);
+	Js._true)
+  in
+  let lhandler = [ handler_save_file ] in
+  Dialog.Right_clic_dialog.create lstr lhandler
 
 let add_file container file =
   let id, project, filename =
@@ -13,17 +30,12 @@ let add_file container file =
   let li = createLi document in
   let is_open = ref false in
 
-  Ace_utils.console_debug id;
-  Ace_utils.console_debug filename;
-
-
   li##className <- Js.string "side_class_file_name";
   li##id <- Js.string (Format.sprintf "side_file_%d" id);
   li##innerHTML <- Js.string filename;
   li##onclick <- handler (fun _ -> 
     if not !is_open then 
       (let callback _ content =
-	 Ace_utils.console_debug id;
 	 Tabs.add_tab id filename content;
 	 Tabs.change_tab id
        in
@@ -40,7 +52,17 @@ let add_file container file =
 	  Filemanager.open_file ~callback ~project ~filename
       end;
     Js._true);
-  
+  let hand = handler (fun ev ->
+    let ev = Js.Opt.get (Dom_html.CoerceTo.mouseEvent ev) (fun () ->
+      failwith "fail on coerceTo mouseEvent TAG:#48978") in
+    focused_file := Some id;
+    let x = ev##clientX in
+    let y = ev##clientY in
+    Dialog.Right_clic_dialog.show right_clic_dialog_file x y;
+    Js._false
+  ) in
+  Ace_utils.make_event_oncontextmenu li hand;
+
   Dom.appendChild container li
 
 let rename_file container filename =
@@ -50,8 +72,8 @@ let rename_file container filename =
 
 let focused_project = ref None
 
+
 let create_file project filename =
-  let filename = "untitled.ml" in (* FOR TEST *)
   Event_manager.create_file#trigger (project, filename)
 
 
@@ -61,7 +83,8 @@ let right_clic_dialog_opened_project =
     match !focused_project with
     | None -> assert false
     | Some project ->
-      create_file project "untitled.ml";
+      Dialog.Prompt_dialog.prompt "Choose file name :" "untitled.ml"
+	(create_file project);
       Js._true)
   in		 
   let lhandler = [ handler_new_file ] in

@@ -46,6 +46,7 @@ val create_edit_session : string -> editSession
 val change_edit_session : editSession -> unit
 val get_editor_value : unit -> string
 val set_editor_value : string -> unit
+val get_editsession_content : editSession -> string
 
 val get_line : int -> string
 val get_lines : int -> int -> string

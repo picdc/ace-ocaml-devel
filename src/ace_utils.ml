@@ -274,6 +274,10 @@ let set_editor_value str =
 	       "editor.getSession().getDocument().setValue")
 	    [| Js.Unsafe.inject str |])
 
+let get_editsession_content es =
+  Js.to_string (Js.Unsafe.meth_call es "getDocument().getValue"
+  		  [| Js.Unsafe.inject () |])
+
 let get_line (row: int) : string =
   Js.to_string (Js.Unsafe.fun_call
 		  (Js.Unsafe.variable

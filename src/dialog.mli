@@ -11,3 +11,10 @@ module Right_clic_dialog : sig
   val hide_all : unit -> unit
    
 end
+
+
+module Prompt_dialog : sig
+
+  val prompt : string -> string -> (string -> unit) -> unit 
+
+end

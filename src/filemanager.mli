@@ -35,3 +35,4 @@ val create_project : callback:(unit -> unit) -> project:string -> unit
 val create_file : (file -> unit) -> (string * string) -> unit
 
 val rename_file : (file -> unit) -> (int * string) -> unit
+val save_file : (unit -> unit) -> (int * string) -> unit

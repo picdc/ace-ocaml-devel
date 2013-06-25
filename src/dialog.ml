@@ -9,13 +9,6 @@ module Right_clic_dialog = struct
 
   let elements = ref [] 
 
-  let show dialog x y =
-    let l = Format.sprintf "%dpx" x in
-    let t = Format.sprintf "%dpx" y in
-    dialog##style##display <- Js.string "";
-    dialog##style##left <- Js.string l;
-    dialog##style##top <- Js.string t
-
   let hide dialog =
     dialog##style##display <- Js.string "none"
 
@@ -40,5 +33,27 @@ module Right_clic_dialog = struct
   let hide_all () =
     List.iter (fun el -> hide el) !elements
 
+
+  let show dialog x y =
+    hide_all ();
+    let l = Format.sprintf "%dpx" x in
+    let t = Format.sprintf "%dpx" y in
+    dialog##style##display <- Js.string "";
+    dialog##style##left <- Js.string l;
+    dialog##style##top <- Js.string t
+
  
+end
+
+
+
+module Prompt_dialog = struct
+
+  let prompt title default f =
+    let res = Dom_html.window##prompt(Js.string title, Js.string default) in
+    try
+      let res = Js.to_string res in
+      f res
+    with _ -> ()
+
 end

@@ -66,8 +66,13 @@ let create_file ~callback ~project ~filename =
   let callback _ = callback () in 
   pull_request ~callback ~meth:"POST" ~url:"project/create" ~asyn:true ~msg
 
-(* let save_content_of_file ~callback ~project ~filename = *)
-(*   () *)
+
+let save_file ~callback ~project ~filename ~content =
+  let msg = Format.sprintf "project=%s&file=%s&content=%s"
+    project filename content in
+  let callback _ = callback () in
+  pull_request ~callback ~meth:"POST" ~url:"project/save" ~asyn:true ~msg
+
 
 let rename_file ~callback ~project ~filename ~new_name =
   let msg = Format.sprintf "project=%s&file=%s&newname=%s"

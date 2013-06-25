@@ -16,6 +16,12 @@ let len = ref 4
 let exist_tab id =
   H.mem htbl id
 
+let get_content_tab id =
+  try 
+    let es = H.find htbl id in
+    Some (Ace_utils.get_editsession_content es)
+  with Not_found -> None
+
 
 let get_line_width () =
   let container = get_element_by_id "tabline" in
@@ -199,9 +205,6 @@ let rec add_tab id title content =
   (* Choix de l'id *)
   let es = create_edit_session content in
   H.add htbl id es;
-
-  Ace_utils.console_log "coucou";
-  Ace_utils.console_debug id;
 
   (* Création du tab *)
   let line = get_element_by_id "tabline" in

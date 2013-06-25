@@ -163,3 +163,9 @@ let rename_file callback (id, new_name) =
       Request.rename_file ~callback ~project:file.project 
 	~filename:file.filename ~new_name
     else raise (Bad_file_name (file.project, new_name))
+
+
+let save_file callback (id, content) =
+  let file = get_file id in
+  Request.save_file ~callback ~project:file.project ~filename:file.filename
+    ~content
