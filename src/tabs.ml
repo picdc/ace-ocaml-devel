@@ -492,8 +492,20 @@ let main () =
     add_tab id filename "";
     change_tab id
   in
+  let callback_delete_file file =
+    let id = file.Filemanager.id in
+    if exist_tab id then
+      close_tab id
+  in
+  let callback_delete_project _ =
+    H.iter (fun k _ ->
+      try let _ = Filemanager.get_file k in ()
+      with Not_found -> close_tab k) htbl
+  in
   Event_manager.create_file#add_event callback_create_file;
   Event_manager.rename_file#add_event callback_rename_file;
+  Event_manager.delete_file#add_event callback_delete_file;
+  Event_manager.delete_project#add_event callback_delete_project;
 
   enable_navigation_buttons false
 

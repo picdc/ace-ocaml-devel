@@ -111,11 +111,11 @@ let open_project callback project =
    Request.get_list_of_files ~callback project
        
 
-let open_file ~callback ~project ~filename =
-  let callback =
+let open_file callback (project, filename) =
+  let callback str =
     let file = get_file2 ~project ~filename in
     file.is_open <- true;
-    callback file.id
+    callback (file.id, str)
   in
   Request.get_content_of_file ~callback ~project ~filename
 

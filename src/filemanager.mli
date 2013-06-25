@@ -28,16 +28,13 @@ val get_id : project:string -> filename:string -> int
 
 val open_workspace : callback:(string list -> unit) -> unit
 val open_project : (file list -> unit) -> string -> unit
-val open_file : callback:(int -> string -> unit) -> project:string ->
-  filename:string -> unit
+val open_file : ((int * string) -> unit) -> (string * string) -> unit
 
 val create_project : (string -> unit) -> string -> unit
 val create_file : (file -> unit) -> (string * string) -> unit
-
 val rename_file : (file -> unit) -> (int * string) -> unit
 val rename_project : ((string * string) -> unit) -> (string * string)
   -> unit
 val save_file : (unit -> unit) -> (int * string) -> unit
-
 val delete_file : (file -> unit) -> int -> unit
 val delete_project : (string -> unit) -> string -> unit

@@ -1,7 +1,6 @@
 
 !!!!!!!!!!!!!
 
-- quand on delete un file -> le retirer des tabs
 - quand on ferme le dernier tabs -> vider le content de l'éditeur
 - ajout u.ml puis delete u.ml, rajouter u.ml -> bug
   puis rajout d'un autre tab -> failure avec l'id
