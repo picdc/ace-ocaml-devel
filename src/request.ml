@@ -21,9 +21,6 @@ let pull_request ~callback ~meth ~url ~asyn ~msg =
   in
   req##onreadystatechange <- Js.wrap_callback f;
   req##send(Js.some (Js.string msg))
-  
-
-
 
 
 
@@ -69,7 +66,8 @@ let create_file ~callback ~project ~filename =
 
 let save_file ~callback ~project ~filename ~content =
   let msg = Format.sprintf "project=%s&file=%s&content=%s"
-    project filename content in
+    project filename (Url.urlencode content) in
+  Ace_utils.console_log msg;
   let callback _ = callback () in
   pull_request ~callback ~meth:"POST" ~url:"project/save" ~asyn:true ~msg
 
