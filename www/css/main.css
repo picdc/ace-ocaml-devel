@@ -61,6 +61,7 @@
 }
 
 .dialog_right_clic_item {
+    display: block;
     margin-left: 10px;
     margin-right: 10px;
     background-color: inherit;

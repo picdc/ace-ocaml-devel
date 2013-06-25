@@ -6,7 +6,7 @@ type project = {
 } 
 type file = {
   id : int;
-  project: string;
+  mutable project: string;
   mutable filename: string;
   mutable is_open: bool
 }
@@ -120,11 +120,11 @@ let open_file ~callback ~project ~filename =
   Request.get_content_of_file ~callback ~project ~filename
 
 
-let create_project ~callback ~project =
+let create_project callback project =
   if not (project_exists project) then
-    let callback =
+    let callback () =
       add_new_project project;
-      callback
+      callback project
     in
     Request.create_project callback project 
   else raise (Bad_project_name project)
@@ -145,6 +145,24 @@ let create_file callback (project, filename) =
     else raise (Bad_file_name (project, filename))
   else raise (Project_closed project)
 
+
+
+let rename_project callback (name, new_name) =
+  if name <> new_name then
+    if project_exists name then
+      if not (project_exists new_name) then
+	let callback () =
+	  let project = H.find existing_projects name in
+	  let rproject = { project with name = new_name } in
+	  H.remove existing_projects name;
+	  H.add existing_projects new_name rproject;
+	  H.iter (fun _ f ->
+	    if f.project = name then f.project <- new_name) existing_files;
+	  callback (name, new_name)
+	in
+	Request.rename_project callback name new_name
+      else raise (Bad_project_name new_name)
+    else raise (Project_not_found name)
 
 let rename_file callback (id, new_name) =
   let file = get_file id in
@@ -169,3 +187,24 @@ let save_file callback (id, content) =
   let file = get_file id in
   Request.save_file ~callback ~project:file.project ~filename:file.filename
     ~content
+
+
+let delete_file callback id =
+  let file = get_file id in
+  let callback () =
+    H.remove existing_files id;
+    callback file
+  in
+  Request.delete_file ~callback ~project:file.project ~filename:file.filename
+  
+
+let delete_project callback name =
+  if project_exists name then
+    let callback () =
+      H.remove existing_projects name;
+      H.iter (fun k v -> 
+	if v.project = name then H.remove existing_files k) existing_files;
+      callback name
+    in
+    Request.delete_project ~callback ~project:name
+  else raise (Project_not_found name)

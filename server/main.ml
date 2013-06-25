@@ -81,6 +81,15 @@ let project_save_function project file content =
   with _ -> raise Fail_shell_call
 
 
+let rename_function project new_name =
+  let path = Format.sprintf "%s/common_user/" ppath in
+  let res = Shell.cmd "mv" [ path^project; path^new_name ] in
+  let b = Buffer.create 503 in
+  try
+    Shell.call ~stdout:(Shell.to_buffer b) [ res ]
+  with _ -> raise Fail_shell_call
+
+
 let project_rename_function project file new_name =
   let path = Format.sprintf "%s/common_user/%s/" ppath project in
   let res = Shell.cmd "mv" [ path^file; path^new_name ] in
@@ -89,6 +98,21 @@ let project_rename_function project file new_name =
     Shell.call ~stdout:(Shell.to_buffer b) [ res ]
   with _ -> raise Fail_shell_call
 
+let delete_function project =
+  let path = Format.sprintf "%s/common_user/%s" ppath project in
+  let res = Shell.cmd "rm" [ "-r" ; path ] in
+  let b = Buffer.create 503 in
+  try
+    Shell.call ~stdout:(Shell.to_buffer b) [ res ]
+  with _ -> raise Fail_shell_call
+
+let project_delete_function project file =
+  let path = Format.sprintf "%s/common_user/%s/%s" ppath project file in
+  let res = Shell.cmd "rm" [ path ] in
+  let b = Buffer.create 503 in
+  try
+    Shell.call ~stdout:(Shell.to_buffer b) [ res ]
+  with _ -> raise Fail_shell_call
 
 let empty_dyn_service = 
   { Nethttpd_services.dyn_handler = (fun _ _ -> ());
@@ -174,6 +198,17 @@ let project_save_service =
 	  _ -> print_string "Error !" cgi
       ); }
 
+let rename_service = 
+  { empty_dyn_service with
+    Nethttpd_services.dyn_handler =
+      (fun _ cgi -> 
+	try
+	  let project = get_argument cgi "project" in
+	  let new_name = get_argument cgi "newname" in
+	  rename_function project new_name;
+	  print_string "Renamed" cgi
+	with _ -> print_string "Error !" cgi
+      ); }
 
 let project_rename_service = 
   { empty_dyn_service with
@@ -189,6 +224,29 @@ let project_rename_service =
 	  _ -> print_string "Error !" cgi
       ); }
 
+let delete_service = 
+  { empty_dyn_service with
+    Nethttpd_services.dyn_handler =
+      (fun _ cgi -> 
+	try
+	  let project = get_argument cgi "project" in
+	  delete_function project;
+	  print_string "Deleted" cgi
+	with _ -> print_string "Error !" cgi
+      ); }
+
+let project_delete_service = 
+  { empty_dyn_service with
+    Nethttpd_services.dyn_handler =
+      (fun _ cgi -> 
+	try
+	  let project = get_argument cgi "project" in
+	  let file = get_argument cgi "file" in
+	  project_delete_function project file;
+	  print_string "Deleted" cgi
+	with _ -> print_string "Error !" cgi
+      ); }
+
 let my_factory =
   Nethttpd_plex.nethttpd_factory
     ~name:"ace-edit_processor"
@@ -198,7 +256,10 @@ let my_factory =
 		 "project_create_service", project_create_service;
 		 "create_service", create_service;
 		 "project_save_service", project_save_service;
-                 "project_rename_service", project_rename_service ]
+                 "rename_service", rename_service;
+                 "project_rename_service", project_rename_service;
+		 "delete_service", delete_service;
+		 "project_delete_service", project_delete_service ]
     ()
 
 let main() =

@@ -21,3 +21,12 @@ val save_file :
 val rename_file :
   callback:(unit -> unit) -> project:string -> filename:string -> 
   new_name:string -> unit
+
+val rename_project :
+  callback:(unit -> unit) -> project:string -> new_name:string -> unit
+
+val delete_project :
+  callback:(unit -> unit) -> project:string -> unit
+
+val delete_file :
+  callback:(unit -> unit) -> project:string -> filename:string -> unit

@@ -42,7 +42,7 @@ module Right_clic_dialog = struct
     dialog##style##left <- Js.string l;
     dialog##style##top <- Js.string t
 
- 
+
 end
 
 

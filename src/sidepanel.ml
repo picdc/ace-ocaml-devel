@@ -6,7 +6,7 @@ module H = Hashtbl
 let focused_file = ref None
 
 let right_clic_dialog_file =
-  let lstr = [ "Save file" ] in
+  let lstr = [ "Save file" ; "Delete file" ] in
   let handler_save_file = handler (fun _ ->
     match !focused_file with
     | None -> assert false
@@ -16,9 +16,14 @@ let right_clic_dialog_file =
       | None -> Js._true
       | Some content -> 
 	Event_manager.save_file#trigger (file_id, content);
-	Js._true)
-  in
-  let lhandler = [ handler_save_file ] in
+	Js._true) in
+  let handler_delete_file = handler (fun _ ->
+    match !focused_file with
+    | None -> assert false
+    | Some file_id ->
+      Event_manager.delete_file#trigger file_id;
+      Js._true) in
+  let lhandler = [ handler_save_file ; handler_delete_file ] in
   Dialog.Right_clic_dialog.create lstr lhandler
 
 let add_file container file =
@@ -76,9 +81,17 @@ let focused_project = ref None
 let create_file project filename =
   Event_manager.create_file#trigger (project, filename)
 
+let handler_rename_project () = handler ( fun _ ->
+  match !focused_project with
+  | None -> assert false
+  | Some project ->
+    let f new_name =
+      Event_manager.rename_project#trigger (project, new_name) in
+    Dialog.Prompt_dialog.prompt "Choose new project name :" project f;
+    Js._true)
 
 let right_clic_dialog_opened_project =
-  let lstr = [ "Create new file" ] in
+  let lstr = [ "Create new file" ; "Rename project" ] in
   let handler_new_file = handler (fun _ ->
     match !focused_project with
     | None -> assert false
@@ -87,11 +100,11 @@ let right_clic_dialog_opened_project =
 	(create_file project);
       Js._true)
   in		 
-  let lhandler = [ handler_new_file ] in
+  let lhandler = [ handler_new_file ; handler_rename_project () ] in
   Dialog.Right_clic_dialog.create lstr lhandler
 
 let right_clic_dialog_closed_project =
-  let lstr = [ "Open project" ] in
+  let lstr = [ "Open project" ; "Rename project" ] in
   let handler_open_project = handler (fun _ ->
     match !focused_project with
     | None -> assert false
@@ -99,7 +112,7 @@ let right_clic_dialog_closed_project =
       Event_manager.open_project#trigger project;
       Js._true)
   in		 
-  let lhandler = [ handler_open_project ] in
+  let lhandler = [ handler_open_project ; handler_rename_project () ] in
   Dialog.Right_clic_dialog.create lstr lhandler
 
 let add_project container title =
@@ -113,6 +126,7 @@ let add_project container title =
   ul##id <- Js.string ("side_project_"^title);
   span##className <- Js.string "side_class_project_name";
   span##innerHTML <- Js.string title;
+  span##id <- Js.string ("side_project_"^title^"_title");
   span##onclick <- handler (fun ev ->
     if not (Filemanager.is_project_opened title) then
       (Event_manager.open_project#trigger title;
@@ -149,12 +163,23 @@ let make_sidepanel () =
   let sideprojects = createUl document in
   div##id <- Js.string "sidepanel";
 
+  (* Le bouton de création de project *)
+  let button_create_project = createButton document in
+  button_create_project##innerHTML <- Js.string "Create new project";
+  button_create_project##onclick <- handler (fun _ -> 
+    let f s = Event_manager.create_project#trigger s in
+    Dialog.Prompt_dialog.prompt "Choose new project's name :"
+      "new_project" f;
+    Js._true);
 
+  (* Les projets *)
   sideprojects##id <- Js.string "side_projects";
   let callback ls =
     List.iter (fun el -> add_project sideprojects el) ls in
   Filemanager.open_workspace ~callback; 
   
+
+
 
   let callback_rename_file file =
     let id, project, filename =
@@ -164,6 +189,10 @@ let make_sidepanel () =
     let id_container = Format.sprintf "side_file_%d" id in
     let container = Ace_utils.get_element_by_id id_container in
     rename_file container filename
+  in
+
+  let callback_create_project project =
+    add_project sideprojects project
   in
 
   let callback_create_file file =
@@ -181,10 +210,31 @@ let make_sidepanel () =
       add_file container file) files
   in
 
+  let callback_delete_file file =
+    let id_c_project = "side_project_"^file.Filemanager.project in
+    let c_project = Ace_utils.get_element_by_id id_c_project in
+    let id_c_file = Format.sprintf "side_file_%d" file.Filemanager.id in
+    let c_file = Ace_utils.get_element_by_id id_c_file in
+    Dom.removeChild c_project c_file
+  in
+
+  let callback_rename_project (name, new_name) =
+    let id_c_project = "side_project_"^name in
+    let c_project = Ace_utils.get_element_by_id id_c_project in
+    c_project##id <- Js.string ("side_project_"^new_name);
+    let id_c_title = "side_project_"^name^"_title" in
+    let c_title = Ace_utils.get_element_by_id id_c_title in
+    c_title##innerHTML <- Js.string new_name
+  in
+
   Event_manager.create_file#add_event callback_create_file;
+  Event_manager.create_project#add_event callback_create_project;
   Event_manager.rename_file#add_event callback_rename_file;
   Event_manager.open_project#add_event callback_open_project;
+  Event_manager.delete_file#add_event callback_delete_file;
+  Event_manager.rename_project#add_event callback_rename_project;
 
+  Dom.appendChild div button_create_project;
   Dom.appendChild div sideprojects;
   div
     

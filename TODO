@@ -1,4 +1,15 @@
 
+!!!!!!!!!!!!!
+
+- quand on delete un file -> le retirer des tabs
+- quand on ferme le dernier tabs -> vider le content de l'éditeur
+- ajout u.ml puis delete u.ml, rajouter u.ml -> bug
+  puis rajout d'un autre tab -> failure avec l'id
+- ajout u.ml = ouvre un tab, cliquer sur le tab via sidepanel = ouvre un autre tab
+  --> peut etre à l'origine de l'assert failure ci dessus
+
+!!!!!!!!!!!!!
+
 * Serveur Web
   - discuter pour savoir comment le faire
      -> script CGI en ocaml ?

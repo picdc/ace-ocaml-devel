@@ -79,3 +79,22 @@ let rename_file ~callback ~project ~filename ~new_name =
     project filename new_name in
   let callback _ = callback () in
   pull_request ~callback ~meth:"POST" ~url:"project/rename" ~asyn:true ~msg
+
+
+let rename_project ~callback ~project ~new_name =
+  let msg = Format.sprintf "project=%s&newname=%s" project new_name in
+  let callback _ = callback () in
+  pull_request ~callback ~meth:"POST" ~url:"rename" ~asyn:true ~msg
+
+
+let delete_project ~callback ~project =
+  let msg = Format.sprintf "project=%s" project in
+  let callback _ = callback () in
+  pull_request ~callback ~meth:"POST" ~url:"delete" ~asyn:true ~msg
+
+
+let delete_file ~callback ~project ~filename =
+  let msg = Format.sprintf "project=%s&file=%s" project filename in
+  let callback _ = callback () in
+  pull_request ~callback ~meth:"POST" ~url:"project/delete" ~asyn:true ~msg
+
