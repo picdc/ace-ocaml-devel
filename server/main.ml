@@ -5,7 +5,8 @@ exception Bad_cgi_argument
 exception Fail_shell_call
 
 
-let ppath = "/home/dmaison/ace-ocaml/data"
+(* let ppath = "/home/dmaison/ace-ocaml/data" *)
+let ppath = Format.sprintf "%s/ace-ocaml/data" (Sys.getenv "HOME")
 
 let get_argument (cgi: Netcgi.cgi_activation) name =
   if cgi#argument_exists name then begin
@@ -189,6 +190,19 @@ let project_rename_service =
 	  _ -> print_string "Error !" cgi
       ); }
 
+(* let fs_spec = *)
+(*   Nethttpd_services.( *)
+(*   { file_docroot = Format.sprintf "%s/ace-ocaml/www" (Sys.getenv "HOME"); *)
+(*     file_uri = "/"; *)
+(*     file_suffix_types = [ "txt", "text/plain"; *)
+(* 			  "html", "text/html" ]; *)
+(*     file_default_type = "text/html"; *)
+(*     file_options = [ `Enable_gzip; *)
+(* 		     `Enable_listings (simple_listing ?hide:None); *)
+(* 		     `Enable_index_file ["ace-edit.html"] *)
+(* 		   ] *)
+(*   }) *)
+
 let my_factory =
   Nethttpd_plex.nethttpd_factory
     ~name:"ace-edit_processor"
@@ -199,6 +213,7 @@ let my_factory =
 		 "create_service", create_service;
 		 "project_save_service", project_save_service;
                  "project_rename_service", project_rename_service ]
+    (* ~services: [ "/", (Nethttpd_services.file_service fs_spec) ] *)
     ()
 
 let main() =
