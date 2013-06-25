@@ -45,6 +45,8 @@
 
 * Auto-complétion
   - ocp-index (courage Pierrick !)
+  - Remplacer RE par PCRE
+  - Revoir plus tard en utilisant la pile d'OCP-INDENT
 
 * Indentation
   - Adapter la méthode par block pour les modules

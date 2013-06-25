@@ -5,7 +5,8 @@ exception Bad_cgi_argument
 exception Fail_shell_call
 
 
-let ppath = "/home/dmaison/ace-ocaml/data"
+(* let ppath = "/home/dmaison/ace-ocaml/data" *)
+let ppath = Format.sprintf "%s/ace-ocaml/data" (Sys.getenv "HOME")
 
 let get_argument (cgi: Netcgi.cgi_activation) name =
   if cgi#argument_exists name then begin
@@ -247,6 +248,7 @@ let project_delete_service =
 	with _ -> print_string "Error !" cgi
       ); }
 
+
 let my_factory =
   Nethttpd_plex.nethttpd_factory
     ~name:"ace-edit_processor"
@@ -260,6 +262,7 @@ let my_factory =
                  "project_rename_service", project_rename_service;
 		 "delete_service", delete_service;
 		 "project_delete_service", project_delete_service ]
+
     ()
 
 let main() =
